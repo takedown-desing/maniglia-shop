@@ -2,7 +2,7 @@
 import registryRaw from '../data/registry.json';
 
 export type RegPage = { url: string; h1: string; type: string; priority: string; primaryKw: string; ws: number; parent: string; note: string };
-export type Variant = { finish: string; color: string; article?: string; price: number | null; inStock?: boolean; image: string | null };
+export type Variant = { finish: string; color: string; article?: string; price: number | null; inStock?: boolean; image: string | null; imageSrc?: string };
 export type Product = {
   slug: string; name: string; brand: string; series: string | null; category: string; article?: string;
   variants: Variant[]; material?: string | null; style?: string | null; doorTypes?: string[];
@@ -42,7 +42,9 @@ const serviceMods = import.meta.glob('../data/content/service.json', { eager: tr
 
 function cleanProduct(p: Product): Product | null {
   if (!p || !p.slug || !p.name || !p.category) return null;
-  const variants = (p.variants || []).filter(Boolean);
+  // Фото показываем только с подтверждённым источником и не с сайтов конкурентов (водяные знаки).
+  const BLOCKED = /todoor\.ru/i;
+  const variants = (p.variants || []).filter(Boolean).map((v) => ({ ...v, image: v.image && v.imageSrc && !BLOCKED.test(v.imageSrc) ? v.image : null }));
   if (!variants.length) return null;
   const cat = p.category.endsWith('/') ? p.category : p.category + '/';
   return { ...p, category: cat, variants, doorTypes: p.doorTypes || [] };
@@ -50,7 +52,10 @@ function cleanProduct(p: Product): Product | null {
 const seen = new Set<string>();
 export const products: Product[] = loadArray<Product>(productMods)
   .map(cleanProduct)
-  .filter((p): p is Product => !!p && !seen.has(p.slug) && (seen.add(p.slug), true));
+  .filter((p): p is Product => !!p && !seen.has(p.slug) && (seen.add(p.slug), true))
+  .map((p, i) => ({ p, i, img: p.variants.some((v) => v.image) ? 0 : 1 }))
+  .sort((a, b) => a.img - b.img || a.i - b.i)
+  .map((x) => x.p);
 export const productBySlug = new Map(products.map((p) => [p.slug, p]));
 
 export const pageTexts = new Map(loadArray<PageText>(pagesMods).map((t) => [t.url, t]));

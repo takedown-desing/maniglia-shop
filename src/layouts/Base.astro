@@ -16,7 +16,7 @@ interface Props {
 }
 const { title, description = '', path, noindex = false, schema = [], crumbs = [], image = null, activeCat = '' } = Astro.props;
 const canonical = abs(Astro.site, path);
-const fullTitle = title.includes(SITE_NAME) ? title : `${title} | ${SITE_NAME}`;
+const fullTitle = title.includes(SITE_NAME) || title.length + SITE_NAME.length + 3 > 70 ? title : `${title} | ${SITE_NAME}`;
 const org = { '@type': 'Organization', '@id': abs(Astro.site, '/') + '#org', name: SITE_NAME, url: abs(Astro.site, '/'), telephone: PHONE, email: EMAIL };
 const graph: Record<string, unknown>[] = [org, ...schema];
 if (crumbs.length > 1) graph.push({ '@type': 'BreadcrumbList', itemListElement: crumbs.map((c, i) => ({ '@type': 'ListItem', position: i + 1, name: c.name, item: abs(Astro.site, c.url) })) });

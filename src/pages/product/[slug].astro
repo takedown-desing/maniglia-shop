@@ -17,7 +17,8 @@ const crumbs = [...(catReg ? breadcrumbs(p.category) : [{ url: '/', name: 'Гл�
 const v0 = p.variants.find((v) => v.image) || p.variants[0];
 const bname = brandName(p.brand);
 const price = minPrice(p);
-const title = `${p.name}${v0.finish ? ', ' + v0.finish : ''}: купить, цена`;
+const withFinish = `${p.name}${v0.finish ? ', ' + v0.finish : ''}`;
+const title = withFinish.length <= 55 ? `${withFinish}: купить, цена` : p.name.length <= 60 ? `${p.name}: купить` : p.name;
 const description = `${p.name} (${bname}${p.article ? ', арт. ' + p.article : ''}). ${p.variants.length > 1 ? p.variants.length + ' покрытий. ' : ''}${price ? 'Цена от ' + new Intl.NumberFormat('ru-RU').format(price) + ' ₽. ' : ''}Доставка по России.`;
 const topCat = CATEGORY_NAV.find((c) => p.category.startsWith(c.url))?.url || '';
 const similar = products.filter((x) => x.slug !== p.slug && x.category === p.category).slice(0, 4);
@@ -29,7 +30,8 @@ const compatCats: Record<string, string[]> = {
   'zavertki-i-nakladki': ['/catalog/dvernye-ruchki/', '/catalog/mezhkomnatnye-zamki/s-fiksatorom/'],
 };
 const catSlug = p.category.split('/')[2];
-const compat = (compatCats[catSlug] || []).flatMap((c) => products.filter((x) => x.category.startsWith(c) && (x.brand === p.brand || x.variants.some((v) => v.color === v0.color))).slice(0, 2)).slice(0, 4);
+const withImg = (x: Product) => x.variants.some((v) => v.image);
+const compat = (compatCats[catSlug] || []).flatMap((c) => products.filter((x) => withImg(x) && x.category.startsWith(c) && (x.brand === p.brand || x.variants.some((v) => v.color === v0.color))).slice(0, 2)).slice(0, 4);
 const seriesUrl = registry.find((r) => r.type === 'series' && SERIES_RULES[r.url.split('/')[2]]?.brand === p.brand && SERIES_RULES[r.url.split('/')[2]].re.test((p.series || '') + ' ' + p.name))?.url;
 const guide = articles.find((a) => (a.related || []).some((r) => p.category.startsWith(r)));
 const offers = p.variants.filter((v) => v.price).map((v) => ({ '@type': 'Offer', price: v.price, priceCurrency: 'RUB', availability: v.inStock === false ? 'https://schema.org/PreOrder' : 'https://schema.org/InStock', url: abs(Astro.site, url), sku: v.article || p.article, itemCondition: 'https://schema.org/NewCondition' }));

@@ -34,6 +34,7 @@ const lo = prices.length ? Math.min(...prices) : 0; const hi = prices.length ? M
     <div class="grid" data-grid>
       {items.map((p, i) => <ProductCard p={p} eager={i < 4} />)}
     </div>
+    {items.length > 24 && <div style="text-align:center;margin-top:34px"><button type="button" class="btn btn-ghost" data-more>Показать ещё</button></div>}
   </div>
 )}
 <script>
@@ -42,6 +43,17 @@ const lo = prices.length ? Math.min(...prices) : 0; const hi = prices.length ? M
     const grid = root.querySelector<HTMLElement>('[data-grid]')!;
     const cards = [...grid.querySelectorAll<HTMLElement>('[data-card]')];
     const found = root.querySelector('[data-found]'); const count = root.querySelector('[data-count]');
+    const more = root.querySelector<HTMLButtonElement>('[data-more]');
+    const PAGE = 24; let limit = PAGE;
+    const paginate = () => {
+      let shown = 0; let total = 0;
+      [...grid.querySelectorAll<HTMLElement>('[data-card]')].forEach((c) => {
+        if (c.dataset.match === '0') { c.hidden = true; return; }
+        total++; c.hidden = shown >= limit; if (!c.hidden) shown++;
+      });
+      if (more) more.hidden = total <= limit;
+    };
+    more?.addEventListener('click', () => { limit += PAGE; paginate(); });
     const apply = () => {
       const f = form ? new FormData(form) : new FormData();
       const brand = f.get('brand') as string, color = f.get('color') as string, style = f.get('style') as string;
@@ -51,10 +63,12 @@ const lo = prices.length ? Math.min(...prices) : 0; const hi = prices.length ? M
         const pr = +(c.dataset.price || 0);
         const ok = (!brand || c.dataset.brand === brand) && (!color || (c.dataset.colors || '').split(' ').includes(color)) && (!style || c.dataset.style === style)
           && (!min || (pr && pr >= min)) && (!max || (pr && pr <= max));
-        c.hidden = !ok; if (ok) n++;
+        c.dataset.match = ok ? '1' : '0'; if (ok) n++;
       });
       if (found) found.textContent = String(n); if (count) count.textContent = String(n);
+      limit = PAGE; paginate();
     };
+    paginate();
     form?.addEventListener('change', apply); form?.addEventListener('input', apply);
     form?.addEventListener('reset', () => setTimeout(apply, 0));
     root.querySelector('[data-apply]')?.addEventListener('click', () => grid.scrollIntoView({ behavior: 'smooth' }));
@@ -66,6 +80,7 @@ const lo = prices.length ? Math.min(...prices) : 0; const hi = prices.length ? M
         return v === 'asc' ? pa - pb : v === 'desc' ? (pb % 1e9) - (pa % 1e9) : 0;
       });
       if (v) sorted.forEach((c) => grid.appendChild(c)); else cards.forEach((c) => grid.appendChild(c));
+      paginate();
     });
   });
 </script>

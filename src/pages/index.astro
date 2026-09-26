@@ -13,7 +13,8 @@ const tiles = CATEGORY_NAV.map((c) => ({ url: c.url, name: c.name, icon: c.icon,
 // хиты: по одному-два товара из ключевых категорий, у которых есть картинка
 const pick = (cat: string, n: number) => products.filter((p) => p.category.startsWith(cat) && firstImage(p)).slice(0, n);
 const hits = [...pick('/catalog/dvernye-ruchki/', 4), ...pick('/catalog/dvernye-petli/skrytye/', 2), ...pick('/catalog/mezhkomnatnye-zamki/', 2), ...pick('/catalog/razdvizhnye-sistemy/', 2), ...pick('/catalog/upory-i-ogranichiteli/', 2)].slice(0, 12);
-const heroImg = (cat: string) => firstImage(products.find((p) => p.category.startsWith(cat) && firstImage(p)) || products[0]) ;
+// для первого экрана берём фото без логотипов дистрибьюторов
+const heroImg = (cat: string) => firstImage(products.find((p) => p.category.startsWith(cat) && p.variants.some((v) => v.image && v.imageSrc && !/made-italy|fratelli-cattini\.com/.test(v.imageSrc))) || products[0]);
 const slides = [
   { kicker: 'Италия · Португалия · Россия', h: 'Дверная фурнитура 22 брендов', p: 'Ручки, замки, петли, доводчики и раздвижные системы: подберём комплект под вашу дверь в одном покрытии.', cta: '/catalog/', ctaText: 'Перейти в каталог', img: heroImg('/catalog/dvernye-ruchki/na-rozetke/') },
   { kicker: 'Krona Koblenz · AGB · Otlav', h: 'Скрытые петли для дверей-невидимок', p: 'Регулировка 3D, нагрузка до 100 кг на комплект, покрытия под цвет ручек.', cta: '/catalog/dvernye-petli/skrytye/', ctaText: 'Скрытые петли', img: heroImg('/catalog/dvernye-petli/skrytye/') },
