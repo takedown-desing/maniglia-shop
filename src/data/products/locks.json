@@ -13,7 +13,8 @@
     "article": "B06102.50.03.567",
     "price": 3252,
     "inStock": true,
-    "image": "/images/products/agb-mediana-polaris-wc-b06102-zoloto.jpg"
+    "image": "/images/products/agb-mediana-polaris-wc-b06102-zoloto.jpg",
+    "imageSrc": "https://www.tlock.ru/photo_bank/25587_01.jpg"
    },
    {
     "finish": "хром",
@@ -21,7 +22,8 @@
     "article": "B06102.50.06.567",
     "price": 3509,
     "inStock": true,
-    "image": "/images/products/agb-mediana-polaris-wc-b06102-hrom.jpg"
+    "image": "/images/products/agb-mediana-polaris-wc-b06102-hrom.jpg",
+    "imageSrc": "https://www.tlock.ru/photo_bank/25597_01.jpg"
    },
    {
     "finish": "матовый хром",
@@ -29,7 +31,8 @@
     "article": "B06102.50.34.567",
     "price": 3665,
     "inStock": true,
-    "image": "/images/products/agb-mediana-polaris-wc-b06102-matovyy-hrom.jpg"
+    "image": "/images/products/agb-mediana-polaris-wc-b06102-matovyy-hrom.jpg",
+    "imageSrc": "https://www.tlock.ru/photo_bank/25595_01.jpg"
    },
    {
     "finish": "чёрный",
@@ -37,7 +40,8 @@
     "article": "B06102.50.93.567",
     "price": 3955,
     "inStock": true,
-    "image": "/images/products/agb-mediana-polaris-wc-b06102-chernyy.jpg"
+    "image": "/images/products/agb-mediana-polaris-wc-b06102-chernyy.jpg",
+    "imageSrc": "https://www.tlock.ru/photo_bank/36553_01.jpg"
    },
    {
     "finish": "белый",
@@ -45,7 +49,8 @@
     "article": "B06102.50.FM.567",
     "price": 4131,
     "inStock": true,
-    "image": "/images/products/agb-mediana-polaris-wc-b06102-belyy.jpg"
+    "image": "/images/products/agb-mediana-polaris-wc-b06102-belyy.jpg",
+    "imageSrc": "https://www.tlock.ru/photo_bank/36551_01.jpg"
    },
    {
     "finish": "античная бронза",
@@ -53,7 +58,8 @@
     "article": "B06102.50.12.567",
     "price": 4470,
     "inStock": true,
-    "image": "/images/products/agb-mediana-polaris-wc-b06102-antichnaya-bronza.jpg"
+    "image": "/images/products/agb-mediana-polaris-wc-b06102-antichnaya-bronza.jpg",
+    "imageSrc": "https://www.tlock.ru/photo_bank/26389_01.jpg"
    }
   ],
   "material": "сталь",
@@ -71,7 +77,7 @@
    "Страна": "Италия"
   },
   "description": "Итальянский сантехнический замок с магнитным язычком для дверей ванной и туалета. Язычок выдвигается только при закрывании полотна, поэтому дверь захлопывается почти бесшумно и не цепляет одежду. Идёт в коробке вместе с ответной планкой в цвет корпуса.",
-  "sourceUrl": "https://todoor.ru/shop/B041025003-zamok-mezhkomnatnyj-WC-s-otvetnoj-plankoj-MEDIANA-POLARIS-zoloto/"
+  "sourceUrl": "https://www.tlock.ru/catalog/zashchelki_/bez_ruchek_v_komplekte_/mediana_polaris/b06102_50_ind_upak_b02402_05/b06102_50_03_567_b04102_b05102_zamok_mezhk_wc_lat_s_otv_pl_b2402_05_03_mediana_polaris/"
  },
  {
   "slug": "krona-koblenz-spinoff-wc96",
@@ -87,7 +93,8 @@
     "article": "KM.003.CM.A.4.COV.OS",
     "price": 2716,
     "inStock": true,
-    "image": "/images/products/krona-koblenz-spinoff-wc96-matovoe-zoloto.jpg"
+    "image": "/images/products/krona-koblenz-spinoff-wc96-matovoe-zoloto.jpg",
+    "imageSrc": "https://krona-koblenz.ru/images/detailed/110/KS-WC-OS.png"
    },
    {
     "finish": "золото",
@@ -95,7 +102,8 @@
     "article": "KM.003.CM.A.4.COV.OL",
     "price": 2716,
     "inStock": true,
-    "image": "/images/products/krona-koblenz-spinoff-wc96-zoloto.jpg"
+    "image": "/images/products/krona-koblenz-spinoff-wc96-zoloto.jpg",
+    "imageSrc": "https://krona-koblenz.ru/images/detailed/110/KS-WC-OL.png"
    },
    {
     "finish": "состаренная бронза",
@@ -103,7 +111,8 @@
     "article": "KM.003.CM.A.4.COV.BS",
     "price": 2716,
     "inStock": true,
-    "image": "/images/products/krona-koblenz-spinoff-wc96-sostarennaya-bronza.jpg"
+    "image": "/images/products/krona-koblenz-spinoff-wc96-sostarennaya-bronza.jpg",
+    "imageSrc": "https://krona-koblenz.ru/images/detailed/110/KS-WC-BS.png"
    },
    {
     "finish": "хром",
@@ -111,7 +120,8 @@
     "article": "KM.003.CM.A.4.COV.CL",
     "price": 2716,
     "inStock": true,
-    "image": "/images/products/krona-koblenz-spinoff-wc96-hrom.jpg"
+    "image": "/images/products/krona-koblenz-spinoff-wc96-hrom.jpg",
+    "imageSrc": "https://krona-koblenz.ru/images/detailed/110/KS-WC-CL.png"
    },
    {
     "finish": "матовый никель",
@@ -119,7 +129,8 @@
     "article": "KM.003.CM.A.4.COV.NS",
     "price": 2716,
     "inStock": true,
-    "image": "/images/products/krona-koblenz-spinoff-wc96-matovyy-nikel.jpg"
+    "image": "/images/products/krona-koblenz-spinoff-wc96-matovyy-nikel.jpg",
+    "imageSrc": "https://krona-koblenz.ru/images/detailed/110/KS-WC-NS.png"
    },
    {
     "finish": "бронза",
@@ -127,7 +138,8 @@
     "article": "KM.003.CM.A.4.COV.BR",
     "price": 2716,
     "inStock": true,
-    "image": "/images/products/krona-koblenz-spinoff-wc96-bronza.jpg"
+    "image": "/images/products/krona-koblenz-spinoff-wc96-bronza.jpg",
+    "imageSrc": "https://krona-koblenz.ru/images/detailed/110/KS-WC-BR.png"
    },
    {
     "finish": "белый",
@@ -135,7 +147,8 @@
     "article": "KM.003.CM.A.4.COV.BI",
     "price": 2716,
     "inStock": true,
-    "image": "/images/products/krona-koblenz-spinoff-wc96-belyy.jpg"
+    "image": "/images/products/krona-koblenz-spinoff-wc96-belyy.jpg",
+    "imageSrc": "https://krona-koblenz.ru/images/detailed/110/343445_bij5-a1.png"
    },
    {
     "finish": "чёрный",
@@ -143,7 +156,8 @@
     "article": "KM.003.CM.A.4.COV.NO",
     "price": 2716,
     "inStock": true,
-    "image": "/images/products/krona-koblenz-spinoff-wc96-chernyy.jpg"
+    "image": "/images/products/krona-koblenz-spinoff-wc96-chernyy.jpg",
+    "imageSrc": "https://krona-koblenz.ru/images/detailed/110/KS-WC-NO-1.png"
    }
   ],
   "material": "сталь",
@@ -160,7 +174,7 @@
    "Страна": "Италия"
   },
   "description": "Сантехнический магнитный замок итальянской марки Krona Koblenz с мягким износостойким язычком и встроенным доводчиком. Торцевая планка стальная и без видимых отверстий под шурупы: крепёж спрятан в корпусе. Большая палитра отделок позволяет подобрать замок точно в тон ручке.",
-  "sourceUrl": "https://todoor.ru/shop/km003cma4covos-zamok-mezhkomnatnyj-magnitnyj-koblenz-wc96-s-dovodchikom-os-mat-zoloto-komplekt/"
+  "sourceUrl": "https://krona-koblenz.ru/magnitnye-zamki-spinoff-s-dovodchikom/"
  },
  {
   "slug": "armadillo-gravity-g01-190-wc",
@@ -504,8 +518,8 @@
     "finish": "медь",
     "color": "copper",
     "article": "M96WC-50 AC",
-    "price": 110,
-    "inStock": true,
+    "price": null,
+    "inStock": false,
     "image": "/images/products/fuaro-m96wc-50-med.jpg",
     "imageSrc": "https://zamkitut.com/upload/iblock/c67/c67fd017698aa18077d7420522477d5c.jpg"
    },
@@ -549,7 +563,8 @@
     "article": "MAG MINI W",
     "price": 2441,
     "inStock": true,
-    "image": "/images/products/fratelli-cattini-mag-mini-w-matovyy-chernyy.jpg"
+    "image": "/images/products/fratelli-cattini-mag-mini-w-matovyy-chernyy.jpg",
+    "imageSrc": "https://fratelli-cattini.com/wp-content/uploads/2025/06/zaschelka-magnitnaja-fratelli-cattini-mag-mini-w-dlja-derevjannyh-dverej-matovyj-chernyj.jpg"
    },
    {
     "finish": "серый",
@@ -557,7 +572,8 @@
     "article": "MAG MINI W",
     "price": null,
     "inStock": false,
-    "image": "/images/products/fratelli-cattini-mag-mini-w-seryy.jpg"
+    "image": "/images/products/fratelli-cattini-mag-mini-w-seryy.jpg",
+    "imageSrc": "https://fratelli-cattini.com/wp-content/uploads/2025/05/zaschelka-magnitnaja-fratelli-cattini-mag-mini-w-dlja-derevjannyh-dverej-matovyj-seryj.jpg"
    },
    {
     "finish": "матовый белый",
@@ -565,7 +581,8 @@
     "article": "MAG MINI W",
     "price": null,
     "inStock": false,
-    "image": "/images/products/fratelli-cattini-mag-mini-w-matovyy-belyy.jpg"
+    "image": "/images/products/fratelli-cattini-mag-mini-w-matovyy-belyy.jpg",
+    "imageSrc": "https://fratelli-cattini.com/wp-content/uploads/2025/05/zaschelka-magnitnaja-fratelli-cattini-mag-mini-w-dlja-derevjannyh-dverej-matovyj-belyj.jpg"
    }
   ],
   "material": "пластик",
@@ -581,7 +598,7 @@
    "Страна": "Италия"
   },
   "description": "Компактная магнитная защёлка для деревянных межкомнатных дверей, которые открываются без классической ручки. Удерживает полотно в закрытом положении и не требует большой врезки. Корпус выпускается в матовом чёрном, сером и белом цвете.",
-  "sourceUrl": "https://todoor.ru/shop/zaschelka-magnitnaja-fratelli-cattini-mag-mini-w-dlja-derevjannyh-dverej-matovyj-chernyj/"
+  "sourceUrl": "https://fratelli-cattini.com/shop/zashhelka-magnitnaya-fratelli-cattini-mag-mini-w-dlya-derevyannyh-dverej-matovyj-chernyj/"
  },
  {
   "slug": "fratelli-cattini-mag-mini-a",
@@ -597,7 +614,8 @@
     "article": "MAG MINI A",
     "price": null,
     "inStock": false,
-    "image": "/images/products/fratelli-cattini-mag-mini-a-matovyy-chernyy.jpg"
+    "image": "/images/products/fratelli-cattini-mag-mini-a-matovyy-chernyy.jpg",
+    "imageSrc": "https://fratelli-cattini.com/wp-content/uploads/2025/05/zaschelka-magnitnaja-fratelli-cattini-mag-mini-a-dlja-aljuminievyh-dverej-matovyj-chernyj.jpg"
    },
    {
     "finish": "серый",
@@ -605,7 +623,8 @@
     "article": "MAG MINI A",
     "price": null,
     "inStock": false,
-    "image": "/images/products/fratelli-cattini-mag-mini-a-seryy.jpg"
+    "image": "/images/products/fratelli-cattini-mag-mini-a-seryy.jpg",
+    "imageSrc": "https://fratelli-cattini.com/wp-content/uploads/2025/05/zaschelka-magnitnaja-fratelli-cattini-mag-mini-a-dlja-aljuminievyh-dverej-matovyj-seryj.jpg"
    },
    {
     "finish": "матовый белый",
@@ -613,7 +632,8 @@
     "article": "MAG MINI A",
     "price": null,
     "inStock": false,
-    "image": "/images/products/fratelli-cattini-mag-mini-a-matovyy-belyy.jpg"
+    "image": "/images/products/fratelli-cattini-mag-mini-a-matovyy-belyy.jpg",
+    "imageSrc": "https://fratelli-cattini.com/wp-content/uploads/2025/05/zaschelka-magnitnaja-fratelli-cattini-mag-mini-a-dlja-aljuminievyh-dverej-matovyj-belyj.jpg"
    }
   ],
   "material": "пластик",
@@ -628,7 +648,7 @@
    "Страна": "Италия"
   },
   "description": "Версия магнитной защёлки MAG MINI для дверей в алюминиевом профиле. Позволяет сделать лаконичное полотно без выступающей ручки. Три матовых цвета: чёрный, серый и белый.",
-  "sourceUrl": "https://todoor.ru/shop/zaschelka-magnitnaja-fratelli-cattini-mag-mini-a-dlja-aljuminievyh-dverej-matovyj-chernyj/"
+  "sourceUrl": "https://fratelli-cattini.com/shop/zashhelka-magnitnaya-fratelli-cattini-mag-mini-a-dlya-alyuminievyh-dverej-matovyj-chernyj/"
  },
  {
   "slug": "agb-touch-b01120-30",
@@ -644,7 +664,8 @@
     "article": "B01120.30.FM",
     "price": 5269,
     "inStock": false,
-    "image": "/images/products/agb-touch-b01120-30-matovyy-belyy.jpg"
+    "image": "/images/products/agb-touch-b01120-30-matovyy-belyy.jpg",
+    "imageSrc": "https://www.tlock.ru/photo_bank/42823_01.jpg"
    },
    {
     "finish": "серый",
@@ -652,7 +673,8 @@
     "article": "B01120.30.78",
     "price": 5500,
     "inStock": false,
-    "image": "/images/products/agb-touch-b01120-30-seryy.jpg"
+    "image": "/images/products/agb-touch-b01120-30-seryy.jpg",
+    "imageSrc": "https://www.tlock.ru/photo_bank/42819_01.jpg"
    },
    {
     "finish": "чёрный",
@@ -660,7 +682,8 @@
     "article": "B01120.30.93",
     "price": 5500,
     "inStock": false,
-    "image": "/images/products/agb-touch-b01120-30-chernyy.jpg"
+    "image": "/images/products/agb-touch-b01120-30-chernyy.jpg",
+    "imageSrc": "https://www.tlock.ru/photo_bank/42821_01.jpg"
    }
   ],
   "material": "сталь",
@@ -674,7 +697,7 @@
    "Страна": "Италия"
   },
   "description": "Итальянский замок AGB Touch для дверей без ручек: полотно открывается нажатием и удерживается магнитом. Лицевая планка окрашена в матовый белый, серый или чёрный цвет и почти не заметна на торце. Подходит для скрытых дверей и дверей под покраску.",
-  "sourceUrl": "https://todoor.ru/shop/v0112030fm-zamok-mezhkomnatnyj-agb-touch-matovyj-belyj/"
+  "sourceUrl": "https://www.tlock.ru/catalog/zashchelki_/bez_ruchek_v_komplekte_/touch/b01120_30/magnitnaya_zashchelka_reguliruemaya_touch_b01120_30_fm_belyy_s_litsevoy_plankoy/"
  },
  {
   "slug": "punto-ml96wc-50",
@@ -690,7 +713,8 @@
     "article": "ML96WC-50 BL",
     "price": null,
     "inStock": false,
-    "image": "/images/products/punto-ml96wc-50-chernyy.jpg"
+    "image": "/images/products/punto-ml96wc-50-chernyy.jpg",
+    "imageSrc": "https://www.dveri-tut.com/userfiles/shop/large/3/20237_zaschelka-punto-vreznaya-magnitn.jpg"
    }
   ],
   "material": "сталь",
@@ -705,7 +729,7 @@
    "Бэксет, мм": "50"
   },
   "description": "Магнитная защёлка PUNTO для дверей ванной и туалета, работает в паре с поворотной заверткой. Язычок прячется в корпус при открытой двери и срабатывает мягко при закрывании. Чёрное покрытие подходит к ручкам в стиле лофт и минимализм.",
-  "sourceUrl": "https://todoor.ru/shop/zaschelka-vreznaja-magnitnaja-punto-ml96wc-50-bl-chernyj/"
+  "sourceUrl": "https://www.dveri-tut.com/furnitura/zamki-zaschelki/zaschelka-punto-vreznaya-magnitnaya-ml96wc-50bl-bl/"
  },
  {
   "slug": "agb-mediana-polaris-cyl-b06103",
@@ -721,7 +745,8 @@
     "article": "B06103.50.03.567",
     "price": 3317,
     "inStock": true,
-    "image": "/images/products/agb-mediana-polaris-cyl-b06103-zoloto.jpg"
+    "image": "/images/products/agb-mediana-polaris-cyl-b06103-zoloto.jpg",
+    "imageSrc": "https://www.tlock.ru/photo_bank/25599_01.jpg"
    },
    {
     "finish": "хром",
@@ -729,7 +754,8 @@
     "article": "B06103.50.06.567",
     "price": 3609,
     "inStock": true,
-    "image": "/images/products/agb-mediana-polaris-cyl-b06103-hrom.jpg"
+    "image": "/images/products/agb-mediana-polaris-cyl-b06103-hrom.jpg",
+    "imageSrc": "https://www.tlock.ru/photo_bank/25601_01.jpg"
    },
    {
     "finish": "матовый хром",
@@ -737,7 +763,8 @@
     "article": "B06103.50.34.567",
     "price": 3730,
     "inStock": true,
-    "image": "/images/products/agb-mediana-polaris-cyl-b06103-matovyy-hrom.jpg"
+    "image": "/images/products/agb-mediana-polaris-cyl-b06103-matovyy-hrom.jpg",
+    "imageSrc": "https://www.tlock.ru/photo_bank/25589_01.jpg"
    },
    {
     "finish": "чёрный",
@@ -745,7 +772,8 @@
     "article": "B06103.50.93.567",
     "price": 4179,
     "inStock": true,
-    "image": "/images/products/agb-mediana-polaris-cyl-b06103-chernyy.jpg"
+    "image": "/images/products/agb-mediana-polaris-cyl-b06103-chernyy.jpg",
+    "imageSrc": "https://www.tlock.ru/photo_bank/40297_01.jpg"
    },
    {
     "finish": "античная бронза",
@@ -753,7 +781,8 @@
     "article": "B06103.50.12.567",
     "price": 4255,
     "inStock": true,
-    "image": "/images/products/agb-mediana-polaris-cyl-b06103-antichnaya-bronza.jpg"
+    "image": "/images/products/agb-mediana-polaris-cyl-b06103-antichnaya-bronza.jpg",
+    "imageSrc": "https://www.tlock.ru/photo_bank/26391_01.jpg"
    },
    {
     "finish": "белый",
@@ -761,7 +790,8 @@
     "article": "B06103.50.FM.567",
     "price": 4079,
     "inStock": false,
-    "image": "/images/products/agb-mediana-polaris-cyl-b06103-belyy.jpg"
+    "image": "/images/products/agb-mediana-polaris-cyl-b06103-belyy.jpg",
+    "imageSrc": "https://www.tlock.ru/photo_bank/40711_01.jpg"
    }
   ],
   "material": "сталь",
@@ -778,7 +808,7 @@
    "Страна": "Италия"
   },
   "description": "Магнитный замок Polaris для межкомнатной двери, которую нужно запирать ключом: в корпус устанавливается стандартный цилиндр. Закрывается тихо, ригель выдвигается поворотом ключа или вертушки. Ответная планка в комплекте.",
-  "sourceUrl": "https://todoor.ru/shop/B041035003-zamok-mezhkomnatnyj-pod-cilindr-s-otvetnoj-plankoj-MEDIANA-POLARIS-zoloto/"
+  "sourceUrl": "https://www.tlock.ru/catalog/zamki_vreznye/dlya_legkikh_dverey/mediana_polaris/b06103_50_ind_upak_b02402_05/b06103_50_03_567_b04103_zamok_mezhk_pod_tsil_s_otv_pl_b02402_05_03_lat_mediana_polaris/"
  },
  {
   "slug": "krona-koblenz-spinoff-y85",
@@ -794,7 +824,8 @@
     "article": "KM.002.CM.A.4.COV.BS",
     "price": 2716,
     "inStock": true,
-    "image": "/images/products/krona-koblenz-spinoff-y85-sostarennaya-bronza.jpg"
+    "image": "/images/products/krona-koblenz-spinoff-y85-sostarennaya-bronza.jpg",
+    "imageSrc": "https://krona-koblenz.ru/images/detailed/110/343454.png"
    },
    {
     "finish": "бронза",
@@ -802,7 +833,8 @@
     "article": "KM.002.CM.A.4.COV.BR",
     "price": 2716,
     "inStock": true,
-    "image": "/images/products/krona-koblenz-spinoff-y85-bronza.jpg"
+    "image": "/images/products/krona-koblenz-spinoff-y85-bronza.jpg",
+    "imageSrc": "https://krona-koblenz.ru/images/detailed/110/32434566.png"
    },
    {
     "finish": "хром",
@@ -810,7 +842,8 @@
     "article": "KM.002.CM.A.4.COV.CL",
     "price": 2716,
     "inStock": true,
-    "image": "/images/products/krona-koblenz-spinoff-y85-hrom.jpg"
+    "image": "/images/products/krona-koblenz-spinoff-y85-hrom.jpg",
+    "imageSrc": "https://krona-koblenz.ru/images/detailed/110/3435345344.png"
    },
    {
     "finish": "матовый никель",
@@ -818,7 +851,8 @@
     "article": "KM.002.CM.A.4.COV.NS",
     "price": 2716,
     "inStock": true,
-    "image": "/images/products/krona-koblenz-spinoff-y85-matovyy-nikel.jpg"
+    "image": "/images/products/krona-koblenz-spinoff-y85-matovyy-nikel.jpg",
+    "imageSrc": "https://krona-koblenz.ru/images/detailed/110/234234.png"
    },
    {
     "finish": "матовое золото",
@@ -826,7 +860,8 @@
     "article": "KM.002.CM.A.4.COV.OS",
     "price": 2716,
     "inStock": true,
-    "image": "/images/products/krona-koblenz-spinoff-y85-matovoe-zoloto.jpg"
+    "image": "/images/products/krona-koblenz-spinoff-y85-matovoe-zoloto.jpg",
+    "imageSrc": "https://krona-koblenz.ru/images/detailed/109/43443-OS.png"
    },
    {
     "finish": "золото",
@@ -834,7 +869,8 @@
     "article": "KM.002.CM.A.4.COV.OL",
     "price": 2716,
     "inStock": true,
-    "image": "/images/products/krona-koblenz-spinoff-y85-zoloto.jpg"
+    "image": "/images/products/krona-koblenz-spinoff-y85-zoloto.jpg",
+    "imageSrc": "https://krona-koblenz.ru/images/detailed/109/4345-OL.png"
    },
    {
     "finish": "белый",
@@ -842,7 +878,8 @@
     "article": "KM.002.CM.A.4.COV.BI",
     "price": 2716,
     "inStock": true,
-    "image": "/images/products/krona-koblenz-spinoff-y85-belyy.jpg"
+    "image": "/images/products/krona-koblenz-spinoff-y85-belyy.jpg",
+    "imageSrc": "https://krona-koblenz.ru/images/detailed/110/sf-bi.png"
    },
    {
     "finish": "чёрный",
@@ -850,7 +887,8 @@
     "article": "KM.002.CM.A.4.COV.NO",
     "price": 2716,
     "inStock": true,
-    "image": "/images/products/krona-koblenz-spinoff-y85-chernyy.jpg"
+    "image": "/images/products/krona-koblenz-spinoff-y85-chernyy.jpg",
+    "imageSrc": "https://krona-koblenz.ru/images/detailed/109/353455df.png"
    }
   ],
   "material": "сталь",
@@ -866,7 +904,7 @@
    "Страна": "Италия"
   },
   "description": "Замок Spinoff под евроцилиндр для кабинетов, гардеробных и детских. Магнитный язычок с доводчиком работает тихо, а стальная торцевая планка крепится без видимых шурупов. Выпускается в десяти отделках, включая белый, чёрный и несколько оттенков золота.",
-  "sourceUrl": "https://todoor.ru/shop/km002cma4covbs-zamok-mezhkomnatnyj-magnitnyj-koblenz-y85-s-dovodchikom-bs-mat-bronza-komplekt/"
+  "sourceUrl": "https://krona-koblenz.ru/magnitnye-zamki-spinoff-s-dovodchikom/"
  },
  {
   "slug": "armadillo-gravity-pro-g02-196-cyl",
@@ -1091,7 +1129,8 @@
     "article": "B01102.50.34",
     "price": 1584,
     "inStock": true,
-    "image": "/images/products/agb-mediana-evolution-wc-b01102-matovyy-hrom.jpg"
+    "image": "/images/products/agb-mediana-evolution-wc-b01102-matovyy-hrom.jpg",
+    "imageSrc": "https://agb.spb.ru/wp-content/uploads/2020/04/Mediana-Evolution-WC-мат.-хром.jpg"
    },
    {
     "finish": "золото",
@@ -1099,7 +1138,8 @@
     "article": "B01102.50.03",
     "price": 1220,
     "inStock": false,
-    "image": "/images/products/agb-mediana-evolution-wc-b01102-zoloto.jpg"
+    "image": "/images/products/agb-mediana-evolution-wc-b01102-zoloto.jpg",
+    "imageSrc": "https://agb.spb.ru/wp-content/uploads/2020/04/Mediana-Evolution-WC-латунь.jpg"
    },
    {
     "finish": "медь",
@@ -1107,7 +1147,8 @@
     "article": "B01102.50.22",
     "price": 1379,
     "inStock": false,
-    "image": "/images/products/agb-mediana-evolution-wc-b01102-med.jpg"
+    "image": "/images/products/agb-mediana-evolution-wc-b01102-med.jpg",
+    "imageSrc": "https://agb.spb.ru/wp-content/uploads/2020/04/Mediana-Evolution-WC-бронза.jpg"
    },
    {
     "finish": "хром",
@@ -1115,7 +1156,8 @@
     "article": "B01102.50.06",
     "price": 1715,
     "inStock": false,
-    "image": "/images/products/agb-mediana-evolution-wc-b01102-hrom.jpg"
+    "image": "/images/products/agb-mediana-evolution-wc-b01102-hrom.jpg",
+    "imageSrc": "https://agb.spb.ru/wp-content/uploads/2020/04/Mediana-Evolution-WC-хром.jpg"
    },
    {
     "finish": "матовое золото",
@@ -1123,7 +1165,8 @@
     "article": "B01102.50.23",
     "price": 2228,
     "inStock": false,
-    "image": "/images/products/agb-mediana-evolution-wc-b01102-matovoe-zoloto.jpg"
+    "image": "/images/products/agb-mediana-evolution-wc-b01102-matovoe-zoloto.jpg",
+    "imageSrc": "https://agb.spb.ru/wp-content/uploads/2020/04/Mediana-Evolution-WC-мат.-латунь.jpg"
    },
    {
     "finish": "античная бронза",
@@ -1131,7 +1174,8 @@
     "article": "B01102.50.12",
     "price": 2338,
     "inStock": false,
-    "image": "/images/products/agb-mediana-evolution-wc-b01102-antichnaya-bronza.jpg"
+    "image": "/images/products/agb-mediana-evolution-wc-b01102-antichnaya-bronza.jpg",
+    "imageSrc": "https://agb.spb.ru/wp-content/uploads/2020/04/Mediana-Evolution-WC-ст.-бронза.jpg"
    },
    {
     "finish": "бронза",
@@ -1139,7 +1183,7 @@
     "article": "B01102.50.42",
     "price": 1379,
     "inStock": false,
-    "image": "/images/products/agb-mediana-evolution-wc-b01102-bronza.jpg"
+    "image": null
    }
   ],
   "material": "сталь",
@@ -1157,7 +1201,7 @@
    "Страна": "Италия"
   },
   "description": "Один из самых популярных итальянских межкомнатных замков с бесшумным пластиковым язычком. Модель WC работает с поворотной заверткой и подходит для ванной и туалета. Пластиковый язычок заметно тише металлического и не царапает ответную планку.",
-  "sourceUrl": "https://todoor.ru/shop/B011025034-zamok-mezhkomnatnyj-WC-MEDIANA-EVOLUTION-matovyj-nikel/"
+  "sourceUrl": "https://agb.spb.ru/product/mediana-evolution-wc/"
  },
  {
   "slug": "agb-mediana-evolution-cyl-b01103",
@@ -1173,7 +1217,8 @@
     "article": "B01103.50.23",
     "price": 2102,
     "inStock": true,
-    "image": "/images/products/agb-mediana-evolution-cyl-b01103-matovoe-zoloto.jpg"
+    "image": "/images/products/agb-mediana-evolution-cyl-b01103-matovoe-zoloto.jpg",
+    "imageSrc": "https://agb.spb.ru/wp-content/uploads/2020/04/Evolution-цилиндр-мат.-латунь.jpg"
    },
    {
     "finish": "золото",
@@ -1181,7 +1226,8 @@
     "article": "B01103.50.03",
     "price": 1288,
     "inStock": false,
-    "image": "/images/products/agb-mediana-evolution-cyl-b01103-zoloto.jpg"
+    "image": "/images/products/agb-mediana-evolution-cyl-b01103-zoloto.jpg",
+    "imageSrc": "https://agb.spb.ru/wp-content/uploads/2020/04/Evolution-цилиндр-латунь.jpg"
    },
    {
     "finish": "матовый хром",
@@ -1189,7 +1235,8 @@
     "article": "B01103.50.34",
     "price": 1652,
     "inStock": false,
-    "image": "/images/products/agb-mediana-evolution-cyl-b01103-matovyy-hrom.jpg"
+    "image": "/images/products/agb-mediana-evolution-cyl-b01103-matovyy-hrom.jpg",
+    "imageSrc": "https://agb.spb.ru/wp-content/uploads/2020/04/Evolution-цилиндр-мат.-хром.jpg"
    },
    {
     "finish": "хром",
@@ -1197,7 +1244,8 @@
     "article": "B01103.50.06",
     "price": 1747,
     "inStock": false,
-    "image": "/images/products/agb-mediana-evolution-cyl-b01103-hrom.jpg"
+    "image": "/images/products/agb-mediana-evolution-cyl-b01103-hrom.jpg",
+    "imageSrc": "https://agb.spb.ru/wp-content/uploads/2020/04/Evolution-цилиндр-хром.jpg"
    },
    {
     "finish": "античная бронза",
@@ -1205,7 +1253,8 @@
     "article": "B01103.50.12",
     "price": 2960,
     "inStock": false,
-    "image": "/images/products/agb-mediana-evolution-cyl-b01103-antichnaya-bronza.jpg"
+    "image": "/images/products/agb-mediana-evolution-cyl-b01103-antichnaya-bronza.jpg",
+    "imageSrc": "https://www.moyzamok.ru/pages/photos/agb/mediana_evolytion/011035012.jpg"
    },
    {
     "finish": "чёрный",
@@ -1213,7 +1262,7 @@
     "article": "B01103.50.93",
     "price": 1728,
     "inStock": false,
-    "image": "/images/products/agb-mediana-evolution-cyl-b01103-chernyy.jpg"
+    "image": null
    }
   ],
   "material": "сталь",
@@ -1230,7 +1279,7 @@
    "Страна": "Италия"
   },
   "description": "Корпус замка Mediana Evolution под евроцилиндр для межкомнатных дверей, которые запираются ключом. Тихий пластиковый язычок и проверенная итальянская механика. Ответная планка приобретается отдельно.",
-  "sourceUrl": "https://todoor.ru/shop/B011035023-zamok-mezhkomnatnyj-pod-cilindr-MEDIANA-EVOLUTION-matovoe-zoloto/"
+  "sourceUrl": "https://agb.spb.ru/product/mediana-evolution-cilindr/"
  },
  {
   "slug": "morelli-1895p",
@@ -1476,7 +1525,8 @@
     "article": "L6-45 AB",
     "price": 163,
     "inStock": true,
-    "image": "/images/products/morelli-l6-45-antichnaya-bronza.jpg"
+    "image": "/images/products/morelli-l6-45-antichnaya-bronza.jpg",
+    "imageSrc": "https://morelli.ru/storage/products/December2020/1PozchHx3sMoZcghwjLW.webp"
    }
   ],
   "material": "сталь",
@@ -1490,7 +1540,7 @@
    "Бэксет, мм": "45"
   },
   "description": "Базовая межкомнатная защёлка Morelli с металлическим язычком. Недорогое решение для дверей, которые достаточно просто прикрывать. Античная бронза подойдёт к классическим ручкам.",
-  "sourceUrl": "https://todoor.ru/shop/zaschelka-mezhkomnatnaja-Morelli-L6-45-AB-antichnaja-bronza/"
+  "sourceUrl": "https://morelli.ru/catalog/zamki-i-zashchelki/all/172"
  },
  {
   "slug": "agb-centro-cyl-b01025",
@@ -1506,7 +1556,8 @@
     "article": "B01025.50.34",
     "price": 2427,
     "inStock": false,
-    "image": "/images/products/agb-centro-cyl-b01025-matovyy-hrom.jpg"
+    "image": "/images/products/agb-centro-cyl-b01025-matovyy-hrom.jpg",
+    "imageSrc": "https://www.moyzamok.ru/pages/photos/agb/centro/010255034.jpg"
    },
    {
     "finish": "золото",
@@ -1514,7 +1565,8 @@
     "article": "B01025.50.03",
     "price": 2478,
     "inStock": false,
-    "image": "/images/products/agb-centro-cyl-b01025-zoloto.jpg"
+    "image": "/images/products/agb-centro-cyl-b01025-zoloto.jpg",
+    "imageSrc": "https://www.moyzamok.ru/pages/photos/agb/centro/010255003.jpg"
    },
    {
     "finish": "хром",
@@ -1522,7 +1574,8 @@
     "article": "B01025.50.06",
     "price": 3188,
     "inStock": false,
-    "image": "/images/products/agb-centro-cyl-b01025-hrom.jpg"
+    "image": "/images/products/agb-centro-cyl-b01025-hrom.jpg",
+    "imageSrc": "https://www.moyzamok.ru/pages/photos/agb/centro/010255006.jpg"
    },
    {
     "finish": "античная бронза",
@@ -1530,7 +1583,8 @@
     "article": "B01025.50.12",
     "price": 3805,
     "inStock": false,
-    "image": "/images/products/agb-centro-cyl-b01025-antichnaya-bronza.jpg"
+    "image": "/images/products/agb-centro-cyl-b01025-antichnaya-bronza.jpg",
+    "imageSrc": "https://www.moyzamok.ru/pages/photos/agb/centro/010255012.jpg"
    }
   ],
   "material": "сталь",
@@ -1546,7 +1600,7 @@
    "Страна": "Италия"
   },
   "description": "Итальянский замок AGB Centro с металлической защёлкой и отдельным ригелем под евроцилиндр. Проверенная классическая конструкция для межкомнатных дверей, которые запираются на ключ. Выпускается в золоте, хроме, матовом хроме и античной бронзе.",
-  "sourceUrl": "https://todoor.ru/shop/B010255034-zamok-mezhkomnatnyj-pod-cilindr-1rigel--zaschjolka-CENTRO-matovyj-nikel/"
+  "sourceUrl": "https://www.moyzamok.ru/item317"
  },
  {
   "slug": "agb-centro-wc-b01013",
@@ -1562,7 +1616,8 @@
     "article": "B01013.50.03",
     "price": 1382,
     "inStock": false,
-    "image": "/images/products/agb-centro-wc-b01013-zoloto.jpg"
+    "image": "/images/products/agb-centro-wc-b01013-zoloto.jpg",
+    "imageSrc": "https://www.moyzamok.ru/pages/photos/agb/centro/010135003.jpg"
    },
    {
     "finish": "хром",
@@ -1570,7 +1625,8 @@
     "article": "B01013.50.06",
     "price": 1741,
     "inStock": false,
-    "image": "/images/products/agb-centro-wc-b01013-hrom.jpg"
+    "image": "/images/products/agb-centro-wc-b01013-hrom.jpg",
+    "imageSrc": "https://www.moyzamok.ru/pages/photos/agb/centro/010135006.jpg"
    },
    {
     "finish": "матовый хром",
@@ -1578,7 +1634,8 @@
     "article": "B01013.50.34",
     "price": 1954,
     "inStock": false,
-    "image": "/images/products/agb-centro-wc-b01013-matovyy-hrom.jpg"
+    "image": "/images/products/agb-centro-wc-b01013-matovyy-hrom.jpg",
+    "imageSrc": "https://www.moyzamok.ru/pages/photos/agb/centro/010135034.jpg"
    },
    {
     "finish": "античная бронза",
@@ -1586,7 +1643,8 @@
     "article": "B01013.50.12",
     "price": 2090,
     "inStock": false,
-    "image": "/images/products/agb-centro-wc-b01013-antichnaya-bronza.jpg"
+    "image": "/images/products/agb-centro-wc-b01013-antichnaya-bronza.jpg",
+    "imageSrc": "https://www.moyzamok.ru/pages/photos/agb/centro/10135012.jpg"
    },
    {
     "finish": "медь",
@@ -1594,7 +1652,8 @@
     "article": "B01013.50.22",
     "price": 1163,
     "inStock": false,
-    "image": "/images/products/agb-centro-wc-b01013-med.jpg"
+    "image": "/images/products/agb-centro-wc-b01013-med.jpg",
+    "imageSrc": "https://www.moyzamok.ru/pages/photos/agb/centro/010135022.jpg"
    }
   ],
   "material": "сталь",
@@ -1612,7 +1671,7 @@
    "Страна": "Италия"
   },
   "description": "Сантехнический замок AGB Centro с металлической защёлкой, расположенной над фиксатором. Такая схема удобна при установке ручек на планке. Надёжный вариант для ванной и туалета с поворотной заверткой.",
-  "sourceUrl": "https://todoor.ru/shop/B010135003-zamok-mezhkomnatnyj-WC-zaschjolka-vverhu-CENTRO-zoloto/"
+  "sourceUrl": "https://www.moyzamok.ru/item311"
  },
  {
   "slug": "agb-grand-wc-b00598",
@@ -1628,7 +1687,7 @@
     "article": "B00598.50.34",
     "price": 2060,
     "inStock": true,
-    "image": "/images/products/agb-grand-wc-b00598-matovyy-hrom.jpg"
+    "image": null
    },
    {
     "finish": "медь",
@@ -1636,7 +1695,8 @@
     "article": "B00598.50.22",
     "price": 1430,
     "inStock": false,
-    "image": "/images/products/agb-grand-wc-b00598-med.jpg"
+    "image": "/images/products/agb-grand-wc-b00598-med.jpg",
+    "imageSrc": "https://agb.spb.ru/wp-content/uploads/2020/05/AGB-Grand-WC-18мм-бронза.jpg"
    },
    {
     "finish": "хром",
@@ -1644,7 +1704,8 @@
     "article": "B00598.50.06",
     "price": 1852,
     "inStock": false,
-    "image": "/images/products/agb-grand-wc-b00598-hrom.jpg"
+    "image": "/images/products/agb-grand-wc-b00598-hrom.jpg",
+    "imageSrc": "https://agb.spb.ru/wp-content/uploads/2020/05/AGB-Grand-WC-18мм-хром.jpg"
    }
   ],
   "material": "сталь",
@@ -1661,7 +1722,7 @@
    "Страна": "Италия"
   },
   "description": "Сантехнический замок серии Grand от AGB с металлической защёлкой и ригелем под завертку. Подходит для дверей санузла, в том числе с ручками на длинной планке. Корпус стальной, лицевая планка в цвет фурнитуры.",
-  "sourceUrl": "https://todoor.ru/shop/b005985034-zamok-mezhkomnatnyj-box-wc-zaschelka-vverhu-agb-grand-matovyj-hrom/"
+  "sourceUrl": "https://agb.spb.ru/product/agb-grand-wc/"
  },
  {
   "slug": "morelli-2070-wc",
@@ -1776,7 +1837,8 @@
     "article": "B06101.50.06.640",
     "price": 2960,
     "inStock": false,
-    "image": "/images/products/agb-mediana-polaris-key-b06101-hrom.jpg"
+    "image": "/images/products/agb-mediana-polaris-key-b06101-hrom.jpg",
+    "imageSrc": "https://www.tlock.ru/photo_bank/60139_01.jpg"
    },
    {
     "finish": "матовый хром",
@@ -1784,7 +1846,8 @@
     "article": "B06101.50.34.640",
     "price": 3012,
     "inStock": false,
-    "image": "/images/products/agb-mediana-polaris-key-b06101-matovyy-hrom.jpg"
+    "image": "/images/products/agb-mediana-polaris-key-b06101-matovyy-hrom.jpg",
+    "imageSrc": "https://www.tlock.ru/photo_bank/60143_01.jpg"
    },
    {
     "finish": "античная бронза",
@@ -1792,7 +1855,8 @@
     "article": "B06101.50.12.640",
     "price": 3879,
     "inStock": false,
-    "image": "/images/products/agb-mediana-polaris-key-b06101-antichnaya-bronza.jpg"
+    "image": "/images/products/agb-mediana-polaris-key-b06101-antichnaya-bronza.jpg",
+    "imageSrc": "https://www.tlock.ru/photo_bank/60141_01.jpg"
    }
   ],
   "material": "сталь",
@@ -1809,7 +1873,7 @@
    "Страна": "Италия"
   },
   "description": "Магнитный замок Polaris под простой межкомнатный ключ (буратино). Сочетает бесшумную магнитную защёлку и ригель, который запирается ключом. Хорош для классических интерьеров, где используются накладки под ключ.",
-  "sourceUrl": "https://todoor.ru/shop/b061015006640-zamok-mezhkomnatnyj-teh-upak-pod-kljuch-buratino-agb-mediana-polaris-hromotvpl/"
+  "sourceUrl": "https://www.tlock.ru/catalog/zashchelki_/bez_ruchek_v_komplekte_/mediana_polaris/b06101_50/b06101_50_06_640_korpus_vreznogo_zamka_pod_kl_nikel_mediana_polaris_s_otv_plankoy_skin/"
  },
  {
   "slug": "agb-mediana-evolution-key-b01101",
@@ -1825,7 +1889,8 @@
     "article": "B01101.50.03",
     "price": 1120,
     "inStock": false,
-    "image": "/images/products/agb-mediana-evolution-key-b01101-zoloto.jpg"
+    "image": "/images/products/agb-mediana-evolution-key-b01101-zoloto.jpg",
+    "imageSrc": "https://agb.spb.ru/wp-content/uploads/2020/04/Mediana-Evolution-ключ-латунь.jpg"
    },
    {
     "finish": "медь",
@@ -1833,7 +1898,8 @@
     "article": "B01101.50.22",
     "price": 1316,
     "inStock": false,
-    "image": "/images/products/agb-mediana-evolution-key-b01101-med.jpg"
+    "image": "/images/products/agb-mediana-evolution-key-b01101-med.jpg",
+    "imageSrc": "https://agb.spb.ru/wp-content/uploads/2020/04/Mediana-Evolution-ключ-бронза.jpg"
    },
    {
     "finish": "хром",
@@ -1841,7 +1907,8 @@
     "article": "B01101.50.06",
     "price": 1753,
     "inStock": false,
-    "image": "/images/products/agb-mediana-evolution-key-b01101-hrom.jpg"
+    "image": "/images/products/agb-mediana-evolution-key-b01101-hrom.jpg",
+    "imageSrc": "https://agb.spb.ru/wp-content/uploads/2020/04/Mediana-Evolution-ключ-хром.jpg"
    },
    {
     "finish": "матовый хром",
@@ -1849,7 +1916,8 @@
     "article": "B01101.50.34",
     "price": 1802,
     "inStock": false,
-    "image": "/images/products/agb-mediana-evolution-key-b01101-matovyy-hrom.jpg"
+    "image": "/images/products/agb-mediana-evolution-key-b01101-matovyy-hrom.jpg",
+    "imageSrc": "https://agb.spb.ru/wp-content/uploads/2020/04/Mediana-Evolution-ключ-мат.-хром.jpg"
    },
    {
     "finish": "матовое золото",
@@ -1857,7 +1925,8 @@
     "article": "B01101.50.23",
     "price": 2128,
     "inStock": false,
-    "image": "/images/products/agb-mediana-evolution-key-b01101-matovoe-zoloto.jpg"
+    "image": "/images/products/agb-mediana-evolution-key-b01101-matovoe-zoloto.jpg",
+    "imageSrc": "https://agb.spb.ru/wp-content/uploads/2020/04/Mediana-Evolution-ключ-мат.-латунь.jpg"
    },
    {
     "finish": "античная бронза",
@@ -1865,7 +1934,8 @@
     "article": "B01101.50.12",
     "price": 2421,
     "inStock": false,
-    "image": "/images/products/agb-mediana-evolution-key-b01101-antichnaya-bronza.jpg"
+    "image": "/images/products/agb-mediana-evolution-key-b01101-antichnaya-bronza.jpg",
+    "imageSrc": "https://agb.spb.ru/wp-content/uploads/2020/04/Mediana-Evolution-ключ-ст.-бронза.jpg"
    }
   ],
   "material": "сталь",
@@ -1882,7 +1952,7 @@
    "Страна": "Италия"
   },
   "description": "Межкомнатный замок AGB Mediana Evolution под ключ-буратино с тихим пластиковым язычком. Подходит для спален и кабинетов в классическом стиле. Выпускается в шести отделках, от золота до античной бронзы.",
-  "sourceUrl": "https://todoor.ru/shop/B011015003-zamok-mezhkomnatnyj-pod-kljuch-buratino-MEDIANA-EVOLUTION-zoloto/"
+  "sourceUrl": "https://agb.spb.ru/product/mediana-evolution-cliuch/"
  },
  {
   "slug": "agb-grand-key-b00597",
@@ -1898,7 +1968,8 @@
     "article": "B00597.50.22",
     "price": 1249,
     "inStock": false,
-    "image": "/images/products/agb-grand-key-b00597-med.jpg"
+    "image": "/images/products/agb-grand-key-b00597-med.jpg",
+    "imageSrc": "https://agb.spb.ru/wp-content/uploads/2020/05/AGB-Grand-Ключ-18мм-бронза.jpg"
    },
    {
     "finish": "матовый хром",
@@ -1906,7 +1977,7 @@
     "article": "B00597.50.34",
     "price": 1889,
     "inStock": false,
-    "image": "/images/products/agb-grand-key-b00597-matovyy-hrom.jpg"
+    "image": null
    }
   ],
   "material": "сталь",
@@ -1922,7 +1993,7 @@
    "Страна": "Италия"
   },
   "description": "Классический итальянский замок AGB Grand с металлической защёлкой и ригелем под ключ-буратино. Прост в установке и надёжен в работе. Подходит к накладкам под ключ большинства производителей.",
-  "sourceUrl": "https://todoor.ru/shop/b005975022-zamok-mezhkomnatnyj-teh-upak-pod-kljuch-buratino--zaschelka-agb-grand-med/"
+  "sourceUrl": "https://agb.spb.ru/product/agb-grand-cliuch/"
  },
  {
   "slug": "morelli-art-sr1-wc",
@@ -2049,7 +2120,8 @@
     "article": "SRR201",
     "price": 907,
     "inStock": true,
-    "image": "/images/products/venezia-srr201-matovaya-bronza.jpg"
+    "image": "/images/products/venezia-srr201-matovaya-bronza.jpg",
+    "imageSrc": "https://zamkitut.com/upload/iblock/865/865872ecbf008382ab0ee687d8ba4553.jpg"
    },
    {
     "finish": "полированная латунь",
@@ -2057,7 +2129,8 @@
     "article": "SRR201",
     "price": 907,
     "inStock": false,
-    "image": "/images/products/venezia-srr201-polirovannaya-latun.jpg"
+    "image": "/images/products/venezia-srr201-polirovannaya-latun.jpg",
+    "imageSrc": "https://zamkitut.com/upload/iblock/4a3/4a321d0557a8a0efecb671fde93f04d4.jpg"
    },
    {
     "finish": "матовый хром",
@@ -2065,7 +2138,8 @@
     "article": "SRR201",
     "price": 1052,
     "inStock": false,
-    "image": "/images/products/venezia-srr201-matovyy-hrom.jpg"
+    "image": "/images/products/venezia-srr201-matovyy-hrom.jpg",
+    "imageSrc": "https://zamkitut.com/upload/iblock/c02/c02af25edf0175d09642b11f99d82377.jpg"
    },
    {
     "finish": "полированный хром",
@@ -2073,7 +2147,8 @@
     "article": "SRR201",
     "price": 1061,
     "inStock": false,
-    "image": "/images/products/venezia-srr201-polirovannyy-hrom.jpg"
+    "image": "/images/products/venezia-srr201-polirovannyy-hrom.jpg",
+    "imageSrc": "https://zamkitut.com/upload/iblock/34e/34e4f2a5eef8778794931b3de3520e8d.jpg"
    }
   ],
   "material": "сталь",
@@ -2089,7 +2164,7 @@
    "Страна": "Италия"
   },
   "description": "Итальянский замок Venezia для раздвижных дверей, запирается поворотной заверткой. Поставляется вместе с ответной планкой. Отделки подобраны под классические ручки-купе Venezia: бронза, латунь и хром.",
-  "sourceUrl": "https://todoor.ru/shop/zamok-dlja-razdvizhnoj--raspashnoj-dveri-srr201-8mm-matovaja-bronza/"
+  "sourceUrl": "https://zamkitut.com/catalog/product/zamok_dlya_razdvizhnoy_dveri_srr201_otvetnaya_planka_polirovannyy_khrom/"
  },
  {
   "slug": "armadillo-sh011-urb-kit",
@@ -2342,7 +2417,8 @@
     "article": "MH-WC SG/GP",
     "price": 680,
     "inStock": true,
-    "image": "/images/products/morelli-mh-wc-round-matovoe-zoloto-zoloto.jpg"
+    "image": "/images/products/morelli-mh-wc-round-matovoe-zoloto-zoloto.jpg",
+    "imageSrc": "https://morelli.ru/storage/products/August2020/Jp6iitVF2KiBnKjrreCP.webp"
    },
    {
     "finish": "белый никель / хром",
@@ -2350,7 +2426,8 @@
     "article": "MH-WC SN/CP",
     "price": 1012,
     "inStock": false,
-    "image": "/images/products/morelli-mh-wc-round-belyy-nikel-hrom.jpg"
+    "image": "/images/products/morelli-mh-wc-round-belyy-nikel-hrom.jpg",
+    "imageSrc": "https://morelli.ru/storage/products/August2020/82e2uJ4RQAe44VSk0Qn3.webp"
    },
    {
     "finish": "матовый хром / хром",
@@ -2358,7 +2435,8 @@
     "article": "MH-WC SC/CP",
     "price": 1012,
     "inStock": false,
-    "image": "/images/products/morelli-mh-wc-round-matovyy-hrom-hrom.jpg"
+    "image": "/images/products/morelli-mh-wc-round-matovyy-hrom-hrom.jpg",
+    "imageSrc": "https://morelli.ru/storage/products/August2020/ZXyeBG6bQhFGcklq3Luq.webp"
    },
    {
     "finish": "античная бронза",
@@ -2366,7 +2444,8 @@
     "article": "MH-WC AB",
     "price": 1012,
     "inStock": false,
-    "image": "/images/products/morelli-mh-wc-round-antichnaya-bronza.jpg"
+    "image": "/images/products/morelli-mh-wc-round-antichnaya-bronza.jpg",
+    "imageSrc": "https://morelli.ru/storage/products/August2020/9RhHFEGebhT8Grafc5YB.webp"
    },
    {
     "finish": "матовая античная бронза",
@@ -2374,7 +2453,8 @@
     "article": "MH-WC MAB/AB",
     "price": 1035,
     "inStock": false,
-    "image": "/images/products/morelli-mh-wc-round-matovaya-antichnaya-bronza.jpg"
+    "image": "/images/products/morelli-mh-wc-round-matovaya-antichnaya-bronza.jpg",
+    "imageSrc": "https://morelli.ru/storage/products/August2020/eJNqSMkAfIB8gNTWwRB0.webp"
    },
    {
     "finish": "золото",
@@ -2382,7 +2462,8 @@
     "article": "MH-WC GP",
     "price": 1035,
     "inStock": false,
-    "image": "/images/products/morelli-mh-wc-round-zoloto.jpg"
+    "image": "/images/products/morelli-mh-wc-round-zoloto.jpg",
+    "imageSrc": "https://morelli.ru/storage/products/August2020/sfpPsMlg0voDUetFcjNy.webp"
    }
   ],
   "material": "цинковый сплав",
@@ -2396,7 +2477,7 @@
    "Форма розетки": "круглая"
   },
   "description": "Поворотная завертка Morelli на круглой розетке для дверей ванной и туалета. Снаружи ставится ответная часть с прорезью для аварийного открывания. Подходит к ручкам Morelli на круглой розетке.",
-  "sourceUrl": "https://todoor.ru/shop/santehnicheskaja-zavertka-Morelli-kruglaja-MH-WC-SG/GP-matovoe-zoloto-/-zoloto/"
+  "sourceUrl": "https://morelli.ru/catalog/skobyanye-izdeliya/all/544"
  },
  {
   "slug": "morelli-mh-wc-s6",
@@ -2412,7 +2493,8 @@
     "article": "MH-WC-S6 SSC",
     "price": 1035,
     "inStock": false,
-    "image": "/images/products/morelli-mh-wc-s6-supermatovyy-hrom.jpg"
+    "image": "/images/products/morelli-mh-wc-s6-supermatovyy-hrom.jpg",
+    "imageSrc": "https://morelli.ru/storage/catalog/products/main_images/01JBKETZMJW1YDE4917ZK70ME3.webp"
    },
    {
     "finish": "белый",
@@ -2420,7 +2502,8 @@
     "article": "MH-WC-S6 W",
     "price": 1035,
     "inStock": false,
-    "image": "/images/products/morelli-mh-wc-s6-belyy.jpg"
+    "image": "/images/products/morelli-mh-wc-s6-belyy.jpg",
+    "imageSrc": "https://morelli.ru/storage/products/August2020/CmrFhEBroZ4SYrrAG5cR.webp"
    },
    {
     "finish": "матовый хром",
@@ -2428,7 +2511,8 @@
     "article": "MH-WC-S6 SC",
     "price": 1035,
     "inStock": false,
-    "image": "/images/products/morelli-mh-wc-s6-matovyy-hrom.jpg"
+    "image": "/images/products/morelli-mh-wc-s6-matovyy-hrom.jpg",
+    "imageSrc": "https://morelli.ru/storage/catalog/products/main_images/01KRZSZB9JJYX01AQD4193P0E9.webp"
    },
    {
     "finish": "чёрный",
@@ -2436,7 +2520,8 @@
     "article": "MH-WC-S6 BL",
     "price": 1035,
     "inStock": false,
-    "image": "/images/products/morelli-mh-wc-s6-chernyy.jpg"
+    "image": "/images/products/morelli-mh-wc-s6-chernyy.jpg",
+    "imageSrc": "https://morelli.ru/storage/products/July2020/u7KAvjfG9rx8oDEKZhE8.webp"
    },
    {
     "finish": "сатинированное золото",
@@ -2444,7 +2529,8 @@
     "article": "MH-WC-S6 MSG",
     "price": 1064,
     "inStock": false,
-    "image": "/images/products/morelli-mh-wc-s6-satinirovannoe-zoloto.jpg"
+    "image": "/images/products/morelli-mh-wc-s6-satinirovannoe-zoloto.jpg",
+    "imageSrc": "https://morelli.ru/storage/products/November2023/TfEwu2R9Rqjlc5anTQ4P.webp"
    }
   ],
   "material": "цинковый сплав",
@@ -2458,7 +2544,7 @@
    "Форма розетки": "квадратная тонкая"
   },
   "description": "Завертка Morelli на тонкой квадратной розетке для санузла. Строгая геометрия подходит к современным ручкам с квадратным основанием. Выпускается в чёрном, белом, матовом хроме и матовом золоте.",
-  "sourceUrl": "https://todoor.ru/shop/santehnicheskaja-zavertka-morelli-kvadratnaja-mh-wc-s6-ssc-super-matovyj-hrom/"
+  "sourceUrl": "https://morelli.ru/catalog/skobyanye-izdeliya/all/2088"
  },
  {
   "slug": "armadillo-wc-bolt-bk6-uss",
@@ -2569,7 +2655,8 @@
     "article": "BK6.R.SLR52 GOLD-24",
     "price": 574,
     "inStock": false,
-    "image": "/images/products/fuaro-bk6-slr52-zoloto-24k.jpg"
+    "image": "/images/products/fuaro-bk6-slr52-zoloto-24k.jpg",
+    "imageSrc": "https://kromus.ru/images/detailed/87/47431_01.jpg"
    },
    {
     "finish": "хром",
@@ -2577,7 +2664,8 @@
     "article": "BK6.R.SLR52 CP-8",
     "price": 574,
     "inStock": false,
-    "image": "/images/products/fuaro-bk6-slr52-hrom.jpg"
+    "image": "/images/products/fuaro-bk6-slr52-hrom.jpg",
+    "imageSrc": "https://kromus.ru/images/detailed/85/46869_01.jpg"
    },
    {
     "finish": "чёрный",
@@ -2585,7 +2673,8 @@
     "article": "BK6.R.SLR52 BL-24",
     "price": 574,
     "inStock": false,
-    "image": "/images/products/fuaro-bk6-slr52-chernyy.jpg"
+    "image": "/images/products/fuaro-bk6-slr52-chernyy.jpg",
+    "imageSrc": "https://kromus.ru/images/detailed/85/46863_01.jpg"
    },
    {
     "finish": "сатинированный хром",
@@ -2593,7 +2682,8 @@
     "article": "BK6.R.SLR52 SSC-16",
     "price": 574,
     "inStock": false,
-    "image": "/images/products/fuaro-bk6-slr52-satinirovannyy-hrom.jpg"
+    "image": "/images/products/fuaro-bk6-slr52-satinirovannyy-hrom.jpg",
+    "imageSrc": "https://kromus.ru/images/detailed/85/46865_01.jpg"
    },
    {
     "finish": "графит",
@@ -2601,7 +2691,8 @@
     "article": "BK6.R.SLR52 GR-23",
     "price": 574,
     "inStock": false,
-    "image": "/images/products/fuaro-bk6-slr52-grafit.jpg"
+    "image": "/images/products/fuaro-bk6-slr52-grafit.jpg",
+    "imageSrc": "https://kromus.ru/images/detailed/85/46861_01.jpg"
    },
    {
     "finish": "сатинированное золото",
@@ -2609,7 +2700,8 @@
     "article": "BK6.R.SLR52 SSG-39",
     "price": 574,
     "inStock": false,
-    "image": "/images/products/fuaro-bk6-slr52-satinirovannoe-zoloto.jpg"
+    "image": "/images/products/fuaro-bk6-slr52-satinirovannoe-zoloto.jpg",
+    "imageSrc": "https://kromus.ru/images/detailed/85/46867_01.jpg"
    }
   ],
   "material": "цинковый сплав",
@@ -2625,7 +2717,7 @@
    "Квадрат, мм": "6"
   },
   "description": "Лаконичная завертка Fuaro на круглой тонкой розетке для ванной и туалета. Подходит к ручкам на розетке того же диаметра. Шесть отделок: хром, чёрный, графит, сатинированный хром, сатинированное золото и золото 24К.",
-  "sourceUrl": "https://todoor.ru/shop/ruchka-povorotnaja-fuaro-bk6rslr52-gold-24-zoloto-24k/"
+  "sourceUrl": "https://kromus.ru/ruchka-povorotnaya-bk6-r-slr52-bk6-slr-gold-24-zoloto-24k/"
  },
  {
   "slug": "fuaro-bk6-sm",
@@ -2641,7 +2733,8 @@
     "article": "BK6 SM MAB-6",
     "price": 1049,
     "inStock": false,
-    "image": "/images/products/fuaro-bk6-sm-temnaya-bronza.jpg"
+    "image": "/images/products/fuaro-bk6-sm-temnaya-bronza.jpg",
+    "imageSrc": "https://kromus.ru/images/detailed/78/29603_01.jpg"
    },
    {
     "finish": "золото 24К",
@@ -2649,7 +2742,8 @@
     "article": "BK6 SM GOLD-24",
     "price": 1049,
     "inStock": false,
-    "image": "/images/products/fuaro-bk6-sm-zoloto-24k.jpg"
+    "image": "/images/products/fuaro-bk6-sm-zoloto-24k.jpg",
+    "imageSrc": "https://kromus.ru/images/detailed/78/29597_01.jpg"
    },
    {
     "finish": "матовая бронза",
@@ -2657,7 +2751,8 @@
     "article": "BK6 SM AB-7",
     "price": 1049,
     "inStock": false,
-    "image": "/images/products/fuaro-bk6-sm-matovaya-bronza.jpg"
+    "image": "/images/products/fuaro-bk6-sm-matovaya-bronza.jpg",
+    "imageSrc": "https://kromus.ru/images/detailed/78/29601_01.jpg"
    },
    {
     "finish": "французское золото",
@@ -2665,7 +2760,8 @@
     "article": "BK6 SM RB-10",
     "price": 1087,
     "inStock": false,
-    "image": "/images/products/fuaro-bk6-sm-francuzskoe-zoloto.jpg"
+    "image": "/images/products/fuaro-bk6-sm-francuzskoe-zoloto.jpg",
+    "imageSrc": "https://kromus.ru/images/detailed/78/29599_01.jpg"
    }
   ],
   "material": "цинковый сплав",
@@ -2679,7 +2775,7 @@
    "Квадрат, мм": "6"
   },
   "description": "Завертка Fuaro в классическом исполнении для дверей санузла. Состаренные отделки, такие как тёмная бронза и французское золото, подходят к ручкам в историческом стиле. Устанавливается с сантехническим замком под квадрат 6 мм.",
-  "sourceUrl": "https://todoor.ru/shop/ruchka-povorotnaja-FUARO-BK6-SM-MAB-6-temnaja-bronza/"
+  "sourceUrl": "https://kromus.ru/ruchka-povorotnaya-bk6-r-sm58-bk6-sm-mab-6-temnaya-bronza/"
  },
  {
   "slug": "fratelli-cattini-wc-2-7-7",
@@ -2695,7 +2791,8 @@
     "article": "WC-2 7.7-AN",
     "price": 2294,
     "inStock": true,
-    "image": "/images/products/fratelli-cattini-wc-2-7-7-antracit.jpg"
+    "image": "/images/products/fratelli-cattini-wc-2-7-7-antracit.jpg",
+    "imageSrc": "https://fratelli-cattini.com/wp-content/uploads/2025/06/fiksator-povorotnyj-na-kruglom-osnovanii-fratelli-cattini-wc-2-77-an-matovyj-antracit.jpg"
    },
    {
     "finish": "матовый платинум",
@@ -2703,7 +2800,8 @@
     "article": "WC-2 7.7-PM",
     "price": 2294,
     "inStock": true,
-    "image": "/images/products/fratelli-cattini-wc-2-7-7-matovyy-platinum.jpg"
+    "image": "/images/products/fratelli-cattini-wc-2-7-7-matovyy-platinum.jpg",
+    "imageSrc": "https://fratelli-cattini.com/wp-content/uploads/2025/06/fiksator-povorotnyj-na-kruglom-osnovanii-fratelli-cattini-wc-2-77-pm-matovyj-platinum.jpg"
    },
    {
     "finish": "полированная латунь",
@@ -2711,7 +2809,8 @@
     "article": "WC-2 7.7-OLV",
     "price": 2307,
     "inStock": true,
-    "image": "/images/products/fratelli-cattini-wc-2-7-7-polirovannaya-latun.jpg"
+    "image": "/images/products/fratelli-cattini-wc-2-7-7-polirovannaya-latun.jpg",
+    "imageSrc": "https://fratelli-cattini.com/wp-content/uploads/2025/06/fiksator-povorotnyj-na-kruglom-osnovanii-fratelli-cattini-wc-77-olv-polirovannaja-latun.jpg"
    },
    {
     "finish": "матовый чёрный",
@@ -2719,7 +2818,8 @@
     "article": "WC-2 7.7-NM",
     "price": 2307,
     "inStock": true,
-    "image": "/images/products/fratelli-cattini-wc-2-7-7-matovyy-chernyy.jpg"
+    "image": "/images/products/fratelli-cattini-wc-2-7-7-matovyy-chernyy.jpg",
+    "imageSrc": "https://fratelli-cattini.com/wp-content/uploads/2025/06/fiksator-povorotnyj-na-kruglom-osnovanii-fratelli-cattini-wc-77-nm-matovyj-chernyj.jpg"
    },
    {
     "finish": "матовый хром",
@@ -2727,7 +2827,8 @@
     "article": "WC-2 7.7-CS",
     "price": 2307,
     "inStock": true,
-    "image": "/images/products/fratelli-cattini-wc-2-7-7-matovyy-hrom.jpg"
+    "image": "/images/products/fratelli-cattini-wc-2-7-7-matovyy-hrom.jpg",
+    "imageSrc": "https://fratelli-cattini.com/wp-content/uploads/2025/06/fiksator-povorotnyj-na-kruglom-osnovanii-fratelli-cattini-wc-77-cs-matovyj-hrom.jpg"
    },
    {
     "finish": "матовая латунь",
@@ -2735,7 +2836,8 @@
     "article": "WC-2 7.7-BS",
     "price": 2643,
     "inStock": true,
-    "image": "/images/products/fratelli-cattini-wc-2-7-7-matovaya-latun.jpg"
+    "image": "/images/products/fratelli-cattini-wc-2-7-7-matovaya-latun.jpg",
+    "imageSrc": "https://fratelli-cattini.com/wp-content/uploads/2025/06/fiksator-povorotnyj-na-kruglom-osnovanii-fratelli-cattini-wc-2-77-bs-matovaja-latun-2-sht.jpg"
    }
   ],
   "material": "латунь",
@@ -2750,7 +2852,7 @@
    "Страна": "Италия"
   },
   "description": "Итальянский поворотный фиксатор Fratelli Cattini на круглой розетке для ванной и туалета. Подбирается в пару к ручкам бренда на таком же основании. Выпускается в матовом чёрном, матовом хроме, матовом золоте, антраците, платинуме и полированной латуни.",
-  "sourceUrl": "https://todoor.ru/shop/fiksator-povorotnyj-na-kruglom-osnovanii-fratelli-cattini-wc-2-77-an-matovyj-antracit/"
+  "sourceUrl": "https://fratelli-cattini.com/shop/fiksator-povorotnyj-na-kruglom-osnovanii-fratelli-cattini-wc-2-7-7-an-matovyj-antraczit/"
  },
  {
   "slug": "fratelli-cattini-wc-8-8fs",
@@ -2766,7 +2868,8 @@
     "article": "WC-8 8FS-BS",
     "price": 3502,
     "inStock": true,
-    "image": "/images/products/fratelli-cattini-wc-8-8fs-matovaya-latun.jpg"
+    "image": "/images/products/fratelli-cattini-wc-8-8fs-matovaya-latun.jpg",
+    "imageSrc": "https://fratelli-cattini.com/wp-content/uploads/2025/06/fiksator-povorotnyj-na-kvadratnom-osnovanii-fratelli-cattini-wc-8fs-bs-matovaja-latun.jpg"
    },
    {
     "finish": "полированная латунь",
@@ -2774,7 +2877,8 @@
     "article": "WC-8 8FS-OLV",
     "price": 3502,
     "inStock": true,
-    "image": "/images/products/fratelli-cattini-wc-8-8fs-polirovannaya-latun.jpg"
+    "image": "/images/products/fratelli-cattini-wc-8-8fs-polirovannaya-latun.jpg",
+    "imageSrc": "https://made-italy.ru/shop-photos/fiksator-povorotnyj-na-kvadratnom-osnovanii-fratelli-cattini-wc-8-8fs-olv-polirovannaja-latun.jpg"
    },
    {
     "finish": "матовая бронза",
@@ -2782,7 +2886,8 @@
     "article": "WC-8 8FS-BY",
     "price": 3502,
     "inStock": true,
-    "image": "/images/products/fratelli-cattini-wc-8-8fs-matovaya-bronza.jpg"
+    "image": "/images/products/fratelli-cattini-wc-8-8fs-matovaya-bronza.jpg",
+    "imageSrc": "https://made-italy.ru/shop-photos/fiksator-povorotnyj-na-kvadratnom-osnovanii-fratelli-cattini-wc-8-8fs-by-matovaja-bronza.jpg"
    },
    {
     "finish": "матовое золото",
@@ -2790,7 +2895,8 @@
     "article": "WC-8 8FS-SB",
     "price": 3656,
     "inStock": true,
-    "image": "/images/products/fratelli-cattini-wc-8-8fs-matovoe-zoloto.jpg"
+    "image": "/images/products/fratelli-cattini-wc-8-8fs-matovoe-zoloto.jpg",
+    "imageSrc": "https://made-italy.ru/shop-photos/fiksator-povorotnyj-na-kvadratnom-osnovanii-fratelli-cattini-wc-8-8fs-sb-matovoe-zoloto.jpg"
    },
    {
     "finish": "матовый никель",
@@ -2798,7 +2904,8 @@
     "article": "WC-8 8FS-NI",
     "price": 3656,
     "inStock": true,
-    "image": "/images/products/fratelli-cattini-wc-8-8fs-matovyy-nikel.jpg"
+    "image": "/images/products/fratelli-cattini-wc-8-8fs-matovyy-nikel.jpg",
+    "imageSrc": "https://made-italy.ru/shop-photos/fiksator-povorotnyj-na-kvadratnom-osnovanii-fratelli-cattini-wc-8-8fs-ni-matovyj-nikel.jpg"
    },
    {
     "finish": "матовый хром",
@@ -2806,7 +2913,8 @@
     "article": "WC-8 8FS-CS",
     "price": 3859,
     "inStock": true,
-    "image": "/images/products/fratelli-cattini-wc-8-8fs-matovyy-hrom.jpg"
+    "image": "/images/products/fratelli-cattini-wc-8-8fs-matovyy-hrom.jpg",
+    "imageSrc": "https://fratelli-cattini.com/wp-content/uploads/2025/06/fiksator-povorotnyj-na-kvadratnom-osnovanii-fratelli-cattini-wc-8fs-cs-matovyj-hrom.jpg"
    }
   ],
   "material": "латунь",
@@ -2821,7 +2929,7 @@
    "Страна": "Италия"
   },
   "description": "Фиксатор Fratelli Cattini на тонком квадратном основании для дверей санузла. Подходит к современным ручкам с квадратной розеткой. Доступен в матовой меди, латуни, бронзе, никеле, хроме и чёрном цвете.",
-  "sourceUrl": "https://todoor.ru/shop/fiksator-povorotnyj-na-kvadratnom-osnovanii-fratelli-cattini-wc-85-kd-zoloto-krajola/"
+  "sourceUrl": "https://made-italy.ru/shop/fiksator-povorotnyj-na-kvadratnom-osnovanii-fratelli-cattini-wc-8-8fs-sb-matovoe-zoloto/"
  },
  {
   "slug": "colombo-cd49bzg6g",
@@ -2837,7 +2945,8 @@
     "article": "CD49BZG6G-CR",
     "price": 4334,
     "inStock": true,
-    "image": "/images/products/colombo-cd49bzg6g-polirovannyy-hrom.jpg"
+    "image": "/images/products/colombo-cd49bzg6g-polirovannyy-hrom.jpg",
+    "imageSrc": "https://colombo.pro/wa-data/public/shop/products/18/20/2018/images/11659/11659.750x0.png"
    },
    {
     "finish": "матовый хром",
@@ -2845,7 +2954,8 @@
     "article": "CD49BZG6G-CM",
     "price": 5174,
     "inStock": true,
-    "image": "/images/products/colombo-cd49bzg6g-matovyy-hrom.jpg"
+    "image": "/images/products/colombo-cd49bzg6g-matovyy-hrom.jpg",
+    "imageSrc": "https://colombo.pro/wa-data/public/shop/products/65/18/1865/images/6981/6981.750x0.png"
    }
   ],
   "material": "латунь",
@@ -2860,7 +2970,7 @@
    "Страна": "Италия"
   },
   "description": "Поворотный фиксатор Colombo Design на круглой розетке для дверей ванной и туалета. Латунный корпус и качественное итальянское покрытие. Выпускается в полированном и матовом хроме.",
-  "sourceUrl": "https://todoor.ru/shop/fiksator-povorotnyj-na-kruglom-osnovanii-colombo-cd49-bzg-g-polirovannyj-hrom/"
+  "sourceUrl": "https://colombo.pro/product/Colombo-Design-Rosetta-CD49BZGG.CR/"
  },
  {
   "slug": "venezia-wc-2-d1",
@@ -2876,7 +2986,8 @@
     "article": "WC-2 D1",
     "price": 4788,
     "inStock": true,
-    "image": "/images/products/venezia-wc-2-d1-polirovannaya-latun.jpg"
+    "image": "/images/products/venezia-wc-2-d1-polirovannaya-latun.jpg",
+    "imageSrc": "https://zamkitut.com/upload/iblock/75c/75c7cd968da2948e195dc57f6b448599.jpg"
    },
    {
     "finish": "античная бронза",
@@ -2884,7 +2995,8 @@
     "article": "WC-2 D1",
     "price": 4788,
     "inStock": true,
-    "image": "/images/products/venezia-wc-2-d1-antichnaya-bronza.jpg"
+    "image": "/images/products/venezia-wc-2-d1-antichnaya-bronza.jpg",
+    "imageSrc": "https://zamkitut.com/upload/iblock/c25/c25eddfd9d80b211f034c451508fd9d6.jpg"
    },
    {
     "finish": "полированный хром",
@@ -2892,7 +3004,8 @@
     "article": "WC-2 D1",
     "price": 5061,
     "inStock": true,
-    "image": "/images/products/venezia-wc-2-d1-polirovannyy-hrom.jpg"
+    "image": "/images/products/venezia-wc-2-d1-polirovannyy-hrom.jpg",
+    "imageSrc": "https://sdf-handle.ru/upload/iblock/1db/1db8da69ced4213d675393f71169d1e2.png"
    },
    {
     "finish": "французское золото",
@@ -2900,7 +3013,8 @@
     "article": "WC-2 D1",
     "price": 5376,
     "inStock": true,
-    "image": "/images/products/venezia-wc-2-d1-francuzskoe-zoloto.jpg"
+    "image": "/images/products/venezia-wc-2-d1-francuzskoe-zoloto.jpg",
+    "imageSrc": "https://zamkitut.com/upload/iblock/ef1/ef13cd55532cf4f3ce173077db98bf3b.jpg"
    },
    {
     "finish": "матовая бронза",
@@ -2908,7 +3022,8 @@
     "article": "WC-2 D1",
     "price": 4788,
     "inStock": false,
-    "image": "/images/products/venezia-wc-2-d1-matovaya-bronza.jpg"
+    "image": "/images/products/venezia-wc-2-d1-matovaya-bronza.jpg",
+    "imageSrc": "https://sdf-handle.ru/upload/iblock/637/6376ed7c67d21e51dcdd81460b23c6dc.png"
    },
    {
     "finish": "тёмная бронза",
@@ -2916,7 +3031,8 @@
     "article": "WC-2 D1",
     "price": 5191,
     "inStock": false,
-    "image": "/images/products/venezia-wc-2-d1-temnaya-bronza.jpg"
+    "image": "/images/products/venezia-wc-2-d1-temnaya-bronza.jpg",
+    "imageSrc": "https://zamkitut.com/upload/iblock/d89/d8948311f5e1ed9f568311960df57d42.jpg"
    }
   ],
   "material": "латунь",
@@ -2931,7 +3047,7 @@
    "Страна": "Италия"
   },
   "description": "Классический итальянский фиксатор Venezia на фигурной розетке D1 для санузла. Сочетается с ручками Venezia в классическом стиле. Доступен в латуни, бронзе, хроме, французском золоте и античном серебре.",
-  "sourceUrl": "https://todoor.ru/shop/fiksator-povorotnyj-Venezia-WC-2-D1-polirovannaja-latun/"
+  "sourceUrl": "https://zamkitut.com/catalog/product/fiksator-santekhnicheskiy-venezia-wc-2-d1-polirovannaya-latun/"
  },
  {
   "slug": "morelli-mh-kh-round",
@@ -2947,7 +3063,8 @@
     "article": "MH-KH AB",
     "price": 732,
     "inStock": true,
-    "image": "/images/products/morelli-mh-kh-round-antichnaya-bronza.jpg"
+    "image": "/images/products/morelli-mh-kh-round-antichnaya-bronza.jpg",
+    "imageSrc": "https://morelli.ru/storage/products/December2020/dAAxTm7uJo6BanBobz2V.webp"
    },
    {
     "finish": "матовый никель / хром",
@@ -2955,7 +3072,8 @@
     "article": "MH-KH SN/CP",
     "price": 732,
     "inStock": false,
-    "image": "/images/products/morelli-mh-kh-round-matovyy-nikel-hrom.jpg"
+    "image": "/images/products/morelli-mh-kh-round-matovyy-nikel-hrom.jpg",
+    "imageSrc": "https://morelli.ru/storage/products/February2019/QOfmuDPkKHZX3Tmhyslm.webp"
    },
    {
     "finish": "матовый хром / хром",
@@ -2963,7 +3081,8 @@
     "article": "MH-KH SC/CP",
     "price": 732,
     "inStock": false,
-    "image": "/images/products/morelli-mh-kh-round-matovyy-hrom-hrom.jpg"
+    "image": "/images/products/morelli-mh-kh-round-matovyy-hrom-hrom.jpg",
+    "imageSrc": "https://morelli.ru/storage/products/March2019/9JPSPO3MqFWmCJGhs791.webp"
    },
    {
     "finish": "матовое золото / золото",
@@ -2971,7 +3090,8 @@
     "article": "MH-KH SG/GP",
     "price": 764,
     "inStock": false,
-    "image": "/images/products/morelli-mh-kh-round-matovoe-zoloto-zoloto.jpg"
+    "image": "/images/products/morelli-mh-kh-round-matovoe-zoloto-zoloto.jpg",
+    "imageSrc": "https://morelli.ru/storage/products/March2019/Zm1MNa8U8FrFuYnk2WQJ.webp"
    },
    {
     "finish": "матовая античная бронза",
@@ -2979,7 +3099,8 @@
     "article": "MH-KH MAB/AB",
     "price": 764,
     "inStock": false,
-    "image": "/images/products/morelli-mh-kh-round-matovaya-antichnaya-bronza.jpg"
+    "image": "/images/products/morelli-mh-kh-round-matovaya-antichnaya-bronza.jpg",
+    "imageSrc": "https://morelli.ru/storage/products/February2019/DjrFOwiI64iYcewVNPEB.webp"
    },
    {
     "finish": "золото",
@@ -2987,7 +3108,8 @@
     "article": "MH-KH GP",
     "price": 764,
     "inStock": false,
-    "image": "/images/products/morelli-mh-kh-round-zoloto.jpg"
+    "image": "/images/products/morelli-mh-kh-round-zoloto.jpg",
+    "imageSrc": "https://morelli.ru/storage/products/March2019/SVs8nnmu7Gmpqb7O0OLW.webp"
    }
   ],
   "material": "цинковый сплав",
@@ -3000,7 +3122,7 @@
    "Форма розетки": "круглая"
   },
   "description": "Декоративная накладка Morelli на круглой розетке, закрывает отверстие под цилиндр. Подбирается в тон ручке и завертке Morelli. Много отделок: от хрома и никеля до кофе и античной бронзы.",
-  "sourceUrl": "https://todoor.ru/shop/nakladka-pod-cilindr-Morelli-kruglaja-MH-KH-AB-antichnaja-bronza/"
+  "sourceUrl": "https://morelli.ru/catalog/skobyanye-izdeliya/all/181"
  },
  {
   "slug": "armadillo-et-urb",
@@ -3100,7 +3222,8 @@
     "article": "ET.R.SLR52 GOLD-24",
     "price": 365,
     "inStock": false,
-    "image": "/images/products/fuaro-et-r-slr52-zoloto-24k.jpg"
+    "image": "/images/products/fuaro-et-r-slr52-zoloto-24k.jpg",
+    "imageSrc": "https://kromus.ru/images/detailed/87/47433_01.jpg"
    },
    {
     "finish": "хром",
@@ -3108,7 +3231,8 @@
     "article": "ET.R.SLR52 CP-8",
     "price": 365,
     "inStock": false,
-    "image": "/images/products/fuaro-et-r-slr52-hrom.jpg"
+    "image": "/images/products/fuaro-et-r-slr52-hrom.jpg",
+    "imageSrc": "https://kromus.ru/images/detailed/85/46877_01.jpg"
    },
    {
     "finish": "сатинированное золото",
@@ -3116,7 +3240,8 @@
     "article": "ET.R.SLR52 SSG-39",
     "price": 365,
     "inStock": false,
-    "image": "/images/products/fuaro-et-r-slr52-satinirovannoe-zoloto.jpg"
+    "image": "/images/products/fuaro-et-r-slr52-satinirovannoe-zoloto.jpg",
+    "imageSrc": "https://kromus.ru/images/detailed/86/46873_01.jpg"
    },
    {
     "finish": "чёрный",
@@ -3124,7 +3249,8 @@
     "article": "ET.R.SLR52 BL-24",
     "price": 365,
     "inStock": false,
-    "image": "/images/products/fuaro-et-r-slr52-chernyy.jpg"
+    "image": "/images/products/fuaro-et-r-slr52-chernyy.jpg",
+    "imageSrc": "https://kromus.ru/images/detailed/85/46871_01.jpg"
    },
    {
     "finish": "сатинированный хром",
@@ -3132,7 +3258,8 @@
     "article": "ET.R.SLR52 SSC-16",
     "price": 365,
     "inStock": false,
-    "image": "/images/products/fuaro-et-r-slr52-satinirovannyy-hrom.jpg"
+    "image": "/images/products/fuaro-et-r-slr52-satinirovannyy-hrom.jpg",
+    "imageSrc": "https://kromus.ru/images/detailed/85/46879_01.jpg"
    },
    {
     "finish": "графит",
@@ -3140,7 +3267,8 @@
     "article": "ET.R.SLR52 GR-23",
     "price": 414,
     "inStock": false,
-    "image": "/images/products/fuaro-et-r-slr52-grafit.jpg"
+    "image": "/images/products/fuaro-et-r-slr52-grafit.jpg",
+    "imageSrc": "https://kromus.ru/images/detailed/85/46875_01.jpg"
    }
   ],
   "material": "цинковый сплав",
@@ -3154,7 +3282,7 @@
    "Диаметр розетки, мм": "52"
   },
   "description": "Тонкая круглая накладка Fuaro под евроцилиндр. Составляет комплект с заверткой BK6.R.SLR52 и ручками на такой же розетке. Шесть отделок, от чёрного до золота 24К.",
-  "sourceUrl": "https://todoor.ru/shop/nakladka-pod-cilindr-na-krugloj-rozetke-fuaro-etrslr52-gold-24-zoloto-24/"
+  "sourceUrl": "https://kromus.ru/nakladka-na-cilindr-et-r-slr52-gold-24-zoloto-24/"
  },
  {
   "slug": "fuaro-et-sl",
@@ -3170,7 +3298,8 @@
     "article": "ET SL SSG-39",
     "price": 462,
     "inStock": false,
-    "image": "/images/products/fuaro-et-sl-satinirovannoe-zoloto.jpg"
+    "image": "/images/products/fuaro-et-sl-satinirovannoe-zoloto.jpg",
+    "imageSrc": "https://kromus.ru/images/detailed/85/45843_01.jpg"
    },
    {
     "finish": "хром",
@@ -3178,7 +3307,8 @@
     "article": "ET SL CP-8",
     "price": 462,
     "inStock": false,
-    "image": "/images/products/fuaro-et-sl-hrom.jpg"
+    "image": "/images/products/fuaro-et-sl-hrom.jpg",
+    "imageSrc": "https://kromus.ru/images/detailed/84/44317_01.jpg"
    },
    {
     "finish": "сатинированный хром",
@@ -3186,7 +3316,8 @@
     "article": "ET SL SSC-16",
     "price": 462,
     "inStock": false,
-    "image": "/images/products/fuaro-et-sl-satinirovannyy-hrom.jpg"
+    "image": "/images/products/fuaro-et-sl-satinirovannyy-hrom.jpg",
+    "imageSrc": "https://kromus.ru/images/detailed/84/44313_01.jpg"
    },
    {
     "finish": "графит",
@@ -3194,7 +3325,8 @@
     "article": "ET SL GR-23",
     "price": 462,
     "inStock": false,
-    "image": "/images/products/fuaro-et-sl-grafit.jpg"
+    "image": "/images/products/fuaro-et-sl-grafit.jpg",
+    "imageSrc": "https://kromus.ru/images/detailed/84/44319_01.jpg"
    },
    {
     "finish": "чёрный",
@@ -3202,7 +3334,8 @@
     "article": "ET SL BL-24",
     "price": 462,
     "inStock": false,
-    "image": "/images/products/fuaro-et-sl-chernyy.jpg"
+    "image": "/images/products/fuaro-et-sl-chernyy.jpg",
+    "imageSrc": "https://kromus.ru/images/detailed/84/44315_01.jpg"
    }
   ],
   "material": "цинковый сплав",
@@ -3215,7 +3348,7 @@
    "Форма розетки": "квадратная"
   },
   "description": "Квадратная накладка Fuaro под цилиндр для дверей с современными ручками на квадратной розетке. Скрывает торец цилиндра и отверстие в полотне. Пять отделок, включая графит и чёрный.",
-  "sourceUrl": "https://todoor.ru/shop/nakladka-pod-cilindr-na-kvadratnoj-rozetke-fuaro-et-sl-ssg-39-satinirovannoe-zoloto/"
+  "sourceUrl": "https://kromus.ru/nakladka-pod-cilindr-et-k-sl52-et-sl-ssg-39-satinirovannoe-zoloto/"
  },
  {
   "slug": "colombo-cd63gb",
@@ -3231,7 +3364,8 @@
     "article": "CD63GB-BA",
     "price": 2269,
     "inStock": true,
-    "image": "/images/products/colombo-cd63gb-antichnaya-bronza.jpg"
+    "image": "/images/products/colombo-cd63gb-antichnaya-bronza.jpg",
+    "imageSrc": "https://colombo.pro/wa-data/public/shop/products/01/27/2701/images/9113/9113.750x0.png"
    },
    {
     "finish": "полированный хром",
@@ -3239,7 +3373,8 @@
     "article": "CD63GB-CR",
     "price": 2472,
     "inStock": true,
-    "image": "/images/products/colombo-cd63gb-polirovannyy-hrom.jpg"
+    "image": "/images/products/colombo-cd63gb-polirovannyy-hrom.jpg",
+    "imageSrc": "https://colombo.pro/wa-data/public/shop/products/87/18/1887/images/9100/9100.750x0.png"
    },
    {
     "finish": "бронза",
@@ -3247,7 +3382,8 @@
     "article": "CD63GB-BR",
     "price": 2472,
     "inStock": true,
-    "image": "/images/products/colombo-cd63gb-bronza.jpg"
+    "image": "/images/products/colombo-cd63gb-bronza.jpg",
+    "imageSrc": "https://colombo.pro/wa-data/public/shop/products/63/21/2163/images/9111/9111.750x0.png"
    },
    {
     "finish": "матовая бронза",
@@ -3255,7 +3391,8 @@
     "article": "CD63GB-OA",
     "price": 2716,
     "inStock": true,
-    "image": "/images/products/colombo-cd63gb-matovaya-bronza.jpg"
+    "image": "/images/products/colombo-cd63gb-matovaya-bronza.jpg",
+    "imageSrc": "https://colombo.pro/wa-data/public/shop/products/91/21/2191/images/9115/9115.750x0.png"
    },
    {
     "finish": "матовый хром",
@@ -3263,7 +3400,8 @@
     "article": "CD63GB-CM",
     "price": 2895,
     "inStock": true,
-    "image": "/images/products/colombo-cd63gb-matovyy-hrom.jpg"
+    "image": "/images/products/colombo-cd63gb-matovyy-hrom.jpg",
+    "imageSrc": "https://colombo.pro/wa-data/public/shop/products/00/19/1900/images/9102/9102.750x0.png"
    },
    {
     "finish": "матовый никель",
@@ -3271,7 +3409,8 @@
     "article": "CD63GB-NI",
     "price": 2895,
     "inStock": true,
-    "image": "/images/products/colombo-cd63gb-matovyy-nikel.jpg"
+    "image": "/images/products/colombo-cd63gb-matovyy-nikel.jpg",
+    "imageSrc": "https://colombo.pro/wa-data/public/shop/products/88/18/1888/images/9106/9106.750x0.png"
    },
    {
     "finish": "полированная латунь",
@@ -3279,7 +3418,8 @@
     "article": "CD63GB-OL",
     "price": 3068,
     "inStock": true,
-    "image": "/images/products/colombo-cd63gb-polirovannaya-latun.jpg"
+    "image": "/images/products/colombo-cd63gb-polirovannaya-latun.jpg",
+    "imageSrc": "https://colombo.pro/wa-data/public/shop/products/89/18/1889/images/9088/9088.750x0.png"
    },
    {
     "finish": "матовое золото",
@@ -3287,7 +3427,8 @@
     "article": "CD63GB-OM",
     "price": 3397,
     "inStock": true,
-    "image": "/images/products/colombo-cd63gb-matovoe-zoloto.jpg"
+    "image": "/images/products/colombo-cd63gb-matovoe-zoloto.jpg",
+    "imageSrc": "https://colombo.pro/wa-data/public/shop/products/98/18/1898/images/9083/9083.750x0.png"
    }
   ],
   "material": "латунь",
@@ -3302,7 +3443,7 @@
    "Страна": "Италия"
   },
   "description": "Пара итальянских накладок Colombo Design под евроцилиндр на круглом основании. Латунь и стойкое гальваническое покрытие. Широкая палитра: от белого и матового чёрного до полированной латуни и античной бронзы.",
-  "sourceUrl": "https://todoor.ru/shop/nakladka-pod-cilindr-na-kruglom-osnovanii-colombo-cd63-gb-antichnaja-bronza/"
+  "sourceUrl": "https://colombo.pro/product/Colombo-Design-Rosetta-CD63GB.CM/"
  },
  {
   "slug": "venezia-cyl-1-d1",
@@ -3318,7 +3459,8 @@
     "article": "CYL-1 D1",
     "price": 2734,
     "inStock": true,
-    "image": "/images/products/venezia-cyl-1-d1-polirovannyy-hrom.jpg"
+    "image": "/images/products/venezia-cyl-1-d1-polirovannyy-hrom.jpg",
+    "imageSrc": "https://sdf-handle.ru/upload/iblock/bfc/bfc8aae9d22a920a79748115c8120168.png"
    },
    {
     "finish": "полированная латунь",
@@ -3326,7 +3468,8 @@
     "article": "CYL-1 D1",
     "price": 2824,
     "inStock": true,
-    "image": "/images/products/venezia-cyl-1-d1-polirovannaya-latun.jpg"
+    "image": "/images/products/venezia-cyl-1-d1-polirovannaya-latun.jpg",
+    "imageSrc": "https://sdf-handle.ru/upload/iblock/788/7883fb7bbd3cc5d0e891cd83ce882cfe.png"
    },
    {
     "finish": "матовая бронза",
@@ -3334,7 +3477,7 @@
     "article": "CYL-1 D1",
     "price": 2962,
     "inStock": true,
-    "image": "/images/products/venezia-cyl-1-d1-matovaya-bronza.jpg"
+    "image": null
    },
    {
     "finish": "античная бронза",
@@ -3342,7 +3485,8 @@
     "article": "CYL-1 D1",
     "price": 2962,
     "inStock": true,
-    "image": "/images/products/venezia-cyl-1-d1-antichnaya-bronza.jpg"
+    "image": "/images/products/venezia-cyl-1-d1-antichnaya-bronza.jpg",
+    "imageSrc": "https://zamkitut.com/upload/iblock/8c7/2pve9bgb5bl1dnsvjgjqu2ekccpn673y.jpg"
    },
    {
     "finish": "французское золото",
@@ -3350,7 +3494,8 @@
     "article": "CYL-1 D1",
     "price": 2995,
     "inStock": true,
-    "image": "/images/products/venezia-cyl-1-d1-francuzskoe-zoloto.jpg"
+    "image": "/images/products/venezia-cyl-1-d1-francuzskoe-zoloto.jpg",
+    "imageSrc": "https://sdf-handle.ru/upload/iblock/5c3/5c39169041ce248cf7cfd27bbc4629b0.png"
    },
    {
     "finish": "античное серебро",
@@ -3358,7 +3503,8 @@
     "article": "CYL-1 D1",
     "price": 3508,
     "inStock": true,
-    "image": "/images/products/venezia-cyl-1-d1-antichnoe-serebro.jpg"
+    "image": "/images/products/venezia-cyl-1-d1-antichnoe-serebro.jpg",
+    "imageSrc": "https://sdf-handle.ru/upload/iblock/bee/beed4fb5fe29edf91d84db0bb3928927.png"
    },
    {
     "finish": "матовый хром",
@@ -3366,7 +3512,7 @@
     "article": "CYL-1 D1",
     "price": 2734,
     "inStock": true,
-    "image": "/images/products/venezia-cyl-1-d1-matovyy-hrom.jpg"
+    "image": null
    }
   ],
   "material": "латунь",
@@ -3381,7 +3527,7 @@
    "Страна": "Италия"
   },
   "description": "Пара классических накладок Venezia под цилиндр на фигурной розетке D1. Сочетаются с классическими ручками и фиксаторами Venezia. Выпускаются в латуни, бронзе, хроме, французском золоте и античном серебре.",
-  "sourceUrl": "https://todoor.ru/shop/nakladka-dvernaja-pod-cilindr-Venezia-CYL-1-D1-polirovannyj-hrom/"
+  "sourceUrl": "https://sdf-handle.ru/katalog/komplektuyuschie/nakladki-pod-cilindr/nakladki-pod-tsilindr-venezia/nakladka-pod-tsilindr-cyl-1-d1-venezia-VNZ1305/"
  },
  {
   "slug": "fratelli-cattini-cyl-7",
@@ -3397,7 +3543,8 @@
     "article": "CYL 7-GA",
     "price": 329,
     "inStock": true,
-    "image": "/images/products/fratelli-cattini-cyl-7-antracit.jpg"
+    "image": "/images/products/fratelli-cattini-cyl-7-antracit.jpg",
+    "imageSrc": "https://fratelli-cattini.com/wp-content/uploads/2025/06/nakladka-pod-cilindr-na-kruglom-osnovanii-fratelli-cattini-cyl-7-ga-antracit-seryj-2-sht.jpg"
    },
    {
     "finish": "полированный хром",
@@ -3405,7 +3552,8 @@
     "article": "CYL 7-CR",
     "price": 490,
     "inStock": true,
-    "image": "/images/products/fratelli-cattini-cyl-7-polirovannyy-hrom.jpg"
+    "image": "/images/products/fratelli-cattini-cyl-7-polirovannyy-hrom.jpg",
+    "imageSrc": "https://fratelli-cattini.com/wp-content/uploads/2025/06/nakladka-pod-cilindr-na-kruglom-osnovanii-fratelli-cattini-cyl-7-cr-polirovannyj-hrom-2-sht.jpg"
    },
    {
     "finish": "матовый хром",
@@ -3413,7 +3561,8 @@
     "article": "CYL 7-CS",
     "price": 774,
     "inStock": true,
-    "image": "/images/products/fratelli-cattini-cyl-7-matovyy-hrom.jpg"
+    "image": "/images/products/fratelli-cattini-cyl-7-matovyy-hrom.jpg",
+    "imageSrc": "https://fratelli-cattini.com/wp-content/uploads/2025/06/nakladka-pod-cilindr-na-kruglom-osnovanii-fratelli-cattini-cyl-7-cs-matovyj-hrom-2-sht.jpg"
    },
    {
     "finish": "полированная латунь",
@@ -3421,7 +3570,8 @@
     "article": "CYL 7.7-OLV",
     "price": 1154,
     "inStock": true,
-    "image": "/images/products/fratelli-cattini-cyl-7-polirovannaya-latun.jpg"
+    "image": "/images/products/fratelli-cattini-cyl-7-polirovannaya-latun.jpg",
+    "imageSrc": "https://fratelli-cattini.com/wp-content/uploads/2025/05/nakladka-pod-cilindr-na-kruglom-osnovanii-fratelli-cattini-cyl-77-olv-polirovannaja-latun-2-sht.jpg"
    },
    {
     "finish": "матовый чёрный",
@@ -3429,7 +3579,8 @@
     "article": "CYL 7.7-NM",
     "price": 1154,
     "inStock": true,
-    "image": "/images/products/fratelli-cattini-cyl-7-matovyy-chernyy.jpg"
+    "image": "/images/products/fratelli-cattini-cyl-7-matovyy-chernyy.jpg",
+    "imageSrc": "https://fratelli-cattini.com/wp-content/uploads/2025/05/nakladka-pod-cilindr-na-kruglom-osnovanii-fratelli-cattini-cyl-77-nm-matovyj-chernyj-2-sht.jpg"
    },
    {
     "finish": "матовая латунь",
@@ -3437,7 +3588,8 @@
     "article": "CYL 7FS-BS",
     "price": 1281,
     "inStock": true,
-    "image": "/images/products/fratelli-cattini-cyl-7-matovaya-latun.jpg"
+    "image": "/images/products/fratelli-cattini-cyl-7-matovaya-latun.jpg",
+    "imageSrc": "https://fratelli-cattini.com/wp-content/uploads/2025/06/nakladka-pod-cilindr-na-kruglom-osnovanii-fratelli-cattini-cyl-7fs-bs-matovaja-latun-2-sht.jpg"
    }
   ],
   "material": "латунь",
@@ -3452,7 +3604,7 @@
    "Страна": "Италия"
   },
   "description": "Итальянские накладки Fratelli Cattini под цилиндр на круглом основании, продаются парой. Сочетаются с ручками и фиксаторами бренда серии 7. Матовые современные отделки.",
-  "sourceUrl": "https://todoor.ru/shop/nakladka-pod-cilindr-na-kruglom-osnovanii-fratelli-cattini-cyl-7-ga-antracit-seryj-2-sht/"
+  "sourceUrl": "https://fratelli-cattini.com/shop/nakladka-pod-czilindr-na-kruglom-osnovanii-fratelli-cattini-cyl-7-ga-antraczit-seryj-2-sht/"
  },
  {
   "slug": "fuaro-100-za",
@@ -3639,7 +3791,8 @@
     "article": "HS 60C PG",
     "price": 804,
     "inStock": false,
-    "image": "/images/products/morelli-hs-60c-zoloto.jpg"
+    "image": "/images/products/morelli-hs-60c-zoloto.jpg",
+    "imageSrc": "https://morelli.ru/storage/catalog/products/main_images/01JB1ZR5NXAMD5F380F5KD3E7E.webp"
    },
    {
     "finish": "полированный хром",
@@ -3647,7 +3800,8 @@
     "article": "HS 60C PC",
     "price": 826,
     "inStock": false,
-    "image": "/images/products/morelli-hs-60c-polirovannyy-hrom.jpg"
+    "image": "/images/products/morelli-hs-60c-polirovannyy-hrom.jpg",
+    "imageSrc": "https://morelli.ru/storage/catalog/products/main_images/01JB2DK51RTBMJ45B79VAWM96Z.webp"
    },
    {
     "finish": "античная бронза",
@@ -3655,7 +3809,8 @@
     "article": "HS 60C AB",
     "price": 891,
     "inStock": false,
-    "image": "/images/products/morelli-hs-60c-antichnaya-bronza.jpg"
+    "image": "/images/products/morelli-hs-60c-antichnaya-bronza.jpg",
+    "imageSrc": "https://morelli.ru/storage/catalog/products/main_images/01K21P8RX81T5FE4P5EDV7SJ4B.webp"
    },
    {
     "finish": "матовый никель",
@@ -3663,7 +3818,8 @@
     "article": "HS 60C SN",
     "price": 891,
     "inStock": false,
-    "image": "/images/products/morelli-hs-60c-matovyy-nikel.jpg"
+    "image": "/images/products/morelli-hs-60c-matovyy-nikel.jpg",
+    "imageSrc": "https://morelli.ru/storage/catalog/products/main_images/01K3GT1A1VBMFVZY1XBVFERK2E.png"
    }
   ],
   "material": "латунь",
@@ -3677,7 +3833,7 @@
    "Серия": "HS (повышенной секретности)"
   },
   "description": "Цилиндр Morelli серии HS для межкомнатных замков под евроцилиндр. Отделка корпуса совпадает с палитрой ручек Morelli, поэтому торец цилиндра не выбивается по цвету. Открывается ключом с обеих сторон.",
-  "sourceUrl": "https://todoor.ru/shop/cilindrovyj-mehanizm-morelli-kljuch-kljuch-hs-60c-pg-zoloto/"
+  "sourceUrl": "https://morelli.ru/catalog/zamki-i-zashchelki/all/2211"
  },
  {
   "slug": "venezia-kk-25-10-25",
@@ -3693,7 +3849,8 @@
     "article": "25/10/25",
     "price": 3673,
     "inStock": true,
-    "image": "/images/products/venezia-kk-25-10-25-francuzskoe-zoloto.jpg"
+    "image": "/images/products/venezia-kk-25-10-25-francuzskoe-zoloto.jpg",
+    "imageSrc": "https://sdf-handle.ru/upload/iblock/da5/da5d2a7abf08e66863b70136770da198.png"
    },
    {
     "finish": "античное серебро",
@@ -3701,7 +3858,8 @@
     "article": "25/10/25",
     "price": 3673,
     "inStock": true,
-    "image": "/images/products/venezia-kk-25-10-25-antichnoe-serebro.jpg"
+    "image": "/images/products/venezia-kk-25-10-25-antichnoe-serebro.jpg",
+    "imageSrc": "https://sdf-handle.ru/upload/iblock/d05/d05feb5768ea8570c297630e3c4a486a.png"
    },
    {
     "finish": "чёрный",
@@ -3709,7 +3867,7 @@
     "article": "25/10/25",
     "price": 3131,
     "inStock": true,
-    "image": "/images/products/venezia-kk-25-10-25-chernyy.jpg"
+    "image": null
    },
    {
     "finish": "полированная латунь",
@@ -3717,7 +3875,8 @@
     "article": "25/10/25",
     "price": 2696,
     "inStock": false,
-    "image": "/images/products/venezia-kk-25-10-25-polirovannaya-latun.jpg"
+    "image": "/images/products/venezia-kk-25-10-25-polirovannaya-latun.jpg",
+    "imageSrc": "https://sdf-handle.ru/upload/iblock/2a3/2a35eb16a0211bf3f687b09610acdccb.png"
    },
    {
     "finish": "матовая бронза",
@@ -3725,7 +3884,8 @@
     "article": "25/10/25",
     "price": 3025,
     "inStock": false,
-    "image": "/images/products/venezia-kk-25-10-25-matovaya-bronza.jpg"
+    "image": "/images/products/venezia-kk-25-10-25-matovaya-bronza.jpg",
+    "imageSrc": "https://sdf-handle.ru/upload/iblock/56d/56d3b545af1e2af641e550b995814420.png"
    },
    {
     "finish": "античная бронза",
@@ -3733,7 +3893,8 @@
     "article": "25/10/25",
     "price": 3025,
     "inStock": false,
-    "image": "/images/products/venezia-kk-25-10-25-antichnaya-bronza.jpg"
+    "image": "/images/products/venezia-kk-25-10-25-antichnaya-bronza.jpg",
+    "imageSrc": "https://sdf-handle.ru/upload/iblock/59d/59d5a1605ba9dbea8bb7c8b1337457af.png"
    }
   ],
   "material": "латунь",
@@ -3747,7 +3908,7 @@
    "Страна": "Италия"
   },
   "description": "Итальянский цилиндр Venezia длиной 60 мм для межкомнатных дверей. Корпус выпускается в тех же покрытиях, что и классическая фурнитура Venezia: латунь, бронза, хром, французское золото, чёрный. Открывается ключом с обеих сторон.",
-  "sourceUrl": "https://todoor.ru/shop/cilindrovyj-mehanizm-kljuch-kljuch-Venezia-25/10/25-francuzkoe-zoloto/"
+  "sourceUrl": "https://sdf-handle.ru/katalog/cilindry/zamki-i-cilindry-venezia/tsilindr-klyuch-klyuch-25-10-25-venezia-VNZ2032/"
  },
  {
   "slug": "fuaro-200-zm",
@@ -3910,7 +4071,8 @@
     "article": "HS 60CK PG",
     "price": 1059,
     "inStock": false,
-    "image": "/images/products/morelli-hs-60ck-zoloto.jpg"
+    "image": "/images/products/morelli-hs-60ck-zoloto.jpg",
+    "imageSrc": "https://morelli.ru/storage/catalog/products/main_images/01JB2BF0PBS5ZH3EXMH33R876E.webp"
    },
    {
     "finish": "полированный хром",
@@ -3918,7 +4080,8 @@
     "article": "HS 60CK PC",
     "price": 1114,
     "inStock": false,
-    "image": "/images/products/morelli-hs-60ck-polirovannyy-hrom.jpg"
+    "image": "/images/products/morelli-hs-60ck-polirovannyy-hrom.jpg",
+    "imageSrc": "https://morelli.ru/storage/catalog/products/main_images/01JB2BC607ZJEQ11WEJKMK334D.webp"
    },
    {
     "finish": "античная бронза",
@@ -3926,7 +4089,8 @@
     "article": "HS 60CK AB",
     "price": 1160,
     "inStock": false,
-    "image": "/images/products/morelli-hs-60ck-antichnaya-bronza.jpg"
+    "image": "/images/products/morelli-hs-60ck-antichnaya-bronza.jpg",
+    "imageSrc": "https://morelli.ru/storage/catalog/products/main_images/01JP4RPSX90RXDZ4Y4F911BT55.png"
    },
    {
     "finish": "белый",
@@ -3934,7 +4098,8 @@
     "article": "HS 60CK W",
     "price": 1160,
     "inStock": false,
-    "image": "/images/products/morelli-hs-60ck-belyy.jpg"
+    "image": "/images/products/morelli-hs-60ck-belyy.jpg",
+    "imageSrc": "https://morelli.ru/storage/catalog/products/main_images/01JFD8XSKCMYAZ6FJ3E3D3P3M9.png"
    },
    {
     "finish": "матовый никель",
@@ -3942,7 +4107,8 @@
     "article": "HS 60CK SN",
     "price": 1160,
     "inStock": false,
-    "image": "/images/products/morelli-hs-60ck-matovyy-nikel.jpg"
+    "image": "/images/products/morelli-hs-60ck-matovyy-nikel.jpg",
+    "imageSrc": "https://morelli.ru/storage/catalog/products/main_images/01JB2BNAD7WJ7TWV15JZ6PACK7.webp"
    },
    {
     "finish": "чёрный",
@@ -3950,7 +4116,8 @@
     "article": "HS 60CK BL",
     "price": 1160,
     "inStock": false,
-    "image": "/images/products/morelli-hs-60ck-chernyy.jpg"
+    "image": "/images/products/morelli-hs-60ck-chernyy.jpg",
+    "imageSrc": "https://morelli.ru/storage/catalog/products/main_images/01JB23YP6MR7Z6207416J8JK73.webp"
    }
   ],
   "material": "латунь",
@@ -3964,7 +4131,7 @@
    "Серия": "HS (повышенной секретности)"
   },
   "description": "Цилиндр Morelli HS с вертушкой для межкомнатных дверей: снаружи дверь открывается ключом, изнутри поворотом вертушки. Шесть отделок в тон ручкам Morelli, включая белый и чёрный.",
-  "sourceUrl": "https://todoor.ru/shop/cilindrovyj-mehanizm-morelli-kljuch-vertushka-hs-60ck-pg-zoloto/"
+  "sourceUrl": "https://morelli.ru/catalog/zamki-i-zashchelki/all/2215"
  },
  {
   "slug": "venezia-kv-25-10-25",
@@ -3980,7 +4147,8 @@
     "article": "25/10/25",
     "price": 4068,
     "inStock": true,
-    "image": "/images/products/venezia-kv-25-10-25-polirovannaya-latun.jpg"
+    "image": "/images/products/venezia-kv-25-10-25-polirovannaya-latun.jpg",
+    "imageSrc": "https://sdf-handle.ru/upload/iblock/6a3/6a3479778109da0d8e0af2ddb17905a4.jpg"
    },
    {
     "finish": "матовый хром",
@@ -3988,7 +4156,8 @@
     "article": "25/10/25",
     "price": 4849,
     "inStock": true,
-    "image": "/images/products/venezia-kv-25-10-25-matovyy-hrom.jpg"
+    "image": "/images/products/venezia-kv-25-10-25-matovyy-hrom.jpg",
+    "imageSrc": "https://sdf-handle.ru/upload/iblock/437/4374470b1320417983d6dd479fab4552.jpg"
    },
    {
     "finish": "полированный хром",
@@ -3996,7 +4165,8 @@
     "article": "25/10/25",
     "price": 4849,
     "inStock": true,
-    "image": "/images/products/venezia-kv-25-10-25-polirovannyy-hrom.jpg"
+    "image": "/images/products/venezia-kv-25-10-25-polirovannyy-hrom.jpg",
+    "imageSrc": "https://sdf-handle.ru/upload/iblock/861/86192c6068cc6b2d7280f0f780e674c9.jpg"
    },
    {
     "finish": "французское золото",
@@ -4004,7 +4174,8 @@
     "article": "25/10/25",
     "price": 5407,
     "inStock": true,
-    "image": "/images/products/venezia-kv-25-10-25-francuzskoe-zoloto.jpg"
+    "image": "/images/products/venezia-kv-25-10-25-francuzskoe-zoloto.jpg",
+    "imageSrc": "https://sdf-handle.ru/upload/iblock/8cf/8cfe69d68d2be50a0e182dc8766ef324.jpg"
    },
    {
     "finish": "античное серебро",
@@ -4012,7 +4183,8 @@
     "article": "25/10/25",
     "price": 5407,
     "inStock": true,
-    "image": "/images/products/venezia-kv-25-10-25-antichnoe-serebro.jpg"
+    "image": "/images/products/venezia-kv-25-10-25-antichnoe-serebro.jpg",
+    "imageSrc": "https://sdf-handle.ru/upload/iblock/41e/41e020dd66b5f850da65d2cb545b601e.jpg"
    },
    {
     "finish": "чёрный",
@@ -4020,7 +4192,7 @@
     "article": "25/10/25",
     "price": 4617,
     "inStock": true,
-    "image": "/images/products/venezia-kv-25-10-25-chernyy.jpg"
+    "image": null
    }
   ],
   "material": "латунь",
@@ -4034,7 +4206,7 @@
    "Страна": "Италия"
   },
   "description": "Итальянский цилиндр Venezia с классической вертушкой для межкомнатных дверей. Цвет корпуса и вертушки совпадает с классической фурнитурой бренда. Выпускается в латуни, бронзе, хроме, французском золоте и чёрном.",
-  "sourceUrl": "https://todoor.ru/shop/cilindrovyj-mehanizm-kljuch-vertushka-Venezia-25/10/25-polirovannaja-latun/"
+  "sourceUrl": "https://sdf-handle.ru/katalog/cilindry/zamki-i-cilindry-venezia/tsilindr-klyuch-fiksator-25-10-25-venezia-VNZ626/"
  },
  {
   "slug": "armadillo-def-uss-k25",
