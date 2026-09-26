@@ -1,0 +1,129 @@
+---
+import Base from '../../layouts/Base.astro';
+import ProductCard from '../../components/ProductCard.astro';
+import Icon from '../../components/Icon.astro';
+import {
+  products, regByUrl, breadcrumbs, brandName, rub, COLOR_HEX, COLOR_NAMES, CATEGORY_NAV, articles, SERIES_RULES, registry, SITE_NAME, minPrice,
+} from '../../lib/data';
+import type { Product } from '../../lib/data';
+import { u, abs } from '../../lib/url';
+export function getStaticPaths() {
+  return products.map((p) => ({ params: { slug: p.slug }, props: { p } }));
+}
+const { p } = Astro.props as { p: Product };
+const url = `/product/${p.slug}/`;
+const catReg = regByUrl.get(p.category);
+const crumbs = [...(catReg ? breadcrumbs(p.category) : [{ url: '/', name: 'Главная' }]), { url, name: p.name }];
+const v0 = p.variants.find((v) => v.image) || p.variants[0];
+const bname = brandName(p.brand);
+const price = minPrice(p);
+const title = `${p.name}${v0.finish ? ', ' + v0.finish : ''}: купить, цена`;
+const description = `${p.name} (${bname}${p.article ? ', арт. ' + p.article : ''}). ${p.variants.length > 1 ? p.variants.length + ' покрытий. ' : ''}${price ? 'Цена от ' + new Intl.NumberFormat('ru-RU').format(price) + ' ₽. ' : ''}Доставка по России.`;
+const topCat = CATEGORY_NAV.find((c) => p.category.startsWith(c.url))?.url || '';
+const similar = products.filter((x) => x.slug !== p.slug && x.category === p.category).slice(0, 4);
+const sameSeries = p.series ? products.filter((x) => x.slug !== p.slug && x.brand === p.brand && x.series === p.series).slice(0, 4) : [];
+const compatCats: Record<string, string[]> = {
+  'dvernye-ruchki': ['/catalog/zavertki-i-nakladki/', '/catalog/mezhkomnatnye-zamki/', '/catalog/dvernye-petli/skrytye/'],
+  'mezhkomnatnye-zamki': ['/catalog/dvernye-ruchki/', '/catalog/dvernye-petli/'],
+  'dvernye-petli': ['/catalog/mezhkomnatnye-zamki/magnitnye/', '/catalog/dvernye-ruchki/'],
+  'zavertki-i-nakladki': ['/catalog/dvernye-ruchki/', '/catalog/mezhkomnatnye-zamki/s-fiksatorom/'],
+};
+const catSlug = p.category.split('/')[2];
+const compat = (compatCats[catSlug] || []).flatMap((c) => products.filter((x) => x.category.startsWith(c) && (x.brand === p.brand || x.variants.some((v) => v.color === v0.color))).slice(0, 2)).slice(0, 4);
+const seriesUrl = registry.find((r) => r.type === 'series' && SERIES_RULES[r.url.split('/')[2]]?.brand === p.brand && SERIES_RULES[r.url.split('/')[2]].re.test((p.series || '') + ' ' + p.name))?.url;
+const guide = articles.find((a) => (a.related || []).some((r) => p.category.startsWith(r)));
+const offers = p.variants.filter((v) => v.price).map((v) => ({ '@type': 'Offer', price: v.price, priceCurrency: 'RUB', availability: v.inStock === false ? 'https://schema.org/PreOrder' : 'https://schema.org/InStock', url: abs(Astro.site, url), sku: v.article || p.article, itemCondition: 'https://schema.org/NewCondition' }));
+const schema = [{
+  '@type': 'Product', name: p.name, sku: p.article, mpn: p.article, brand: { '@type': 'Brand', name: bname }, description: p.description,
+  image: p.variants.filter((v) => v.image).map((v) => abs(Astro.site, v.image!)), color: v0.finish, material: p.material || undefined, url: abs(Astro.site, url),
+  ...(offers.length ? { offers: offers.length === 1 ? offers[0] : { '@type': 'AggregateOffer', priceCurrency: 'RUB', lowPrice: Math.min(...offers.map((o) => o.price as number)), highPrice: Math.max(...offers.map((o) => o.price as number)), offerCount: offers.length } } : {}),
+}];
+const specs = Object.entries({ Производитель: bname, ...(p.series ? { Серия: p.series } : {}), ...(p.article ? { Артикул: p.article } : {}), ...(p.material ? { Материал: p.material } : {}), ...(p.specs || {}) });
+---
+<Base title={title} description={description} path={url} crumbs={crumbs} schema={schema} activeCat={topCat} image={v0.image}>
+  <div class="wrap">
+    <div class="product" data-product>
+      <div>
+        <div class="gallery-main">
+          {v0.image ? <img id="main-img" src={u(v0.image)} alt={`${p.name}, ${v0.finish}`} width="800" height="800" fetchpriority="high" /> : <Icon name="box" size={120} />}
+        </div>
+        {p.variants.filter((v) => v.image).length > 1 && (
+          <div class="thumbs">
+            {p.variants.filter((v) => v.image).map((v, i) => <button type="button" class={i === 0 ? 'on' : ''} data-thumb={u(v.image)} aria-label={v.finish}><img src={u(v.image)} alt="" width="74" height="74" loading="lazy" /></button>)}
+          </div>
+        )}
+      </div>
+      <div>
+        <div class="p-brand"><a href={u(`/brands/${p.brand}/`)}>{bname}</a>{p.series && seriesUrl && <> · <a href={u(seriesUrl)}>серия {p.series}</a></>}</div>
+        <h1 class="p-title">{p.name}</h1>
+        <div class="p-meta">{p.article && <span>Артикул: <b id="p-art">{v0.article || p.article}</b></span>}<span id="p-stock" style={`color:${v0.inStock === false ? 'var(--c-muted)' : 'var(--c-ok)'}`}>{v0.inStock === false ? 'Под заказ' : 'В наличии'}</span></div>
+        <div class="p-price" id="p-price">{rub(v0.price)}</div>
+        <div class="p-note">Цена ориентировочная (демо), уточняйте у менеджера</div>
+        {p.variants.length > 0 && (
+          <>
+            <div style="font-size:14.5px">Покрытие: <b id="p-finish">{v0.finish}</b></div>
+            <div class="finishes" role="radiogroup" aria-label="Покрытие">
+              {p.variants.map((v, i) => (
+                <button type="button" role="radio" aria-checked={v === v0 ? 'true' : 'false'} class={'finish' + (v === v0 ? ' on' : '')}
+                  data-finish={v.finish} data-price={v.price ?? ''} data-img={v.image ? u(v.image) : ''} data-art={v.article || p.article || ''} data-stock={v.inStock === false ? '0' : '1'} data-rawimg={v.image || ''}>
+                  <span class="sw" style={`background:${COLOR_HEX[v.color] || '#ccc'}`}></span>{v.finish || COLOR_NAMES[v.color]}
+                </button>
+              ))}
+            </div>
+          </>
+        )}
+        <div class="buy">
+          <div class="qty"><button type="button" data-q="-1" aria-label="Меньше">−</button><input id="qty" value="1" inputmode="numeric" aria-label="Количество" /><button type="button" data-q="1" aria-label="Больше">+</button></div>
+          <button class="btn btn-accent" id="add" data-add data-slug={p.slug} data-name={p.name} data-finish={v0.finish} data-price={v0.price ?? ''} data-img={v0.image ?? ''} data-url={url}>В корзину</button>
+          <a class="btn btn-ghost" href={u('/catalog/komplekty-furnitury/')}>Собрать комплект</a>
+        </div>
+        <div class="p-perks">
+          <div><Icon name="truck" />Доставка по России: СДЭК, Boxberry, курьер</div>
+          <div><Icon name="shield" />Гарантия производителя, оригинальная продукция</div>
+          <div><Icon name="store" />Образцы покрытий в шоуруме (уточняйте наличие)</div>
+        </div>
+        {p.description && <p style="margin-top:22px;font-size:15.5px">{p.description}</p>}
+      </div>
+    </div>
+
+    <nav class="tabs" aria-label="Разделы карточки"><a href="#specs">Характеристики</a>{sameSeries.length > 0 && <a href="#series">Эта серия</a>}{compat.length > 0 && <a href="#compat">С этим покупают</a>}{similar.length > 0 && <a href="#similar">Похожие</a>}</nav>
+    <section id="specs" class="two-col">
+      <table class="specs"><tbody>{specs.map(([k, v]) => <tr><th scope="row">{k}</th><td>{v}</td></tr>)}</tbody></table>
+      <aside class="aside-box">
+        <h3>Полезно</h3>
+        <ul>
+          {catReg && <li><a href={u(p.category)}>Все: {catReg.h1}</a></li>}
+          <li><a href={u(`/brands/${p.brand}/`)}>Вся фурнитура {bname}</a></li>
+          {guide && <li><a href={u(`/blog/${guide.slug}/`)}>{guide.h1}</a></li>}
+          <li><a href={u('/dostavka/')}>Доставка и оплата</a></li>
+        </ul>
+      </aside>
+    </section>
+    {sameSeries.length > 0 && <section id="series" class="section"><h2>Другие изделия серии {p.series}</h2><div class="grid">{sameSeries.map((x) => <ProductCard p={x} />)}</div></section>}
+    {compat.length > 0 && <section id="compat" class="section"><h2>С этим покупают</h2><div class="grid">{compat.map((x) => <ProductCard p={x} />)}</div></section>}
+    {similar.length > 0 && <section id="similar" class="section"><h2>Похожие товары</h2><div class="grid">{similar.map((x) => <ProductCard p={x} />)}</div></section>}
+  </div>
+</Base>
+<script>
+  const root = document.querySelector('[data-product]');
+  const add = document.getElementById('add') as HTMLElement | null;
+  const fmt = (n: string) => n ? new Intl.NumberFormat('ru-RU').format(+n) + ' ₽' : 'Цена по запросу';
+  const setMain = (src: string, alt: string) => { const img = document.getElementById('main-img') as HTMLImageElement | null; if (img && src) { img.src = src; img.alt = alt; } };
+  root?.querySelectorAll<HTMLButtonElement>('.finish').forEach((b) => b.addEventListener('click', () => {
+    root.querySelectorAll('.finish').forEach((x) => { x.classList.remove('on'); x.setAttribute('aria-checked', 'false'); });
+    b.classList.add('on'); b.setAttribute('aria-checked', 'true');
+    const d = b.dataset;
+    document.getElementById('p-price')!.textContent = fmt(d.price || '');
+    document.getElementById('p-finish')!.textContent = d.finish || '';
+    const art = document.getElementById('p-art'); if (art) art.textContent = d.art || '';
+    const st = document.getElementById('p-stock')!; st.textContent = d.stock === '1' ? 'В наличии' : 'Под заказ'; st.style.color = d.stock === '1' ? 'var(--c-ok)' : 'var(--c-muted)';
+    setMain(d.img || '', d.finish || '');
+    if (add) { add.dataset.finish = d.finish; add.dataset.price = d.price; if (d.rawimg) add.dataset.img = d.rawimg; }
+  }));
+  root?.querySelectorAll<HTMLButtonElement>('[data-thumb]').forEach((b) => b.addEventListener('click', () => {
+    root.querySelectorAll('[data-thumb]').forEach((x) => x.classList.remove('on')); b.classList.add('on'); setMain(b.dataset.thumb || '', '');
+  }));
+  root?.querySelectorAll<HTMLButtonElement>('[data-q]').forEach((b) => b.addEventListener('click', () => {
+    const q = document.getElementById('qty') as HTMLInputElement; q.value = String(Math.max(1, (parseInt(q.value, 10) || 1) + +(b.dataset.q || 0)));
+  }));
+</script>

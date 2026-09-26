@@ -1,0 +1,28 @@
+---
+import Base from '../layouts/Base.astro';
+import { SITE_NAME } from '../lib/data';
+import { u } from '../lib/url';
+---
+<Base title={`Поиск | ${SITE_NAME}`} path="/search/" noindex crumbs={[{ url: '/', name: 'Главная' }, { url: '/search/', name: 'Поиск' }]}>
+  <div class="wrap">
+    <div class="page-head"><h1>Поиск по каталогу</h1></div>
+    <form class="filter" style="grid-template-columns:1fr auto" onsubmit="return false"><input id="q" type="search" placeholder="Например: скрытые петли Koblenz, ручка чёрная" style="height:46px;border:1px solid var(--c-line-2);padding:0 16px;font:inherit;font-size:16px" aria-label="Поисковый запрос" /><button class="btn" id="go">Найти</button></form>
+    <p id="res-info" style="margin:18px 0"></p>
+    <div class="grid" id="res"></div>
+  </div>
+  <script define:vars={{ idx: u('/search-index.json'), base: u('/') }}>
+    const q = document.getElementById('q'); const res = document.getElementById('res'); const info = document.getElementById('res-info');
+    let data = null;
+    const esc = (s) => s.replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+    const run = async () => {
+      if (!data) data = await (await fetch(idx)).json();
+      const terms = q.value.toLowerCase().replace(/ё/g, 'е').split(/\s+/).filter((t) => t.length > 1).map((t) => t.slice(0, Math.max(3, t.length - 2)));
+      if (!terms.length) { res.innerHTML = ''; info.textContent = ''; return; }
+      const hits = data.filter((d) => terms.every((t) => d.s.includes(t))).slice(0, 60);
+      info.textContent = hits.length ? `Найдено: ${hits.length}` : 'Ничего не найдено. Попробуйте другое слово или откройте каталог.';
+      res.innerHTML = hits.map((h) => `<article class="card"><a class="card-img" href="${base}${h.u}">${h.i ? `<img src="${base}${h.i}" alt="${esc(h.n)}" loading="lazy">` : ''}</a><div class="card-brand">${esc(h.b)}</div><a class="card-name" href="${base}${h.u}">${esc(h.n)}</a><div class="card-price">${h.p ? new Intl.NumberFormat('ru-RU').format(h.p) + ' ₽' : '<small>Цена по запросу</small>'}</div></article>`).join('');
+    };
+    const params = new URLSearchParams(location.search); if (params.get('q')) { q.value = params.get('q'); run(); }
+    document.getElementById('go').addEventListener('click', run); q.addEventListener('input', () => { clearTimeout(window.__t); window.__t = setTimeout(run, 250); });
+  </script>
+</Base>

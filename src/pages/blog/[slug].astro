@@ -1,0 +1,52 @@
+---
+import Base from '../../layouts/Base.astro';
+import Prose from '../../components/Prose.astro';
+import Faq from '../../components/Faq.astro';
+import { articles, registry, regByUrl, SITE_NAME, shortName } from '../../lib/data';
+import type { Article } from '../../lib/data';
+import { u, abs } from '../../lib/url';
+export function getStaticPaths() {
+  const hubs = registry.filter((p) => p.type === 'blog-hub' && p.url !== '/blog/').map((p) => ({ params: { slug: p.url.split('/')[2] }, props: { hub: p.url.split('/')[2], a: null } }));
+  const arts = articles.map((a) => ({ params: { slug: a.slug }, props: { hub: null, a } }));
+  return [...hubs, ...arts];
+}
+const { hub, a } = Astro.props as { hub: string | null; a: Article | null };
+const hubReg = hub ? regByUrl.get(`/blog/${hub}/`) : null;
+const list = hub ? articles.filter((x) => x.hub === hub) : [];
+const url = hub ? `/blog/${hub}/` : `/blog/${a!.slug}/`;
+const crumbs = [{ url: '/', name: 'Главная' }, { url: '/blog/', name: 'Инструкции и советы' }, ...(a && regByUrl.get(`/blog/${a.hub}/`) ? [{ url: `/blog/${a.hub}/`, name: regByUrl.get(`/blog/${a.hub}/`)!.h1.split(':')[0] }] : []), { url, name: hub ? hubReg!.h1.split(':')[0] : a!.h1 }];
+const schema = a ? [
+  { '@type': 'Article', headline: a.title, description: a.description, datePublished: a.date, dateModified: a.date, author: { '@type': 'Organization', name: a.author || SITE_NAME }, publisher: { '@id': abs(Astro.site, '/') + '#org' }, mainEntityOfPage: abs(Astro.site, url) },
+  ...(a.faq?.length ? [{ '@type': 'FAQPage', mainEntity: a.faq.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) }] : []),
+] : [];
+const other = a ? articles.filter((x) => x.slug !== a.slug && x.hub === a.hub).concat(articles.filter((x) => x.slug !== a.slug && x.hub !== a.hub)).slice(0, 3) : [];
+---
+{hub ? (
+  <Base title={`${hubReg!.h1} | ${SITE_NAME}`} description={hubReg!.h1} path={url} crumbs={crumbs} noindex={list.length === 0}>
+    <div class="wrap">
+      <div class="page-head"><h1>{hubReg!.h1}</h1></div>
+      {list.length ? <div class="post-grid">{list.map((x) => <a class="post-card" href={u(`/blog/${x.slug}/`)}><span class="h">{x.h1}</span><span class="d">{x.description}</span></a>)}</div>
+        : <div class="empty">Статьи раздела готовятся. Пока загляните в <a href={u('/blog/')}>все инструкции</a>.</div>}
+    </div>
+  </Base>
+) : (
+  <Base title={a!.title} description={a!.description} path={url} crumbs={crumbs} schema={schema}>
+    <div class="wrap two-col" style="padding-top:6px">
+      <article>
+        <h1>{a!.h1}</h1>
+        <p style="font-size:13.5px;color:var(--c-muted)">{a!.author} · {new Date(a!.date).toLocaleDateString('ru-RU')} · {a!.readingMinutes || 6} мин чтения</p>
+        <Prose md={a!.body} />
+        <Faq items={a!.faq} />
+      </article>
+      <aside>
+        {a!.related?.length && (
+          <div class="aside-box" style="margin-bottom:20px">
+            <h3>Товары по теме</h3>
+            <ul>{a!.related.filter((r) => regByUrl.get(r)).map((r) => <li><a href={u(r)}>{shortName(regByUrl.get(r)!)}</a></li>)}</ul>
+          </div>
+        )}
+        {other.length > 0 && <div class="aside-box"><h3>Читайте также</h3><ul>{other.map((x) => <li><a href={u(`/blog/${x.slug}/`)}>{x.h1}</a></li>)}</ul></div>}
+      </aside>
+    </div>
+  </Base>
+)}

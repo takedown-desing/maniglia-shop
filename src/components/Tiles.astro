@@ -1,0 +1,14 @@
+---
+import Icon from './Icon.astro';
+import { u } from '../lib/url';
+const { items } = Astro.props as { items: { url: string; name: string; icon?: string; img?: string | null; count?: number }[] };
+---
+<div class="tiles">
+  {items.map((t) => (
+    <a class="tile" href={u(t.url)}>
+      {t.img ? <img src={u(t.img)} alt="" width="92" height="92" loading="lazy" /> : <Icon name={t.icon || 'box'} size={52} />}
+      <span class="n">{t.name}</span>
+      {typeof t.count === 'number' && t.count > 0 && <span class="c">{t.count} товаров</span>}
+    </a>
+  ))}
+</div>

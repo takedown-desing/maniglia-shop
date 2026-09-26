@@ -1,0 +1,35 @@
+---
+// Линейные иконки разделов (собственная отрисовка, stroke 1.4)
+const { name, size = 32 } = Astro.props as { name: string; size?: number };
+const P: Record<string, string> = {
+  handle: '<circle cx="9" cy="16" r="5.5"/><circle cx="9" cy="16" r="2"/><path d="M11 14.2h16.5a2 2 0 0 1 0 3.6H11"/>',
+  rosette: '<circle cx="16" cy="16" r="11"/><circle cx="16" cy="16" r="6.5"/><path d="M13 16h6"/>',
+  lock: '<rect x="9" y="4" width="10" height="24" rx="1"/><path d="M19 8h4v16h-4"/><circle cx="14" cy="12" r="1.6"/><path d="M13 19h2v4h-2z"/>',
+  padlock: '<rect x="7" y="14" width="18" height="14" rx="2"/><path d="M11 14v-4a5 5 0 0 1 10 0v4"/><circle cx="16" cy="20" r="1.8"/><path d="M16 22v3"/>',
+  cylinder: '<path d="M6 12h13a4 4 0 0 1 4 4 4 4 0 0 1-4 4H6z"/><circle cx="19" cy="16" r="1.6"/><path d="M23 16h4M10 12v8M14 12v8"/>',
+  hinge: '<rect x="6" y="5" width="9" height="22" rx="1.5"/><rect x="17" y="5" width="9" height="22" rx="1.5"/><path d="M15 9h2M15 16h2M15 23h2"/><circle cx="10.5" cy="10" r="1"/><circle cx="10.5" cy="22" r="1"/><circle cx="21.5" cy="10" r="1"/><circle cx="21.5" cy="22" r="1"/>',
+  closer: '<rect x="4" y="9" width="15" height="6" rx="2"/><path d="M19 12h3M22 12l6 10"/><circle cx="22" cy="12" r="1.6"/><path d="M4 26h24"/>',
+  slide: '<path d="M3 7h26"/><circle cx="10" cy="7" r="2"/><circle cx="22" cy="7" r="2"/><rect x="7" y="10" width="18" height="18" rx="1"/><path d="M21 17v4"/>',
+  stop: '<path d="M6 27h20"/><path d="M12 27v-9a4 4 0 0 1 8 0v9"/><rect x="11" y="10" width="10" height="4" rx="2"/>',
+  bolt: '<rect x="4" y="11" width="11" height="10" rx="1"/><rect x="18" y="12" width="10" height="8" rx="1"/><path d="M9 16h16"/><circle cx="12" cy="13" r="1"/>',
+  eye: '<circle cx="16" cy="16" r="10"/><circle cx="16" cy="16" r="5"/><circle cx="16" cy="16" r="1.6"/>',
+  seal: '<rect x="4" y="4" width="24" height="18" rx="1"/><path d="M4 26h24M8 22v4M24 22v4"/><path d="M10 26h12"/>',
+  glass: '<rect x="8" y="4" width="16" height="24" rx="1"/><path d="M12 9l4-3M12 14l8-6"/><rect x="5" y="9" width="3" height="5"/><rect x="5" y="19" width="3" height="5"/>',
+  window: '<rect x="6" y="4" width="20" height="24" rx="1"/><path d="M16 4v24M6 16h20"/><path d="M19 12v6"/>',
+  furniture: '<rect x="5" y="6" width="22" height="18" rx="1"/><path d="M16 6v18M5 24v3M27 24v3"/><path d="M12 13v4M20 13v4"/>',
+  kit: '<rect x="4" y="9" width="24" height="18" rx="2"/><path d="M11 9V6h10v3"/><circle cx="12" cy="18" r="3"/><path d="M15 18h8"/>',
+  search: '<circle cx="14" cy="14" r="8"/><path d="M20 20l7 7"/>',
+  cart: '<path d="M6 10h20l-2 17H8z"/><path d="M11 10a5 5 0 0 1 10 0"/>',
+  heart: '<path d="M16 27s-10-6-10-13a6 6 0 0 1 10-4 6 6 0 0 1 10 4c0 7-10 13-10 13z"/>',
+  menu: '<path d="M5 9h22M5 16h22M5 23h22"/>',
+  truck: '<rect x="3" y="9" width="16" height="12" rx="1"/><path d="M19 13h5l4 4v4h-9"/><circle cx="9" cy="23" r="2.5"/><circle cx="23" cy="23" r="2.5"/>',
+  shield: '<path d="M16 4l10 4v7c0 7-5 11-10 13-5-2-10-6-10-13V8z"/><path d="M11 16l4 4 6-7"/>',
+  store: '<path d="M4 12l3-7h18l3 7M4 12h24v15H4z"/><path d="M13 27v-8h6v8"/>',
+  percent: '<circle cx="10" cy="10" r="4"/><circle cx="22" cy="22" r="4"/><path d="M25 7L7 25"/>',
+  chat: '<path d="M5 7h22v14H14l-6 5v-5H5z"/>',
+  check: '<path d="M6 16l7 7 13-14"/>',
+  box: '<path d="M4 10l12-6 12 6v12l-12 6-12-6z"/><path d="M4 10l12 6 12-6M16 16v12"/>',
+};
+const d = P[name] ?? P.box;
+---
+<svg viewBox="0 0 32 32" width={size} height={size} fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" set:html={d} />

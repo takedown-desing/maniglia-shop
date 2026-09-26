@@ -1,0 +1,2892 @@
+[
+ {
+  "url": "/",
+  "h1": "Главная — интернет-магазин дверной фурнитуры",
+  "type": "home",
+  "priority": "P1",
+  "primaryKw": "магазин фурнитуры для дверей",
+  "ws": 2637,
+  "parent": "",
+  "note": ""
+ },
+ {
+  "url": "/brands/",
+  "h1": "Бренды дверной фурнитуры",
+  "type": "brand-hub",
+  "priority": "P1",
+  "primaryKw": "производители дверной фурнитуры",
+  "ws": 162,
+  "parent": "/",
+  "note": ""
+ },
+ {
+  "url": "/sale/",
+  "h1": "Распродажа",
+  "type": "utility",
+  "priority": "P2",
+  "primaryKw": "замок скидки",
+  "ws": 258,
+  "parent": "/",
+  "note": "индексируется; товары со скидкой"
+ },
+ {
+  "url": "/new/",
+  "h1": "Новинки",
+  "type": "utility",
+  "priority": "P3",
+  "primaryKw": "",
+  "ws": 0,
+  "parent": "/",
+  "note": "noindex, follow"
+ },
+ {
+  "url": "/blog/",
+  "h1": "Инструкции и советы по дверной фурнитуре",
+  "type": "blog-hub",
+  "priority": "P1",
+  "primaryKw": "",
+  "ws": 0,
+  "parent": "/",
+  "note": "хаб информационного силоса; статьи — из инфо-кластеров"
+ },
+ {
+  "url": "/blog/ruchki/",
+  "h1": "Всё о дверных ручках: выбор, установка, ремонт",
+  "type": "blog-hub",
+  "priority": "P2",
+  "primaryKw": "",
+  "ws": 0,
+  "parent": "/blog/",
+  "note": ""
+ },
+ {
+  "url": "/blog/zamki/",
+  "h1": "Замки и защёлки: выбор, установка, регулировка",
+  "type": "blog-hub",
+  "priority": "P2",
+  "primaryKw": "",
+  "ws": 0,
+  "parent": "/blog/",
+  "note": ""
+ },
+ {
+  "url": "/blog/petli/",
+  "h1": "Дверные петли: выбор, врезка, регулировка",
+  "type": "blog-hub",
+  "priority": "P2",
+  "primaryKw": "",
+  "ws": 0,
+  "parent": "/blog/",
+  "note": ""
+ },
+ {
+  "url": "/blog/dovodchiki/",
+  "h1": "Доводчики: выбор, установка, настройка",
+  "type": "blog-hub",
+  "priority": "P2",
+  "primaryKw": "",
+  "ws": 0,
+  "parent": "/blog/",
+  "note": ""
+ },
+ {
+  "url": "/blog/razdvizhnye-sistemy/",
+  "h1": "Раздвижные системы: выбор и монтаж",
+  "type": "blog-hub",
+  "priority": "P2",
+  "primaryKw": "",
+  "ws": 0,
+  "parent": "/blog/",
+  "note": ""
+ },
+ {
+  "url": "/blog/okna/",
+  "h1": "Оконная фурнитура: ручки, регулировка",
+  "type": "blog-hub",
+  "priority": "P3",
+  "primaryKw": "",
+  "ws": 0,
+  "parent": "/blog/",
+  "note": ""
+ },
+ {
+  "url": "/o-kompanii/",
+  "h1": "О компании",
+  "type": "utility",
+  "priority": "P1",
+  "primaryKw": "",
+  "ws": 0,
+  "parent": "/",
+  "note": ""
+ },
+ {
+  "url": "/kontakty/",
+  "h1": "Контакты",
+  "type": "utility",
+  "priority": "P1",
+  "primaryKw": "",
+  "ws": 0,
+  "parent": "/",
+  "note": "LocalBusiness schema, карта"
+ },
+ {
+  "url": "/showroom/",
+  "h1": "Шоурум",
+  "type": "utility",
+  "priority": "P2",
+  "primaryKw": "петли старого образца",
+  "ws": 991,
+  "parent": "/",
+  "note": "если у клиента есть шоурум; фильтр «есть образец в шоуруме» — фишка todoor"
+ },
+ {
+  "url": "/dostavka/",
+  "h1": "Доставка",
+  "type": "utility",
+  "priority": "P1",
+  "primaryKw": "",
+  "ws": 0,
+  "parent": "/",
+  "note": ""
+ },
+ {
+  "url": "/oplata/",
+  "h1": "Оплата",
+  "type": "utility",
+  "priority": "P1",
+  "primaryKw": "",
+  "ws": 0,
+  "parent": "/",
+  "note": ""
+ },
+ {
+  "url": "/garantiya-i-vozvrat/",
+  "h1": "Гарантия и возврат",
+  "type": "utility",
+  "priority": "P1",
+  "primaryKw": "",
+  "ws": 0,
+  "parent": "/",
+  "note": ""
+ },
+ {
+  "url": "/optovikam/",
+  "h1": "Оптовикам и дилерам",
+  "type": "b2b",
+  "priority": "P1",
+  "primaryKw": "замок опт",
+  "ws": 1733,
+  "parent": "/",
+  "note": ""
+ },
+ {
+  "url": "/dizajneram/",
+  "h1": "Дизайнерам и архитекторам",
+  "type": "b2b",
+  "priority": "P2",
+  "primaryKw": "",
+  "ws": 0,
+  "parent": "/",
+  "note": "программа лояльности, образцы, 3D-модели"
+ },
+ {
+  "url": "/proizvoditelyam-dverej/",
+  "h1": "Производителям дверей",
+  "type": "b2b",
+  "priority": "P2",
+  "primaryKw": "",
+  "ws": 0,
+  "parent": "/",
+  "note": "комплектация под серию, отгрузка партиями"
+ },
+ {
+  "url": "/otzyvy/",
+  "h1": "Отзывы",
+  "type": "utility",
+  "priority": "P2",
+  "primaryKw": "",
+  "ws": 0,
+  "parent": "/",
+  "note": ""
+ },
+ {
+  "url": "/sertifikaty/",
+  "h1": "Сертификаты",
+  "type": "utility",
+  "priority": "P2",
+  "primaryKw": "",
+  "ws": 0,
+  "parent": "/",
+  "note": ""
+ },
+ {
+  "url": "/faq/",
+  "h1": "Вопросы и ответы",
+  "type": "utility",
+  "priority": "P2",
+  "primaryKw": "",
+  "ws": 0,
+  "parent": "/",
+  "note": "FAQPage schema"
+ },
+ {
+  "url": "/politika-konfidencialnosti/",
+  "h1": "Политика конфиденциальности",
+  "type": "utility",
+  "priority": "P1",
+  "primaryKw": "",
+  "ws": 0,
+  "parent": "/",
+  "note": "noindex"
+ },
+ {
+  "url": "/publichnaya-oferta/",
+  "h1": "Публичная оферта",
+  "type": "utility",
+  "priority": "P1",
+  "primaryKw": "",
+  "ws": 0,
+  "parent": "/",
+  "note": "noindex"
+ },
+ {
+  "url": "/sitemap/",
+  "h1": "Карта сайта (HTML)",
+  "type": "utility",
+  "priority": "P1",
+  "primaryKw": "",
+  "ws": 0,
+  "parent": "/",
+  "note": ""
+ },
+ {
+  "url": "/product/{slug}/",
+  "h1": "Карточка товара (шаблон)",
+  "type": "product-template",
+  "priority": "P1",
+  "primaryKw": "",
+  "ws": 0,
+  "parent": "/product/",
+  "note": "модель + варианты покрытий; Product/Offer/BreadcrumbList schema"
+ },
+ {
+  "url": "/search/",
+  "h1": "Поиск по сайту",
+  "type": "utility",
+  "priority": "P1",
+  "primaryKw": "",
+  "ws": 0,
+  "parent": "/",
+  "note": "noindex"
+ },
+ {
+  "url": "/cart/",
+  "h1": "Корзина",
+  "type": "utility",
+  "priority": "P1",
+  "primaryKw": "",
+  "ws": 0,
+  "parent": "/",
+  "note": "noindex"
+ },
+ {
+  "url": "/compare/",
+  "h1": "Сравнение",
+  "type": "utility",
+  "priority": "P2",
+  "primaryKw": "",
+  "ws": 0,
+  "parent": "/",
+  "note": "noindex"
+ },
+ {
+  "url": "/account/",
+  "h1": "Личный кабинет",
+  "type": "utility",
+  "priority": "P2",
+  "primaryKw": "",
+  "ws": 0,
+  "parent": "/",
+  "note": "noindex"
+ },
+ {
+  "url": "/catalog/",
+  "h1": "Каталог дверной фурнитуры",
+  "type": "category",
+  "priority": "P1",
+  "primaryKw": "фурнитура для дверей",
+  "ws": 269201,
+  "parent": "/",
+  "note": "хаб каталога; primary kw = «дверная фурнитура» делит с главной — главная берёт бренд+«интернет-магазин дверной фурнитуры», каталог — «дверная фурнитура купить»"
+ },
+ {
+  "url": "/catalog/dvernye-ruchki/",
+  "h1": "Дверные ручки",
+  "type": "category",
+  "priority": "P1",
+  "primaryKw": "ручка дверная",
+  "ws": 3520902,
+  "parent": "/catalog/",
+  "note": "pillar силоса S01"
+ },
+ {
+  "url": "/catalog/dvernye-ruchki/na-rozetke/",
+  "h1": "Дверные ручки на розетке",
+  "type": "subcategory",
+  "priority": "P1",
+  "primaryKw": "ручка на розетке",
+  "ws": 21800,
+  "parent": "/catalog/dvernye-ruchki/",
+  "note": ""
+ },
+ {
+  "url": "/catalog/dvernye-ruchki/na-rozetke/kruglaya-rozetka/",
+  "h1": "Ручки на круглой розетке",
+  "type": "tag",
+  "priority": "P2",
+  "primaryKw": "ручка на круглой розетке",
+  "ws": 4958,
+  "parent": "/catalog/dvernye-ruchki/na-rozetke/",
+  "note": ""
+ },
+ {
+  "url": "/catalog/dvernye-ruchki/na-rozetke/kvadratnaya-rozetka/",
+  "h1": "Ручки на квадратной розетке",
+  "type": "tag",
+  "priority": "P2",
+  "primaryKw": "ручка на квадратной розетке",
+  "ws": 3174,
+  "parent": "/catalog/dvernye-ruchki/na-rozetke/",
+  "note": ""
+ },
+ {
+  "url": "/catalog/dvernye-ruchki/na-planke/",
+  "h1": "Дверные ручки на планке",
+  "type": "subcategory",
+  "priority": "P1",
+  "primaryKw": "ручка на планке",
+  "ws": 54858,
+  "parent": "/catalog/dvernye-ruchki/",
+  "note": ""
+ },
+ {
+  "url": "/catalog/dvernye-ruchki/knoby/",
+  "h1": "Ручки-кнобы (поворотные)",
+  "type": "subcategory",
+  "priority": "P1",
+  "primaryKw": "кнобы",
+  "ws": 38744,
+  "parent": "/catalog/dvernye-ruchki/",
+  "note": ""
+ },
+ {
+  "url": "/catalog/dvernye-ruchki/skoby/",
+  "h1": "Ручки-скобы для дверей",
+  "type": "subcategory",
+  "priority": "P1",
+  "primaryKw": "ручка скоба",
+  "ws": 99030,
+  "parent": "/catalog/dvernye-ruchki/",
+  "note": ""
+ },
+ {
+  "url": "/catalog/dvernye-ruchki/dlya-razdvizhnyh-dverej/",
+  "h1": "Ручки для раздвижных дверей и дверей-купе",
+  "type": "subcategory",
+  "priority": "P1",
+  "primaryKw": "врезная ручка",
+  "ws": 66885,
+  "parent": "/catalog/dvernye-ruchki/",
+  "note": "включая врезные ручки-«лодочки»"
+ },
+ {
+  "url": "/catalog/dvernye-ruchki/dlya-vhodnyh-dverej/",
+  "h1": "Ручки для входных дверей",
+  "type": "subcategory",
+  "priority": "P1",
+  "primaryKw": "ручка входная",
+  "ws": 241091,
+  "parent": "/catalog/dvernye-ruchki/",
+  "note": ""
+ },
+ {
+  "url": "/catalog/dvernye-ruchki/dlya-steklyannyh-dverej/",
+  "h1": "Ручки для стеклянных дверей",
+  "type": "subcategory",
+  "priority": "P2",
+  "primaryKw": "ручка для стекла",
+  "ws": 9689,
+  "parent": "/catalog/dvernye-ruchki/",
+  "note": ""
+ },
+ {
+  "url": "/catalog/dvernye-ruchki/dlya-profilnyh-dverej/",
+  "h1": "Ручки для алюминиевых и профильных дверей",
+  "type": "subcategory",
+  "priority": "P2",
+  "primaryKw": "ручка для алюминиевой двери",
+  "ws": 5814,
+  "parent": "/catalog/dvernye-ruchki/",
+  "note": ""
+ },
+ {
+  "url": "/catalog/dvernye-ruchki/antipanika/",
+  "h1": "Ручки антипаника и противопожарные",
+  "type": "subcategory",
+  "priority": "P2",
+  "primaryKw": "антипаника",
+  "ws": 42169,
+  "parent": "/catalog/dvernye-ruchki/",
+  "note": ""
+ },
+ {
+  "url": "/catalog/dvernye-ruchki/s-zamkom/",
+  "h1": "Дверные ручки с замком",
+  "type": "tag",
+  "priority": "P1",
+  "primaryKw": "ручка с замком",
+  "ws": 148177,
+  "parent": "/catalog/dvernye-ruchki/",
+  "note": ""
+ },
+ {
+  "url": "/catalog/dvernye-ruchki/s-fiksatorom/",
+  "h1": "Ручки с фиксатором (для ванной и туалета)",
+  "type": "tag",
+  "priority": "P1",
+  "primaryKw": "ручка с фиксатором",
+  "ws": 32950,
+  "parent": "/catalog/dvernye-ruchki/",
+  "note": ""
+ },
+ {
+  "url": "/catalog/dvernye-ruchki/chernye/",
+  "h1": "Чёрные дверные ручки",
+  "type": "tag",
+  "priority": "P1",
+  "primaryKw": "черная ручка",
+  "ws": 215647,
+  "parent": "/catalog/dvernye-ruchki/",
+  "note": ""
+ },
+ {
+  "url": "/catalog/dvernye-ruchki/belye/",
+  "h1": "Белые дверные ручки",
+  "type": "tag",
+  "priority": "P2",
+  "primaryKw": "белая ручка",
+  "ws": 72047,
+  "parent": "/catalog/dvernye-ruchki/",
+  "note": ""
+ },
+ {
+  "url": "/catalog/dvernye-ruchki/zoloto/",
+  "h1": "Дверные ручки золото",
+  "type": "tag",
+  "priority": "P1",
+  "primaryKw": "ручки золото",
+  "ws": 47475,
+  "parent": "/catalog/dvernye-ruchki/",
+  "note": ""
+ },
+ {
+  "url": "/catalog/dvernye-ruchki/hrom/",
+  "h1": "Дверные ручки хром",
+  "type": "tag",
+  "priority": "P1",
+  "primaryKw": "ручки хром",
+  "ws": 66171,
+  "parent": "/catalog/dvernye-ruchki/",
+  "note": ""
+ },
+ {
+  "url": "/catalog/dvernye-ruchki/bronza/",
+  "h1": "Дверные ручки бронза",
+  "type": "tag",
+  "priority": "P1",
+  "primaryKw": "ручка бронза",
+  "ws": 33627,
+  "parent": "/catalog/dvernye-ruchki/",
+  "note": ""
+ },
+ {
+  "url": "/catalog/dvernye-ruchki/nikel/",
+  "h1": "Дверные ручки никель",
+  "type": "tag",
+  "priority": "P2",
+  "primaryKw": "ручки никель",
+  "ws": 26907,
+  "parent": "/catalog/dvernye-ruchki/",
+  "note": ""
+ },
+ {
+  "url": "/catalog/dvernye-ruchki/latun/",
+  "h1": "Дверные ручки латунь",
+  "type": "tag",
+  "priority": "P2",
+  "primaryKw": "ручки латунь",
+  "ws": 28076,
+  "parent": "/catalog/dvernye-ruchki/",
+  "note": ""
+ },
+ {
+  "url": "/catalog/dvernye-ruchki/grafit/",
+  "h1": "Дверные ручки графит",
+  "type": "tag",
+  "priority": "P3",
+  "primaryKw": "ручки графит",
+  "ws": 6050,
+  "parent": "/catalog/dvernye-ruchki/",
+  "note": ""
+ },
+ {
+  "url": "/catalog/dvernye-ruchki/med/",
+  "h1": "Дверные ручки медь",
+  "type": "tag",
+  "priority": "P3",
+  "primaryKw": "медные ручки",
+  "ws": 7282,
+  "parent": "/catalog/dvernye-ruchki/",
+  "note": ""
+ },
+ {
+  "url": "/catalog/dvernye-ruchki/italyanskie/",
+  "h1": "Итальянские дверные ручки",
+  "type": "tag",
+  "priority": "P1",
+  "primaryKw": "ручки италия",
+  "ws": 9894,
+  "parent": "/catalog/dvernye-ruchki/",
+  "note": ""
+ },
+ {
+  "url": "/catalog/dvernye-ruchki/klassika/",
+  "h1": "Дверные ручки в классическом стиле",
+  "type": "tag",
+  "priority": "P2",
+  "primaryKw": "ручка двери классика",
+  "ws": 1850,
+  "parent": "/catalog/dvernye-ruchki/",
+  "note": ""
+ },
+ {
+  "url": "/catalog/dvernye-ruchki/sovremennye/",
+  "h1": "Дверные ручки в современном стиле (модерн, минимализм)",
+  "type": "tag",
+  "priority": "P2",
+  "primaryKw": "ручки минимализм",
+  "ws": 1164,
+  "parent": "/catalog/dvernye-ruchki/",
+  "note": ""
+ },
+ {
+  "url": "/catalog/dvernye-ruchki/loft/",
+  "h1": "Дверные ручки лофт",
+  "type": "tag",
+  "priority": "P3",
+  "primaryKw": "ручка лофт дверная",
+  "ws": 210,
+  "parent": "/catalog/dvernye-ruchki/",
+  "note": ""
+ },
+ {
+  "url": "/catalog/dvernye-ruchki/magnitnye/",
+  "h1": "Магнитные дверные ручки",
+  "type": "tag",
+  "priority": "P3",
+  "primaryKw": "магнитные дверные ручки",
+  "ws": 17111,
+  "parent": "/catalog/dvernye-ruchki/",
+  "note": ""
+ },
+ {
+  "url": "/catalog/dvernye-ruchki/dlya-finskih-dverej/",
+  "h1": "Ручки для финских дверей",
+  "type": "tag",
+  "priority": "P3",
+  "primaryKw": "ручки для финских дверей",
+  "ws": 572,
+  "parent": "/catalog/dvernye-ruchki/",
+  "note": ""
+ },
+ {
+  "url": "/catalog/zavertki-i-nakladki/",
+  "h1": "WC-завертки и накладки",
+  "type": "category",
+  "priority": "P1",
+  "primaryKw": "накладка на дверь",
+  "ws": 247330,
+  "parent": "/catalog/",
+  "note": "pillar S02"
+ },
+ {
+  "url": "/catalog/zavertki-i-nakladki/wc-zavertki/",
+  "h1": "Сантехнические завертки WC",
+  "type": "subcategory",
+  "priority": "P1",
+  "primaryKw": "завертка",
+  "ws": 53699,
+  "parent": "/catalog/zavertki-i-nakladki/",
+  "note": ""
+ },
+ {
+  "url": "/catalog/zavertki-i-nakladki/nakladki-pod-cilindr/",
+  "h1": "Накладки под цилиндр и ключ",
+  "type": "subcategory",
+  "priority": "P1",
+  "primaryKw": "накладка на цилиндр",
+  "ws": 11031,
+  "parent": "/catalog/zavertki-i-nakladki/",
+  "note": ""
+ },
+ {
+  "url": "/catalog/zavertki-i-nakladki/dekorativnye-nakladki/",
+  "h1": "Декоративные накладки и розетки",
+  "type": "subcategory",
+  "priority": "P2",
+  "primaryKw": "накладка дверная",
+  "ws": 43448,
+  "parent": "/catalog/zavertki-i-nakladki/",
+  "note": ""
+ },
+ {
+  "url": "/catalog/zavertki-i-nakladki/nakladki-dlya-vhodnyh-dverej/",
+  "h1": "Накладки для входных дверей",
+  "type": "tag",
+  "priority": "P2",
+  "primaryKw": "накладка на входную",
+  "ws": 59212,
+  "parent": "/catalog/zavertki-i-nakladki/",
+  "note": ""
+ },
+ {
+  "url": "/catalog/mezhkomnatnye-zamki/",
+  "h1": "Замки и защёлки для межкомнатных дверей",
+  "type": "category",
+  "priority": "P1",
+  "primaryKw": "купить замок",
+  "ws": 12556482,
+  "parent": "/catalog/",
+  "note": "pillar S03"
+ },
+ {
+  "url": "/catalog/mezhkomnatnye-zamki/magnitnye/",
+  "h1": "Магнитные замки и защёлки",
+  "type": "subcategory",
+  "priority": "P1",
+  "primaryKw": "магнитный замок",
+  "ws": 191435,
+  "parent": "/catalog/mezhkomnatnye-zamki/",
+  "note": "AGB Polaris, Koblenz Spinoff, Morelli"
+ },
+ {
+  "url": "/catalog/mezhkomnatnye-zamki/s-plastikovym-yazychkom/",
+  "h1": "Замки с пластиковым язычком",
+  "type": "subcategory",
+  "priority": "P1",
+  "primaryKw": "замок пластиковый",
+  "ws": 88933,
+  "parent": "/catalog/mezhkomnatnye-zamki/",
+  "note": ""
+ },
+ {
+  "url": "/catalog/mezhkomnatnye-zamki/s-metallicheskim-yazychkom/",
+  "h1": "Замки с металлическим язычком",
+  "type": "subcategory",
+  "priority": "P1",
+  "primaryKw": "",
+  "ws": 0,
+  "parent": "/catalog/mezhkomnatnye-zamki/",
+  "note": ""
+ },
+ {
+  "url": "/catalog/mezhkomnatnye-zamki/pod-cilindr/",
+  "h1": "Межкомнатные замки под цилиндр",
+  "type": "subcategory",
+  "priority": "P1",
+  "primaryKw": "замок под цилиндр",
+  "ws": 7479,
+  "parent": "/catalog/mezhkomnatnye-zamki/",
+  "note": ""
+ },
+ {
+  "url": "/catalog/mezhkomnatnye-zamki/s-fiksatorom/",
+  "h1": "Замки с фиксатором (сантехнические)",
+  "type": "subcategory",
+  "priority": "P1",
+  "primaryKw": "замок фиксатор",
+  "ws": 52264,
+  "parent": "/catalog/mezhkomnatnye-zamki/",
+  "note": ""
+ },
+ {
+  "url": "/catalog/mezhkomnatnye-zamki/pod-klyuch/",
+  "h1": "Межкомнатные замки под ключ",
+  "type": "subcategory",
+  "priority": "P2",
+  "primaryKw": "замок межкомнатный с ключом",
+  "ws": 6078,
+  "parent": "/catalog/mezhkomnatnye-zamki/",
+  "note": ""
+ },
+ {
+  "url": "/catalog/mezhkomnatnye-zamki/dlya-razdvizhnyh-dverej/",
+  "h1": "Замки и защёлки для раздвижных дверей",
+  "type": "subcategory",
+  "priority": "P2",
+  "primaryKw": "замок раздвижной",
+  "ws": 9453,
+  "parent": "/catalog/mezhkomnatnye-zamki/",
+  "note": ""
+ },
+ {
+  "url": "/catalog/mezhkomnatnye-zamki/otvetnye-planki/",
+  "h1": "Ответные планки",
+  "type": "subcategory",
+  "priority": "P1",
+  "primaryKw": "ответные планки дверь",
+  "ws": 58201,
+  "parent": "/catalog/mezhkomnatnye-zamki/",
+  "note": ""
+ },
+ {
+  "url": "/catalog/mezhkomnatnye-zamki/besshumnye/",
+  "h1": "Бесшумные замки для межкомнатных дверей",
+  "type": "tag",
+  "priority": "P2",
+  "primaryKw": "бесшумные замки",
+  "ws": 10401,
+  "parent": "/catalog/mezhkomnatnye-zamki/",
+  "note": ""
+ },
+ {
+  "url": "/catalog/mezhkomnatnye-zamki/chernye/",
+  "h1": "Чёрные замки и защёлки",
+  "type": "tag",
+  "priority": "P3",
+  "primaryKw": "защелка черная",
+  "ws": 12755,
+  "parent": "/catalog/mezhkomnatnye-zamki/",
+  "note": ""
+ },
+ {
+  "url": "/catalog/zamki-dlya-vhodnyh-dverej/",
+  "h1": "Замки для входных дверей",
+  "type": "category",
+  "priority": "GAP",
+  "primaryKw": "входной замок",
+  "ws": 525723,
+  "parent": "/catalog/",
+  "note": "pillar S04; ассортимент: FUARO, AGB Mediana, PUNTO, AJAX — категория ждёт расширения (Apecs/Гардиан/Эльбор)"
+ },
+ {
+  "url": "/catalog/zamki-dlya-vhodnyh-dverej/vreznye/",
+  "h1": "Врезные замки",
+  "type": "subcategory",
+  "priority": "GAP",
+  "primaryKw": "замок врезной",
+  "ws": 461551,
+  "parent": "/catalog/zamki-dlya-vhodnyh-dverej/",
+  "note": ""
+ },
+ {
+  "url": "/catalog/zamki-dlya-vhodnyh-dverej/vreznye/cilindrovye/",
+  "h1": "Врезные цилиндровые замки",
+  "type": "tag",
+  "priority": "GAP",
+  "primaryKw": "цилиндровый замок",
+  "ws": 54154,
+  "parent": "/catalog/zamki-dlya-vhodnyh-dverej/vreznye/",
+  "note": ""
+ },
+ {
+  "url": "/catalog/zamki-dlya-vhodnyh-dverej/vreznye/suvaldnye/",
+  "h1": "Сувальдные замки",
+  "type": "tag",
+  "priority": "GAP",
+  "primaryKw": "сувальдный",
+  "ws": 130024,
+  "parent": "/catalog/zamki-dlya-vhodnyh-dverej/vreznye/",
+  "note": ""
+ },
+ {
+  "url": "/catalog/zamki-dlya-vhodnyh-dverej/nakladnye/",
+  "h1": "Накладные замки",
+  "type": "subcategory",
+  "priority": "GAP",
+  "primaryKw": "накладные замки",
+  "ws": 277765,
+  "parent": "/catalog/zamki-dlya-vhodnyh-dverej/",
+  "note": ""
+ },
+ {
+  "url": "/catalog/zamki-dlya-vhodnyh-dverej/elektromehanicheskie/",
+  "h1": "Электромеханические и электронные замки",
+  "type": "subcategory",
+  "priority": "GAP",
+  "primaryKw": "кодовый замок",
+  "ws": 389611,
+  "parent": "/catalog/zamki-dlya-vhodnyh-dverej/",
+  "note": "Armadillo/Morelli smart — мало; спрос огромный"
+ },
+ {
+  "url": "/catalog/zamki-dlya-vhodnyh-dverej/navesnye/",
+  "h1": "Навесные замки",
+  "type": "subcategory",
+  "priority": "GAP",
+  "primaryKw": "замок навесной",
+  "ws": 453531,
+  "parent": "/catalog/zamki-dlya-vhodnyh-dverej/",
+  "note": "в ассортименте 23 брендов практически нет"
+ },
+ {
+  "url": "/catalog/zamki-dlya-vhodnyh-dverej/dlya-kalitki/",
+  "h1": "Замки для калитки и ворот",
+  "type": "tag",
+  "priority": "GAP",
+  "primaryKw": "замок для калитки",
+  "ws": 127468,
+  "parent": "/catalog/zamki-dlya-vhodnyh-dverej/",
+  "note": ""
+ },
+ {
+  "url": "/catalog/zamki-dlya-vhodnyh-dverej/protivopozharnye/",
+  "h1": "Замки для противопожарных дверей",
+  "type": "tag",
+  "priority": "P3",
+  "primaryKw": "замок противопожарный",
+  "ws": 11387,
+  "parent": "/catalog/zamki-dlya-vhodnyh-dverej/",
+  "note": ""
+ },
+ {
+  "url": "/catalog/cilindry/",
+  "h1": "Цилиндровые механизмы (личинки)",
+  "type": "category",
+  "priority": "P1",
+  "primaryKw": "личинка замка",
+  "ws": 1035594,
+  "parent": "/catalog/",
+  "note": "pillar S05: FUARO, AGB, PUNTO, AJAX, Armadillo"
+ },
+ {
+  "url": "/catalog/cilindry/klyuch-klyuch/",
+  "h1": "Цилиндры ключ-ключ",
+  "type": "subcategory",
+  "priority": "P1",
+  "primaryKw": "цилиндровый механизм ключ ключ",
+  "ws": 14765,
+  "parent": "/catalog/cilindry/",
+  "note": ""
+ },
+ {
+  "url": "/catalog/cilindry/klyuch-vertushka/",
+  "h1": "Цилиндры ключ-вертушка",
+  "type": "subcategory",
+  "priority": "P1",
+  "primaryKw": "личинка с вертушкой",
+  "ws": 67567,
+  "parent": "/catalog/cilindry/",
+  "note": ""
+ },
+ {
+  "url": "/catalog/cilindry/s-perekodirovkoj/",
+  "h1": "Цилиндры с перекодировкой",
+  "type": "tag",
+  "priority": "P3",
+  "primaryKw": "замок с перекодировкой ключа",
+  "ws": 326,
+  "parent": "/catalog/cilindry/",
+  "note": ""
+ },
+ {
+  "url": "/catalog/cilindry/bronenakladki/",
+  "h1": "Броненакладки на цилиндр",
+  "type": "subcategory",
+  "priority": "P2",
+  "primaryKw": "броненакладка",
+  "ws": 12594,
+  "parent": "/catalog/cilindry/",
+  "note": ""
+ },
+ {
+  "url": "/catalog/cilindry/povorotniki/",
+  "h1": "Поворотники (вертушки) для цилиндров",
+  "type": "subcategory",
+  "priority": "P3",
+  "primaryKw": "поворотник дверной",
+  "ws": 585,
+  "parent": "/catalog/cilindry/",
+  "note": ""
+ },
+ {
+  "url": "/catalog/dvernye-petli/",
+  "h1": "Дверные петли",
+  "type": "category",
+  "priority": "P1",
+  "primaryKw": "петли дверные",
+  "ws": 3424807,
+  "parent": "/catalog/",
+  "note": "pillar S06"
+ },
+ {
+  "url": "/catalog/dvernye-petli/universalnye/",
+  "h1": "Универсальные дверные петли",
+  "type": "subcategory",
+  "priority": "P1",
+  "primaryKw": "петля универсальная",
+  "ws": 16388,
+  "parent": "/catalog/dvernye-petli/",
+  "note": ""
+ },
+ {
+  "url": "/catalog/dvernye-petli/skrytye/",
+  "h1": "Скрытые петли",
+  "type": "subcategory",
+  "priority": "P1",
+  "primaryKw": "скрыть петли",
+  "ws": 182786,
+  "parent": "/catalog/dvernye-petli/",
+  "note": "Koblenz Kubica/Atomika, AGB Eclipse, Otlav, Morelli, Armadillo"
+ },
+ {
+  "url": "/catalog/dvernye-petli/vvertnye/",
+  "h1": "Ввертные петли и колпачки",
+  "type": "subcategory",
+  "priority": "P1",
+  "primaryKw": "ввертный",
+  "ws": 17007,
+  "parent": "/catalog/dvernye-petli/",
+  "note": ""
+ },
+ {
+  "url": "/catalog/dvernye-petli/babochki/",
+  "h1": "Петли-бабочки",
+  "type": "subcategory",
+  "priority": "P1",
+  "primaryKw": "петли бабочки",
+  "ws": 117437,
+  "parent": "/catalog/dvernye-petli/",
+  "note": ""
+ },
+ {
+  "url": "/catalog/dvernye-petli/razemnye/",
+  "h1": "Разъёмные петли (левые и правые)",
+  "type": "subcategory",
+  "priority": "P2",
+  "primaryKw": "петля левая",
+  "ws": 54385,
+  "parent": "/catalog/dvernye-petli/",
+  "note": ""
+ },
+ {
+  "url": "/catalog/dvernye-petli/pruzhinnye/",
+  "h1": "Пружинные и маятниковые (барные) петли",
+  "type": "subcategory",
+  "priority": "P2",
+  "primaryKw": "петля барная",
+  "ws": 16074,
+  "parent": "/catalog/dvernye-petli/",
+  "note": ""
+ },
+ {
+  "url": "/catalog/dvernye-petli/dlya-vhodnyh-dverej/",
+  "h1": "Петли для входных и металлических дверей",
+  "type": "subcategory",
+  "priority": "P2",
+  "primaryKw": "петли металлические",
+  "ws": 59482,
+  "parent": "/catalog/dvernye-petli/",
+  "note": ""
+ },
+ {
+  "url": "/catalog/dvernye-petli/s-dovodchikom/",
+  "h1": "Петли с доводчиком",
+  "type": "tag",
+  "priority": "P2",
+  "primaryKw": "петли с доводчиком для дверей",
+  "ws": 10530,
+  "parent": "/catalog/dvernye-petli/",
+  "note": "Koblenz Kiker"
+ },
+ {
+  "url": "/catalog/dvernye-petli/chernye/",
+  "h1": "Чёрные дверные петли",
+  "type": "tag",
+  "priority": "P2",
+  "primaryKw": "петля черная",
+  "ws": 19511,
+  "parent": "/catalog/dvernye-petli/",
+  "note": ""
+ },
+ {
+  "url": "/catalog/dvernye-petli/belye/",
+  "h1": "Белые дверные петли",
+  "type": "tag",
+  "priority": "P3",
+  "primaryKw": "петли белые",
+  "ws": 9235,
+  "parent": "/catalog/dvernye-petli/",
+  "note": ""
+ },
+ {
+  "url": "/catalog/dvernye-petli/shablony-i-frezy/",
+  "h1": "Шаблоны и фрезы для врезки петель и замков",
+  "type": "subcategory",
+  "priority": "P2",
+  "primaryKw": "шаблон для петель",
+  "ws": 43564,
+  "parent": "/catalog/dvernye-petli/",
+  "note": ""
+ },
+ {
+  "url": "/catalog/dovodchiki/",
+  "h1": "Дверные доводчики",
+  "type": "category",
+  "priority": "P1",
+  "primaryKw": "доводчик",
+  "ws": 783247,
+  "parent": "/catalog/",
+  "note": "pillar S07"
+ },
+ {
+  "url": "/catalog/dovodchiki/nakladnye/",
+  "h1": "Накладные (верхние) доводчики",
+  "type": "subcategory",
+  "priority": "P1",
+  "primaryKw": "доводчик гидравлический",
+  "ws": 2842,
+  "parent": "/catalog/dovodchiki/",
+  "note": ""
+ },
+ {
+  "url": "/catalog/dovodchiki/skrytye/",
+  "h1": "Скрытые доводчики",
+  "type": "subcategory",
+  "priority": "P1",
+  "primaryKw": "скрытый доводчик",
+  "ws": 18084,
+  "parent": "/catalog/dovodchiki/",
+  "note": ""
+ },
+ {
+  "url": "/catalog/dovodchiki/napolnye/",
+  "h1": "Напольные доводчики",
+  "type": "subcategory",
+  "priority": "P2",
+  "primaryKw": "доводчик напольный",
+  "ws": 2469,
+  "parent": "/catalog/dovodchiki/",
+  "note": "GAP по ассортименту"
+ },
+ {
+  "url": "/catalog/dovodchiki/pruzhinnye/",
+  "h1": "Пружинные доводчики",
+  "type": "subcategory",
+  "priority": "P3",
+  "primaryKw": "доводчик пружинный",
+  "ws": 2659,
+  "parent": "/catalog/dovodchiki/",
+  "note": ""
+ },
+ {
+  "url": "/catalog/dovodchiki/dlya-steklyannyh-dverej/",
+  "h1": "Доводчики для стеклянных дверей",
+  "type": "tag",
+  "priority": "P2",
+  "primaryKw": "доводчик для стеклянной двери",
+  "ws": 1046,
+  "parent": "/catalog/dovodchiki/",
+  "note": ""
+ },
+ {
+  "url": "/catalog/dovodchiki/s-fiksaciej/",
+  "h1": "Доводчики с фиксацией открытого положения",
+  "type": "tag",
+  "priority": "P2",
+  "primaryKw": "дверной доводчик с фиксацией",
+  "ws": 1659,
+  "parent": "/catalog/dovodchiki/",
+  "note": ""
+ },
+ {
+  "url": "/catalog/dovodchiki/ulichnye/",
+  "h1": "Уличные морозостойкие доводчики",
+  "type": "tag",
+  "priority": "P2",
+  "primaryKw": "доводчик уличный",
+  "ws": 23325,
+  "parent": "/catalog/dovodchiki/",
+  "note": ""
+ },
+ {
+  "url": "/catalog/razdvizhnye-sistemy/",
+  "h1": "Раздвижные и складные системы для дверей",
+  "type": "category",
+  "priority": "P1",
+  "primaryKw": "механизм двери",
+  "ws": 768332,
+  "parent": "/catalog/",
+  "note": "pillar S08"
+ },
+ {
+  "url": "/catalog/razdvizhnye-sistemy/dlya-mezhkomnatnyh-dverej/",
+  "h1": "Раздвижные системы для межкомнатных дверей",
+  "type": "subcategory",
+  "priority": "P1",
+  "primaryKw": "раздвижные межкомнатные купить",
+  "ws": 18610,
+  "parent": "/catalog/razdvizhnye-sistemy/",
+  "note": ""
+ },
+ {
+  "url": "/catalog/razdvizhnye-sistemy/skrytye/",
+  "h1": "Скрытые раздвижные системы",
+  "type": "subcategory",
+  "priority": "P1",
+  "primaryKw": "скрытая раздвижная дверь",
+  "ws": 9107,
+  "parent": "/catalog/razdvizhnye-sistemy/",
+  "note": "Koblenz Tricks, AGB Scivola"
+ },
+ {
+  "url": "/catalog/razdvizhnye-sistemy/roto/",
+  "h1": "Рото-системы (поворотно-сдвижные)",
+  "type": "subcategory",
+  "priority": "P1",
+  "primaryKw": "фурнитура рото",
+  "ws": 11404,
+  "parent": "/catalog/razdvizhnye-sistemy/",
+  "note": ""
+ },
+ {
+  "url": "/catalog/razdvizhnye-sistemy/knizhka/",
+  "h1": "Складные системы (дверь-книжка)",
+  "type": "subcategory",
+  "priority": "P1",
+  "primaryKw": "складная дверь",
+  "ws": 155897,
+  "parent": "/catalog/razdvizhnye-sistemy/",
+  "note": "Cattini CompactTwin"
+ },
+ {
+  "url": "/catalog/razdvizhnye-sistemy/penaly/",
+  "h1": "Пеналы (кассеты) для раздвижных дверей",
+  "type": "subcategory",
+  "priority": "P2",
+  "primaryKw": "пенал для раздвижной двери",
+  "ws": 7365,
+  "parent": "/catalog/razdvizhnye-sistemy/",
+  "note": ""
+ },
+ {
+  "url": "/catalog/razdvizhnye-sistemy/dlya-steklyannyh-dverej/",
+  "h1": "Раздвижные системы для стеклянных дверей",
+  "type": "subcategory",
+  "priority": "P2",
+  "primaryKw": "стеклянные раздвижные двери",
+  "ws": 23181,
+  "parent": "/catalog/razdvizhnye-sistemy/",
+  "note": ""
+ },
+ {
+  "url": "/catalog/razdvizhnye-sistemy/komplektuyushchie/",
+  "h1": "Комплектующие: ролики, направляющие, щётки",
+  "type": "subcategory",
+  "priority": "P2",
+  "primaryKw": "заглушка ручки двери",
+  "ws": 38881,
+  "parent": "/catalog/razdvizhnye-sistemy/",
+  "note": ""
+ },
+ {
+  "url": "/catalog/razdvizhnye-sistemy/dlya-tyazhelyh-dverej/",
+  "h1": "Раздвижные системы для тяжёлых дверей",
+  "type": "tag",
+  "priority": "P3",
+  "primaryKw": "ролики для тяжелых раздвижных дверей",
+  "ws": 15,
+  "parent": "/catalog/razdvizhnye-sistemy/",
+  "note": ""
+ },
+ {
+  "url": "/catalog/upory-i-ogranichiteli/",
+  "h1": "Дверные упоры и ограничители",
+  "type": "category",
+  "priority": "P1",
+  "primaryKw": "ограничитель двери",
+  "ws": 281052,
+  "parent": "/catalog/",
+  "note": "pillar S09: FANTOM, Verum Stoppino, все бренды"
+ },
+ {
+  "url": "/catalog/upory-i-ogranichiteli/napolnye/",
+  "h1": "Напольные упоры",
+  "type": "subcategory",
+  "priority": "P1",
+  "primaryKw": "ограничитель двери напольный",
+  "ws": 10091,
+  "parent": "/catalog/upory-i-ogranichiteli/",
+  "note": ""
+ },
+ {
+  "url": "/catalog/upory-i-ogranichiteli/nastennye/",
+  "h1": "Настенные упоры",
+  "type": "subcategory",
+  "priority": "P1",
+  "primaryKw": "ограничитель двери настенный",
+  "ws": 2670,
+  "parent": "/catalog/upory-i-ogranichiteli/",
+  "note": ""
+ },
+ {
+  "url": "/catalog/upory-i-ogranichiteli/magnitnye/",
+  "h1": "Магнитные упоры и стопоры",
+  "type": "subcategory",
+  "priority": "P1",
+  "primaryKw": "магнитный ограничитель",
+  "ws": 15516,
+  "parent": "/catalog/upory-i-ogranichiteli/",
+  "note": "FANTOM"
+ },
+ {
+  "url": "/catalog/upory-i-ogranichiteli/skrytye/",
+  "h1": "Скрытые упоры",
+  "type": "subcategory",
+  "priority": "P2",
+  "primaryKw": "скрытый ограничитель",
+  "ws": 5209,
+  "parent": "/catalog/upory-i-ogranichiteli/",
+  "note": ""
+ },
+ {
+  "url": "/catalog/upory-i-ogranichiteli/torcevye/",
+  "h1": "Торцевые упоры (ригели)",
+  "type": "subcategory",
+  "priority": "P3",
+  "primaryKw": "ригель для двери",
+  "ws": 4138,
+  "parent": "/catalog/upory-i-ogranichiteli/",
+  "note": ""
+ },
+ {
+  "url": "/catalog/upory-i-ogranichiteli/chernye/",
+  "h1": "Чёрные дверные упоры",
+  "type": "tag",
+  "priority": "P3",
+  "primaryKw": "дверной ограничитель черный",
+  "ws": 1017,
+  "parent": "/catalog/upory-i-ogranichiteli/",
+  "note": ""
+ },
+ {
+  "url": "/catalog/zadvizhki-i-shpingalety/",
+  "h1": "Задвижки, шпингалеты и засовы",
+  "type": "category",
+  "priority": "P1",
+  "primaryKw": "шпингалет",
+  "ws": 132934,
+  "parent": "/catalog/",
+  "note": "pillar S10"
+ },
+ {
+  "url": "/catalog/zadvizhki-i-shpingalety/torcevye/",
+  "h1": "Торцевые задвижки",
+  "type": "subcategory",
+  "priority": "P2",
+  "primaryKw": "шпингалет торцевой",
+  "ws": 3548,
+  "parent": "/catalog/zadvizhki-i-shpingalety/",
+  "note": ""
+ },
+ {
+  "url": "/catalog/zadvizhki-i-shpingalety/nakladnye/",
+  "h1": "Накладные задвижки и шпингалеты",
+  "type": "subcategory",
+  "priority": "P2",
+  "primaryKw": "задвижка накладная",
+  "ws": 9459,
+  "parent": "/catalog/zadvizhki-i-shpingalety/",
+  "note": ""
+ },
+ {
+  "url": "/catalog/zadvizhki-i-shpingalety/nochnye/",
+  "h1": "Ночные задвижки",
+  "type": "tag",
+  "priority": "P3",
+  "primaryKw": "ночная задвижка",
+  "ws": 6570,
+  "parent": "/catalog/zadvizhki-i-shpingalety/",
+  "note": ""
+ },
+ {
+  "url": "/catalog/glazki-i-aksessuary/",
+  "h1": "Дверные глазки, цепочки и аксессуары",
+  "type": "category",
+  "priority": "P2",
+  "primaryKw": "ручка молоток для двери",
+  "ws": 1,
+  "parent": "/catalog/",
+  "note": "pillar S11"
+ },
+ {
+  "url": "/catalog/glazki-i-aksessuary/glazki/",
+  "h1": "Дверные глазки",
+  "type": "subcategory",
+  "priority": "P2",
+  "primaryKw": "глазок",
+  "ws": 517718,
+  "parent": "/catalog/glazki-i-aksessuary/",
+  "note": ""
+ },
+ {
+  "url": "/catalog/glazki-i-aksessuary/cepochki/",
+  "h1": "Дверные цепочки",
+  "type": "subcategory",
+  "priority": "P3",
+  "primaryKw": "замок цепочка на дверь",
+  "ws": 228,
+  "parent": "/catalog/glazki-i-aksessuary/",
+  "note": ""
+ },
+ {
+  "url": "/catalog/glazki-i-aksessuary/stuchalki/",
+  "h1": "Дверные стучалки (молотки)",
+  "type": "subcategory",
+  "priority": "P3",
+  "primaryKw": "стучалка",
+  "ws": 3268,
+  "parent": "/catalog/glazki-i-aksessuary/",
+  "note": ""
+ },
+ {
+  "url": "/catalog/avtoporogi-i-uplotniteli/",
+  "h1": "Автопороги и уплотнители",
+  "type": "category",
+  "priority": "P1",
+  "primaryKw": "",
+  "ws": 114779,
+  "parent": "/catalog/",
+  "note": "pillar S12: Comaglio/Venezia, Armadillo, Cattini, Porta di Parma"
+ },
+ {
+  "url": "/catalog/avtoporogi-i-uplotniteli/avtoporogi/",
+  "h1": "Автопороги (умные пороги)",
+  "type": "subcategory",
+  "priority": "P1",
+  "primaryKw": "автопорог",
+  "ws": 6066,
+  "parent": "/catalog/avtoporogi-i-uplotniteli/",
+  "note": ""
+ },
+ {
+  "url": "/catalog/avtoporogi-i-uplotniteli/uplotniteli/",
+  "h1": "Уплотнители для дверей",
+  "type": "subcategory",
+  "priority": "P2",
+  "primaryKw": "уплотнитель для дверей",
+  "ws": 228679,
+  "parent": "/catalog/avtoporogi-i-uplotniteli/",
+  "note": ""
+ },
+ {
+  "url": "/catalog/avtoporogi-i-uplotniteli/shchetki/",
+  "h1": "Шумоизоляционные щётки",
+  "type": "subcategory",
+  "priority": "P3",
+  "primaryKw": "",
+  "ws": 0,
+  "parent": "/catalog/avtoporogi-i-uplotniteli/",
+  "note": ""
+ },
+ {
+  "url": "/catalog/furnitura-dlya-steklyannyh-dverej/",
+  "h1": "Фурнитура для стеклянных дверей",
+  "type": "category",
+  "priority": "P2",
+  "primaryKw": "",
+  "ws": 1029,
+  "parent": "/catalog/",
+  "note": "pillar S13: Verum, Tupai, AGB, Cattini"
+ },
+ {
+  "url": "/catalog/furnitura-dlya-steklyannyh-dverej/petli/",
+  "h1": "Петли для стеклянных дверей",
+  "type": "subcategory",
+  "priority": "P2",
+  "primaryKw": "петли для стеклянных",
+  "ws": 17416,
+  "parent": "/catalog/furnitura-dlya-steklyannyh-dverej/",
+  "note": ""
+ },
+ {
+  "url": "/catalog/furnitura-dlya-steklyannyh-dverej/zamki/",
+  "h1": "Замки и защёлки для стеклянных дверей",
+  "type": "subcategory",
+  "priority": "P2",
+  "primaryKw": "замок для стеклянной двери",
+  "ws": 5921,
+  "parent": "/catalog/furnitura-dlya-steklyannyh-dverej/",
+  "note": ""
+ },
+ {
+  "url": "/catalog/furnitura-dlya-steklyannyh-dverej/komplekty/",
+  "h1": "Комплекты фурнитуры для распашных стеклянных дверей",
+  "type": "subcategory",
+  "priority": "P3",
+  "primaryKw": "комплект петель для стеклянных дверей",
+  "ws": 131,
+  "parent": "/catalog/furnitura-dlya-steklyannyh-dverej/",
+  "note": ""
+ },
+ {
+  "url": "/catalog/furnitura-dlya-steklyannyh-dverej/otvetnye-chasti/",
+  "h1": "Ответные части и фиксаторы для стекла",
+  "type": "subcategory",
+  "priority": "P3",
+  "primaryKw": "роликовая защелка",
+  "ws": 2947,
+  "parent": "/catalog/furnitura-dlya-steklyannyh-dverej/",
+  "note": ""
+ },
+ {
+  "url": "/catalog/okonnaya-furnitura/",
+  "h1": "Оконная фурнитура",
+  "type": "category",
+  "priority": "P1",
+  "primaryKw": "фурнитура для окон",
+  "ws": 255310,
+  "parent": "/catalog/",
+  "note": "pillar S14: AGB, Colombo, Tupai, Extreza, Cattini"
+ },
+ {
+  "url": "/catalog/okonnaya-furnitura/okonnye-ruchki/",
+  "h1": "Оконные ручки",
+  "type": "subcategory",
+  "priority": "P1",
+  "primaryKw": "ручка для окна",
+  "ws": 157915,
+  "parent": "/catalog/okonnaya-furnitura/",
+  "note": ""
+ },
+ {
+  "url": "/catalog/okonnaya-furnitura/okonnye-ruchki/s-klyuchom/",
+  "h1": "Оконные ручки с ключом",
+  "type": "tag",
+  "priority": "P2",
+  "primaryKw": "ручки для окон с замком",
+  "ws": 7667,
+  "parent": "/catalog/okonnaya-furnitura/okonnye-ruchki/",
+  "note": ""
+ },
+ {
+  "url": "/catalog/okonnaya-furnitura/balkonnye-ruchki/",
+  "h1": "Балконные ручки",
+  "type": "subcategory",
+  "priority": "P2",
+  "primaryKw": "балконная ручка",
+  "ws": 46289,
+  "parent": "/catalog/okonnaya-furnitura/",
+  "note": ""
+ },
+ {
+  "url": "/catalog/okonnaya-furnitura/komplektuyushchie/",
+  "h1": "Оконные комплектующие",
+  "type": "subcategory",
+  "priority": "P3",
+  "primaryKw": "петли для окон",
+  "ws": 29229,
+  "parent": "/catalog/okonnaya-furnitura/",
+  "note": ""
+ },
+ {
+  "url": "/catalog/mebelnaya-furnitura/",
+  "h1": "Мебельная фурнитура",
+  "type": "category",
+  "priority": "GAP",
+  "primaryKw": "мебельная фурнитура",
+  "ws": 771086,
+  "parent": "/catalog/",
+  "note": "pillar S15; только при подтверждении ассортимента (Pamar, Colombo, Tupai, Koblenz Kubikina)"
+ },
+ {
+  "url": "/catalog/mebelnaya-furnitura/mebelnye-ruchki/",
+  "h1": "Мебельные ручки",
+  "type": "subcategory",
+  "priority": "GAP",
+  "primaryKw": "мебельные ручки",
+  "ws": 183651,
+  "parent": "/catalog/mebelnaya-furnitura/",
+  "note": ""
+ },
+ {
+  "url": "/catalog/mebelnaya-furnitura/mebelnye-petli/",
+  "h1": "Мебельные петли",
+  "type": "subcategory",
+  "priority": "GAP",
+  "primaryKw": "петли для шкафа",
+  "ws": 96315,
+  "parent": "/catalog/mebelnaya-furnitura/",
+  "note": ""
+ },
+ {
+  "url": "/catalog/mebelnaya-furnitura/mebelnye-zamki/",
+  "h1": "Мебельные замки",
+  "type": "subcategory",
+  "priority": "GAP",
+  "primaryKw": "замок мебельный",
+  "ws": 37092,
+  "parent": "/catalog/mebelnaya-furnitura/",
+  "note": ""
+ },
+ {
+  "url": "/catalog/mebelnaya-furnitura/kryuchki/",
+  "h1": "Мебельные крючки",
+  "type": "subcategory",
+  "priority": "GAP",
+  "primaryKw": "крючки для рейлинга купить",
+  "ws": 1056,
+  "parent": "/catalog/mebelnaya-furnitura/",
+  "note": ""
+ },
+ {
+  "url": "/catalog/komplekty-furnitury/",
+  "h1": "Комплекты фурнитуры на дверь",
+  "type": "kit",
+  "priority": "P1",
+  "primaryKw": "комплект фурнитуры",
+  "ws": 27906,
+  "parent": "/catalog/",
+  "note": "коммерческое УТП: ручка + завертка + накладка + замок + петли + упор в одном покрытии/коллекции"
+ },
+ {
+  "url": "/catalog/remkomplekty-i-zapchasti/",
+  "h1": "Ремкомплекты и запчасти",
+  "type": "category",
+  "priority": "P2",
+  "primaryKw": "ремкомплект двери",
+  "ws": 85967,
+  "parent": "/catalog/",
+  "note": "pillar S16"
+ },
+ {
+  "url": "/brands/morelli/",
+  "h1": "Дверная фурнитура Morelli",
+  "type": "brand",
+  "priority": "P1",
+  "primaryKw": "морелли",
+  "ws": 58598,
+  "parent": "/brands/",
+  "note": "tier A: самый большой брендовый спрос; ручки, замки, петли, раздвижные, смарт-замки"
+ },
+ {
+  "url": "/brands/morelli/dvernye-ruchki/",
+  "h1": "Дверные ручки Morelli",
+  "type": "brand-category",
+  "priority": "P1",
+  "primaryKw": "ручки morelli",
+  "ws": 34261,
+  "parent": "/brands/morelli/",
+  "note": ""
+ },
+ {
+  "url": "/brands/morelli/mezhkomnatnye-zamki/",
+  "h1": "Замки и защёлки для межкомнатных дверей Morelli",
+  "type": "brand-category",
+  "priority": "P1",
+  "primaryKw": "замок morelli",
+  "ws": 20241,
+  "parent": "/brands/morelli/",
+  "note": ""
+ },
+ {
+  "url": "/brands/morelli/dvernye-petli/",
+  "h1": "Дверные петли Morelli",
+  "type": "brand-category",
+  "priority": "P1",
+  "primaryKw": "петли morelli",
+  "ws": 9908,
+  "parent": "/brands/morelli/",
+  "note": ""
+ },
+ {
+  "url": "/brands/morelli/razdvizhnye-sistemy/",
+  "h1": "Раздвижные и складные системы для дверей Morelli",
+  "type": "brand-category",
+  "priority": "P1",
+  "primaryKw": "раздвижные двери morelli",
+  "ws": 249,
+  "parent": "/brands/morelli/",
+  "note": ""
+ },
+ {
+  "url": "/brands/morelli/zavertki-i-nakladki/",
+  "h1": "WC-завертки и накладки Morelli",
+  "type": "brand-category",
+  "priority": "P1",
+  "primaryKw": "накладки морелли",
+  "ws": 163,
+  "parent": "/brands/morelli/",
+  "note": ""
+ },
+ {
+  "url": "/brands/fuaro/",
+  "h1": "Дверная фурнитура FUARO",
+  "type": "brand",
+  "priority": "P1",
+  "primaryKw": "фуаро",
+  "ws": 14601,
+  "parent": "/brands/",
+  "note": "tier A: замки входные/межкомнатные, цилиндры, ручки, доводчики, петли"
+ },
+ {
+  "url": "/brands/fuaro/zamki-dlya-vhodnyh-dverej/",
+  "h1": "Замки для входных дверей FUARO",
+  "type": "brand-category",
+  "priority": "P1",
+  "primaryKw": "замок врезной fuaro",
+  "ws": 3876,
+  "parent": "/brands/fuaro/",
+  "note": ""
+ },
+ {
+  "url": "/brands/fuaro/cilindry/",
+  "h1": "Цилиндровые механизмы (личинки) FUARO",
+  "type": "brand-category",
+  "priority": "P1",
+  "primaryKw": "fuaro цилиндровый",
+  "ws": 7108,
+  "parent": "/brands/fuaro/",
+  "note": ""
+ },
+ {
+  "url": "/brands/fuaro/dvernye-ruchki/",
+  "h1": "Дверные ручки FUARO",
+  "type": "brand-category",
+  "priority": "P1",
+  "primaryKw": "ручка fuaro",
+  "ws": 31810,
+  "parent": "/brands/fuaro/",
+  "note": ""
+ },
+ {
+  "url": "/brands/fuaro/mezhkomnatnye-zamki/",
+  "h1": "Замки и защёлки для межкомнатных дверей FUARO",
+  "type": "brand-category",
+  "priority": "P1",
+  "primaryKw": "замок fuaro",
+  "ws": 20912,
+  "parent": "/brands/fuaro/",
+  "note": ""
+ },
+ {
+  "url": "/brands/fuaro/dovodchiki/",
+  "h1": "Дверные доводчики FUARO",
+  "type": "brand-category",
+  "priority": "P1",
+  "primaryKw": "доводчик fuaro",
+  "ws": 1965,
+  "parent": "/brands/fuaro/",
+  "note": ""
+ },
+ {
+  "url": "/brands/fuaro/dvernye-petli/",
+  "h1": "Дверные петли FUARO",
+  "type": "brand-category",
+  "priority": "P1",
+  "primaryKw": "петли fuaro",
+  "ws": 6799,
+  "parent": "/brands/fuaro/",
+  "note": ""
+ },
+ {
+  "url": "/brands/punto/",
+  "h1": "Дверная фурнитура PUNTO",
+  "type": "brand",
+  "priority": "P1",
+  "primaryKw": "punto купить",
+  "ws": 7386,
+  "parent": "/brands/",
+  "note": "tier A: ручки, замки, защёлки, петли, цилиндры"
+ },
+ {
+  "url": "/brands/punto/dvernye-ruchki/",
+  "h1": "Дверные ручки PUNTO",
+  "type": "brand-category",
+  "priority": "P1",
+  "primaryKw": "ручка punto",
+  "ws": 34471,
+  "parent": "/brands/punto/",
+  "note": ""
+ },
+ {
+  "url": "/brands/punto/mezhkomnatnye-zamki/",
+  "h1": "Замки и защёлки для межкомнатных дверей PUNTO",
+  "type": "brand-category",
+  "priority": "P1",
+  "primaryKw": "замок punto",
+  "ws": 13733,
+  "parent": "/brands/punto/",
+  "note": ""
+ },
+ {
+  "url": "/brands/punto/dvernye-petli/",
+  "h1": "Дверные петли PUNTO",
+  "type": "brand-category",
+  "priority": "P1",
+  "primaryKw": "punto петли",
+  "ws": 3628,
+  "parent": "/brands/punto/",
+  "note": ""
+ },
+ {
+  "url": "/brands/punto/cilindry/",
+  "h1": "Цилиндровые механизмы (личинки) PUNTO",
+  "type": "brand-category",
+  "priority": "P1",
+  "primaryKw": "личинка punto",
+  "ws": 3803,
+  "parent": "/brands/punto/",
+  "note": ""
+ },
+ {
+  "url": "/brands/punto/zavertki-i-nakladki/",
+  "h1": "WC-завертки и накладки PUNTO",
+  "type": "brand-category",
+  "priority": "P1",
+  "primaryKw": "дверная накладка punto",
+  "ws": 5,
+  "parent": "/brands/punto/",
+  "note": ""
+ },
+ {
+  "url": "/brands/armadillo/",
+  "h1": "Дверная фурнитура Armadillo",
+  "type": "brand",
+  "priority": "P1",
+  "primaryKw": "армадилло",
+  "ws": 15997,
+  "parent": "/brands/",
+  "note": "tier A: ручки, петли, защёлки, раздвижные системы, доводчики, упоры"
+ },
+ {
+  "url": "/brands/armadillo/dvernye-ruchki/",
+  "h1": "Дверные ручки Armadillo",
+  "type": "brand-category",
+  "priority": "P1",
+  "primaryKw": "ручка armadillo",
+  "ws": 20338,
+  "parent": "/brands/armadillo/",
+  "note": ""
+ },
+ {
+  "url": "/brands/armadillo/dvernye-petli/",
+  "h1": "Дверные петли Armadillo",
+  "type": "brand-category",
+  "priority": "P1",
+  "primaryKw": "петли armadillo",
+  "ws": 17039,
+  "parent": "/brands/armadillo/",
+  "note": ""
+ },
+ {
+  "url": "/brands/armadillo/mezhkomnatnye-zamki/",
+  "h1": "Замки и защёлки для межкомнатных дверей Armadillo",
+  "type": "brand-category",
+  "priority": "P1",
+  "primaryKw": "замок armadillo",
+  "ws": 3338,
+  "parent": "/brands/armadillo/",
+  "note": ""
+ },
+ {
+  "url": "/brands/armadillo/razdvizhnye-sistemy/",
+  "h1": "Раздвижные и складные системы для дверей Armadillo",
+  "type": "brand-category",
+  "priority": "P1",
+  "primaryKw": "armadillo раздвижные двери",
+  "ws": 1361,
+  "parent": "/brands/armadillo/",
+  "note": ""
+ },
+ {
+  "url": "/brands/armadillo/dovodchiki/",
+  "h1": "Дверные доводчики Armadillo",
+  "type": "brand-category",
+  "priority": "P1",
+  "primaryKw": "доводчик armadillo",
+  "ws": 1762,
+  "parent": "/brands/armadillo/",
+  "note": ""
+ },
+ {
+  "url": "/brands/armadillo/upory-i-ogranichiteli/",
+  "h1": "Дверные упоры и ограничители Armadillo",
+  "type": "brand-category",
+  "priority": "P1",
+  "primaryKw": "armadillo дверной упор",
+  "ws": 861,
+  "parent": "/brands/armadillo/",
+  "note": ""
+ },
+ {
+  "url": "/brands/agb/",
+  "h1": "Дверная фурнитура AGB",
+  "type": "brand",
+  "priority": "P1",
+  "primaryKw": "agb купить",
+  "ws": 6207,
+  "parent": "/brands/",
+  "note": "tier A: магнитные замки, скрытые петли Eclipse, замки Mediana, раздвижные Scivola, оконная"
+ },
+ {
+  "url": "/brands/agb/skrytye-petli/",
+  "h1": "Скрытые петли AGB",
+  "type": "brand-category",
+  "priority": "P1",
+  "primaryKw": "скрытые петли agb",
+  "ws": 4393,
+  "parent": "/brands/agb/",
+  "note": ""
+ },
+ {
+  "url": "/brands/agb/dvernye-petli/",
+  "h1": "Дверные петли AGB",
+  "type": "brand-category",
+  "priority": "P1",
+  "primaryKw": "петли agb",
+  "ws": 10610,
+  "parent": "/brands/agb/",
+  "note": ""
+ },
+ {
+  "url": "/brands/agb/mezhkomnatnye-zamki/",
+  "h1": "Замки и защёлки для межкомнатных дверей AGB",
+  "type": "brand-category",
+  "priority": "P1",
+  "primaryKw": "замок agb",
+  "ws": 18851,
+  "parent": "/brands/agb/",
+  "note": ""
+ },
+ {
+  "url": "/brands/agb/magnitnye-zamki/",
+  "h1": "Магнитные замки AGB",
+  "type": "brand-category",
+  "priority": "P1",
+  "primaryKw": "магнитная планка agb",
+  "ws": 493,
+  "parent": "/brands/agb/",
+  "note": ""
+ },
+ {
+  "url": "/brands/agb/zamki-dlya-vhodnyh-dverej/",
+  "h1": "Замки для входных дверей AGB",
+  "type": "brand-category",
+  "priority": "P1",
+  "primaryKw": "",
+  "ws": 0,
+  "parent": "/brands/agb/",
+  "note": ""
+ },
+ {
+  "url": "/brands/agb/razdvizhnye-sistemy/",
+  "h1": "Раздвижные и складные системы для дверей AGB",
+  "type": "brand-category",
+  "priority": "P1",
+  "primaryKw": "agb для раздвижных дверей",
+  "ws": 57,
+  "parent": "/brands/agb/",
+  "note": ""
+ },
+ {
+  "url": "/brands/agb/okonnaya-furnitura/",
+  "h1": "Оконная фурнитура AGB",
+  "type": "brand-category",
+  "priority": "P1",
+  "primaryKw": "оконная фурнитура agb",
+  "ws": 4,
+  "parent": "/brands/agb/",
+  "note": ""
+ },
+ {
+  "url": "/brands/krona-koblenz/",
+  "h1": "Дверная фурнитура Krona Koblenz",
+  "type": "brand",
+  "priority": "P1",
+  "primaryKw": "петли koblenz",
+  "ws": 9586,
+  "parent": "/brands/",
+  "note": "tier A: скрытые петли Kubica/Atomika, магнитные замки Spinoff, системы Tricks, Kiker"
+ },
+ {
+  "url": "/brands/krona-koblenz/skrytye-petli/",
+  "h1": "Скрытые петли Krona Koblenz",
+  "type": "brand-category",
+  "priority": "P1",
+  "primaryKw": "петля скрытая koblenz",
+  "ws": 4551,
+  "parent": "/brands/krona-koblenz/",
+  "note": ""
+ },
+ {
+  "url": "/brands/krona-koblenz/magnitnye-zamki/",
+  "h1": "Магнитные замки Krona Koblenz",
+  "type": "brand-category",
+  "priority": "P1",
+  "primaryKw": "krona koblenz замок магнитный",
+  "ws": 83,
+  "parent": "/brands/krona-koblenz/",
+  "note": ""
+ },
+ {
+  "url": "/brands/krona-koblenz/razdvizhnye-sistemy/",
+  "h1": "Раздвижные и складные системы для дверей Krona Koblenz",
+  "type": "brand-category",
+  "priority": "P1",
+  "primaryKw": "крона кобленц раздвижные системы",
+  "ws": 7,
+  "parent": "/brands/krona-koblenz/",
+  "note": ""
+ },
+ {
+  "url": "/brands/colombo-design/",
+  "h1": "Дверная фурнитура Colombo Design",
+  "type": "brand",
+  "priority": "P1",
+  "primaryKw": "colombo",
+  "ws": 13116,
+  "parent": "/brands/",
+  "note": "tier A: премиум ручки (Robot и др.), оконные ручки, WC, аксессуары"
+ },
+ {
+  "url": "/brands/colombo-design/dvernye-ruchki/",
+  "h1": "Дверные ручки Colombo Design",
+  "type": "brand-category",
+  "priority": "P1",
+  "primaryKw": "ручки colombo",
+  "ws": 2994,
+  "parent": "/brands/colombo-design/",
+  "note": ""
+ },
+ {
+  "url": "/brands/colombo-design/okonnye-ruchki/",
+  "h1": "Оконные ручки Colombo Design",
+  "type": "brand-category",
+  "priority": "P1",
+  "primaryKw": "",
+  "ws": 0,
+  "parent": "/brands/colombo-design/",
+  "note": ""
+ },
+ {
+  "url": "/brands/colombo-design/zavertki-i-nakladki/",
+  "h1": "WC-завертки и накладки Colombo Design",
+  "type": "brand-category",
+  "priority": "P1",
+  "primaryKw": "",
+  "ws": 0,
+  "parent": "/brands/colombo-design/",
+  "note": ""
+ },
+ {
+  "url": "/brands/fratelli-cattini/",
+  "h1": "Дверная фурнитура Fratelli Cattini",
+  "type": "brand",
+  "priority": "P1",
+  "primaryKw": "fratelli cattini",
+  "ws": 3027,
+  "parent": "/brands/",
+  "note": "tier A: ручки, петли, замки, упоры, рото CompactTwin, доводчики, автопороги"
+ },
+ {
+  "url": "/brands/fratelli-cattini/dvernye-ruchki/",
+  "h1": "Дверные ручки Fratelli Cattini",
+  "type": "brand-category",
+  "priority": "P1",
+  "primaryKw": "fratelli ручки",
+  "ws": 7158,
+  "parent": "/brands/fratelli-cattini/",
+  "note": ""
+ },
+ {
+  "url": "/brands/fratelli-cattini/dvernye-petli/",
+  "h1": "Дверные петли Fratelli Cattini",
+  "type": "brand-category",
+  "priority": "P1",
+  "primaryKw": "fratelli cattini петли",
+  "ws": 55,
+  "parent": "/brands/fratelli-cattini/",
+  "note": ""
+ },
+ {
+  "url": "/brands/fratelli-cattini/mezhkomnatnye-zamki/",
+  "h1": "Замки и защёлки для межкомнатных дверей Fratelli Cattini",
+  "type": "brand-category",
+  "priority": "P1",
+  "primaryKw": "",
+  "ws": 0,
+  "parent": "/brands/fratelli-cattini/",
+  "note": ""
+ },
+ {
+  "url": "/brands/fratelli-cattini/razdvizhnye-sistemy/",
+  "h1": "Раздвижные и складные системы для дверей Fratelli Cattini",
+  "type": "brand-category",
+  "priority": "P1",
+  "primaryKw": "",
+  "ws": 0,
+  "parent": "/brands/fratelli-cattini/",
+  "note": ""
+ },
+ {
+  "url": "/brands/fantom/",
+  "h1": "Дверная фурнитура FANTOM",
+  "type": "brand",
+  "priority": "P1",
+  "primaryKw": "магазин фантом",
+  "ws": 5009,
+  "parent": "/brands/",
+  "note": "tier B: магнитные упоры/стопоры, противопожарные"
+ },
+ {
+  "url": "/brands/fantom/upory-i-ogranichiteli/",
+  "h1": "Дверные упоры и ограничители FANTOM",
+  "type": "brand-category",
+  "priority": "P2",
+  "primaryKw": "упор магнитный fantom",
+  "ws": 1773,
+  "parent": "/brands/fantom/",
+  "note": ""
+ },
+ {
+  "url": "/brands/verum/",
+  "h1": "Дверная фурнитура Verum",
+  "type": "brand",
+  "priority": "P1",
+  "primaryKw": "verum официальный",
+  "ws": 4410,
+  "parent": "/brands/",
+  "note": "tier B: дизайнерские ручки, упоры Stoppino, стеклянные двери"
+ },
+ {
+  "url": "/brands/verum/dvernye-ruchki/",
+  "h1": "Дверные ручки Verum",
+  "type": "brand-category",
+  "priority": "P2",
+  "primaryKw": "ручки verum",
+  "ws": 363,
+  "parent": "/brands/verum/",
+  "note": ""
+ },
+ {
+  "url": "/brands/verum/upory-i-ogranichiteli/",
+  "h1": "Дверные упоры и ограничители Verum",
+  "type": "brand-category",
+  "priority": "P2",
+  "primaryKw": "verum стопор скрытый магнитный",
+  "ws": 387,
+  "parent": "/brands/verum/",
+  "note": ""
+ },
+ {
+  "url": "/brands/ajax/",
+  "h1": "Дверная фурнитура AJAX",
+  "type": "brand",
+  "priority": "P1",
+  "primaryKw": "ajax замки",
+  "ws": 1726,
+  "parent": "/brands/",
+  "note": "tier B: ручки, замки, цилиндры, доводчики"
+ },
+ {
+  "url": "/brands/ajax/dvernye-ruchki/",
+  "h1": "Дверные ручки AJAX",
+  "type": "brand-category",
+  "priority": "P2",
+  "primaryKw": "ручка ajax",
+  "ws": 3422,
+  "parent": "/brands/ajax/",
+  "note": ""
+ },
+ {
+  "url": "/brands/ajax/zamki-dlya-vhodnyh-dverej/",
+  "h1": "Замки для входных дверей AJAX",
+  "type": "brand-category",
+  "priority": "P2",
+  "primaryKw": "ajax замок дверной врезной",
+  "ws": 30,
+  "parent": "/brands/ajax/",
+  "note": ""
+ },
+ {
+  "url": "/brands/ajax/cilindry/",
+  "h1": "Цилиндровые механизмы (личинки) AJAX",
+  "type": "brand-category",
+  "priority": "P2",
+  "primaryKw": "ajax цилиндровый механизм",
+  "ws": 479,
+  "parent": "/brands/ajax/",
+  "note": ""
+ },
+ {
+  "url": "/brands/class/",
+  "h1": "Дверная фурнитура CLASS",
+  "type": "brand",
+  "priority": "P1",
+  "primaryKw": "замок class",
+  "ws": 2114,
+  "parent": "/brands/",
+  "note": "tier B: итальянские ручки (группа Fadex/Frosio Bortolo)"
+ },
+ {
+  "url": "/brands/class/dvernye-ruchki/",
+  "h1": "Дверные ручки CLASS",
+  "type": "brand-category",
+  "priority": "P2",
+  "primaryKw": "ручки class",
+  "ws": 1026,
+  "parent": "/brands/class/",
+  "note": ""
+ },
+ {
+  "url": "/brands/tupai/",
+  "h1": "Дверная фурнитура TUPAI",
+  "type": "brand",
+  "priority": "P1",
+  "primaryKw": "tupai",
+  "ws": 1407,
+  "parent": "/brands/",
+  "note": "tier B: португальские ручки 5S/5S Q, петли, замки"
+ },
+ {
+  "url": "/brands/tupai/dvernye-ruchki/",
+  "h1": "Дверные ручки TUPAI",
+  "type": "brand-category",
+  "priority": "P2",
+  "primaryKw": "ручка tupai",
+  "ws": 1703,
+  "parent": "/brands/tupai/",
+  "note": ""
+ },
+ {
+  "url": "/brands/extreza/",
+  "h1": "Дверная фурнитура Extreza",
+  "type": "brand",
+  "priority": "P1",
+  "primaryKw": "extreza дверные",
+  "ws": 579,
+  "parent": "/brands/",
+  "note": "tier B: ручки, оконные ручки"
+ },
+ {
+  "url": "/brands/extreza/dvernye-ruchki/",
+  "h1": "Дверные ручки Extreza",
+  "type": "brand-category",
+  "priority": "P2",
+  "primaryKw": "ручка extreza",
+  "ws": 2495,
+  "parent": "/brands/extreza/",
+  "note": ""
+ },
+ {
+  "url": "/brands/otlav/",
+  "h1": "Дверная фурнитура Otlav",
+  "type": "brand",
+  "priority": "P1",
+  "primaryKw": "otlav",
+  "ws": 1649,
+  "parent": "/brands/",
+  "note": "tier B: скрытые и универсальные петли"
+ },
+ {
+  "url": "/brands/otlav/skrytye-petli/",
+  "h1": "Скрытые петли Otlav",
+  "type": "brand-category",
+  "priority": "P2",
+  "primaryKw": "петли otlav скрытые",
+  "ws": 547,
+  "parent": "/brands/otlav/",
+  "note": ""
+ },
+ {
+  "url": "/brands/lockstyle/",
+  "h1": "Дверная фурнитура LockStyle",
+  "type": "brand",
+  "priority": "P1",
+  "primaryKw": "lockstyle",
+  "ws": 1235,
+  "parent": "/brands/",
+  "note": "tier B: ручки (private label)"
+ },
+ {
+  "url": "/brands/lockstyle/dvernye-ruchki/",
+  "h1": "Дверные ручки LockStyle",
+  "type": "brand-category",
+  "priority": "P2",
+  "primaryKw": "ручки lockstyle",
+  "ws": 680,
+  "parent": "/brands/lockstyle/",
+  "note": ""
+ },
+ {
+  "url": "/brands/venezia/",
+  "h1": "Дверная фурнитура VENEZIA",
+  "type": "brand",
+  "priority": "P1",
+  "primaryKw": "дверь венеция",
+  "ws": 2560,
+  "parent": "/brands/",
+  "note": "tier B: итальянские ручки на розетке/планке, скобы, автопороги (Comaglio)"
+ },
+ {
+  "url": "/brands/venezia/dvernye-ruchki/",
+  "h1": "Дверные ручки VENEZIA",
+  "type": "brand-category",
+  "priority": "P2",
+  "primaryKw": "ручки venezia",
+  "ws": 1805,
+  "parent": "/brands/venezia/",
+  "note": ""
+ },
+ {
+  "url": "/brands/forme/",
+  "h1": "Дверная фурнитура FORME",
+  "type": "brand",
+  "priority": "P1",
+  "primaryKw": "forme официальный сайт",
+  "ws": 142,
+  "parent": "/brands/",
+  "note": "tier B: итальянские ручки"
+ },
+ {
+  "url": "/brands/forme/dvernye-ruchki/",
+  "h1": "Дверные ручки FORME",
+  "type": "brand-category",
+  "priority": "P2",
+  "primaryKw": "ручки forme",
+  "ws": 1156,
+  "parent": "/brands/forme/",
+  "note": ""
+ },
+ {
+  "url": "/brands/pamar/",
+  "h1": "Дверная фурнитура Pamar",
+  "type": "brand",
+  "priority": "P2",
+  "primaryKw": "pamar",
+  "ws": 1213,
+  "parent": "/brands/",
+  "note": "tier C: мебельные ручки, ручки для раздвижных дверей"
+ },
+ {
+  "url": "/brands/pamar/mebelnaya-furnitura/",
+  "h1": "Мебельная фурнитура Pamar",
+  "type": "brand-category",
+  "priority": "P2",
+  "primaryKw": "ручки мебельные pamar",
+  "ws": 155,
+  "parent": "/brands/pamar/",
+  "note": ""
+ },
+ {
+  "url": "/brands/melodia/",
+  "h1": "Дверная фурнитура MELODIA",
+  "type": "brand",
+  "priority": "P2",
+  "primaryKw": "ручки melodia",
+  "ws": 551,
+  "parent": "/brands/",
+  "note": "tier C: итальянские ручки"
+ },
+ {
+  "url": "/brands/comaglio/",
+  "h1": "Дверная фурнитура Comaglio",
+  "type": "brand",
+  "priority": "P2",
+  "primaryKw": "comaglio",
+  "ws": 110,
+  "parent": "/brands/",
+  "note": "tier C: автопороги, уплотнители"
+ },
+ {
+  "url": "/brands/porta-di-parma/",
+  "h1": "Дверная фурнитура Porta di Parma",
+  "type": "brand",
+  "priority": "P2",
+  "primaryKw": "porta di parma ручка на планке",
+  "ws": 137,
+  "parent": "/brands/",
+  "note": "tier C: ручки, автопороги"
+ },
+ {
+  "url": "/series/krona-koblenz-kubica/",
+  "h1": "Скрытые петли Krona Koblenz Kubica",
+  "type": "series",
+  "priority": "P2",
+  "primaryKw": "kubica",
+  "ws": 14513,
+  "parent": "/series/",
+  "note": "бренд krona-koblenz"
+ },
+ {
+  "url": "/series/krona-koblenz-atomika/",
+  "h1": "Скрытые петли Krona Koblenz Atomika",
+  "type": "series",
+  "priority": "P2",
+  "primaryKw": "",
+  "ws": 0,
+  "parent": "/series/",
+  "note": "бренд krona-koblenz"
+ },
+ {
+  "url": "/series/krona-koblenz-spinoff/",
+  "h1": "Магнитные замки Krona Koblenz Spinoff",
+  "type": "series",
+  "priority": "P2",
+  "primaryKw": "замок krona koblenz spinoff",
+  "ws": 10,
+  "parent": "/series/",
+  "note": "бренд krona-koblenz"
+ },
+ {
+  "url": "/series/krona-koblenz-tricks/",
+  "h1": "Скрытая раздвижная система Krona Koblenz Tricks",
+  "type": "series",
+  "priority": "P2",
+  "primaryKw": "krona koblenz tricks купить",
+  "ws": 6,
+  "parent": "/series/",
+  "note": "бренд krona-koblenz"
+ },
+ {
+  "url": "/series/agb-eclipse/",
+  "h1": "Скрытые петли AGB Eclipse",
+  "type": "series",
+  "priority": "P2",
+  "primaryKw": "петли agb eclipse",
+  "ws": 7400,
+  "parent": "/series/",
+  "note": "бренд agb"
+ },
+ {
+  "url": "/series/agb-polaris/",
+  "h1": "Магнитные замки AGB Polaris",
+  "type": "series",
+  "priority": "P2",
+  "primaryKw": "замок agb polaris",
+  "ws": 3982,
+  "parent": "/series/",
+  "note": "бренд agb"
+ },
+ {
+  "url": "/series/agb-mediana/",
+  "h1": "Замки AGB Mediana",
+  "type": "series",
+  "priority": "P2",
+  "primaryKw": "замки agb mediana",
+  "ws": 886,
+  "parent": "/series/",
+  "note": "бренд agb"
+ },
+ {
+  "url": "/series/agb-scivola/",
+  "h1": "Раздвижные системы AGB Scivola",
+  "type": "series",
+  "priority": "P2",
+  "primaryKw": "",
+  "ws": 0,
+  "parent": "/series/",
+  "note": "бренд agb"
+ },
+ {
+  "url": "/series/colombo-design-robot/",
+  "h1": "Ручки Colombo Design Robot",
+  "type": "series",
+  "priority": "P2",
+  "primaryKw": "ручка colombo robot",
+  "ws": 142,
+  "parent": "/series/",
+  "note": "бренд colombo-design"
+ },
+ {
+  "url": "/series/colombo-design-antologhia/",
+  "h1": "Antologhia — классические ручки Colombo Design",
+  "type": "series",
+  "priority": "P2",
+  "primaryKw": "",
+  "ws": 0,
+  "parent": "/series/",
+  "note": "бренд colombo-design"
+ },
+ {
+  "url": "/series/armadillo-urban/",
+  "h1": "Ручки Armadillo Urban",
+  "type": "series",
+  "priority": "P2",
+  "primaryKw": "ручка armadillo urban",
+  "ws": 94,
+  "parent": "/series/",
+  "note": "бренд armadillo"
+ },
+ {
+  "url": "/series/morelli-luxury/",
+  "h1": "Morelli Luxury",
+  "type": "series",
+  "priority": "P2",
+  "primaryKw": "morelli luxury дверные ручки",
+  "ws": 602,
+  "parent": "/series/",
+  "note": "бренд morelli"
+ },
+ {
+  "url": "/series/fratelli-cattini-compacttwin/",
+  "h1": "Складная система Fratelli Cattini CompactTwin",
+  "type": "series",
+  "priority": "P2",
+  "primaryKw": "",
+  "ws": 0,
+  "parent": "/series/",
+  "note": "бренд fratelli-cattini"
+ },
+ {
+  "url": "/series/tupai-5s/",
+  "h1": "Ручки Tupai 5S",
+  "type": "series",
+  "priority": "P2",
+  "primaryKw": "tupai 4007 5s",
+  "ws": 93,
+  "parent": "/series/",
+  "note": "бренд tupai"
+ },
+ {
+  "url": "/series/venezia-unique/",
+  "h1": "Venezia Unique — дизайнерские ручки",
+  "type": "series",
+  "priority": "P2",
+  "primaryKw": "",
+  "ws": 0,
+  "parent": "/series/",
+  "note": "бренд venezia"
+ },
+ {
+  "url": "/furnitura-dlya-mezhkomnatnyh-dverej/",
+  "h1": "Фурнитура для межкомнатных дверей",
+  "type": "door-type",
+  "priority": "P1",
+  "primaryKw": "межкомнатная фурнитура",
+  "ws": 20273,
+  "parent": "/",
+  "note": "ось «по типу двери»; ссылается на теги категорий"
+ },
+ {
+  "url": "/furnitura-dlya-vhodnyh-dverej/",
+  "h1": "Фурнитура для входных дверей",
+  "type": "door-type",
+  "priority": "P1",
+  "primaryKw": "входная фурнитура",
+  "ws": 7607,
+  "parent": "/",
+  "note": "ось «по типу двери»; ссылается на теги категорий"
+ },
+ {
+  "url": "/furnitura-dlya-razdvizhnyh-dverej/",
+  "h1": "Фурнитура для раздвижных дверей и дверей-купе",
+  "type": "door-type",
+  "priority": "P1",
+  "primaryKw": "фурнитура для купе",
+  "ws": 16117,
+  "parent": "/",
+  "note": "ось «по типу двери»; ссылается на теги категорий"
+ },
+ {
+  "url": "/furnitura-dlya-steklyannyh-dverej/",
+  "h1": "Фурнитура для стеклянных дверей",
+  "type": "door-type",
+  "priority": "P1",
+  "primaryKw": "фурнитура для стекла",
+  "ws": 15468,
+  "parent": "/",
+  "note": "ось «по типу двери»; ссылается на теги категорий"
+ },
+ {
+  "url": "/furnitura-dlya-pvh-dverej/",
+  "h1": "Фурнитура для пластиковых (ПВХ) дверей",
+  "type": "door-type",
+  "priority": "P2",
+  "primaryKw": "фурнитура для пластиковых дверей",
+  "ws": 15246,
+  "parent": "/",
+  "note": "ось «по типу двери»; ссылается на теги категорий"
+ },
+ {
+  "url": "/furnitura-dlya-alyuminievyh-dverej/",
+  "h1": "Фурнитура для алюминиевых и профильных дверей",
+  "type": "door-type",
+  "priority": "P2",
+  "primaryKw": "фурнитура для алюминиевых дверей",
+  "ws": 784,
+  "parent": "/",
+  "note": "ось «по типу двери»; ссылается на теги категорий"
+ },
+ {
+  "url": "/furnitura-dlya-protivopozharnyh-dverej/",
+  "h1": "Противопожарная фурнитура (антипаника)",
+  "type": "door-type",
+  "priority": "P2",
+  "primaryKw": "противопожарная фурнитура",
+  "ws": 326,
+  "parent": "/",
+  "note": "ось «по типу двери»; ссылается на теги категорий"
+ },
+ {
+  "url": "/furnitura-dlya-finskih-dverej/",
+  "h1": "Фурнитура для финских дверей",
+  "type": "door-type",
+  "priority": "P3",
+  "primaryKw": "финский замок",
+  "ws": 3947,
+  "parent": "/",
+  "note": "ось «по типу двери»; ссылается на теги категорий"
+ },
+ {
+  "url": "/furnitura-dlya-kalitok-i-vorot/",
+  "h1": "Фурнитура для калиток и ворот",
+  "type": "door-type",
+  "priority": "P2",
+  "primaryKw": "петли для ворот",
+  "ws": 105334,
+  "parent": "/",
+  "note": "ось «по типу двери»; ссылается на теги категорий"
+ },
+ {
+  "url": "/furnitura-dlya-vannoy-i-tualeta/",
+  "h1": "Фурнитура для дверей ванной и туалета",
+  "type": "door-type",
+  "priority": "P2",
+  "primaryKw": "купить ручку для ванной",
+  "ws": 8744,
+  "parent": "/",
+  "note": "ось «по типу двери»; ссылается на теги категорий"
+ },
+ {
+  "url": "/blog/kak-snyat-dvernuyu-ruchku/",
+  "h1": "Как снять дверную ручку межкомнатной двери",
+  "type": "article",
+  "priority": "P2",
+  "primaryKw": "как снять дверную ручку",
+  "ws": 67324,
+  "parent": "/blog/",
+  "note": "hub /blog/ruchki/"
+ },
+ {
+  "url": "/blog/kak-ustanovit-dvernuyu-ruchku/",
+  "h1": "Как установить дверную ручку с защёлкой",
+  "type": "article",
+  "priority": "P2",
+  "primaryKw": "как установить ручку",
+  "ws": 105015,
+  "parent": "/blog/",
+  "note": "hub /blog/ruchki/"
+ },
+ {
+  "url": "/blog/kak-vybrat-dvernye-ruchki/",
+  "h1": "Как выбрать дверные ручки: типы, покрытия, размеры",
+  "type": "article",
+  "priority": "P2",
+  "primaryKw": "какие дверные ручки",
+  "ws": 5957,
+  "parent": "/blog/",
+  "note": "hub /blog/ruchki/"
+ },
+ {
+  "url": "/blog/dvernaya-ruchka-boltaetsya-ili-zaedaet/",
+  "h1": "Ручка болтается, заедает или не возвращается: что делать",
+  "type": "article",
+  "priority": "P2",
+  "primaryKw": "как починить дверную ручку",
+  "ws": 4975,
+  "parent": "/blog/",
+  "note": "hub /blog/ruchki/"
+ },
+ {
+  "url": "/blog/razmery-dvernyh-ruchek/",
+  "h1": "Размеры дверных ручек и розеток: межосевое, квадрат, backset",
+  "type": "article",
+  "priority": "P2",
+  "primaryKw": "ручка дверная размеры",
+  "ws": 3612,
+  "parent": "/blog/",
+  "note": "hub /blog/ruchki/"
+ },
+ {
+  "url": "/blog/kak-vybrat-zamok-dlya-mezhkomnatnoj-dveri/",
+  "h1": "Как выбрать замок для межкомнатной двери",
+  "type": "article",
+  "priority": "P2",
+  "primaryKw": "какой замок для межкомнатной двери",
+  "ws": 2906,
+  "parent": "/blog/",
+  "note": "hub /blog/zamki/"
+ },
+ {
+  "url": "/blog/magnitnyj-zamok-plyusy-i-minusy/",
+  "h1": "Магнитный замок для межкомнатной двери: плюсы, минусы, установка",
+  "type": "article",
+  "priority": "P2",
+  "primaryKw": "как работает магнитный замок",
+  "ws": 11581,
+  "parent": "/blog/",
+  "note": "hub /blog/zamki/"
+ },
+ {
+  "url": "/blog/kak-vrezat-zamok-v-mezhkomnatnuyu-dver/",
+  "h1": "Как врезать замок в межкомнатную дверь своими руками",
+  "type": "article",
+  "priority": "P2",
+  "primaryKw": "как установить замок",
+  "ws": 154414,
+  "parent": "/blog/",
+  "note": "hub /blog/zamki/"
+ },
+ {
+  "url": "/blog/kak-otkryt-mezhkomnatnuyu-dver-bez-klyucha/",
+  "h1": "Как открыть межкомнатную дверь, если заблокирован замок или фиксатор",
+  "type": "article",
+  "priority": "P2",
+  "primaryKw": "как открыть замок",
+  "ws": 294821,
+  "parent": "/blog/",
+  "note": "hub /blog/zamki/"
+ },
+ {
+  "url": "/blog/kak-zamenit-lichinku-zamka/",
+  "h1": "Как заменить личинку (цилиндр) замка",
+  "type": "article",
+  "priority": "P2",
+  "primaryKw": "замена цилиндра",
+  "ws": 271798,
+  "parent": "/blog/",
+  "note": "hub /blog/zamki/"
+ },
+ {
+  "url": "/blog/kak-vybrat-cilindr-zamka/",
+  "h1": "Как подобрать цилиндр замка: размеры, классы, ключ-вертушка",
+  "type": "article",
+  "priority": "P2",
+  "primaryKw": "цилиндр замка какой",
+  "ws": 6355,
+  "parent": "/blog/",
+  "note": "hub /blog/zamki/"
+ },
+ {
+  "url": "/blog/kak-otregulirovat-skrytye-petli/",
+  "h1": "Как отрегулировать скрытые петли",
+  "type": "article",
+  "priority": "P2",
+  "primaryKw": "как отрегулировать скрытые петли",
+  "ws": 2437,
+  "parent": "/blog/",
+  "note": "hub /blog/petli/"
+ },
+ {
+  "url": "/blog/kak-ustanovit-skrytye-petli/",
+  "h1": "Как установить скрытые петли: врезка и шаблоны",
+  "type": "article",
+  "priority": "P2",
+  "primaryKw": "как установить скрытые петли",
+  "ws": 1153,
+  "parent": "/blog/",
+  "note": "hub /blog/petli/"
+ },
+ {
+  "url": "/blog/kak-vybrat-dvernye-petli/",
+  "h1": "Как выбрать петли для межкомнатной двери",
+  "type": "article",
+  "priority": "P2",
+  "primaryKw": "петли виды петель",
+  "ws": 44985,
+  "parent": "/blog/",
+  "note": "hub /blog/petli/"
+ },
+ {
+  "url": "/blog/kak-vrezat-petli-v-dver/",
+  "h1": "Как врезать петли в дверь: разметка и шаблоны",
+  "type": "article",
+  "priority": "P2",
+  "primaryKw": "как установить петли",
+  "ws": 64930,
+  "parent": "/blog/",
+  "note": "hub /blog/petli/"
+ },
+ {
+  "url": "/blog/kak-smazat-dvernye-petli/",
+  "h1": "Как и чем смазать дверные петли, чтобы не скрипели",
+  "type": "article",
+  "priority": "P2",
+  "primaryKw": "чем смазать петли",
+  "ws": 33040,
+  "parent": "/blog/",
+  "note": "hub /blog/petli/"
+ },
+ {
+  "url": "/blog/petli-babochki-plyusy-i-minusy/",
+  "h1": "Петли-бабочки: плюсы, минусы, как установить",
+  "type": "article",
+  "priority": "P2",
+  "primaryKw": "установка бабочки",
+  "ws": 19212,
+  "parent": "/blog/",
+  "note": "hub /blog/petli/"
+ },
+ {
+  "url": "/blog/levye-i-pravye-petli/",
+  "h1": "Левые и правые петли: как определить сторону открывания",
+  "type": "article",
+  "priority": "P2",
+  "primaryKw": "как приварить каплевидные петли",
+  "ws": 10026,
+  "parent": "/blog/",
+  "note": "hub /blog/petli/"
+ },
+ {
+  "url": "/blog/kak-ustanovit-dovodchik/",
+  "h1": "Как установить дверной доводчик",
+  "type": "article",
+  "priority": "P2",
+  "primaryKw": "установка доводчика",
+  "ws": 87758,
+  "parent": "/blog/",
+  "note": "hub /blog/dovodchiki/"
+ },
+ {
+  "url": "/blog/kak-otregulirovat-dovodchik/",
+  "h1": "Как отрегулировать доводчик двери: скорость, дохлоп, усилие",
+  "type": "article",
+  "priority": "P2",
+  "primaryKw": "регулировка доводчика",
+  "ws": 44302,
+  "parent": "/blog/",
+  "note": "hub /blog/dovodchiki/"
+ },
+ {
+  "url": "/blog/kak-vybrat-dovodchik/",
+  "h1": "Как выбрать доводчик по весу и ширине двери (EN-классы)",
+  "type": "article",
+  "priority": "P2",
+  "primaryKw": "лучшие доводчики",
+  "ws": 8556,
+  "parent": "/blog/",
+  "note": "hub /blog/dovodchiki/"
+ },
+ {
+  "url": "/blog/dovodchik-ne-zakryvaet-dver/",
+  "h1": "Доводчик не закрывает дверь или хлопает: причины и ремонт",
+  "type": "article",
+  "priority": "P2",
+  "primaryKw": "дверь с доводчиком не закрывается до конца",
+  "ws": 233,
+  "parent": "/blog/",
+  "note": "hub /blog/dovodchiki/"
+ },
+ {
+  "url": "/blog/kak-vybrat-razdvizhnuyu-sistemu/",
+  "h1": "Как выбрать раздвижную систему для межкомнатной двери",
+  "type": "article",
+  "priority": "P2",
+  "primaryKw": "",
+  "ws": 0,
+  "parent": "/blog/",
+  "note": "hub /blog/razdvizhnye-sistemy/"
+ },
+ {
+  "url": "/blog/kak-ustanovit-razdvizhnuyu-sistemu/",
+  "h1": "Монтаж раздвижной системы: пошаговая инструкция",
+  "type": "article",
+  "priority": "P2",
+  "primaryKw": "установка раздвижных дверей",
+  "ws": 24171,
+  "parent": "/blog/",
+  "note": "hub /blog/razdvizhnye-sistemy/"
+ },
+ {
+  "url": "/blog/roto-sistema-chto-eto/",
+  "h1": "Рото-система для двери: что это и как работает",
+  "type": "article",
+  "priority": "P2",
+  "primaryKw": "",
+  "ws": 0,
+  "parent": "/blog/",
+  "note": "hub /blog/razdvizhnye-sistemy/"
+ },
+ {
+  "url": "/blog/kak-ustanovit-dvernoj-upor/",
+  "h1": "Как установить дверной упор или ограничитель",
+  "type": "article",
+  "priority": "P2",
+  "primaryKw": "как поменять ограничители дверей",
+  "ws": 5956,
+  "parent": "/blog/",
+  "note": "hub /blog/ruchki/"
+ },
+ {
+  "url": "/blog/kak-snyat-i-zamenit-okonnuyu-ruchku/",
+  "h1": "Как снять и заменить ручку на пластиковом окне",
+  "type": "article",
+  "priority": "P2",
+  "primaryKw": "как снять оконную ручку",
+  "ws": 920,
+  "parent": "/blog/",
+  "note": "hub /blog/okna/"
+ },
+ {
+  "url": "/blog/kak-vybrat-avtoporog/",
+  "h1": "Автопорог: как работает и как выбрать",
+  "type": "article",
+  "priority": "P2",
+  "primaryKw": "автопороги отзывы",
+  "ws": 122,
+  "parent": "/blog/",
+  "note": "hub /blog/razdvizhnye-sistemy/"
+ },
+ {
+  "url": "/blog/pokrytiya-dvernoj-furnitury/",
+  "h1": "Покрытия дверной фурнитуры: PVD, хром, латунь, бронза — что прочнее",
+  "type": "article",
+  "priority": "P2",
+  "primaryKw": "",
+  "ws": 0,
+  "parent": "/blog/",
+  "note": "hub /blog/ruchki/"
+ },
+ {
+  "url": "/blog/kak-podobrat-furnituru-k-mezhkomnatnym-dveryam/",
+  "h1": "Как подобрать фурнитуру к межкомнатным дверям: полный комплект",
+  "type": "article",
+  "priority": "P2",
+  "primaryKw": "фурнитура для окон какая лучше",
+  "ws": 1902,
+  "parent": "/blog/",
+  "note": "hub /blog/ruchki/"
+ },
+ {
+  "url": "/blog/chto-takoe-backset/",
+  "h1": "Что такое backset и межосевое расстояние замка",
+  "type": "article",
+  "priority": "P2",
+  "primaryKw": "",
+  "ws": 0,
+  "parent": "/blog/",
+  "note": "hub /blog/zamki/"
+ },
+ {
+  "url": "/blog/shablony-dlya-vrezki-furnitury/",
+  "h1": "Шаблоны и фрезы для врезки петель и замков: как пользоваться",
+  "type": "article",
+  "priority": "P2",
+  "primaryKw": "шаблон для врезки петель в межкомнатные двери своими руками",
+  "ws": 95,
+  "parent": "/blog/",
+  "note": "hub /blog/petli/"
+ }
+]

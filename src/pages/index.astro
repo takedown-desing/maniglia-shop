@@ -1,0 +1,89 @@
+---
+import Base from '../layouts/Base.astro';
+import Tiles from '../components/Tiles.astro';
+import ProductCard from '../components/ProductCard.astro';
+import BrandTiles from '../components/BrandTiles.astro';
+import Prose from '../components/Prose.astro';
+import Faq from '../components/Faq.astro';
+import Icon from '../components/Icon.astro';
+import { CATEGORY_NAV, products, pageTexts, articles, productsFor, firstImage, DOOR_TYPES, shortName, SITE_NAME, brandName, BRANDS } from '../lib/data';
+import { u, abs } from '../lib/url';
+const t = pageTexts.get('/') || {};
+const tiles = CATEGORY_NAV.map((c) => ({ url: c.url, name: c.name, icon: c.icon, count: productsFor(c.url).length }));
+// хиты: по одному-два товара из ключевых категорий, у которых есть картинка
+const pick = (cat: string, n: number) => products.filter((p) => p.category.startsWith(cat) && firstImage(p)).slice(0, n);
+const hits = [...pick('/catalog/dvernye-ruchki/', 4), ...pick('/catalog/dvernye-petli/skrytye/', 2), ...pick('/catalog/mezhkomnatnye-zamki/', 2), ...pick('/catalog/razdvizhnye-sistemy/', 2), ...pick('/catalog/upory-i-ogranichiteli/', 2)].slice(0, 12);
+const heroImg = (cat: string) => firstImage(products.find((p) => p.category.startsWith(cat) && firstImage(p)) || products[0]) ;
+const slides = [
+  { kicker: 'Италия · Португалия · Россия', h: 'Дверная фурнитура 22 брендов', p: 'Ручки, замки, петли, доводчики и раздвижные системы: подберём комплект под вашу дверь в одном покрытии.', cta: '/catalog/', ctaText: 'Перейти в каталог', img: heroImg('/catalog/dvernye-ruchki/na-rozetke/') },
+  { kicker: 'Krona Koblenz · AGB · Otlav', h: 'Скрытые петли для дверей-невидимок', p: 'Регулировка 3D, нагрузка до 100 кг на комплект, покрытия под цвет ручек.', cta: '/catalog/dvernye-petli/skrytye/', ctaText: 'Скрытые петли', img: heroImg('/catalog/dvernye-petli/skrytye/') },
+  { kicker: 'Магнитные и бесшумные', h: 'Замки для межкомнатных дверей', p: 'Магнитные защёлки AGB Polaris и Koblenz Spinoff: дверь закрывается мягко и без щелчка.', cta: '/catalog/mezhkomnatnye-zamki/magnitnye/', ctaText: 'Магнитные замки', img: heroImg('/catalog/mezhkomnatnye-zamki/') },
+];
+const schema = [{ '@type': 'WebSite', name: SITE_NAME, url: abs(Astro.site, '/'), potentialAction: { '@type': 'SearchAction', target: abs(Astro.site, '/search/') + '?q={q}', 'query-input': 'required name=q' } }];
+---
+<Base title={t.title || `${SITE_NAME}: интернет-магазин дверной фурнитуры`} description={t.description || 'Интернет-магазин дверной фурнитуры: ручки, замки, петли, доводчики 22 брендов. Подбор комплекта, доставка по России.'} path="/" schema={schema}>
+  <section class="hero" aria-label="Предложения">
+    {slides.map((s, i) => (
+      <div class={'hero-slide' + (i === 0 ? ' on' : '')} data-slide>
+        <div class="hero-copy">
+          <div class="kicker">{s.kicker}</div>
+          {i === 0 ? <h1 style="font-size:clamp(30px,3.6vw,50px);font-weight:300">{t.h1 || s.h}</h1> : <h2>{s.h}</h2>}
+          <p>{s.p}</p>
+          <div><a class="btn" href={u(s.cta)}>{s.ctaText}</a></div>
+        </div>
+        <div class="hero-art">{s.img && <img src={u(s.img)} alt="" width="380" height="380" loading={i === 0 ? 'eager' : 'lazy'} />}</div>
+      </div>
+    ))}
+    <div class="hero-dots">{slides.map((_, i) => <button type="button" class={i === 0 ? 'on' : ''} aria-label={`Слайд ${i + 1}`} data-dot={i}></button>)}</div>
+  </section>
+
+  <div class="promo">
+    <a href={u('/sale/')}><Icon name="percent" /><span><span class="big">Распродажа</span><br /><span class="sm">модели с выбором покрытий</span></span></a>
+    <a href={u('/dostavka/')}><Icon name="truck" /><span><span class="big">Доставка по России</span><br /><span class="sm">СДЭК, Boxberry, курьер по Москве</span></span></a>
+    <a href={u('/catalog/komplekty-furnitury/')}><Icon name="kit" /><span><span class="big">Комплект на дверь</span><br /><span class="sm">ручка, замок, петли в одном цвете</span></span></a>
+  </div>
+
+  <h2 class="center-title">Дверная фурнитура</h2>
+  <div class="wrap">
+    <section class="section"><Tiles items={tiles} /></section>
+
+    {hits.length > 0 && (
+      <section class="section" style="padding-top:0">
+        <div class="section-title"><h2>Хиты и новинки</h2><a href={u('/catalog/')}>Весь каталог</a></div>
+        <div class="grid">{hits.map((p, i) => <ProductCard p={p} eager={i < 4} />)}</div>
+      </section>
+    )}
+
+    <section class="section">
+      <div class="section-title"><h2>Бренды</h2><a href={u('/brands/')}>Все бренды</a></div>
+      <BrandTiles slugs={BRANDS.filter((b) => b.tier !== 'C').map((b) => b.slug)} />
+    </section>
+
+    <section class="section">
+      <div class="section-title"><h2>Фурнитура по типу двери</h2></div>
+      <div class="chips">{DOOR_TYPES.map((d) => <a class="chip" href={u(d.url)}>{shortName(d)}</a>)}</div>
+    </section>
+
+    {articles.length > 0 && (
+      <section class="section">
+        <div class="section-title"><h2>Инструкции и советы</h2><a href={u('/blog/')}>Все статьи</a></div>
+        <div class="post-grid">{articles.slice(0, 3).map((a) => <a class="post-card" href={u(`/blog/${a.slug}/`)}><span class="h">{a.h1}</span><span class="d">{a.description}</span><span class="m">{a.readingMinutes || 6} мин чтения</span></a>)}</div>
+      </section>
+    )}
+
+    <section class="section two-col">
+      <div><Prose md={t.text} /><Faq items={t.faq} /></div>
+      <aside class="aside-box">
+        <h3>Оптовым клиентам</h3>
+        <p style="font-size:14.5px;color:var(--c-text-2)">Дилерам, дизайнерам и производителям дверей: индивидуальные цены, образцы покрытий, комплектация под серию.</p>
+        <a class="btn btn-sm" href={u('/optovikam/')}>Условия для опта</a>
+      </aside>
+    </section>
+  </div>
+  <script>
+    const slides = [...document.querySelectorAll<HTMLElement>('[data-slide]')]; const dots = [...document.querySelectorAll<HTMLButtonElement>('[data-dot]')];
+    let i = 0; const show = (n: number) => { i = (n + slides.length) % slides.length; slides.forEach((s, k) => s.classList.toggle('on', k === i)); dots.forEach((d, k) => d.classList.toggle('on', k === i)); };
+    dots.forEach((d, k) => d.addEventListener('click', () => show(k)));
+    if (!matchMedia('(prefers-reduced-motion: reduce)').matches) setInterval(() => show(i + 1), 6000);
+  </script>
+</Base>

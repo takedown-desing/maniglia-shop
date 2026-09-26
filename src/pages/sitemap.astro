@@ -1,0 +1,21 @@
+---
+import Base from '../layouts/Base.astro';
+import { registry, CATEGORY_NAV, children, shortName, BRANDS, DOOR_TYPES, articles, SITE_NAME } from '../lib/data';
+import { u } from '../lib/url';
+const services = registry.filter((p) => ['utility', 'b2b'].includes(p.type) && !['/search/', '/cart/', '/compare/', '/account/', '/new/', '/product/{slug}/'].includes(p.url));
+---
+<Base title={`Карта сайта | ${SITE_NAME}`} description="Все разделы каталога, бренды и статьи." path="/sitemap/" crumbs={[{ url: '/', name: 'Главная' }, { url: '/sitemap/', name: 'Карта сайта' }]}>
+  <div class="wrap prose" style="max-width:none">
+    <h1>Карта сайта</h1>
+    <h2>Каталог</h2>
+    <ul>{CATEGORY_NAV.map((c) => <li><a href={u(c.url)}>{c.name}</a>{children(c.url).length > 0 && <ul>{children(c.url).map((s) => <li><a href={u(s.url)}>{shortName(s)}</a>{children(s.url).length > 0 && <ul>{children(s.url).map((x) => <li><a href={u(x.url)}>{shortName(x)}</a></li>)}</ul>}</li>)}</ul>}</li>)}</ul>
+    <h2>Бренды</h2>
+    <ul>{BRANDS.map((b) => <li><a href={u(`/brands/${b.slug}/`)}>{b.name}</a>{children(`/brands/${b.slug}/`).length > 0 && <ul>{children(`/brands/${b.slug}/`).map((x) => <li><a href={u(x.url)}>{x.h1}</a></li>)}</ul>}</li>)}</ul>
+    <h2>По типу двери</h2>
+    <ul>{DOOR_TYPES.map((d) => <li><a href={u(d.url)}>{shortName(d)}</a></li>)}</ul>
+    <h2>Инструкции и советы</h2>
+    <ul>{articles.map((a) => <li><a href={u(`/blog/${a.slug}/`)}>{a.h1}</a></li>)}</ul>
+    <h2>Покупателям</h2>
+    <ul>{services.map((s) => <li><a href={u(s.url)}>{s.h1}</a></li>)}</ul>
+  </div>
+</Base>

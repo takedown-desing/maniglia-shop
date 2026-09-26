@@ -1,0 +1,124 @@
+---
+// Универсальная страница реестра: категория, подкатегория, тег, бренд×категория, серия, тип двери.
+import Base from '../layouts/Base.astro';
+import Listing from './Listing.astro';
+import Tiles from './Tiles.astro';
+import Faq from './Faq.astro';
+import Prose from './Prose.astro';
+import BrandTiles from './BrandTiles.astro';
+import {
+  regByUrl, pageTexts, productsFor, children, breadcrumbs, shortName, isIndexable, CATEGORY_NAV, articles, brandName,
+  BRAND_CAT_MAP, minPrice, firstImage, COLOR_HEX, SITE_NAME, registry,
+} from '../lib/data';
+import { u, abs } from '../lib/url';
+
+const { url, override } = Astro.props as { url: string; override?: { title?: string; description?: string; h1?: string; lead?: string; text?: string; faq?: { q: string; a: string }[] } };
+const reg = regByUrl.get(url)!;
+const t = { ...(pageTexts.get(url) || {}), ...(override || {}) };
+const items = productsFor(url);
+const h1 = t.h1 || reg.h1;
+const prices = items.map(minPrice).filter((x): x is number => !!x);
+const minP = prices.length ? Math.min(...prices) : null;
+const title = t.title || `${h1} купить в интернет-магазине ${SITE_NAME}`;
+const description = t.description || `${h1}: ${items.length ? items.length + ' моделей, ' : ''}доставка по России, подбор под вашу дверь, консультация менеджера.`;
+const crumbs = breadcrumbs(url);
+const topCat = CATEGORY_NAV.find((c) => url.startsWith(c.url))?.url || '';
+
+// подразделы
+const subs = children(url, ['subcategory', 'kit']);
+const tags = children(url, ['tag']);
+const subTiles = subs.map((s) => {
+  const ps = productsFor(s.url);
+  return { url: s.url, name: shortName(s), img: ps.map(firstImage).find(Boolean) ?? null, count: ps.length };
+});
+// сиблинги-теги (для тегов и подкатегорий)
+const siblings = reg.type === 'tag' || reg.type === 'subcategory' ? children(reg.parent, [reg.type]).filter((s) => s.url !== url) : [];
+
+// бренды в этом разделе
+const catSlug = url.split('/').filter(Boolean)[1];
+const brandCats = reg.type === 'category'
+  ? registry.filter((p) => p.type === 'brand-category' && (BRAND_CAT_MAP[p.url.split('/')[3]] || `/catalog/${p.url.split('/')[3]}/`).startsWith(url))
+  : reg.type === 'subcategory'
+    ? registry.filter((p) => p.type === 'brand-category' && BRAND_CAT_MAP[p.url.split('/')[3]] === url)
+    : [];
+const brandsHere = [...new Set(items.map((p) => p.brand))];
+
+// статьи по теме
+const TOPIC: Record<string, string[]> = {
+  ruchki: ['dvernye-ruchki', 'zavertki-i-nakladki', 'upory-i-ogranichiteli'], zamki: ['mezhkomnatnye-zamki', 'zamki-dlya-vhodnyh-dverej', 'cilindry'],
+  petli: ['dvernye-petli'], dovodchiki: ['dovodchiki'], 'razdvizhnye-sistemy': ['razdvizhnye-sistemy', 'avtoporogi-i-uplotniteli'], okna: ['okonnaya-furnitura'],
+};
+const related = articles.filter((a) => (a.related || []).some((r) => r.startsWith(url) || url.startsWith(r)) || (TOPIC[a.hub] || []).includes(catSlug)).slice(0, 4);
+
+const noindex = !isIndexable(url);
+const schema = [{
+  '@type': 'CollectionPage', name: title, url: abs(Astro.site, url), description,
+  mainEntity: { '@type': 'ItemList', numberOfItems: items.length, itemListElement: items.slice(0, 20).map((p, i) => ({ '@type': 'ListItem', position: i + 1, url: abs(Astro.site, `/product/${p.slug}/`), name: p.name })) },
+}];
+if (t.faq?.length) schema.push({ '@type': 'FAQPage', mainEntity: t.faq.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) } as any);
+---
+<Base title={title} description={description} path={url} crumbs={crumbs} noindex={noindex} schema={schema} activeCat={topCat} image={items.map(firstImage).find(Boolean)}>
+  <div class="wrap">
+    <div class="page-head">
+      <h1>{h1}</h1>
+      {t.lead && <p class="lead">{t.lead}</p>}
+      {minP && <p class="lead" style="font-size:14.5px">{items.length} {items.length % 10 === 1 && items.length % 100 !== 11 ? 'модель' : 'моделей'} · цены от {new Intl.NumberFormat('ru-RU').format(minP)} ₽</p>}
+    </div>
+
+    {brandsHere.length > 1 && reg.type !== 'brand-category' && reg.type !== 'series' && (
+      <div class="chips" aria-label="Бренды раздела">
+        {brandsHere.map((b) => {
+          const bc = brandCats.find((x) => x.url.split('/')[2] === b);
+          return <a class="chip" href={u(bc ? bc.url : `/brands/${b}/`)}>{brandName(b)}</a>;
+        })}
+      </div>
+    )}
+
+    {subTiles.length > 0 && <section style="margin:10px 0 28px"><h2 class="sr-only">Подразделы</h2><Tiles items={subTiles} /></section>}
+
+    {tags.length > 0 && (
+      <div class="chips" aria-label="Подборки">
+        {tags.map((tg) => {
+          const col = { chernye: 'black', belye: 'white', zoloto: 'gold', hrom: 'chrome', bronza: 'bronze', nikel: 'nickel', latun: 'brass', grafit: 'graphite', med: 'copper' }[tg.url.split('/').filter(Boolean).pop() || ''];
+          return <a class="chip" href={u(tg.url)}>{col && <span class="dot" style={`background:${COLOR_HEX[col]}`}></span>}{shortName(tg)}</a>;
+        })}
+      </div>
+    )}
+
+    <Listing items={items} />
+
+    {siblings.length > 0 && (
+      <section class="section" style="padding-bottom:0">
+        <h2>Смотрите также</h2>
+        <div class="chips">{siblings.map((s) => <a class="chip" href={u(s.url)}>{shortName(s)}</a>)}{reg.parent && <a class="chip" href={u(reg.parent)}>Все: {shortName(regByUrl.get(reg.parent)!)}</a>}</div>
+      </section>
+    )}
+
+    {brandCats.length > 0 && (
+      <section class="section" style="padding-bottom:0">
+        <h2>{shortName(reg)} по брендам</h2>
+        <div class="chips">{brandCats.map((b) => <a class="chip" href={u(b.url)}>{b.h1}</a>)}</div>
+      </section>
+    )}
+
+    <section class="section two-col">
+      <div>
+        <Prose md={t.text} />
+        <Faq items={t.faq} />
+      </div>
+      <aside>
+        {related.length > 0 && (
+          <div class="aside-box" style="margin-bottom:20px">
+            <h3>Инструкции по теме</h3>
+            <ul>{related.map((a) => <li><a href={u(`/blog/${a.slug}/`)}>{a.h1}</a></li>)}</ul>
+          </div>
+        )}
+        <div class="aside-box">
+          <h3>Подберём фурнитуру под вашу дверь</h3>
+          <p style="font-size:14.5px;color:var(--c-text-2)">Пришлите фото двери или размеры: менеджер соберёт комплект из ручки, замка, петель и упора в одном покрытии.</p>
+          <a class="btn btn-accent btn-sm" href={u('/catalog/komplekty-furnitury/')}>Собрать комплект</a>
+        </div>
+      </aside>
+    </section>
+  </div>
+</Base>

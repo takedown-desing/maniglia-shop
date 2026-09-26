@@ -1,0 +1,71 @@
+---
+// Листинг с клиентским фильтром (бренд, покрытие, стиль, цена) и сортировкой.
+import type { Product } from '../lib/data';
+import { brandName, COLOR_NAMES, minPrice } from '../lib/data';
+import ProductCard from './ProductCard.astro';
+const { items, filter = true } = Astro.props as { items: Product[]; filter?: boolean };
+const brands = [...new Set(items.map((p) => p.brand))].sort((a, b) => brandName(a).localeCompare(brandName(b)));
+const colors = [...new Set(items.flatMap((p) => p.variants.map((v) => v.color)))];
+const styles = [...new Set(items.map((p) => p.style).filter(Boolean))] as string[];
+const STY: Record<string, string> = { modern: 'Современный', classic: 'Классика', minimal: 'Минимализм', loft: 'Лофт' };
+const prices = items.map(minPrice).filter((x): x is number => !!x);
+const lo = prices.length ? Math.min(...prices) : 0; const hi = prices.length ? Math.max(...prices) : 0;
+---
+{items.length === 0 ? (
+  <div class="empty">Ассортимент этого раздела формируется. Оставьте заявку, и мы подберём товар под вашу дверь: <a href="#" data-lead>связаться с менеджером</a>.</div>
+) : (
+  <div data-listing>
+    {filter && items.length > 4 && (
+      <form class="filter" data-filter onsubmit="return false">
+        <div class="filter-fields">
+          {brands.length > 1 && <div class="select"><label class="sr-only" for="f-brand">Производитель</label><select id="f-brand" name="brand"><option value="">Производитель</option>{brands.map((b) => <option value={b}>{brandName(b)}</option>)}</select></div>}
+          {colors.length > 1 && <div class="select"><label class="sr-only" for="f-color">Цвет</label><select id="f-color" name="color"><option value="">Цвет / покрытие</option>{colors.map((c) => <option value={c}>{COLOR_NAMES[c] || c}</option>)}</select></div>}
+          {styles.length > 1 && <div class="select"><label class="sr-only" for="f-style">Стиль</label><select id="f-style" name="style"><option value="">Стиль</option>{styles.map((s) => <option value={s}>{STY[s] || s}</option>)}</select></div>}
+        </div>
+        {hi > 0 && <div class="price-range"><span>Цена: от</span><input name="min" inputmode="numeric" placeholder={String(lo)} aria-label="Цена от" /><span>до</span><input name="max" inputmode="numeric" placeholder={String(hi)} aria-label="Цена до" /><span>₽</span></div>}
+        <div class="filter-actions"><button type="button" class="btn btn-sky btn-sm" data-apply>Показать (<span data-count>{items.length}</span>)</button><button type="reset" class="btn btn-ghost btn-sm" data-reset>Сбросить</button></div>
+      </form>
+    )}
+    <div class="listbar">
+      <span>Найдено: <b data-found>{items.length}</b> товаров</span>
+      <span class="note">Всегда указываем страну и производителя изделия</span>
+      <label>Сортировка: <select data-sort><option value="">по популярности</option><option value="asc">сначала дешевле</option><option value="desc">сначала дороже</option><option value="name">по названию</option></select></label>
+    </div>
+    <div class="grid" data-grid>
+      {items.map((p, i) => <ProductCard p={p} eager={i < 4} />)}
+    </div>
+  </div>
+)}
+<script>
+  document.querySelectorAll<HTMLElement>('[data-listing]').forEach((root) => {
+    const form = root.querySelector<HTMLFormElement>('[data-filter]');
+    const grid = root.querySelector<HTMLElement>('[data-grid]')!;
+    const cards = [...grid.querySelectorAll<HTMLElement>('[data-card]')];
+    const found = root.querySelector('[data-found]'); const count = root.querySelector('[data-count]');
+    const apply = () => {
+      const f = form ? new FormData(form) : new FormData();
+      const brand = f.get('brand') as string, color = f.get('color') as string, style = f.get('style') as string;
+      const min = +(f.get('min') as string || 0), max = +(f.get('max') as string || 0);
+      let n = 0;
+      cards.forEach((c) => {
+        const pr = +(c.dataset.price || 0);
+        const ok = (!brand || c.dataset.brand === brand) && (!color || (c.dataset.colors || '').split(' ').includes(color)) && (!style || c.dataset.style === style)
+          && (!min || (pr && pr >= min)) && (!max || (pr && pr <= max));
+        c.hidden = !ok; if (ok) n++;
+      });
+      if (found) found.textContent = String(n); if (count) count.textContent = String(n);
+    };
+    form?.addEventListener('change', apply); form?.addEventListener('input', apply);
+    form?.addEventListener('reset', () => setTimeout(apply, 0));
+    root.querySelector('[data-apply]')?.addEventListener('click', () => grid.scrollIntoView({ behavior: 'smooth' }));
+    root.querySelector<HTMLSelectElement>('[data-sort]')?.addEventListener('change', (e) => {
+      const v = (e.target as HTMLSelectElement).value;
+      const sorted = [...cards].sort((a, b) => {
+        if (v === 'name') return (a.dataset.name || '').localeCompare(b.dataset.name || '');
+        const pa = +(a.dataset.price || 0) || 1e9, pb = +(b.dataset.price || 0) || 1e9;
+        return v === 'asc' ? pa - pb : v === 'desc' ? (pb % 1e9) - (pa % 1e9) : 0;
+      });
+      if (v) sorted.forEach((c) => grid.appendChild(c)); else cards.forEach((c) => grid.appendChild(c));
+    });
+  });
+</script>

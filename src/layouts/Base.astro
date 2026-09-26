@@ -1,0 +1,177 @@
+---
+import '../styles/global.css';
+import Icon from '../components/Icon.astro';
+import { CATEGORY_NAV, SITE_NAME, PHONE, EMAIL, BRANDS, DOOR_TYPES, shortName } from '../lib/data';
+import { u, abs } from '../lib/url';
+
+interface Props {
+  title: string;
+  description?: string;
+  path: string;                 // канонический путь без base, со слэшем
+  noindex?: boolean;
+  schema?: Record<string, unknown>[];
+  crumbs?: { url: string; name: string }[];
+  image?: string | null;
+  activeCat?: string;
+}
+const { title, description = '', path, noindex = false, schema = [], crumbs = [], image = null, activeCat = '' } = Astro.props;
+const canonical = abs(Astro.site, path);
+const fullTitle = title.includes(SITE_NAME) ? title : `${title} | ${SITE_NAME}`;
+const org = { '@type': 'Organization', '@id': abs(Astro.site, '/') + '#org', name: SITE_NAME, url: abs(Astro.site, '/'), telephone: PHONE, email: EMAIL };
+const graph: Record<string, unknown>[] = [org, ...schema];
+if (crumbs.length > 1) graph.push({ '@type': 'BreadcrumbList', itemListElement: crumbs.map((c, i) => ({ '@type': 'ListItem', position: i + 1, name: c.name, item: abs(Astro.site, c.url) })) });
+const ld = JSON.stringify({ '@context': 'https://schema.org', '@graph': graph });
+const topBrands = BRANDS.filter((b) => b.tier === 'A');
+---
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{fullTitle}</title>
+  {description && <meta name="description" content={description} />}
+  <link rel="canonical" href={canonical} />
+  <meta name="robots" content={noindex ? 'noindex, follow' : 'index, follow'} />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content={SITE_NAME} />
+  <meta property="og:title" content={fullTitle} />
+  {description && <meta property="og:description" content={description} />}
+  <meta property="og:url" content={canonical} />
+  {image && <meta property="og:image" content={abs(Astro.site, image)} />}
+  <meta name="theme-color" content="#ffffff" />
+  <link rel="icon" href={u('/favicon.svg')} type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&display=swap&subset=cyrillic" rel="stylesheet" />
+  <script type="application/ld+json" set:html={ld} />
+</head>
+<body data-base={u('/')}>
+  <a class="skip" href="#main">Перейти к содержимому</a>
+
+  <nav class="rail" id="rail" aria-label="Каталог">
+    <form class="rail-search" action={u('/search/')} role="search">
+      <Icon name="search" />
+      <label class="sr-only" for="rail-q">Поиск по каталогу</label>
+      <input id="rail-q" name="q" type="search" placeholder="Поиск" autocomplete="off" />
+    </form>
+    <ul>
+      {CATEGORY_NAV.map((c) => (
+        <li><a href={u(c.url)} class={activeCat === c.url ? 'active' : ''}><Icon name={c.icon} /><span class="rail-label">{c.name}</span></a></li>
+      ))}
+    </ul>
+    <div class="rail-sep"></div>
+    <ul>
+      <li><a href={u('/brands/')}><Icon name="store" /><span class="rail-label">Бренды</span></a></li>
+      <li><a href={u('/sale/')}><Icon name="percent" /><span class="rail-label">Распродажа</span></a></li>
+      <li><a href={u('/blog/')}><Icon name="chat" /><span class="rail-label">Инструкции и советы</span></a></li>
+    </ul>
+  </nav>
+
+  <div class="page">
+    <div class="demo-bar">Демо-версия магазина. Название, контакты и цены ориентировочные, ассортимент собран из открытых источников брендов.</div>
+    <header class="top">
+      <div class="wrap">
+        <button class="icon-btn burger" id="burger" aria-label="Открыть каталог" aria-controls="rail" aria-expanded="false"><Icon name="menu" /></button>
+        <a href={u('/')} class="logo-box" aria-label={`${SITE_NAME}, на главную`}>
+          <span class="logo">MANI<b>G</b>LIA</span>
+          <small class="logo-sub">дверная фурнитура</small>
+        </a>
+        <a class="phone" href={`tel:${PHONE.replace(/[^+\d]/g, '')}`}>{PHONE}</a>
+        <nav class="topnav" aria-label="Информация">
+          <a href={u('/dostavka/')}>Доставка и оплата</a>
+          <a href={u('/brands/')}>Бренды</a>
+          <a href={u('/optovikam/')}>Оптовым клиентам</a>
+          <a href={u('/dizajneram/')}>Дизайнерам</a>
+          <a href={u('/showroom/')}>Шоурум</a>
+          <a href={u('/kontakty/')}>Контакты</a>
+        </nav>
+        <div class="top-icons">
+          <a class="icon-btn" href={u('/search/')} aria-label="Поиск"><Icon name="search" /></a>
+          <a class="icon-btn" href={u('/cart/')} aria-label="Корзина"><Icon name="cart" /><span class="count" id="cart-count" hidden>0</span></a>
+        </div>
+      </div>
+    </header>
+
+    <main id="main">
+      {crumbs.length > 1 && (
+        <div class="wrap">
+          <ol class="crumbs">
+            {crumbs.map((c, i) => <li>{i < crumbs.length - 1 ? <a href={u(c.url)}>{c.name}</a> : <span aria-current="page">{c.name}</span>}</li>)}
+          </ol>
+        </div>
+      )}
+      <slot />
+    </main>
+
+    <footer class="foot">
+      <div class="wrap">
+        <div class="foot-grid">
+          <div>
+            <span class="logo">MANI<b>G</b>LIA</span>
+            <p style="margin-top:14px">Интернет-магазин дверной фурнитуры: ручки, замки, петли, доводчики, раздвижные системы 22 брендов. Доставка по России.</p>
+            <p><a href={`tel:${PHONE.replace(/[^+\d]/g, '')}`}>{PHONE}</a><br /><a href={`mailto:${EMAIL}`}>{EMAIL}</a></p>
+          </div>
+          <div>
+            <h4>Каталог</h4>
+            <ul>{CATEGORY_NAV.slice(0, 10).map((c) => <li><a href={u(c.url)}>{c.name}</a></li>)}</ul>
+          </div>
+          <div>
+            <h4>Бренды</h4>
+            <ul>{topBrands.map((b) => <li><a href={u(`/brands/${b.slug}/`)}>{b.name}</a></li>)}<li><a href={u('/brands/')}>Все бренды</a></li></ul>
+            <h4 style="margin-top:22px">По типу двери</h4>
+            <ul>{DOOR_TYPES.slice(0, 5).map((d) => <li><a href={u(d.url)}>{shortName(d).replace('Фурнитура для ', 'Для ')}</a></li>)}</ul>
+          </div>
+          <div>
+            <h4>Покупателям</h4>
+            <ul>
+              <li><a href={u('/dostavka/')}>Доставка</a></li>
+              <li><a href={u('/oplata/')}>Оплата</a></li>
+              <li><a href={u('/garantiya-i-vozvrat/')}>Гарантия и возврат</a></li>
+              <li><a href={u('/optovikam/')}>Оптовикам и дилерам</a></li>
+              <li><a href={u('/dizajneram/')}>Дизайнерам и архитекторам</a></li>
+              <li><a href={u('/proizvoditelyam-dverej/')}>Производителям дверей</a></li>
+              <li><a href={u('/blog/')}>Инструкции и советы</a></li>
+              <li><a href={u('/faq/')}>Вопросы и ответы</a></li>
+              <li><a href={u('/o-kompanii/')}>О компании</a></li>
+              <li><a href={u('/kontakty/')}>Контакты</a></li>
+              <li><a href={u('/sitemap/')}>Карта сайта</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="foot-bottom">
+          <span>© {new Date().getFullYear()} {SITE_NAME}. Демо-версия, данные не являются публичной офертой.</span>
+          <span><a href={u('/politika-konfidencialnosti/')}>Политика конфиденциальности</a> · <a href={u('/publichnaya-oferta/')}>Оферта</a></span>
+        </div>
+      </div>
+    </footer>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script>
+    // --- мобильная панель
+    const rail = document.getElementById('rail'); const burger = document.getElementById('burger');
+    burger?.addEventListener('click', (e) => { e.stopPropagation(); const o = rail!.classList.toggle('open'); burger.setAttribute('aria-expanded', String(o)); });
+    document.addEventListener('click', (e) => { if (rail?.classList.contains('open') && !rail.contains(e.target as Node)) rail.classList.remove('open'); });
+    // --- корзина (демо, localStorage)
+    type Item = { slug: string; name: string; finish: string; price: number | null; img: string; qty: number; url: string };
+    const KEY = 'maniglia-cart';
+    const read = (): Item[] => { try { return JSON.parse(localStorage.getItem(KEY) || '[]'); } catch { return []; } };
+    const write = (a: Item[]) => { try { localStorage.setItem(KEY, JSON.stringify(a)); } catch {} renderCount(); };
+    const renderCount = () => { const n = read().reduce((s, i) => s + i.qty, 0); const el = document.getElementById('cart-count'); if (el) { el.textContent = String(n); el.hidden = n === 0; } };
+    (window as any).maniglia = { read, write };
+    renderCount();
+    const toast = (t: string) => { const el = document.getElementById('toast')!; el.textContent = t; el.classList.add('on'); setTimeout(() => el.classList.remove('on'), 2200); };
+    document.addEventListener('click', (e) => {
+      const b = (e.target as HTMLElement).closest('[data-add]') as HTMLElement | null;
+      if (!b) return;
+      e.preventDefault();
+      const d = b.dataset; const qtyEl = document.getElementById('qty') as HTMLInputElement | null;
+      const qty = Math.max(1, parseInt(qtyEl?.value || '1', 10) || 1);
+      const items = read(); const key = d.slug + '|' + d.finish;
+      const ex = items.find((i) => i.slug + '|' + i.finish === key);
+      if (ex) ex.qty += qty; else items.push({ slug: d.slug!, name: d.name!, finish: d.finish || '', price: d.price ? +d.price : null, img: d.img || '', qty, url: d.url || '' });
+      write(items); toast('Добавлено в корзину');
+    });
+  </script>
+</body>
+</html>

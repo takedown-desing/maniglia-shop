@@ -1,0 +1,8 @@
+---
+import { marked } from 'marked';
+import { u } from '../lib/url';
+const { md = '' } = Astro.props as { md?: string };
+// внутренние ссылки markdown ведём через base
+const html = md ? (marked.parse(md.replace(/\]\((\/[^)\s]*)\)/g, (_m, p) => `](${u(p)})`)) as string) : '';
+---
+{html && <div class="prose" set:html={html} />}

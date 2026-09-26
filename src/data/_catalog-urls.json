@@ -1,0 +1,632 @@
+[
+ {
+  "url": "/catalog/",
+  "h1": "Каталог дверной фурнитуры",
+  "type": "category"
+ },
+ {
+  "url": "/catalog/dvernye-ruchki/",
+  "h1": "Дверные ручки",
+  "type": "category"
+ },
+ {
+  "url": "/catalog/dvernye-ruchki/na-rozetke/",
+  "h1": "Дверные ручки на розетке",
+  "type": "subcategory"
+ },
+ {
+  "url": "/catalog/dvernye-ruchki/na-rozetke/kruglaya-rozetka/",
+  "h1": "Ручки на круглой розетке",
+  "type": "tag"
+ },
+ {
+  "url": "/catalog/dvernye-ruchki/na-rozetke/kvadratnaya-rozetka/",
+  "h1": "Ручки на квадратной розетке",
+  "type": "tag"
+ },
+ {
+  "url": "/catalog/dvernye-ruchki/na-planke/",
+  "h1": "Дверные ручки на планке",
+  "type": "subcategory"
+ },
+ {
+  "url": "/catalog/dvernye-ruchki/knoby/",
+  "h1": "Ручки-кнобы (поворотные)",
+  "type": "subcategory"
+ },
+ {
+  "url": "/catalog/dvernye-ruchki/skoby/",
+  "h1": "Ручки-скобы для дверей",
+  "type": "subcategory"
+ },
+ {
+  "url": "/catalog/dvernye-ruchki/dlya-razdvizhnyh-dverej/",
+  "h1": "Ручки для раздвижных дверей и дверей-купе",
+  "type": "subcategory"
+ },
+ {
+  "url": "/catalog/dvernye-ruchki/dlya-vhodnyh-dverej/",
+  "h1": "Ручки для входных дверей",
+  "type": "subcategory"
+ },
+ {
+  "url": "/catalog/dvernye-ruchki/dlya-steklyannyh-dverej/",
+  "h1": "Ручки для стеклянных дверей",
+  "type": "subcategory"
+ },
+ {
+  "url": "/catalog/dvernye-ruchki/dlya-profilnyh-dverej/",
+  "h1": "Ручки для алюминиевых и профильных дверей",
+  "type": "subcategory"
+ },
+ {
+  "url": "/catalog/dvernye-ruchki/antipanika/",
+  "h1": "Ручки антипаника и противопожарные",
+  "type": "subcategory"
+ },
+ {
+  "url": "/catalog/dvernye-ruchki/s-zamkom/",
+  "h1": "Дверные ручки с замком",
+  "type": "tag"
+ },
+ {
+  "url": "/catalog/dvernye-ruchki/s-fiksatorom/",
+  "h1": "Ручки с фиксатором (для ванной и туалета)",
+  "type": "tag"
+ },
+ {
+  "url": "/catalog/dvernye-ruchki/chernye/",
+  "h1": "Чёрные дверные ручки",
+  "type": "tag"
+ },
+ {
+  "url": "/catalog/dvernye-ruchki/belye/",
+  "h1": "Белые дверные ручки",
+  "type": "tag"
+ },
+ {
+  "url": "/catalog/dvernye-ruchki/zoloto/",
+  "h1": "Дверные ручки золото",
+  "type": "tag"
+ },
+ {
+  "url": "/catalog/dvernye-ruchki/hrom/",
+  "h1": "Дверные ручки хром",
+  "type": "tag"
+ },
+ {
+  "url": "/catalog/dvernye-ruchki/bronza/",
+  "h1": "Дверные ручки бронза",
+  "type": "tag"
+ },
+ {
+  "url": "/catalog/dvernye-ruchki/nikel/",
+  "h1": "Дверные ручки никель",
+  "type": "tag"
+ },
+ {
+  "url": "/catalog/dvernye-ruchki/latun/",
+  "h1": "Дверные ручки латунь",
+  "type": "tag"
+ },
+ {
+  "url": "/catalog/dvernye-ruchki/grafit/",
+  "h1": "Дверные ручки графит",
+  "type": "tag"
+ },
+ {
+  "url": "/catalog/dvernye-ruchki/med/",
+  "h1": "Дверные ручки медь",
+  "type": "tag"
+ },
+ {
+  "url": "/catalog/dvernye-ruchki/italyanskie/",
+  "h1": "Итальянские дверные ручки",
+  "type": "tag"
+ },
+ {
+  "url": "/catalog/dvernye-ruchki/klassika/",
+  "h1": "Дверные ручки в классическом стиле",
+  "type": "tag"
+ },
+ {
+  "url": "/catalog/dvernye-ruchki/sovremennye/",
+  "h1": "Дверные ручки в современном стиле (модерн, минимализм)",
+  "type": "tag"
+ },
+ {
+  "url": "/catalog/dvernye-ruchki/loft/",
+  "h1": "Дверные ручки лофт",
+  "type": "tag"
+ },
+ {
+  "url": "/catalog/dvernye-ruchki/magnitnye/",
+  "h1": "Магнитные дверные ручки",
+  "type": "tag"
+ },
+ {
+  "url": "/catalog/dvernye-ruchki/dlya-finskih-dverej/",
+  "h1": "Ручки для финских дверей",
+  "type": "tag"
+ },
+ {
+  "url": "/catalog/zavertki-i-nakladki/",
+  "h1": "WC-завертки и накладки",
+  "type": "category"
+ },
+ {
+  "url": "/catalog/zavertki-i-nakladki/wc-zavertki/",
+  "h1": "Сантехнические завертки WC",
+  "type": "subcategory"
+ },
+ {
+  "url": "/catalog/zavertki-i-nakladki/nakladki-pod-cilindr/",
+  "h1": "Накладки под цилиндр и ключ",
+  "type": "subcategory"
+ },
+ {
+  "url": "/catalog/zavertki-i-nakladki/dekorativnye-nakladki/",
+  "h1": "Декоративные накладки и розетки",
+  "type": "subcategory"
+ },
+ {
+  "url": "/catalog/zavertki-i-nakladki/nakladki-dlya-vhodnyh-dverej/",
+  "h1": "Накладки для входных дверей",
+  "type": "tag"
+ },
+ {
+  "url": "/catalog/mezhkomnatnye-zamki/",
+  "h1": "Замки и защёлки для межкомнатных дверей",
+  "type": "category"
+ },
+ {
+  "url": "/catalog/mezhkomnatnye-zamki/magnitnye/",
+  "h1": "Магнитные замки и защёлки",
+  "type": "subcategory"
+ },
+ {
+  "url": "/catalog/mezhkomnatnye-zamki/s-plastikovym-yazychkom/",
+  "h1": "Замки с пластиковым язычком",
+  "type": "subcategory"
+ },
+ {
+  "url": "/catalog/mezhkomnatnye-zamki/s-metallicheskim-yazychkom/",
+  "h1": "Замки с металлическим язычком",
+  "type": "subcategory"
+ },
+ {
+  "url": "/catalog/mezhkomnatnye-zamki/pod-cilindr/",
+  "h1": "Межкомнатные замки под цилиндр",
+  "type": "subcategory"
+ },
+ {
+  "url": "/catalog/mezhkomnatnye-zamki/s-fiksatorom/",
+  "h1": "Замки с фиксатором (сантехнические)",
+  "type": "subcategory"
+ },
+ {
+  "url": "/catalog/mezhkomnatnye-zamki/pod-klyuch/",
+  "h1": "Межкомнатные замки под ключ",
+  "type": "subcategory"
+ },
+ {
+  "url": "/catalog/mezhkomnatnye-zamki/dlya-razdvizhnyh-dverej/",
+  "h1": "Замки и защёлки для раздвижных дверей",
+  "type": "subcategory"
+ },
+ {
+  "url": "/catalog/mezhkomnatnye-zamki/otvetnye-planki/",
+  "h1": "Ответные планки",
+  "type": "subcategory"
+ },
+ {
+  "url": "/catalog/mezhkomnatnye-zamki/besshumnye/",
+  "h1": "Бесшумные замки для межкомнатных дверей",
+  "type": "tag"
+ },
+ {
+  "url": "/catalog/mezhkomnatnye-zamki/chernye/",
+  "h1": "Чёрные замки и защёлки",
+  "type": "tag"
+ },
+ {
+  "url": "/catalog/zamki-dlya-vhodnyh-dverej/",
+  "h1": "Замки для входных дверей",
+  "type": "category"
+ },
+ {
+  "url": "/catalog/zamki-dlya-vhodnyh-dverej/vreznye/",
+  "h1": "Врезные замки",
+  "type": "subcategory"
+ },
+ {
+  "url": "/catalog/zamki-dlya-vhodnyh-dverej/vreznye/cilindrovye/",
+  "h1": "Врезные цилиндровые замки",
+  "type": "tag"
+ },
+ {
+  "url": "/catalog/zamki-dlya-vhodnyh-dverej/vreznye/suvaldnye/",
+  "h1": "Сувальдные замки",
+  "type": "tag"
+ },
+ {
+  "url": "/catalog/zamki-dlya-vhodnyh-dverej/nakladnye/",
+  "h1": "Накладные замки",
+  "type": "subcategory"
+ },
+ {
+  "url": "/catalog/zamki-dlya-vhodnyh-dverej/elektromehanicheskie/",
+  "h1": "Электромеханические и электронные замки",
+  "type": "subcategory"
+ },
+ {
+  "url": "/catalog/zamki-dlya-vhodnyh-dverej/navesnye/",
+  "h1": "Навесные замки",
+  "type": "subcategory"
+ },
+ {
+  "url": "/catalog/zamki-dlya-vhodnyh-dverej/dlya-kalitki/",
+  "h1": "Замки для калитки и ворот",
+  "type": "tag"
+ },
+ {
+  "url": "/catalog/zamki-dlya-vhodnyh-dverej/protivopozharnye/",
+  "h1": "Замки для противопожарных дверей",
+  "type": "tag"
+ },
+ {
+  "url": "/catalog/cilindry/",
+  "h1": "Цилиндровые механизмы (личинки)",
+  "type": "category"
+ },
+ {
+  "url": "/catalog/cilindry/klyuch-klyuch/",
+  "h1": "Цилиндры ключ-ключ",
+  "type": "subcategory"
+ },
+ {
+  "url": "/catalog/cilindry/klyuch-vertushka/",
+  "h1": "Цилиндры ключ-вертушка",
+  "type": "subcategory"
+ },
+ {
+  "url": "/catalog/cilindry/s-perekodirovkoj/",
+  "h1": "Цилиндры с перекодировкой",
+  "type": "tag"
+ },
+ {
+  "url": "/catalog/cilindry/bronenakladki/",
+  "h1": "Броненакладки на цилиндр",
+  "type": "subcategory"
+ },
+ {
+  "url": "/catalog/cilindry/povorotniki/",
+  "h1": "Поворотники (вертушки) для цилиндров",
+  "type": "subcategory"
+ },
+ {
+  "url": "/catalog/dvernye-petli/",
+  "h1": "Дверные петли",
+  "type": "category"
+ },
+ {
+  "url": "/catalog/dvernye-petli/universalnye/",
+  "h1": "Универсальные дверные петли",
+  "type": "subcategory"
+ },
+ {
+  "url": "/catalog/dvernye-petli/skrytye/",
+  "h1": "Скрытые петли",
+  "type": "subcategory"
+ },
+ {
+  "url": "/catalog/dvernye-petli/vvertnye/",
+  "h1": "Ввертные петли и колпачки",
+  "type": "subcategory"
+ },
+ {
+  "url": "/catalog/dvernye-petli/babochki/",
+  "h1": "Петли-бабочки",
+  "type": "subcategory"
+ },
+ {
+  "url": "/catalog/dvernye-petli/razemnye/",
+  "h1": "Разъёмные петли (левые и правые)",
+  "type": "subcategory"
+ },
+ {
+  "url": "/catalog/dvernye-petli/pruzhinnye/",
+  "h1": "Пружинные и маятниковые (барные) петли",
+  "type": "subcategory"
+ },
+ {
+  "url": "/catalog/dvernye-petli/dlya-vhodnyh-dverej/",
+  "h1": "Петли для входных и металлических дверей",
+  "type": "subcategory"
+ },
+ {
+  "url": "/catalog/dvernye-petli/s-dovodchikom/",
+  "h1": "Петли с доводчиком",
+  "type": "tag"
+ },
+ {
+  "url": "/catalog/dvernye-petli/chernye/",
+  "h1": "Чёрные дверные петли",
+  "type": "tag"
+ },
+ {
+  "url": "/catalog/dvernye-petli/belye/",
+  "h1": "Белые дверные петли",
+  "type": "tag"
+ },
+ {
+  "url": "/catalog/dvernye-petli/shablony-i-frezy/",
+  "h1": "Шаблоны и фрезы для врезки петель и замков",
+  "type": "subcategory"
+ },
+ {
+  "url": "/catalog/dovodchiki/",
+  "h1": "Дверные доводчики",
+  "type": "category"
+ },
+ {
+  "url": "/catalog/dovodchiki/nakladnye/",
+  "h1": "Накладные (верхние) доводчики",
+  "type": "subcategory"
+ },
+ {
+  "url": "/catalog/dovodchiki/skrytye/",
+  "h1": "Скрытые доводчики",
+  "type": "subcategory"
+ },
+ {
+  "url": "/catalog/dovodchiki/napolnye/",
+  "h1": "Напольные доводчики",
+  "type": "subcategory"
+ },
+ {
+  "url": "/catalog/dovodchiki/pruzhinnye/",
+  "h1": "Пружинные доводчики",
+  "type": "subcategory"
+ },
+ {
+  "url": "/catalog/dovodchiki/dlya-steklyannyh-dverej/",
+  "h1": "Доводчики для стеклянных дверей",
+  "type": "tag"
+ },
+ {
+  "url": "/catalog/dovodchiki/s-fiksaciej/",
+  "h1": "Доводчики с фиксацией открытого положения",
+  "type": "tag"
+ },
+ {
+  "url": "/catalog/dovodchiki/ulichnye/",
+  "h1": "Уличные морозостойкие доводчики",
+  "type": "tag"
+ },
+ {
+  "url": "/catalog/razdvizhnye-sistemy/",
+  "h1": "Раздвижные и складные системы для дверей",
+  "type": "category"
+ },
+ {
+  "url": "/catalog/razdvizhnye-sistemy/dlya-mezhkomnatnyh-dverej/",
+  "h1": "Раздвижные системы для межкомнатных дверей",
+  "type": "subcategory"
+ },
+ {
+  "url": "/catalog/razdvizhnye-sistemy/skrytye/",
+  "h1": "Скрытые раздвижные системы",
+  "type": "subcategory"
+ },
+ {
+  "url": "/catalog/razdvizhnye-sistemy/roto/",
+  "h1": "Рото-системы (поворотно-сдвижные)",
+  "type": "subcategory"
+ },
+ {
+  "url": "/catalog/razdvizhnye-sistemy/knizhka/",
+  "h1": "Складные системы (дверь-книжка)",
+  "type": "subcategory"
+ },
+ {
+  "url": "/catalog/razdvizhnye-sistemy/penaly/",
+  "h1": "Пеналы (кассеты) для раздвижных дверей",
+  "type": "subcategory"
+ },
+ {
+  "url": "/catalog/razdvizhnye-sistemy/dlya-steklyannyh-dverej/",
+  "h1": "Раздвижные системы для стеклянных дверей",
+  "type": "subcategory"
+ },
+ {
+  "url": "/catalog/razdvizhnye-sistemy/komplektuyushchie/",
+  "h1": "Комплектующие: ролики, направляющие, щётки",
+  "type": "subcategory"
+ },
+ {
+  "url": "/catalog/razdvizhnye-sistemy/dlya-tyazhelyh-dverej/",
+  "h1": "Раздвижные системы для тяжёлых дверей",
+  "type": "tag"
+ },
+ {
+  "url": "/catalog/upory-i-ogranichiteli/",
+  "h1": "Дверные упоры и ограничители",
+  "type": "category"
+ },
+ {
+  "url": "/catalog/upory-i-ogranichiteli/napolnye/",
+  "h1": "Напольные упоры",
+  "type": "subcategory"
+ },
+ {
+  "url": "/catalog/upory-i-ogranichiteli/nastennye/",
+  "h1": "Настенные упоры",
+  "type": "subcategory"
+ },
+ {
+  "url": "/catalog/upory-i-ogranichiteli/magnitnye/",
+  "h1": "Магнитные упоры и стопоры",
+  "type": "subcategory"
+ },
+ {
+  "url": "/catalog/upory-i-ogranichiteli/skrytye/",
+  "h1": "Скрытые упоры",
+  "type": "subcategory"
+ },
+ {
+  "url": "/catalog/upory-i-ogranichiteli/torcevye/",
+  "h1": "Торцевые упоры (ригели)",
+  "type": "subcategory"
+ },
+ {
+  "url": "/catalog/upory-i-ogranichiteli/chernye/",
+  "h1": "Чёрные дверные упоры",
+  "type": "tag"
+ },
+ {
+  "url": "/catalog/zadvizhki-i-shpingalety/",
+  "h1": "Задвижки, шпингалеты и засовы",
+  "type": "category"
+ },
+ {
+  "url": "/catalog/zadvizhki-i-shpingalety/torcevye/",
+  "h1": "Торцевые задвижки",
+  "type": "subcategory"
+ },
+ {
+  "url": "/catalog/zadvizhki-i-shpingalety/nakladnye/",
+  "h1": "Накладные задвижки и шпингалеты",
+  "type": "subcategory"
+ },
+ {
+  "url": "/catalog/zadvizhki-i-shpingalety/nochnye/",
+  "h1": "Ночные задвижки",
+  "type": "tag"
+ },
+ {
+  "url": "/catalog/glazki-i-aksessuary/",
+  "h1": "Дверные глазки, цепочки и аксессуары",
+  "type": "category"
+ },
+ {
+  "url": "/catalog/glazki-i-aksessuary/glazki/",
+  "h1": "Дверные глазки",
+  "type": "subcategory"
+ },
+ {
+  "url": "/catalog/glazki-i-aksessuary/cepochki/",
+  "h1": "Дверные цепочки",
+  "type": "subcategory"
+ },
+ {
+  "url": "/catalog/glazki-i-aksessuary/stuchalki/",
+  "h1": "Дверные стучалки (молотки)",
+  "type": "subcategory"
+ },
+ {
+  "url": "/catalog/avtoporogi-i-uplotniteli/",
+  "h1": "Автопороги и уплотнители",
+  "type": "category"
+ },
+ {
+  "url": "/catalog/avtoporogi-i-uplotniteli/avtoporogi/",
+  "h1": "Автопороги (умные пороги)",
+  "type": "subcategory"
+ },
+ {
+  "url": "/catalog/avtoporogi-i-uplotniteli/uplotniteli/",
+  "h1": "Уплотнители для дверей",
+  "type": "subcategory"
+ },
+ {
+  "url": "/catalog/avtoporogi-i-uplotniteli/shchetki/",
+  "h1": "Шумоизоляционные щётки",
+  "type": "subcategory"
+ },
+ {
+  "url": "/catalog/furnitura-dlya-steklyannyh-dverej/",
+  "h1": "Фурнитура для стеклянных дверей",
+  "type": "category"
+ },
+ {
+  "url": "/catalog/furnitura-dlya-steklyannyh-dverej/petli/",
+  "h1": "Петли для стеклянных дверей",
+  "type": "subcategory"
+ },
+ {
+  "url": "/catalog/furnitura-dlya-steklyannyh-dverej/zamki/",
+  "h1": "Замки и защёлки для стеклянных дверей",
+  "type": "subcategory"
+ },
+ {
+  "url": "/catalog/furnitura-dlya-steklyannyh-dverej/komplekty/",
+  "h1": "Комплекты фурнитуры для распашных стеклянных дверей",
+  "type": "subcategory"
+ },
+ {
+  "url": "/catalog/furnitura-dlya-steklyannyh-dverej/otvetnye-chasti/",
+  "h1": "Ответные части и фиксаторы для стекла",
+  "type": "subcategory"
+ },
+ {
+  "url": "/catalog/okonnaya-furnitura/",
+  "h1": "Оконная фурнитура",
+  "type": "category"
+ },
+ {
+  "url": "/catalog/okonnaya-furnitura/okonnye-ruchki/",
+  "h1": "Оконные ручки",
+  "type": "subcategory"
+ },
+ {
+  "url": "/catalog/okonnaya-furnitura/okonnye-ruchki/s-klyuchom/",
+  "h1": "Оконные ручки с ключом",
+  "type": "tag"
+ },
+ {
+  "url": "/catalog/okonnaya-furnitura/balkonnye-ruchki/",
+  "h1": "Балконные ручки",
+  "type": "subcategory"
+ },
+ {
+  "url": "/catalog/okonnaya-furnitura/komplektuyushchie/",
+  "h1": "Оконные комплектующие",
+  "type": "subcategory"
+ },
+ {
+  "url": "/catalog/mebelnaya-furnitura/",
+  "h1": "Мебельная фурнитура",
+  "type": "category"
+ },
+ {
+  "url": "/catalog/mebelnaya-furnitura/mebelnye-ruchki/",
+  "h1": "Мебельные ручки",
+  "type": "subcategory"
+ },
+ {
+  "url": "/catalog/mebelnaya-furnitura/mebelnye-petli/",
+  "h1": "Мебельные петли",
+  "type": "subcategory"
+ },
+ {
+  "url": "/catalog/mebelnaya-furnitura/mebelnye-zamki/",
+  "h1": "Мебельные замки",
+  "type": "subcategory"
+ },
+ {
+  "url": "/catalog/mebelnaya-furnitura/kryuchki/",
+  "h1": "Мебельные крючки",
+  "type": "subcategory"
+ },
+ {
+  "url": "/catalog/komplekty-furnitury/",
+  "h1": "Комплекты фурнитуры на дверь",
+  "type": "kit"
+ },
+ {
+  "url": "/catalog/remkomplekty-i-zapchasti/",
+  "h1": "Ремкомплекты и запчасти",
+  "type": "category"
+ }
+]

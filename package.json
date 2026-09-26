@@ -1,0 +1,17 @@
+{
+  "name": "maniglia-shop",
+  "type": "module",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "prebuild": "node scripts/prepare-data.mjs",
+    "predev": "node scripts/prepare-data.mjs",
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "dependencies": {
+    "astro": "^5.0.0",
+    "marked": "^14.0.0"
+  }
+}

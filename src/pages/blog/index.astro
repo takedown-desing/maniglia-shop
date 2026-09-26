@@ -1,0 +1,15 @@
+---
+import Base from '../../layouts/Base.astro';
+import { articles, registry, SITE_NAME } from '../../lib/data';
+import { u } from '../../lib/url';
+const hubs = registry.filter((p) => p.type === 'blog-hub' && p.url !== '/blog/');
+---
+<Base title={`Инструкции и советы по дверной фурнитуре | ${SITE_NAME}`} description="Как выбрать, установить и отрегулировать дверные ручки, замки, петли, доводчики и раздвижные системы: пошаговые инструкции." path="/blog/" crumbs={[{ url: '/', name: 'Главная' }, { url: '/blog/', name: 'Инструкции и советы' }]}>
+  <div class="wrap">
+    <div class="page-head"><h1>Инструкции и советы</h1><p class="lead">Выбор, установка и регулировка дверной фурнитуры: разбираем по шагам, со ссылками на подходящие товары.</p></div>
+    <div class="chips">{hubs.map((h) => <a class="chip" href={u(h.url)}>{h.h1.split(':')[0]}</a>)}</div>
+    <div class="post-grid">
+      {articles.map((a) => <a class="post-card" href={u(`/blog/${a.slug}/`)}><span class="h">{a.h1}</span><span class="d">{a.description}</span><span class="m">{a.readingMinutes || 6} мин чтения</span></a>)}
+    </div>
+  </div>
+</Base>

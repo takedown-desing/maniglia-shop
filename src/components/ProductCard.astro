@@ -1,0 +1,24 @@
+---
+import type { Product } from '../lib/data';
+import { brandName, minPrice, rub, firstImage, COLOR_HEX, COLOR_NAMES } from '../lib/data';
+import { u } from '../lib/url';
+const { p, eager = false } = Astro.props as { p: Product; eager?: boolean };
+const price = minPrice(p);
+const img = firstImage(p);
+const colors = [...new Set(p.variants.map((v) => v.color))];
+const inStock = p.variants.some((v) => v.inStock !== false);
+const hit = p.variants.length >= 3;
+---
+<article class="card" data-card data-brand={p.brand} data-colors={colors.join(' ')} data-price={price ?? ''} data-style={p.style ?? ''} data-cat={p.category} data-name={p.name.toLowerCase()}>
+  <a href={u(`/product/${p.slug}/`)} class="card-img">
+    {img ? <img src={u(img)} alt={p.name} width="400" height="400" loading={eager ? 'eager' : 'lazy'} decoding="async" /> : <svg class="noimg" viewBox="0 0 32 32" fill="none" stroke="#000" stroke-width="1"><path d="M4 10l12-6 12 6v12l-12 6-12-6z"/></svg>}
+  </a>
+  {hit && <span class="badge" aria-hidden="true">выбор<br/>цвета</span>}
+  <div class="card-brand">{brandName(p.brand)}</div>
+  <a href={u(`/product/${p.slug}/`)} class="card-name">{p.name}</a>
+  <div class="card-sw" aria-label={'Покрытия: ' + colors.map((c) => COLOR_NAMES[c] || c).join(', ')}>
+    {colors.slice(0, 7).map((c) => <span class="sw" style={`background:${COLOR_HEX[c] || '#ccc'}`} title={COLOR_NAMES[c] || c}></span>)}
+  </div>
+  <div class="card-price">{price ? <><small>{p.variants.length > 1 ? 'от ' : ''}</small>{rub(price)}</> : <small>Цена по запросу</small>}</div>
+  <div class={'card-stock' + (inStock ? '' : ' no')}>{inStock ? 'В наличии' : 'Под заказ'}</div>
+</article>

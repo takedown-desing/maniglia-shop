@@ -1,0 +1,12 @@
+---
+import SectionPage from '../../components/SectionPage.astro';
+import { registry } from '../../lib/data';
+export function getStaticPaths() {
+  return registry.filter((p) => p.url.startsWith('/catalog/')).map((p) => ({
+    params: { path: p.url === '/catalog/' ? undefined : p.url.replace(/^\/catalog\//, '').replace(/\/$/, '') },
+    props: { url: p.url },
+  }));
+}
+const { url } = Astro.props;
+---
+<SectionPage url={url} />
