@@ -4,24 +4,85 @@ import Tiles from '../components/Tiles.astro';
 import ProductCard from '../components/ProductCard.astro';
 import BrandTiles from '../components/BrandTiles.astro';
 import Prose from '../components/Prose.astro';
+import Blocks from '../components/Blocks.astro';
 import Faq from '../components/Faq.astro';
 import Icon from '../components/Icon.astro';
 import ReviewCard from '../components/ReviewCard.astro';
 import RatingBadge from '../components/RatingBadge.astro';
 import { REVIEWS, REVIEWS_NOTE } from '../lib/reviews';
-import { CATEGORY_NAV, products, pageTexts, articles, productsFor, firstImage, DOOR_TYPES, shortName, SITE_NAME, brandName, BRANDS } from '../lib/data';
+import { COMPANY, tel, mapSrc } from '../lib/company';
+import {
+  CATEGORY_NAV, products, pageTexts, articles, productsFor, firstImage, colorImage, DOOR_TYPES, shortName, SITE_NAME, BRANDS,
+  registry, seriesTexts, brandName, COLOR_HEX,
+} from '../lib/data';
+import type { Product } from '../lib/data';
 import { u, abs } from '../lib/url';
-const t = pageTexts.get('/') || {};
+
+const t = (pageTexts.get('/') || {}) as any;
 const tiles = CATEGORY_NAV.map((c) => ({ url: c.url, name: c.name, icon: c.icon, count: productsFor(c.url).length }));
-// хиты: по одному-два товара из ключевых категорий, у которых есть картинка
-const pick = (cat: string, n: number) => products.filter((p) => p.category.startsWith(cat) && firstImage(p)).slice(0, n);
-const hits = [...pick('/catalog/dvernye-ruchki/', 4), ...pick('/catalog/dvernye-petli/skrytye/', 2), ...pick('/catalog/mezhkomnatnye-zamki/', 2), ...pick('/catalog/razdvizhnye-sistemy/', 2), ...pick('/catalog/upory-i-ogranichiteli/', 2)].slice(0, 12);
-// для первого экрана берём фото без логотипов дистрибьюторов
-const heroImg = (cat: string) => firstImage(products.find((p) => p.category.startsWith(cat) && p.variants.some((v) => v.image && v.imageSrc && !/made-italy|fratelli-cattini\.com/.test(v.imageSrc))) || products[0]);
+const hasImg = (p: Product) => !!firstImage(p);
+const pickIn = (cat: string, n: number) => products.filter((p) => p.category.startsWith(cat) && hasImg(p)).slice(0, n);
+// hero: фото без логотипов дистрибьюторов
+const clean = (p: Product) => p.variants.some((v) => v.image && v.imageSrc && !/made-italy|fratelli-cattini\.com/.test(v.imageSrc));
+const heroImg = (cat: string) => firstImage(products.find((p) => p.category.startsWith(cat) && clean(p)) || products[0]);
 const slides = [
   { kicker: 'Италия · Португалия · Россия', h: 'Дверная фурнитура 22 брендов', p: 'Ручки, замки, петли, доводчики и раздвижные системы: подберём комплект под вашу дверь в одном покрытии.', cta: '/catalog/', ctaText: 'Перейти в каталог', img: heroImg('/catalog/dvernye-ruchki/na-rozetke/') },
   { kicker: 'Krona Koblenz · AGB · Otlav', h: 'Скрытые петли для дверей-невидимок', p: 'Регулировка 3D, нагрузка до 100 кг на комплект, покрытия под цвет ручек.', cta: '/catalog/dvernye-petli/skrytye/', ctaText: 'Скрытые петли', img: heroImg('/catalog/dvernye-petli/skrytye/') },
   { kicker: 'Магнитные и бесшумные', h: 'Замки для межкомнатных дверей', p: 'Магнитные защёлки AGB Polaris и Koblenz Spinoff: дверь закрывается мягко и без щелчка.', cta: '/catalog/mezhkomnatnye-zamki/magnitnye/', ctaText: 'Магнитные замки', img: heroImg('/catalog/mezhkomnatnye-zamki/') },
+];
+
+// витрина с вкладками по категориям (как «полки» у morelli.ru)
+const shelves = [
+  { id: 'hits', name: 'Хиты', items: [...pickIn('/catalog/dvernye-ruchki/', 3), ...pickIn('/catalog/dvernye-petli/skrytye/', 2), ...pickIn('/catalog/mezhkomnatnye-zamki/magnitnye/', 2), ...pickIn('/catalog/upory-i-ogranichiteli/', 1)] },
+  { id: 'ruchki', name: 'Ручки', items: pickIn('/catalog/dvernye-ruchki/', 8) },
+  { id: 'zamki', name: 'Замки', items: pickIn('/catalog/mezhkomnatnye-zamki/', 8) },
+  { id: 'petli', name: 'Петли', items: pickIn('/catalog/dvernye-petli/', 8) },
+  { id: 'razdv', name: 'Раздвижные системы', items: pickIn('/catalog/razdvizhnye-sistemy/', 8) },
+  { id: 'upory', name: 'Упоры и доводчики', items: [...pickIn('/catalog/upory-i-ogranichiteli/', 4), ...pickIn('/catalog/dovodchiki/', 4)] },
+].filter((s) => s.items.length);
+
+// «Фурнитура для вашей двери» (как «Комплектующие для» у doorlock.ru)
+const doorCards = DOOR_TYPES.slice(0, 8).map((d) => {
+  const ps = productsFor(d.url).filter(hasImg);
+  return { url: d.url, name: d.h1.replace(/^Фурнитура для /, '').replace(/^Противопожарная фурнитура.*/, 'Противопожарных дверей').replace(/^./, (c) => c.toUpperCase()), img: ps.length ? firstImage(ps[Math.min(1, ps.length - 1)]) : null, n: productsFor(d.url).length };
+});
+
+// подбор по цвету: картинка товара именно в этом покрытии
+const COLORS = [['chernye', 'black', 'Чёрный'], ['zoloto', 'gold', 'Золото'], ['hrom', 'chrome', 'Хром'], ['bronza', 'bronze', 'Бронза'], ['nikel', 'nickel', 'Никель'], ['latun', 'brass', 'Латунь'], ['belye', 'white', 'Белый'], ['grafit', 'graphite', 'Графит']]
+  .map(([slug, col, name]) => {
+    const url = `/catalog/dvernye-ruchki/${slug}/`;
+    const ps = productsFor(url);
+    return { url, col, name, n: ps.length, img: ps.map((p) => colorImage(p, col)).find(Boolean) ?? null };
+  }).filter((c) => registry.some((r) => r.url === c.url) && c.n > 0);
+
+// популярные серии
+const series = registry.filter((r) => r.type === 'series').map((r) => {
+  const ps = productsFor(r.url).filter(hasImg); const s = seriesTexts.get(r.url.split('/')[2]);
+  return { url: r.url, name: s?.name || r.h1, brand: ps[0] ? brandName(ps[0].brand) : '', img: ps[0] ? firstImage(ps[0]) : null, n: productsFor(r.url).length };
+}).filter((s) => s.img).slice(0, 6);
+
+// комплект на дверь: по одному товару каждого типа в одном цвете (чёрный)
+const kitColor = 'black';
+const kitParts = [
+  ['/catalog/dvernye-ruchki/', 'Ручка'], ['/catalog/zavertki-i-nakladki/', 'Завертка'], ['/catalog/mezhkomnatnye-zamki/', 'Замок'],
+  ['/catalog/dvernye-petli/', 'Петли'], ['/catalog/upory-i-ogranichiteli/', 'Упор'],
+].map(([cat, label]) => {
+  const p = products.find((x) => x.category.startsWith(cat) && x.variants.some((v) => v.color === kitColor && v.image));
+  return p ? { label, p, img: colorImage(p, kitColor) } : null;
+}).filter(Boolean) as { label: string; p: Product; img: string }[];
+
+const services = [
+  { icon: 'store', t: 'Шоурум с образцами', d: 'Покрытия и популярные модели можно посмотреть вживую' },
+  { icon: 'kit', t: 'Подбор по фото', d: 'Пришлите фото двери или старой фурнитуры, подберём замену' },
+  { icon: 'truck', t: 'Доставка по России', d: 'СДЭК, Boxberry, ПВЗ, курьер по Москве' },
+  { icon: 'box', t: 'Самовывоз в день заказа', d: 'Если товар есть на складе и заказ оформлен до 14:00' },
+  { icon: 'shield', t: 'Гарантия производителя', d: 'Только оригинальная продукция, страна производства в карточке' },
+  { icon: 'check', t: 'Обмен и возврат', d: 'По закону о защите прав потребителей, без лишних вопросов' },
+];
+const b2b = [
+  { url: '/optovikam/', t: 'Оптовикам и дилерам', d: 'Прайс-лист, оптовые цены, отгрузка со склада в Москве', icon: 'box' },
+  { url: '/dizajneram/', t: 'Дизайнерам и архитекторам', d: 'Образцы покрытий, спецификации для проектов, персональный менеджер', icon: 'kit' },
+  { url: '/proizvoditelyam-dverej/', t: 'Производителям дверей', d: 'Комплектация серий дверей фурнитурой, поставки партиями', icon: 'hinge' },
 ];
 const schema = [{ '@type': 'WebSite', name: SITE_NAME, url: abs(Astro.site, '/'), potentialAction: { '@type': 'SearchAction', target: abs(Astro.site, '/search/') + '?q={q}', 'query-input': 'required name=q' } }];
 ---
@@ -51,10 +112,57 @@ const schema = [{ '@type': 'WebSite', name: SITE_NAME, url: abs(Astro.site, '/')
   <div class="wrap">
     <section class="section"><Tiles items={tiles} /></section>
 
-    {hits.length > 0 && (
-      <section class="section" style="padding-top:0">
-        <div class="section-title"><h2>Хиты и новинки</h2><a href={u('/catalog/')}>Весь каталог</a></div>
-        <div class="grid">{hits.map((p, i) => <ProductCard p={p} eager={i < 4} />)}</div>
+    <!-- 1. Витрина с вкладками -->
+    {shelves.length > 0 && (
+      <section class="section" style="padding-top:0" data-tabs>
+        <div class="section-title"><h2>Популярные товары</h2><a href={u('/catalog/')}>Весь каталог</a></div>
+        <div class="tabs-row" role="tablist">{shelves.map((s, i) => <button type="button" role="tab" class={'tab' + (i === 0 ? ' on' : '')} aria-selected={i === 0 ? 'true' : 'false'} data-tab={s.id}>{s.name}</button>)}</div>
+        {shelves.map((s, i) => <div class="grid" role="tabpanel" data-panel={s.id} hidden={i !== 0}>{s.items.map((p, k) => <ProductCard p={p} eager={i === 0 && k < 4} />)}</div>)}
+      </section>
+    )}
+
+    <!-- 2. Фурнитура для вашей двери -->
+    <section class="section">
+      <div class="section-title"><h2>Фурнитура для вашей двери</h2></div>
+      <div class="door-cards">
+        {doorCards.map((d) => <a class="door-card" href={u(d.url)}><span class="dc-name">{d.name}</span>{d.n > 0 && <span class="dc-n">{d.n} товаров</span>}{d.img ? <img src={u(d.img)} alt="" width="120" height="120" loading="lazy" /> : <Icon name="kit" size={60} />}</a>)}
+      </div>
+    </section>
+
+    <!-- 3. Подбор по цвету -->
+    {COLORS.length > 0 && (
+      <section class="section">
+        <div class="section-title"><h2>Дверные ручки по цвету</h2><a href={u('/catalog/dvernye-ruchki/')}>Все ручки</a></div>
+        <div class="color-cards">
+          {COLORS.map((c) => <a class="color-card" href={u(c.url)}><span class="cc-img">{c.img && <img src={u(c.img)} alt="" width="120" height="120" loading="lazy" />}</span><span class="cc-name"><span class="sw" style={`background:${COLOR_HEX[c.col]}`}></span>{c.name}</span><span class="cc-n">{c.n} моделей</span></a>)}
+        </div>
+      </section>
+    )}
+
+    <!-- 4. Собрать комплект -->
+    {kitParts.length >= 3 && (
+      <section class="section">
+        <div class="kit-banner">
+          <div class="kit-copy">
+            <div class="kicker">Сервис подбора</div>
+            <h2>Соберите комплект на дверь в одном покрытии</h2>
+            <ol class="kit-steps"><li>Выберите ручку и покрытие</li><li>Добавьте завертку или накладку</li><li>Подберите замок и петли под вес полотна</li><li>Закончите упором</li></ol>
+            <a class="btn btn-accent" href={u('/catalog/komplekty-furnitury/')}>Собрать комплект</a>
+          </div>
+          <div class="kit-items">
+            {kitParts.map((k) => <a class="kit-item" href={u(`/product/${k.p.slug}/`)}><img src={u(k.img)} alt={k.p.name} width="130" height="130" loading="lazy" /><span>{k.label}</span></a>)}
+          </div>
+        </div>
+      </section>
+    )}
+
+    <!-- 5. Популярные коллекции -->
+    {series.length > 0 && (
+      <section class="section">
+        <div class="section-title"><h2>Популярные коллекции</h2><a href={u('/brands/')}>Все бренды</a></div>
+        <div class="series-cards">
+          {series.map((s) => <a class="series-card" href={u(s.url)}><img src={u(s.img!)} alt="" width="160" height="160" loading="lazy" /><span class="sc-brand">{s.brand}</span><span class="sc-name">{s.name}</span><span class="sc-n">{s.n} моделей</span></a>)}
+        </div>
       </section>
     )}
 
@@ -63,15 +171,44 @@ const schema = [{ '@type': 'WebSite', name: SITE_NAME, url: abs(Astro.site, '/')
       <BrandTiles slugs={BRANDS.filter((b) => b.tier !== 'C').map((b) => b.slug)} />
     </section>
 
+    <!-- 6. Почему мы (сервисные плитки, как у doorlock.ru) -->
     <section class="section">
-      <div class="section-title"><h2>Фурнитура по типу двери</h2></div>
-      <div class="chips">{DOOR_TYPES.map((d) => <a class="chip" href={u(d.url)}>{shortName(d)}</a>)}</div>
+      <div class="section-title"><h2>Почему покупают у нас</h2><a href={u('/o-kompanii/')}>О компании</a></div>
+      <div class="svc-grid">{services.map((s) => <div class="svc"><Icon name={s.icon} size={34} /><b>{s.t}</b><span>{s.d}</span></div>)}</div>
+    </section>
+
+    <!-- 7. Шоурум с картой -->
+    <section class="section">
+      <div class="showroom">
+        <div class="sr-copy">
+          <div class="kicker">Шоурум и самовывоз</div>
+          <h2>Приезжайте посмотреть образцы</h2>
+          <p>{COMPANY.address}. {COMPANY.metro}.</p>
+          <div class="hours" style="margin:12px 0 18px">{COMPANY.hours.map((h) => <><span>{h.d}</span><span>{h.t}</span></>)}</div>
+          <div style="display:flex;gap:10px;flex-wrap:wrap"><a class="btn" href={u('/kontakty/')}>Как добраться</a><a class="btn btn-ghost" href={tel(COMPANY.phoneMain)}>{COMPANY.phoneMain}</a></div>
+        </div>
+        <iframe class="map" src={mapSrc(15)} title="Шоурум на карте" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </section>
+
+    <!-- 8. Для бизнеса -->
+    <section class="section">
+      <div class="section-title"><h2>Для бизнеса</h2></div>
+      <div class="b2b-grid">{b2b.map((b) => <a class="b2b-card" href={u(b.url)}><Icon name={b.icon} size={36} /><b>{b.t}</b><span>{b.d}</span><span class="more">Подробнее →</span></a>)}</div>
     </section>
 
     <section class="section">
       <div class="section-title"><h2>Отзывы покупателей</h2><a href={u('/otzyvy/')}>Все отзывы</a></div>
       <div style="display:flex;gap:18px;align-items:center;flex-wrap:wrap;margin-bottom:18px"><RatingBadge /><span class="rb-note">{REVIEWS_NOTE}</span></div>
       <div class="reviews-grid">{REVIEWS.slice(0, 3).map((r) => <ReviewCard r={r} />)}</div>
+    </section>
+
+    <!-- 9. Каталог/прайс в мессенджер (как у morelli.ru) -->
+    <section class="section">
+      <div class="lead-banner">
+        <div><h2>Получите прайс-лист и каталог покрытий</h2><p>Отправим PDF-каталог с ценами и образцами покрытий в удобный мессенджер или на почту.</p></div>
+        <form class="lead-form" data-demo-form><label class="sr-only" for="lf">Телефон или e-mail</label><input id="lf" name="contact" placeholder="Телефон или e-mail" required /><button class="btn btn-accent" type="submit">Получить каталог</button></form>
+      </div>
     </section>
 
     {articles.length > 0 && (
@@ -82,7 +219,7 @@ const schema = [{ '@type': 'WebSite', name: SITE_NAME, url: abs(Astro.site, '/')
     )}
 
     <section class="section two-col">
-      <div><Prose md={t.text} /><Faq items={t.faq} /></div>
+      <div>{t.blocks?.length ? <Blocks blocks={t.blocks} /> : <Prose md={t.text} />}<Faq items={t.faq} /></div>
       <aside class="aside-box">
         <h3>Оптовым клиентам</h3>
         <p style="font-size:14.5px;color:var(--c-text-2)">Дилерам, дизайнерам и производителям дверей: индивидуальные цены, образцы покрытий, комплектация под серию.</p>
@@ -95,5 +232,12 @@ const schema = [{ '@type': 'WebSite', name: SITE_NAME, url: abs(Astro.site, '/')
     let i = 0; const show = (n: number) => { i = (n + slides.length) % slides.length; slides.forEach((s, k) => s.classList.toggle('on', k === i)); dots.forEach((d, k) => d.classList.toggle('on', k === i)); };
     dots.forEach((d, k) => d.addEventListener('click', () => show(k)));
     if (!matchMedia('(prefers-reduced-motion: reduce)').matches) setInterval(() => show(i + 1), 6000);
+    document.querySelectorAll<HTMLElement>('[data-tabs]').forEach((root) => {
+      root.querySelectorAll<HTMLButtonElement>('[data-tab]').forEach((b) => b.addEventListener('click', () => {
+        root.querySelectorAll<HTMLButtonElement>('[data-tab]').forEach((x) => { x.classList.toggle('on', x === b); x.setAttribute('aria-selected', String(x === b)); });
+        root.querySelectorAll<HTMLElement>('[data-panel]').forEach((p) => { p.hidden = p.dataset.panel !== b.dataset.tab; });
+      }));
+    });
+    document.querySelectorAll<HTMLFormElement>('[data-demo-form]').forEach((f) => f.addEventListener('submit', (e) => { e.preventDefault(); f.innerHTML = '<p>Спасибо! В рабочей версии каталог придёт на указанный контакт.</p>'; }));
   </script>
 </Base>
