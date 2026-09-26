@@ -21,7 +21,7 @@ export const SITE_NAME = 'MANIGLIA';
 export const PHONE = '+7 (000) 000-00-00';
 export const EMAIL = 'info@example.com';
 
-export const registry = registryRaw as RegPage[];
+export const registry = (registryRaw as RegPage[]).map((p) => ({ ...p, h1: p.h1.replace(/\s+—\s+/g, ': ') }));
 export const regByUrl = new Map(registry.map((p) => [p.url, p]));
 
 // ---------- загрузка JSON-файлов (любой из них может ещё отсутствовать)

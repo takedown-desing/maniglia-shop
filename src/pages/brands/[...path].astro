@@ -21,6 +21,8 @@ const items = productsFor(url);
 const cats = isBrand ? children(url, ['brand-category']) : [];
 const series = isBrand ? registry.filter((p) => p.type === 'series' && p.url.split('/')[2].startsWith(slug + '-')) : [];
 const name = bt?.name || reg.h1.replace('Дверная фурнитура ', '');
+const FOUNDED_OK = ['agb', 'krona-koblenz', 'colombo-design', 'tupai', 'pamar', 'otlav', 'comaglio', 'verum', 'fantom'];
+const founded = FOUNDED_OK.includes(slug) && bt?.founded ? `основан в ${bt.founded} г.` : '';
 ---
 {isBrand ? (
   <Base title={bt?.title || `${name}: дверная фурнитура, купить в ${SITE_NAME}`} description={bt?.description || `${reg.h1}: каталог, цены, доставка по России.`} path={url} crumbs={breadcrumbs(url)} noindex={!isIndexable(url)} image={items.map(firstImage).find(Boolean)}
@@ -28,7 +30,7 @@ const name = bt?.name || reg.h1.replace('Дверная фурнитура ', ''
     <div class="wrap">
       <div class="page-head">
         <h1>{reg.h1}</h1>
-        <p class="lead">{[bt?.country, bt?.founded ? `с ${bt.founded} г.` : '', bt?.segment].filter(Boolean).join(' · ')}{bt?.tagline ? `. ${bt.tagline}` : ''}</p>
+        <p class="lead">{[bt?.country, founded, bt?.segment].filter(Boolean).join(' · ')}{bt?.tagline ? `. ${bt.tagline}` : ''}</p>
       </div>
       {cats.length > 0 && <div class="chips">{cats.map((c) => <a class="chip" href={u(c.url)}>{c.h1.replace(' ' + name, '')}</a>)}</div>}
       {series.length > 0 && <div class="chips">{series.map((s) => <a class="chip" href={u(s.url)}>Серия {seriesTexts.get(s.url.split('/')[2])?.name || s.h1}</a>)}</div>}
