@@ -1,0 +1,15 @@
+---
+import SectionPage from '../../../components/SectionPage.astro';
+import { registry, productsFor, pagesCount, seriesTexts } from '../../../lib/data';
+export function getStaticPaths() {
+  const out: any[] = [];
+  for (const p of registry.filter((r) => r.type === 'series')) {
+    const n = pagesCount(productsFor(p.url).length);
+    for (let i = 2; i <= n; i++) out.push({ params: { slug: p.url.split('/')[2], pg: `page-${i}` }, props: { url: p.url, page: i } });
+  }
+  return out;
+}
+const { url, page } = Astro.props;
+const s = seriesTexts.get(url.split('/')[2]);
+---
+<SectionPage url={url} page={page} override={s ? { h1: s.name } : undefined} />

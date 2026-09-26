@@ -2,13 +2,14 @@
 import Icon from './Icon.astro';
 import { u } from '../lib/url';
 const { items } = Astro.props as { items: { url: string; name: string; icon?: string; img?: string | null; count?: number }[] };
+const plural = (n: number) => (n % 10 === 1 && n % 100 !== 11 ? 'товар' : n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 10 || n % 100 >= 20) ? 'товара' : 'товаров');
 ---
 <div class="tiles">
   {items.map((t) => (
     <a class="tile" href={u(t.url)}>
-      {t.img ? <img src={u(t.img)} alt="" width="92" height="92" loading="lazy" /> : <Icon name={t.icon || 'box'} size={52} />}
+      <span class="timg">{t.img ? <img src={u(t.img)} alt="" width="104" height="104" loading="lazy" /> : <Icon name={t.icon || 'box'} size={60} />}</span>
       <span class="n">{t.name}</span>
-      {typeof t.count === 'number' && t.count > 0 && <span class="c">{t.count} товаров</span>}
+      {typeof t.count === 'number' && <span class="c">{t.count > 0 ? `${t.count} ${plural(t.count)}` : 'под заказ'}</span>}
     </a>
   ))}
 </div>

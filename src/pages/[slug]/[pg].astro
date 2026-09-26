@@ -1,0 +1,15 @@
+---
+// Пагинация хабов «по типу двери»: /furnitura-dlya-.../page-N/
+import SectionPage from '../../components/SectionPage.astro';
+import { registry, productsFor, pagesCount } from '../../lib/data';
+export function getStaticPaths() {
+  const out: any[] = [];
+  for (const p of registry.filter((r) => r.type === 'door-type')) {
+    const n = pagesCount(productsFor(p.url).length);
+    for (let i = 2; i <= n; i++) out.push({ params: { slug: p.url.replace(/\//g, ''), pg: `page-${i}` }, props: { url: p.url, page: i } });
+  }
+  return out;
+}
+const { url, page } = Astro.props;
+---
+<SectionPage url={url} page={page} />

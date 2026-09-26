@@ -1,6 +1,6 @@
 ---
-import SectionPage from '../../components/SectionPage.astro';
-import { registry, seriesTexts } from '../../lib/data';
+import SectionPage from '../../../components/SectionPage.astro';
+import { registry, seriesTexts } from '../../../lib/data';
 export function getStaticPaths() {
   return registry.filter((p) => p.type === 'series').map((p) => ({ params: { slug: p.url.split('/')[2] }, props: { url: p.url } }));
 }

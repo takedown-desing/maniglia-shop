@@ -1,0 +1,56 @@
+---
+import Base from '../layouts/Base.astro';
+import Blocks from '../components/Blocks.astro';
+import BrandTiles from '../components/BrandTiles.astro';
+import { COMPANY, tel } from '../lib/company';
+import { SITE_NAME, products, BRANDS } from '../lib/data';
+import { u, abs } from '../lib/url';
+const models = products.length;
+const variants = products.reduce((s, p) => s + p.variants.length, 0);
+const blocks = [
+  { type: 'stats', items: [
+    { value: String(BRANDS.length), label: 'брендов в каталоге' },
+    { value: String(models), label: 'моделей на сайте' },
+    { value: String(variants), label: 'вариантов покрытий' },
+    { value: String(COMPANY.since), label: 'год основания' },
+  ] },
+  { type: 'text', title: 'Кто мы', md: `${SITE_NAME} (${COMPANY.legalName}) продаёт дверную фурнитуру для межкомнатных, входных, раздвижных и стеклянных дверей. Мы работаем с итальянскими, португальскими и российскими брендами: от дизайнерских ручек Colombo Design и Tupai до скрытых петель Krona Koblenz и магнитных замков AGB.\\n\\nНаша задача простая: чтобы ручка, замок, петли и упор подошли к двери и друг к другу по размерам, покрытию и стилю. Поэтому каталог устроен по типу изделия и по типу двери, а в карточках указаны размеры, совместимость и что нужно докупить.` },
+  { type: 'cards', title: 'Как мы работаем', items: [
+    { icon: 'kit', title: 'Подбор комплекта', text: 'Собираем ручку, завертку, замок, петли и упор в одном покрытии под вашу дверь и толщину полотна.' },
+    { icon: 'store', title: 'Шоурум с образцами', text: 'Образцы покрытий и популярных моделей можно посмотреть и подержать в руках до покупки.' },
+    { icon: 'truck', title: 'Доставка по России', text: 'Отправляем транспортными компаниями и службами доставки, по Москве возим курьером.' },
+    { icon: 'shield', title: 'Гарантия производителя', text: 'Продаём оригинальную продукцию, гарантия действует по условиям бренда.' },
+  ] },
+  { type: 'table', title: 'Для кого мы работаем', head: ['Клиент', 'Что предлагаем'], rows: [
+    ['Частные покупатели', 'Подбор фурнитуры под ремонт, консультации по совместимости, самовывоз и доставка'],
+    ['Дизайнеры и архитекторы', 'Образцы покрытий, спецификации для проектов, [программа для дизайнеров](/dizajneram/)'],
+    ['Производители дверей', 'Комплектация серий, отгрузка партиями, [условия для производителей](/proizvoditelyam-dverej/)'],
+    ['Дилеры и оптовики', 'Оптовые цены и прайс-лист, [условия для опта](/optovikam/)'],
+  ] },
+  { type: 'steps', title: 'Как проходит заказ', items: [
+    { title: 'Выбор', text: 'Выберите товары в [каталоге](/catalog/) или пришлите менеджеру фото и размеры двери.' },
+    { title: 'Подтверждение', text: 'Менеджер проверит наличие, совместимость и согласует сроки.' },
+    { title: 'Оплата', text: 'Картой, через СБП или по счёту для юридических лиц.' },
+    { title: 'Получение', text: 'Самовывоз из шоурума или доставка по России.' },
+  ] },
+];
+---
+<Base title={`О компании ${SITE_NAME}: магазин дверной фурнитуры в Москве`} description={`${SITE_NAME}: дверная фурнитура ${BRANDS.length} брендов, шоурум в Москве, подбор комплектов под дверь, доставка по России, работа с дизайнерами и производителями.`} path="/o-kompanii/" crumbs={[{ url: '/', name: 'Главная' }, { url: '/o-kompanii/', name: 'О компании' }]}
+  schema={[{ '@type': 'AboutPage', name: `О компании ${SITE_NAME}`, url: abs(Astro.site, '/o-kompanii/') }]}>
+  <div class="wrap">
+    <div class="page-head"><h1>О компании</h1><p class="lead">Магазин дверной фурнитуры с шоурумом в Москве. Помогаем собрать фурнитуру так, чтобы всё подошло с первого раза.</p></div>
+    <Blocks blocks={blocks} />
+    <section class="section"><h2>Бренды, с которыми мы работаем</h2><BrandTiles small /></section>
+    <section class="section two-col">
+      <div class="aside-box">
+        <h3>Контакты</h3>
+        <p style="margin:0 0 6px"><a href={tel(COMPANY.phoneMain)} style="font-size:20px">{COMPANY.phoneMain}</a></p>
+        <p style="margin:0 0 6px">{COMPANY.address}</p>
+        <p style="margin:0 0 14px">{COMPANY.hours.map((h) => `${h.d} ${h.t}`).join(' · ')}</p>
+        <a class="btn btn-sm" href={u('/kontakty/')}>Схема проезда и реквизиты</a>
+      </div>
+      <div></div>
+    </section>
+    <p class="bnote">Демо-версия: компания и её данные вымышлены.</p>
+  </div>
+</Base>

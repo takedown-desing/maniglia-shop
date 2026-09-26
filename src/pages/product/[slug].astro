@@ -1,9 +1,12 @@
 ---
 import Base from '../../layouts/Base.astro';
 import ProductCard from '../../components/ProductCard.astro';
+import Blocks from '../../components/Blocks.astro';
+import Faq from '../../components/Faq.astro';
 import Icon from '../../components/Icon.astro';
 import {
   products, regByUrl, breadcrumbs, brandName, rub, COLOR_HEX, COLOR_NAMES, CATEGORY_NAV, articles, SERIES_RULES, registry, SITE_NAME, minPrice,
+  productTexts, colorSlug,
 } from '../../lib/data';
 import type { Product } from '../../lib/data';
 import { u, abs } from '../../lib/url';
@@ -35,11 +38,13 @@ const compat = (compatCats[catSlug] || []).flatMap((c) => products.filter((x) =>
 const seriesUrl = registry.find((r) => r.type === 'series' && SERIES_RULES[r.url.split('/')[2]]?.brand === p.brand && SERIES_RULES[r.url.split('/')[2]].re.test((p.series || '') + ' ' + p.name))?.url;
 const guide = articles.find((a) => (a.related || []).some((r) => p.category.startsWith(r)));
 const offers = p.variants.filter((v) => v.price).map((v) => ({ '@type': 'Offer', price: v.price, priceCurrency: 'RUB', availability: v.inStock === false ? 'https://schema.org/PreOrder' : 'https://schema.org/InStock', url: abs(Astro.site, url), sku: v.article || p.article, itemCondition: 'https://schema.org/NewCondition' }));
-const schema = [{
+const schema: any[] = [{
   '@type': 'Product', name: p.name, sku: p.article, mpn: p.article, brand: { '@type': 'Brand', name: bname }, description: p.description,
   image: p.variants.filter((v) => v.image).map((v) => abs(Astro.site, v.image!)), color: v0.finish, material: p.material || undefined, url: abs(Astro.site, url),
   ...(offers.length ? { offers: offers.length === 1 ? offers[0] : { '@type': 'AggregateOffer', priceCurrency: 'RUB', lowPrice: Math.min(...offers.map((o) => o.price as number)), highPrice: Math.max(...offers.map((o) => o.price as number)), offerCount: offers.length } } : {}),
 }];
+const pt = productTexts.get(p.slug);
+if (pt?.faq?.length) schema.push({ '@type': 'FAQPage', mainEntity: pt.faq.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) } as any);
 const specs = Object.entries({ Производитель: bname, ...(p.series ? { Серия: p.series } : {}), ...(p.article ? { Артикул: p.article } : {}), ...(p.material ? { Материал: p.material } : {}), ...(p.specs || {}) });
 ---
 <Base title={title} description={description} path={url} crumbs={crumbs} schema={schema} activeCat={topCat} image={v0.image}>
@@ -67,7 +72,7 @@ const specs = Object.entries({ Производитель: bname, ...(p.series ?
             <div class="finishes" role="radiogroup" aria-label="Покрытие">
               {p.variants.map((v, i) => (
                 <button type="button" role="radio" aria-checked={v === v0 ? 'true' : 'false'} class={'finish' + (v === v0 ? ' on' : '')}
-                  data-finish={v.finish} data-price={v.price ?? ''} data-img={v.image ? u(v.image) : ''} data-art={v.article || p.article || ''} data-stock={v.inStock === false ? '0' : '1'} data-rawimg={v.image || ''}>
+                  data-finish={v.finish} data-price={v.price ?? ''} data-img={v.image ? u(v.image) : ''} data-art={v.article || p.article || ''} data-stock={v.inStock === false ? '0' : '1'} data-rawimg={v.image || ''} data-cslug={colorSlug(v.finish || v.color)}>
                   <span class="sw" style={`background:${COLOR_HEX[v.color] || '#ccc'}`}></span>{v.finish || COLOR_NAMES[v.color]}
                 </button>
               ))}
@@ -84,11 +89,13 @@ const specs = Object.entries({ Производитель: bname, ...(p.series ?
           <div><Icon name="shield" />Гарантия производителя, оригинальная продукция</div>
           <div><Icon name="store" />Образцы покрытий в шоуруме (уточняйте наличие)</div>
         </div>
-        {p.description && <p style="margin-top:22px;font-size:15.5px">{p.description}</p>}
+        {(pt?.intro || p.description) && <p style="margin-top:22px;font-size:15.5px">{pt?.intro || p.description}</p>}
       </div>
     </div>
 
-    <nav class="tabs" aria-label="Разделы карточки"><a href="#specs">Характеристики</a>{sameSeries.length > 0 && <a href="#series">Эта серия</a>}{compat.length > 0 && <a href="#compat">С этим покупают</a>}{similar.length > 0 && <a href="#similar">Похожие</a>}</nav>
+    <nav class="tabs" aria-label="Разделы карточки">{pt?.blocks?.length ? <a href="#about">Описание</a> : null}<a href="#specs">Характеристики</a>{pt?.faq?.length ? <a href="#faq">Вопросы</a> : null}{sameSeries.length > 0 && <a href="#series">Эта серия</a>}{compat.length > 0 && <a href="#compat">С этим покупают</a>}{similar.length > 0 && <a href="#similar">Похожие</a>}</nav>
+    {pt?.blocks?.length ? <section id="about" class="section" style="padding-top:0"><h2>Описание модели</h2>{p.description && pt.intro && <p class="lead-block" style="margin-bottom:26px">{p.description}</p>}<Blocks blocks={pt.blocks} level={3} /></section> : null}
+    <h2 id="specs-h">Характеристики</h2>
     <section id="specs" class="two-col">
       <table class="specs"><tbody>{specs.map(([k, v]) => <tr><th scope="row">{k}</th><td>{v}</td></tr>)}</tbody></table>
       <aside class="aside-box">
@@ -101,6 +108,7 @@ const specs = Object.entries({ Производитель: bname, ...(p.series ?
         </ul>
       </aside>
     </section>
+    {pt?.faq?.length ? <div id="faq"><Faq items={pt.faq} title="Вопросы о модели" /></div> : null}
     {sameSeries.length > 0 && <section id="series" class="section"><h2>Другие изделия серии {p.series}</h2><div class="grid">{sameSeries.map((x) => <ProductCard p={x} />)}</div></section>}
     {compat.length > 0 && <section id="compat" class="section"><h2>С этим покупают</h2><div class="grid">{compat.map((x) => <ProductCard p={x} />)}</div></section>}
     {similar.length > 0 && <section id="similar" class="section"><h2>Похожие товары</h2><div class="grid">{similar.map((x) => <ProductCard p={x} />)}</div></section>}
@@ -121,7 +129,11 @@ const specs = Object.entries({ Производитель: bname, ...(p.series ?
     const st = document.getElementById('p-stock')!; st.textContent = d.stock === '1' ? 'В наличии' : 'Под заказ'; st.style.color = d.stock === '1' ? 'var(--c-ok)' : 'var(--c-muted)';
     setMain(d.img || '', d.finish || '');
     if (add) { add.dataset.finish = d.finish; add.dataset.price = d.price; if (d.rawimg) add.dataset.img = d.rawimg; }
+    if (!(b as any)._silent) { const url = new URL(location.href); url.searchParams.set('color', d.cslug || ''); history.replaceState(null, '', url); }
   }));
+  // выбор покрытия из URL (?color=...)
+  const want = new URLSearchParams(location.search).get('color');
+  if (want) { const btn = root?.querySelector<HTMLButtonElement>(`.finish[data-cslug="${CSS.escape(want)}"]`); if (btn) { (btn as any)._silent = true; btn.click(); (btn as any)._silent = false; } }
   root?.querySelectorAll<HTMLButtonElement>('[data-thumb]').forEach((b) => b.addEventListener('click', () => {
     root.querySelectorAll('[data-thumb]').forEach((x) => x.classList.remove('on')); b.classList.add('on'); setMain(b.dataset.thumb || '', '');
   }));

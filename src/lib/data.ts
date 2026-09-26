@@ -8,7 +8,9 @@ export type Product = {
   variants: Variant[]; material?: string | null; style?: string | null; doorTypes?: string[];
   specs?: Record<string, string>; description?: string; sourceUrl?: string;
 };
-export type PageText = { url: string; title?: string; description?: string; h1?: string; lead?: string; text?: string; faq?: { q: string; a: string }[] };
+export type Block = { type: string; title?: string; [k: string]: any };
+export type PageText = { url: string; title?: string; description?: string; h1?: string; lead?: string; text?: string; blocks?: Block[]; faq?: { q: string; a: string }[] };
+export type ProductText = { slug: string; intro?: string; blocks?: Block[]; faq?: { q: string; a: string }[] };
 export type BrandText = {
   slug: string; name: string; country?: string; founded?: string; segment?: string; tagline?: string; title?: string; description?: string; text?: string;
   series?: string[]; categories?: Record<string, { title?: string; description?: string; lead?: string; text?: string }>;
@@ -17,9 +19,10 @@ export type Article = { slug: string; hub: string; title: string; description: s
 export type Service = { url: string; title: string; description: string; h1: string; body: string };
 export type Series = { slug: string; name: string; brand: string; title?: string; description?: string; text?: string };
 
+import { COMPANY } from './company';
 export const SITE_NAME = 'MANIGLIA';
-export const PHONE = '+7 (000) 000-00-00';
-export const EMAIL = 'info@example.com';
+export const PHONE = COMPANY.phoneMain;
+export const EMAIL = COMPANY.email;
 
 export const registry = (registryRaw as RegPage[]).map((p) => ({ ...p, h1: p.h1.replace(/\s+—\s+/g, ': ') }));
 export const regByUrl = new Map(registry.map((p) => [p.url, p]));
@@ -39,6 +42,8 @@ const brandsMods = import.meta.glob('../data/content/brands.json', { eager: true
 const seriesMods = import.meta.glob('../data/content/series.json', { eager: true });
 const articlesMods = import.meta.glob('../data/content/articles.json', { eager: true });
 const serviceMods = import.meta.glob('../data/content/service.json', { eager: true });
+const sectionMods = import.meta.glob('../data/content/sections/g*.json', { eager: true });
+const productTextMods = import.meta.glob('../data/content/products/*.json', { eager: true });
 
 function cleanProduct(p: Product): Product | null {
   if (!p || !p.slug || !p.name || !p.category) return null;
@@ -58,7 +63,10 @@ export const products: Product[] = loadArray<Product>(productMods)
   .map((x) => x.p);
 export const productBySlug = new Map(products.map((p) => [p.slug, p]));
 
-export const pageTexts = new Map(loadArray<PageText>(pagesMods).map((t) => [t.url, t]));
+// тексты разделов: блочные (sections/g*.json) поверх базовых (pages.json)
+export const pageTexts = new Map<string, PageText>(loadArray<PageText>(pagesMods).map((t) => [t.url, t]));
+for (const t of loadArray<PageText>(sectionMods)) { if (t?.url) pageTexts.set(t.url, { ...(pageTexts.get(t.url) || {}), ...t }); }
+export const productTexts = new Map(loadArray<ProductText>(productTextMods).map((t) => [t.slug, t]));
 export const brandTexts = new Map(loadArray<BrandText>(brandsMods).map((b) => [b.slug, b]));
 export const seriesTexts = new Map(loadArray<Series>(seriesMods).map((s) => [s.slug, s]));
 export const articles = loadArray<Article>(articlesMods);
@@ -124,8 +132,8 @@ export function tagRule(url: string): ((p: Product) => boolean) | null {
     's-dovodchikom': (p) => has(p, /доводчик|самозакрыв|kiker/),
     's-klyuchom': (p) => has(p, /ключ/),
     'dlya-steklyannyh-dverej': (p) => has(p, /стекл/) || (p.doorTypes || []).includes('glass'),
-    's-fiksaciej': (p) => has(p, /фиксац/),
-    ulichnye: (p) => has(p, /морозо|уличн|-\s?\d{2}\s?°|°c/),
+    's-fiksaciej': (p) => Object.entries(p.specs || {}).some(([k, v]) => /фиксац/i.test(k + ' ' + v) && !/(^|:\s*)(нет|без)/i.test(String(v)) && !/без фиксац/i.test(String(v))) || /с фиксацией/i.test(p.name),
+    ulichnye: (p) => has(p, /морозо|уличн|-\s?\d{2}\s?°|°[cс]|от\s*-\s*\d{2}/),
     'dlya-tyazhelyh-dverej': (p) => has(p, /(1[0-9]{2}|[8-9][0-9])\s?кг/),
     cilindrovye: (p) => has(p, /цилиндр/),
     suvaldnye: (p) => has(p, /сувальд/),
@@ -217,3 +225,74 @@ export function shortName(p: RegPage) {
   if (p.url === '/catalog/') n = 'Каталог';
   return n.replace(/^Дверная фурнитура (.+)$/, '$1');
 }
+
+// ---------- фасеты фильтра (общие + автоматические из характеристик)
+export const STYLE_NAMES: Record<string, string> = { modern: 'Современный', classic: 'Классика', minimal: 'Минимализм', loft: 'Лофт' };
+const SPEC_SKIP = /^(цена.*|ед.*измерения|единица.*|кол-во.*|количество.*|артикул|производитель|бренд|серия|модель|описание|комплектация|вес|цвет|покрытие|материал|страна|страна производства|гарантия.*|примечание|упаковка|в комплекте.*)$/i;
+const normVal = (v: unknown) => String(v ?? '').replace(/\s+/g, ' ').trim();
+export function productFacetValues(p: Product): Record<string, string | string[]> {
+  const f: Record<string, string | string[]> = { brand: p.brand, color: [...new Set(p.variants.map((v) => v.color))] };
+  if (p.style) f.style = p.style;
+  if (p.material) f.material = normVal(p.material).toLowerCase();
+  const country = normVal(p.specs?.['Страна производства'] || p.specs?.['Страна'] || brandTexts.get(p.brand)?.country || '');
+  if (country) f.country = country;
+  if (p.series) f.series = normVal(p.series);
+  f.stock = p.variants.some((v) => v.inStock !== false) ? 'yes' : 'no';
+  for (const [k, v] of Object.entries(p.specs || {})) {
+    const key = normVal(k); const val = normVal(v);
+    if (!key || SPEC_SKIP.test(key) || !val || val.length > 32) continue;
+    f['spec:' + key] = val;
+  }
+  return f;
+}
+export type Facet = { key: string; label: string; options: { v: string; label: string; n: number }[] };
+export function facetsFor(items: Product[]): Facet[] {
+  const count = new Map<string, Map<string, number>>();
+  const present = new Map<string, number>();
+  for (const p of items) {
+    for (const [k, v] of Object.entries(productFacetValues(p))) {
+      const vals = Array.isArray(v) ? v : [v];
+      present.set(k, (present.get(k) || 0) + 1);
+      if (!count.has(k)) count.set(k, new Map());
+      for (const x of vals) count.get(k)!.set(x, (count.get(k)!.get(x) || 0) + 1);
+    }
+  }
+  const LABEL: Record<string, string> = { brand: 'Производитель', color: 'Цвет / покрытие', style: 'Стиль', material: 'Материал', country: 'Страна производства', series: 'Модельный ряд', stock: 'Наличие' };
+  const out: Facet[] = [];
+  for (const key of ['brand', 'color', 'style', 'material', 'country', 'series', 'stock']) {
+    const m = count.get(key); if (!m || m.size < 2) continue;
+    if (key === 'series' && m.size > 20) continue;
+    const opts = [...m.entries()].map(([v, n]) => ({ v, n, label: key === 'brand' ? brandName(v) : key === 'color' ? (COLOR_NAMES[v] || v) : key === 'style' ? (STYLE_NAMES[v] || v) : key === 'stock' ? (v === 'yes' ? 'В наличии' : 'Под заказ') : v }));
+    opts.sort((a, b) => key === 'brand' ? a.label.localeCompare(b.label) : b.n - a.n);
+    out.push({ key, label: LABEL[key], options: opts });
+  }
+  const specKeys = [...count.keys()].filter((k) => k.startsWith('spec:'))
+    .filter((k) => (present.get(k) || 0) >= Math.max(3, items.length * 0.3) && count.get(k)!.size >= 2 && count.get(k)!.size <= 12)
+    .sort((a, b) => (present.get(b) || 0) - (present.get(a) || 0)).slice(0, 8);
+  for (const key of specKeys) {
+    const opts = [...count.get(key)!.entries()].map(([v, n]) => ({ v, n, label: v }))
+      .sort((a, b) => (parseFloat(a.v) || 0) - (parseFloat(b.v) || 0) || a.v.localeCompare(b.v, 'ru'));
+    out.push({ key, label: key.slice(5), options: opts });
+  }
+  return out;
+}
+export const PER_PAGE = 24;
+export const pagesCount = (n: number) => Math.max(1, Math.ceil(n / PER_PAGE));
+export function colorImage(p: Product, color?: string) {
+  return (color && p.variants.find((v) => v.color === color && v.image)?.image) || firstImage(p);
+}
+export const colorSlug = (finish: string) => finish.toLowerCase().replace(/ё/g, 'е')
+  .replace(/[а-я]/g, (c) => ({ а:'a',б:'b',в:'v',г:'g',д:'d',е:'e',ж:'zh',з:'z',и:'i',й:'j',к:'k',л:'l',м:'m',н:'n',о:'o',п:'p',р:'r',с:'s',т:'t',у:'u',ф:'f',х:'h',ц:'c',ч:'ch',ш:'sh',щ:'shch',ъ:'',ы:'y',ь:'',э:'e',ю:'yu',я:'ya' } as Record<string,string>)[c] ?? c)
+  .replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+
+export const pluralRu = (n: number, one: string, few: string, many: string) => (n % 10 === 1 && n % 100 !== 11 ? one : n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 10 || n % 100 >= 20) ? few : many);
+
+// ---------- существующие страницы (для очистки ссылок в текстах на ещё не созданные страницы)
+const ARTICLE_URLS = new Set(articles.map((a) => `/blog/${a.slug}/`));
+export const LIVE_URLS = new Set<string>([
+  ...registry.filter((p) => p.type !== 'article' && p.type !== 'product-template').map((p) => p.url),
+  ...ARTICLE_URLS, ...products.map((p) => `/product/${p.slug}/`), '/kontakty/', '/o-kompanii/', '/search/', '/cart/',
+]);
+export const isLive = (path: string) => LIVE_URLS.has(path.split('#')[0].split('?')[0].replace(/([^/])$/, '$1/'));
+// markdown: [анкор](/url/) → анкор, если страницы нет
+export const pruneLinks = (md: string) => md.replace(/\[([^\]]+)\]\((\/[^)\s]*)\)/g, (m, a, p) => (isLive(p) ? m : a));

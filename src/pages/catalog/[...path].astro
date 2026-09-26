@@ -1,12 +1,16 @@
 ---
 import SectionPage from '../../components/SectionPage.astro';
-import { registry } from '../../lib/data';
+import { registry, productsFor, pagesCount } from '../../lib/data';
 export function getStaticPaths() {
-  return registry.filter((p) => p.url.startsWith('/catalog/')).map((p) => ({
-    params: { path: p.url === '/catalog/' ? undefined : p.url.replace(/^\/catalog\//, '').replace(/\/$/, '') },
-    props: { url: p.url },
-  }));
+  const out: any[] = [];
+  for (const p of registry.filter((r) => r.url.startsWith('/catalog/'))) {
+    const rel = p.url === '/catalog/' ? '' : p.url.replace(/^\/catalog\//, '').replace(/\/$/, '');
+    out.push({ params: { path: rel || undefined }, props: { url: p.url, page: 1 } });
+    const n = pagesCount(productsFor(p.url).length);
+    for (let i = 2; i <= n; i++) out.push({ params: { path: (rel ? rel + '/' : '') + `page-${i}` }, props: { url: p.url, page: i } });
+  }
+  return out;
 }
-const { url } = Astro.props;
+const { url, page } = Astro.props;
 ---
-<SectionPage url={url} />
+<SectionPage url={url} page={page} />

@@ -5,45 +5,57 @@ import Listing from './Listing.astro';
 import Tiles from './Tiles.astro';
 import Faq from './Faq.astro';
 import Prose from './Prose.astro';
-import BrandTiles from './BrandTiles.astro';
+import Blocks from './Blocks.astro';
 import {
   regByUrl, pageTexts, productsFor, children, breadcrumbs, shortName, isIndexable, CATEGORY_NAV, articles, brandName,
-  BRAND_CAT_MAP, minPrice, firstImage, COLOR_HEX, SITE_NAME, registry,
+  BRAND_CAT_MAP, minPrice, firstImage, colorImage, SITE_NAME, registry, pagesCount,
 } from '../lib/data';
-import { u, abs } from '../lib/url';
+import { abs, u } from '../lib/url';
 
-const { url, override } = Astro.props as { url: string; override?: { title?: string; description?: string; h1?: string; lead?: string; text?: string; faq?: { q: string; a: string }[] } };
+const { url, page = 1, override } = Astro.props as { url: string; page?: number; override?: { title?: string; description?: string; h1?: string; lead?: string; text?: string; faq?: { q: string; a: string }[] } };
 const reg = regByUrl.get(url)!;
-const t = { ...(pageTexts.get(url) || {}), ...(override || {}) };
+const t = { ...(pageTexts.get(url) || {}), ...(override || {}) } as any;
 const items = productsFor(url);
-const h1 = t.h1 || reg.h1;
+const h1base = t.h1 || reg.h1;
+const pages = pagesCount(items.length);
+const isFirst = page === 1;
+const h1 = isFirst ? h1base : `${h1base}, страница ${page}`;
 const prices = items.map(minPrice).filter((x): x is number => !!x);
 const minP = prices.length ? Math.min(...prices) : null;
-const title = t.title || `${h1} купить в интернет-магазине ${SITE_NAME}`;
-const description = t.description || `${h1}: ${items.length ? items.length + ' моделей, ' : ''}доставка по России, подбор под вашу дверь, консультация менеджера.`;
+const baseTitle = t.title || `${h1base} купить в интернет-магазине ${SITE_NAME}`;
+const title = isFirst ? baseTitle : `${h1base}: страница ${page} из ${pages}`;
+const description = isFirst ? (t.description || `${h1base}: ${items.length ? items.length + ' моделей, ' : ''}доставка по России, подбор под вашу дверь.`) : `${h1base}, страница ${page} из ${pages}: модели, цены и покрытия.`;
+const path = isFirst ? url : `${url}page-${page}/`;
 const crumbs = breadcrumbs(url);
 const topCat = CATEGORY_NAV.find((c) => url.startsWith(c.url))?.url || '';
 
-// подразделы
-const subs = children(url, ['subcategory', 'kit']);
-const tags = children(url, ['tag']);
-const subTiles = subs.map((s) => {
-  const ps = productsFor(s.url);
-  return { url: s.url, name: shortName(s), img: ps.map(firstImage).find(Boolean) ?? null, count: ps.length };
-});
-// сиблинги-теги (для тегов и подкатегорий)
-const siblings = reg.type === 'tag' || reg.type === 'subcategory' ? children(reg.parent, [reg.type]).filter((s) => s.url !== url) : [];
+// иконки для разделов без фото
+const ICON_BY_SLUG: [RegExp, string][] = [
+  [/navesn|kalitk/, 'padlock'], [/nakladnye$|nakladnye\//, 'rimlock'], [/elektromeh/, 'keypad'], [/vreznye|suvaldn|cilindrovye$/, 'lock'],
+  [/cilindr|bronenakl|povorotnik|klyuch/, 'cylinder'], [/protivopozhar|antipanika/, 'shield'], [/glazk/, 'eye'], [/cepochk|stuchalk/, 'bolt'],
+  [/petl|babochk|vvertn/, 'hinge'], [/dovodch/, 'closer'], [/razdvizh|roto|knizhk|penal|komplektuyushch/, 'slide'], [/upor|ogranich/, 'stop'],
+  [/zadvizh|shpingalet|nochn/, 'bolt'], [/porog|uplotn|shchetk/, 'seal'], [/stekl/, 'glass'], [/okon|balkon/, 'window'], [/mebel|kryuchk/, 'furniture'],
+  [/zavertk|wc|nakladki/, 'rosette'], [/zamk|zamok|zamki/, 'lock'], [/ruchk|knob|skob|rozet|plank/, 'handle'], [/remkompl|zapchast/, 'kit'],
+];
+const iconFor = (u2: string) => (ICON_BY_SLUG.find(([re]) => re.test(u2))?.[1]) || CATEGORY_NAV.find((c) => u2.startsWith(c.url))?.icon || 'box';
+const COLOR_TAG: Record<string, string> = { chernye: 'black', belye: 'white', zoloto: 'gold', hrom: 'chrome', bronza: 'bronze', nikel: 'nickel', latun: 'brass', grafit: 'graphite', med: 'copper' };
 
-// бренды в этом разделе
-const catSlug = url.split('/').filter(Boolean)[1];
+// подразделы и подборки — одинаковые плитки
+const kids = [...children(url, ['subcategory', 'kit']), ...children(url, ['tag'])];
+const tiles = kids.map((s) => {
+  const ps = productsFor(s.url);
+  const col = COLOR_TAG[s.url.split('/').filter(Boolean).pop() || ''];
+  const img = col ? ps.map((p) => colorImage(p, col)).find(Boolean) : ps.map(firstImage).find(Boolean);
+  return { url: s.url, name: shortName(s), img: img ?? null, icon: iconFor(s.url), count: ps.length };
+});
+const siblings = reg.type === 'tag' || reg.type === 'subcategory' ? children(reg.parent, ['subcategory', 'tag']).filter((s) => s.url !== url) : [];
+
 const brandCats = reg.type === 'category'
   ? registry.filter((p) => p.type === 'brand-category' && (BRAND_CAT_MAP[p.url.split('/')[3]] || `/catalog/${p.url.split('/')[3]}/`).startsWith(url))
-  : reg.type === 'subcategory'
-    ? registry.filter((p) => p.type === 'brand-category' && BRAND_CAT_MAP[p.url.split('/')[3]] === url)
-    : [];
+  : reg.type === 'subcategory' ? registry.filter((p) => p.type === 'brand-category' && BRAND_CAT_MAP[p.url.split('/')[3]] === url) : [];
 const brandsHere = [...new Set(items.map((p) => p.brand))];
 
-// статьи по теме
+const catSlug = url.split('/').filter(Boolean)[1];
 const TOPIC: Record<string, string[]> = {
   ruchki: ['dvernye-ruchki', 'zavertki-i-nakladki', 'upory-i-ogranichiteli'], zamki: ['mezhkomnatnye-zamki', 'zamki-dlya-vhodnyh-dverej', 'cilindry'],
   petli: ['dvernye-petli'], dovodchiki: ['dovodchiki'], 'razdvizhnye-sistemy': ['razdvizhnye-sistemy', 'avtoporogi-i-uplotniteli'], okna: ['okonnaya-furnitura'],
@@ -51,74 +63,65 @@ const TOPIC: Record<string, string[]> = {
 const related = articles.filter((a) => (a.related || []).some((r) => r.startsWith(url) || url.startsWith(r)) || (TOPIC[a.hub] || []).includes(catSlug)).slice(0, 4);
 
 const noindex = !isIndexable(url);
-const schema = [{
-  '@type': 'CollectionPage', name: title, url: abs(Astro.site, url), description,
-  mainEntity: { '@type': 'ItemList', numberOfItems: items.length, itemListElement: items.slice(0, 20).map((p, i) => ({ '@type': 'ListItem', position: i + 1, url: abs(Astro.site, `/product/${p.slug}/`), name: p.name })) },
+const schema: any[] = [{
+  '@type': 'CollectionPage', name: title, url: abs(Astro.site, path), description,
+  mainEntity: { '@type': 'ItemList', numberOfItems: items.length, itemListElement: items.slice((page - 1) * 24, page * 24).map((p, i) => ({ '@type': 'ListItem', position: (page - 1) * 24 + i + 1, url: abs(Astro.site, `/product/${p.slug}/`), name: p.name })) },
 }];
-if (t.faq?.length) schema.push({ '@type': 'FAQPage', mainEntity: t.faq.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) } as any);
+if (isFirst && t.faq?.length) schema.push({ '@type': 'FAQPage', mainEntity: t.faq.map((f: any) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) });
 ---
-<Base title={title} description={description} path={url} crumbs={crumbs} noindex={noindex} schema={schema} activeCat={topCat} image={items.map(firstImage).find(Boolean)}>
+<Base title={title} description={description} path={path} crumbs={crumbs} noindex={noindex} schema={schema} activeCat={topCat} image={items.map(firstImage).find(Boolean)}
+  prev={page > 1 ? (page === 2 ? url : `${url}page-${page - 1}/`) : undefined} next={page < pages ? `${url}page-${page + 1}/` : undefined}>
   <div class="wrap">
     <div class="page-head">
       <h1>{h1}</h1>
-      {t.lead && <p class="lead">{t.lead}</p>}
+      {isFirst && t.lead && <p class="lead">{t.lead}</p>}
       {minP && <p class="lead" style="font-size:14.5px">{items.length} {items.length % 10 === 1 && items.length % 100 !== 11 ? 'модель' : 'моделей'} · цены от {new Intl.NumberFormat('ru-RU').format(minP)} ₽</p>}
     </div>
 
-    {brandsHere.length > 1 && reg.type !== 'brand-category' && reg.type !== 'series' && (
+    {isFirst && brandsHere.length > 1 && reg.type !== 'brand-category' && reg.type !== 'series' && (
       <div class="chips" aria-label="Бренды раздела">
-        {brandsHere.map((b) => {
-          const bc = brandCats.find((x) => x.url.split('/')[2] === b);
-          return <a class="chip" href={u(bc ? bc.url : `/brands/${b}/`)}>{brandName(b)}</a>;
-        })}
+        {brandsHere.map((b) => { const bc = brandCats.find((x) => x.url.split('/')[2] === b); return <a class="chip" href={u(bc ? bc.url : `/brands/${b}/`)}>{brandName(b)}</a>; })}
       </div>
     )}
 
-    {subTiles.length > 0 && <section style="margin:10px 0 28px"><h2 class="sr-only">Подразделы</h2><Tiles items={subTiles} /></section>}
+    {isFirst && tiles.length > 0 && <section style="margin:10px 0 28px"><h2 class="sr-only">Подразделы и подборки</h2><Tiles items={tiles} /></section>}
 
-    {tags.length > 0 && (
-      <div class="chips" aria-label="Подборки">
-        {tags.map((tg) => {
-          const col = { chernye: 'black', belye: 'white', zoloto: 'gold', hrom: 'chrome', bronza: 'bronze', nikel: 'nickel', latun: 'brass', grafit: 'graphite', med: 'copper' }[tg.url.split('/').filter(Boolean).pop() || ''];
-          return <a class="chip" href={u(tg.url)}>{col && <span class="dot" style={`background:${COLOR_HEX[col]}`}></span>}{shortName(tg)}</a>;
-        })}
-      </div>
-    )}
+    <Listing items={items} page={page} baseUrl={url} />
 
-    <Listing items={items} />
-
-    {siblings.length > 0 && (
-      <section class="section" style="padding-bottom:0">
-        <h2>Смотрите также</h2>
-        <div class="chips">{siblings.map((s) => <a class="chip" href={u(s.url)}>{shortName(s)}</a>)}{reg.parent && <a class="chip" href={u(reg.parent)}>Все: {shortName(regByUrl.get(reg.parent)!)}</a>}</div>
-      </section>
-    )}
-
-    {brandCats.length > 0 && (
-      <section class="section" style="padding-bottom:0">
-        <h2>{shortName(reg)} по брендам</h2>
-        <div class="chips">{brandCats.map((b) => <a class="chip" href={u(b.url)}>{b.h1}</a>)}</div>
-      </section>
-    )}
-
-    <section class="section two-col">
-      <div>
-        <Prose md={t.text} />
-        <Faq items={t.faq} />
-      </div>
-      <aside>
-        {related.length > 0 && (
-          <div class="aside-box" style="margin-bottom:20px">
-            <h3>Инструкции по теме</h3>
-            <ul>{related.map((a) => <li><a href={u(`/blog/${a.slug}/`)}>{a.h1}</a></li>)}</ul>
-          </div>
+    {isFirst && (
+      <>
+        {siblings.length > 0 && (
+          <section class="section" style="padding-bottom:0">
+            <h2>Смотрите также</h2>
+            <div class="chips">{siblings.map((s) => <a class="chip" href={u(s.url)}>{shortName(s)}</a>)}{reg.parent && regByUrl.get(reg.parent) && <a class="chip" href={u(reg.parent)}>Все: {shortName(regByUrl.get(reg.parent)!)}</a>}</div>
+          </section>
         )}
-        <div class="aside-box">
-          <h3>Подберём фурнитуру под вашу дверь</h3>
-          <p style="font-size:14.5px;color:var(--c-text-2)">Пришлите фото двери или размеры: менеджер соберёт комплект из ручки, замка, петель и упора в одном покрытии.</p>
-          <a class="btn btn-accent btn-sm" href={u('/catalog/komplekty-furnitury/')}>Собрать комплект</a>
-        </div>
-      </aside>
-    </section>
+        {brandCats.length > 0 && (
+          <section class="section" style="padding-bottom:0">
+            <h2>{shortName(reg)} по брендам</h2>
+            <div class="chips">{brandCats.map((b) => <a class="chip" href={u(b.url)}>{b.h1}</a>)}</div>
+          </section>
+        )}
+        <section class="section two-col">
+          <div>
+            {t.blocks?.length ? <Blocks blocks={t.blocks} /> : <Prose md={t.text} />}
+            <Faq items={t.faq} />
+          </div>
+          <aside>
+            {related.length > 0 && (
+              <div class="aside-box" style="margin-bottom:20px">
+                <h3>Инструкции по теме</h3>
+                <ul>{related.map((a) => <li><a href={u(`/blog/${a.slug}/`)}>{a.h1}</a></li>)}</ul>
+              </div>
+            )}
+            <div class="aside-box">
+              <h3>Подберём фурнитуру под вашу дверь</h3>
+              <p style="font-size:14.5px;color:var(--c-text-2)">Пришлите фото двери или размеры: менеджер соберёт комплект из ручки, замка, петель и упора в одном покрытии.</p>
+              <a class="btn btn-accent btn-sm" href={u('/catalog/komplekty-furnitury/')}>Собрать комплект</a>
+            </div>
+          </aside>
+        </section>
+      </>
+    )}
   </div>
 </Base>

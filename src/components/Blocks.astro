@@ -1,0 +1,89 @@
+---
+// Рендер блочного контента (формат — src/data/CONTENT-BLOCKS.md) + SVG-инфографика.
+import type { Block } from '../lib/data';
+import { pruneLinks } from '../lib/data';
+import Prose from './Prose.astro';
+import Icon from './Icon.astro';
+import { marked } from 'marked';
+import { u } from '../lib/url';
+const { blocks = [], level = 2 } = Astro.props as { blocks?: Block[]; level?: 2 | 3 };
+const H = level === 2 ? 'h2' : 'h3';
+const inline = (s: unknown) => (marked.parseInline(pruneLinks(String(s ?? '')).replace(/\]\((\/[^)\s]*)\)/g, (_m, p) => `](${u(p)})`)) as string);
+const num = (x: unknown) => (typeof x === 'number' ? x : parseFloat(String(x).replace(',', '.'))) || 0;
+// stats: единица из начала подписи («мм: …», «кг, …») переносится к числу
+const stat = (i: any) => {
+  let v = String(i.value ?? '').trim(); let l = String(i.label ?? '').trim();
+  const m = l.match(/^([A-Za-zА-Яа-яё°%/.]{1,5})[:,]\s+(.+)$/);
+  if (m && /^[\d\s.,–-]+$/.test(v)) { v = `${v} ${m[1]}`; l = m[2]; }
+  return { v, l: l.charAt(0).toUpperCase() + l.slice(1) };
+};
+const fmtN = (n: number) => (Number.isInteger(n) ? String(n) : n.toFixed(1)).replace('.', ',');
+
+function bars(b: Block) {
+  const items = (b.items || []).map((i: any) => ({ label: String(i.label), value: num(i.value) })).filter((i: any) => i.value > 0);
+  const max = Math.max(...items.map((i: any) => i.value), 1);
+  const rowH = 46, top = 8, W = 680, L = 250, R = 590;
+  const H = top + items.length * rowH + 6;
+  const rows = items.map((i: any, k: number) => {
+    const y = top + k * rowH; const w = Math.max(4, ((R - L) * i.value) / max);
+    const lab = i.label.length > 34 ? i.label.slice(0, 33) + '…' : i.label;
+    return `<text x="${L - 12}" y="${y + 24}" text-anchor="end" class="ig-l">${lab.replace(/&/g, '&amp;').replace(/</g, '&lt;')}</text>`
+      + `<rect x="${L}" y="${y + 9}" width="${R - L}" height="22" rx="3" class="ig-track"/>`
+      + `<rect x="${L}" y="${y + 9}" width="${w}" height="22" rx="3" class="ig-bar"/>`
+      + `<text x="${L + w + 8}" y="${y + 25}" class="ig-v">${fmtN(i.value)} ${String(b.unit || '').replace(/</g, '&lt;')}</text>`;
+  }).join('');
+  return { svg: `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="${String(b.title || '').replace(/"/g, '')}" preserveAspectRatio="xMinYMin meet">${rows}</svg>`, items };
+}
+function range(b: Block) {
+  const items = (b.items || []).map((i: any) => ({ label: String(i.label), from: num(i.from), to: num(i.to) }));
+  const min = Math.min(...items.map((i: any) => i.from)); const max = Math.max(...items.map((i: any) => i.to));
+  const span = max - min || 1; const rowH = 46, top = 30, W = 680, L = 250, R = 640;
+  const x = (v: number) => L + ((v - min) / span) * (R - L);
+  const Hh = top + items.length * rowH + 4;
+  const ticks = 5; let axis = '';
+  for (let t = 0; t <= ticks; t++) { const v = min + (span * t) / ticks; axis += `<line x1="${x(v)}" x2="${x(v)}" y1="22" y2="${Hh}" class="ig-grid"/><text x="${x(v)}" y="14" text-anchor="middle" class="ig-t">${fmtN(Math.round(v * 10) / 10)}</text>`; }
+  const rows = items.map((i: any, k: number) => {
+    const y = top + k * rowH; const x1 = x(i.from), x2 = Math.max(x(i.to), x1 + 6);
+    const lab = i.label.length > 34 ? i.label.slice(0, 33) + '…' : i.label;
+    return `<text x="${L - 12}" y="${y + 22}" text-anchor="end" class="ig-l">${lab.replace(/&/g, '&amp;').replace(/</g, '&lt;')}</text><rect x="${x1}" y="${y + 8}" width="${x2 - x1}" height="20" rx="10" class="ig-bar"/><text x="${(x1 + x2) / 2}" y="${y + 22}" text-anchor="middle" class="ig-in">${fmtN(i.from)}–${fmtN(i.to)}</text>`;
+  }).join('');
+  return { svg: `<svg viewBox="0 0 ${W} ${Hh}" role="img" aria-label="${String(b.title || '').replace(/"/g, '')}" preserveAspectRatio="xMinYMin meet">${axis}${rows}</svg>`, items };
+}
+---
+<div class="blocks">
+  {blocks.map((b) => {
+    if (b.type === 'text') return <section class="blk blk-text">{b.title && <H>{b.title}</H>}<Prose md={b.md || b.text} /></section>;
+    if (b.type === 'cards') return (
+      <section class="blk">{b.title && <H>{b.title}</H>}
+        <div class="bcards">{(b.items || []).map((i: any) => <div class="bcard">{i.icon && <Icon name={i.icon} size={34} />}<h4>{i.title}</h4><p set:html={inline(i.text)} /></div>)}</div>
+      </section>);
+    if (b.type === 'table') return (
+      <section class="blk">{b.title && <H>{b.title}</H>}
+        <div class="btable"><table><thead><tr>{(b.head || []).map((h: any) => <th scope="col">{h}</th>)}</tr></thead><tbody>{(b.rows || []).map((r: any[]) => <tr>{r.map((c, i) => i === 0 ? <th scope="row" set:html={inline(c)} /> : <td set:html={inline(c)} />)}</tr>)}</tbody></table></div>
+        {b.note && <p class="bnote" set:html={inline(b.note)} />}
+      </section>);
+    if (b.type === 'steps') return (
+      <section class="blk">{b.title && <H>{b.title}</H>}
+        <ol class="bsteps">{(b.items || []).map((i: any, k: number) => <li><span class="n">{k + 1}</span><div><h4>{i.title}</h4><p set:html={inline(i.text)} /></div></li>)}</ol>
+      </section>);
+    if (b.type === 'checklist') return (
+      <section class="blk">{b.title && <H>{b.title}</H>}
+        <ul class="bcheck">{(b.items || []).map((i: any) => <li><Icon name="check" size={20} /><span set:html={inline(typeof i === 'string' ? i : i.text || i.title)} /></li>)}</ul>
+      </section>);
+    if (b.type === 'callout') return (
+      <aside class={'blk bcallout ' + (b.kind === 'warn' ? 'warn' : 'tip')}><strong>{b.title || (b.kind === 'warn' ? 'Важно' : 'Совет')}</strong><p set:html={inline(b.text)} /></aside>);
+    if (b.type === 'stats') return (
+      <section class="blk">{b.title && <H>{b.title}</H>}<div class="bstats">{(b.items || []).map((i: any) => { const x = stat(i); return <div><span class="v">{x.v}</span><span class="l">{x.l}</span></div>; })}</div></section>);
+    if (b.type === 'bars' || b.type === 'range') {
+      const g = b.type === 'bars' ? bars(b) : range(b);
+      if (!g.items.length) return null;
+      return (
+        <figure class="blk binfo">{b.title && <H>{b.title}</H>}
+          <div class="binfo-svg" set:html={g.svg} />
+          <figcaption class="sr-only">{g.items.map((i: any) => `${i.label}: ${'value' in i ? i.value : i.from + '–' + i.to} ${b.unit || ''}`).join('; ')}</figcaption>
+          {b.note && <p class="bnote" set:html={inline(b.note)} />}
+        </figure>);
+    }
+    return null;
+  })}
+</div>

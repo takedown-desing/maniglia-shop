@@ -1,86 +1,153 @@
 ---
-// Листинг с клиентским фильтром (бренд, покрытие, стиль, цена) и сортировкой.
+// Листинг: серверная страница (24 товара) + нумерованная пагинация (/page-N/).
+// Фильтр и сортировка работают по всему разделу: подгружают /listing.json и рендерят результат на клиенте.
 import type { Product } from '../lib/data';
-import { brandName, COLOR_NAMES, minPrice } from '../lib/data';
+import { facetsFor, minPrice, PER_PAGE, pagesCount } from '../lib/data';
 import ProductCard from './ProductCard.astro';
-const { items, filter = true } = Astro.props as { items: Product[]; filter?: boolean };
-const brands = [...new Set(items.map((p) => p.brand))].sort((a, b) => brandName(a).localeCompare(brandName(b)));
-const colors = [...new Set(items.flatMap((p) => p.variants.map((v) => v.color)))];
-const styles = [...new Set(items.map((p) => p.style).filter(Boolean))] as string[];
-const STY: Record<string, string> = { modern: 'Современный', classic: 'Классика', minimal: 'Минимализм', loft: 'Лофт' };
+import { u } from '../lib/url';
+const { items, page = 1, baseUrl = '', filter = true } = Astro.props as { items: Product[]; page?: number; baseUrl?: string; filter?: boolean };
+const total = items.length;
+const pages = pagesCount(total);
+const slice = items.slice((page - 1) * PER_PAGE, page * PER_PAGE);
+const facets = filter ? facetsFor(items) : [];
 const prices = items.map(minPrice).filter((x): x is number => !!x);
 const lo = prices.length ? Math.min(...prices) : 0; const hi = prices.length ? Math.max(...prices) : 0;
+const pageUrl = (n: number) => u(n === 1 ? baseUrl : `${baseUrl}page-${n}/`);
+const pagerNums = (cur: number, max: number) => {
+  const set = new Set([1, max, cur - 1, cur, cur + 1].filter((x) => x >= 1 && x <= max));
+  const arr = [...set].sort((a, b) => a - b); const out: (number | '…')[] = [];
+  arr.forEach((n, i) => { if (i && n - (arr[i - 1] as number) > 1) out.push('…'); out.push(n); });
+  return out;
+};
 ---
-{items.length === 0 ? (
-  <div class="empty">Ассортимент этого раздела формируется. Оставьте заявку, и мы подберём товар под вашу дверь: <a href="#" data-lead>связаться с менеджером</a>.</div>
+{total === 0 ? (
+  <div class="empty">Ассортимент этого раздела формируется. Оставьте заявку, и мы подберём товар под вашу дверь: <a href={u('/kontakty/')}>связаться с менеджером</a>.</div>
 ) : (
-  <div data-listing>
-    {filter && items.length > 4 && (
-      <form class="filter" data-filter onsubmit="return false">
+  <div data-listing data-base={u('/')} data-per={PER_PAGE}>
+    <script type="application/json" data-scope set:html={JSON.stringify(items.map((p) => p.slug))} />
+    {facets.length > 0 && total > 4 && (
+      <form class="filter" data-filter onsubmit="return false" aria-label="Фильтр товаров">
         <div class="filter-fields">
-          {brands.length > 1 && <div class="select"><label class="sr-only" for="f-brand">Производитель</label><select id="f-brand" name="brand"><option value="">Производитель</option>{brands.map((b) => <option value={b}>{brandName(b)}</option>)}</select></div>}
-          {colors.length > 1 && <div class="select"><label class="sr-only" for="f-color">Цвет</label><select id="f-color" name="color"><option value="">Цвет / покрытие</option>{colors.map((c) => <option value={c}>{COLOR_NAMES[c] || c}</option>)}</select></div>}
-          {styles.length > 1 && <div class="select"><label class="sr-only" for="f-style">Стиль</label><select id="f-style" name="style"><option value="">Стиль</option>{styles.map((s) => <option value={s}>{STY[s] || s}</option>)}</select></div>}
+          {facets.map((f) => (
+            <div class="select">
+              <label class="sr-only" for={'f-' + f.key}>{f.label}</label>
+              <select id={'f-' + f.key} name={f.key}>
+                <option value="">{f.label}</option>
+                {f.options.map((o) => <option value={o.v}>{o.label} ({o.n})</option>)}
+              </select>
+            </div>
+          ))}
         </div>
         {hi > 0 && <div class="price-range"><span>Цена: от</span><input name="min" inputmode="numeric" placeholder={String(lo)} aria-label="Цена от" /><span>до</span><input name="max" inputmode="numeric" placeholder={String(hi)} aria-label="Цена до" /><span>₽</span></div>}
-        <div class="filter-actions"><button type="button" class="btn btn-sky btn-sm" data-apply>Показать (<span data-count>{items.length}</span>)</button><button type="reset" class="btn btn-ghost btn-sm" data-reset>Сбросить</button></div>
+        <div class="filter-actions"><button type="button" class="btn btn-sm" data-apply>Показать (<span data-count>{total}</span>)</button><button type="reset" class="btn btn-ghost btn-sm">Сбросить</button><span class="filter-note" data-note></span></div>
       </form>
     )}
     <div class="listbar">
-      <span>Найдено: <b data-found>{items.length}</b> товаров</span>
+      <span>Найдено: <b data-found>{total}</b> товаров</span>
       <span class="note">Всегда указываем страну и производителя изделия</span>
       <label>Сортировка: <select data-sort><option value="">по популярности</option><option value="asc">сначала дешевле</option><option value="desc">сначала дороже</option><option value="name">по названию</option></select></label>
     </div>
     <div class="grid" data-grid>
-      {items.map((p, i) => <ProductCard p={p} eager={i < 4} />)}
+      {slice.map((p, i) => <ProductCard p={p} eager={i < 4} />)}
     </div>
-    {items.length > 24 && <div style="text-align:center;margin-top:34px"><button type="button" class="btn btn-ghost" data-more>Показать ещё</button></div>}
+    <nav class="pager" aria-label="Страницы каталога" data-pager>
+      {pages > 1 && (
+        <>
+          {page > 1 ? <a class="pg pg-arrow" href={pageUrl(page - 1)} rel="prev" aria-label="Предыдущая страница">‹</a> : <span class="pg pg-arrow is-off">‹</span>}
+          {pagerNums(page, pages).map((n) => n === '…' ? <span class="pg is-gap">…</span> : n === page ? <span class="pg is-on" aria-current="page">{n}</span> : <a class="pg" href={pageUrl(n)}>{n}</a>)}
+          {page < pages ? <a class="pg pg-arrow" href={pageUrl(page + 1)} rel="next" aria-label="Следующая страница">›</a> : <span class="pg pg-arrow is-off">›</span>}
+        </>
+      )}
+    </nav>
   </div>
 )}
 <script>
+  type Row = { s: string; n: string; b: string; p: number | null; i: string | null; m: number; fin: string; vp: number | null; vi: string | null; f: Record<string, string | string[]> };
+  const HEX: Record<string, string> = { black: '#1d1d1f', chrome: '#c9ccd1', gold: '#c9a54a', bronze: '#8a6a45', nickel: '#a9a7a0', brass: '#b89b53', white: '#f4f4f2', graphite: '#4a4c50', copper: '#b06f4a', silver: '#d8d8d8', other: '#bbb' };
+  const esc = (s: string) => String(s ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]!));
+  const fmt = (n: number) => new Intl.NumberFormat('ru-RU').format(n) + ' ₽';
+  const pl = (n: number) => (n % 10 === 1 && n % 100 !== 11 ? 'цвет' : n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 10 || n % 100 >= 20) ? 'цвета' : 'цветов');
+  let cache: Row[] | null = null;
   document.querySelectorAll<HTMLElement>('[data-listing]').forEach((root) => {
+    const base = root.dataset.base!.replace(/\/$/, ''); const per = +(root.dataset.per || 24);
+    const scope: string[] = JSON.parse(root.querySelector('[data-scope]')!.textContent || '[]');
     const form = root.querySelector<HTMLFormElement>('[data-filter]');
     const grid = root.querySelector<HTMLElement>('[data-grid]')!;
-    const cards = [...grid.querySelectorAll<HTMLElement>('[data-card]')];
+    const pager = root.querySelector<HTMLElement>('[data-pager]')!;
+    const serverGrid = grid.innerHTML; const serverPager = pager.innerHTML;
     const found = root.querySelector('[data-found]'); const count = root.querySelector('[data-count]');
-    const more = root.querySelector<HTMLButtonElement>('[data-more]');
-    const PAGE = 24; let limit = PAGE;
-    const paginate = () => {
-      let shown = 0; let total = 0;
-      [...grid.querySelectorAll<HTMLElement>('[data-card]')].forEach((c) => {
-        if (c.dataset.match === '0') { c.hidden = true; return; }
-        total++; c.hidden = shown >= limit; if (!c.hidden) shown++;
-      });
-      if (more) more.hidden = total <= limit;
+    const sortSel = root.querySelector<HTMLSelectElement>('[data-sort]')!;
+    let results: Row[] = []; let pg = 1;
+    const card = (r: Row) => {
+      const cols = [...new Set((Array.isArray(r.f.color) ? r.f.color : [r.f.color]) as string[])];
+      const href = `${base}/product/${r.s}/`;
+      return `<article class="card" data-card><div class="card-media"><a href="${href}" class="card-img" tabindex="-1" aria-hidden="true">${r.i ? `<img src="${base}${r.i}" alt="" width="400" height="400" loading="lazy">` : ''}</a>${r.m >= 3 ? `<span class="badge" aria-hidden="true">${r.m}<br>${pl(r.m)}</span>` : ''}<div class="card-buy"><div class="qty qty-sm"><button type="button" data-cq="-1" aria-label="Меньше">−</button><input value="1" inputmode="numeric" aria-label="Количество" data-cqty><button type="button" data-cq="1" aria-label="Больше">+</button></div><button type="button" class="btn btn-accent btn-sm" data-add data-slug="${esc(r.s)}" data-name="${esc(r.n)}" data-finish="${esc(r.fin)}" data-price="${r.vp ?? ''}" data-img="${esc(r.vi || '')}" data-url="/product/${esc(r.s)}/">В корзину</button></div></div><div class="card-brand">${esc(r.b)}</div><a href="${href}" class="card-name">${esc(r.n)}</a><div class="card-sw">${cols.slice(0, 7).map((c) => `<span class="sw" style="background:${HEX[c] || '#ccc'}"></span>`).join('')}</div><div class="card-price">${r.p ? `<small>${r.m > 1 ? 'от ' : ''}</small>${fmt(r.p)}` : '<small>Цена по запросу</small>'}</div><div class="card-stock${r.f.stock === 'yes' ? '' : ' no'}">${r.f.stock === 'yes' ? 'В наличии' : 'Под заказ'}</div></article>`;
     };
-    more?.addEventListener('click', () => { limit += PAGE; paginate(); });
-    const apply = () => {
-      const f = form ? new FormData(form) : new FormData();
-      const brand = f.get('brand') as string, color = f.get('color') as string, style = f.get('style') as string;
-      const min = +(f.get('min') as string || 0), max = +(f.get('max') as string || 0);
-      let n = 0;
-      cards.forEach((c) => {
-        const pr = +(c.dataset.price || 0);
-        const ok = (!brand || c.dataset.brand === brand) && (!color || (c.dataset.colors || '').split(' ').includes(color)) && (!style || c.dataset.style === style)
-          && (!min || (pr && pr >= min)) && (!max || (pr && pr <= max));
-        c.dataset.match = ok ? '1' : '0'; if (ok) n++;
-      });
-      if (found) found.textContent = String(n); if (count) count.textContent = String(n);
-      limit = PAGE; paginate();
+    const renderPage = () => {
+      const pages = Math.max(1, Math.ceil(results.length / per)); pg = Math.min(pg, pages);
+      grid.innerHTML = results.length ? results.slice((pg - 1) * per, pg * per).map(card).join('') : '<div class="empty" style="grid-column:1/-1">По выбранным параметрам ничего не найдено. Попробуйте ослабить фильтр.</div>';
+      let h = '';
+      if (pages > 1) {
+        h += `<button type="button" class="pg pg-arrow" data-go="${pg - 1}" ${pg === 1 ? 'disabled' : ''} aria-label="Предыдущая">‹</button>`;
+        for (let n = 1; n <= pages; n++) {
+          if (n === 1 || n === pages || Math.abs(n - pg) <= 1) h += n === pg ? `<span class="pg is-on">${n}</span>` : `<button type="button" class="pg" data-go="${n}">${n}</button>`;
+          else if (Math.abs(n - pg) === 2) h += '<span class="pg is-gap">…</span>';
+        }
+        h += `<button type="button" class="pg pg-arrow" data-go="${pg + 1}" ${pg === pages ? 'disabled' : ''} aria-label="Следующая">›</button>`;
+      }
+      pager.innerHTML = h;
     };
-    paginate();
-    form?.addEventListener('change', apply); form?.addEventListener('input', apply);
-    form?.addEventListener('reset', () => setTimeout(apply, 0));
+    pager.addEventListener('click', (e) => { const b = (e.target as HTMLElement).closest('[data-go]') as HTMLElement | null; if (!b) return; pg = +b.dataset.go!; renderPage(); root.scrollIntoView({ behavior: 'smooth' }); });
+    const active = () => {
+      const fd = form ? new FormData(form) : new FormData(); const sel: Record<string, string> = {};
+      fd.forEach((v, k) => { if (v) sel[k] = String(v); });
+      return { sel, sort: sortSel.value };
+    };
+    const run = async () => {
+      const { sel, sort } = active();
+      if (!Object.keys(sel).length && !sort) { grid.innerHTML = serverGrid; pager.innerHTML = serverPager; if (found) found.textContent = String(scope.length); if (count) count.textContent = String(scope.length); recount({}); return; }
+      if (!cache) cache = await (await fetch(`${base}/listing.json`)).json();
+      const set = new Set(scope);
+      results = cache!.filter((r) => set.has(r.s)).filter((r) => {
+        for (const [k, v] of Object.entries(sel)) {
+          if (k === 'min') { if (!r.p || r.p < +v) return false; continue; }
+          if (k === 'max') { if (!r.p || r.p > +v) return false; continue; }
+          const val = r.f[k]; if (val === undefined) return false;
+          if (Array.isArray(val) ? !val.includes(v) : val !== v) return false;
+        }
+        return true;
+      });
+      if (sort === 'asc') results.sort((a, b) => (a.p ?? 1e9) - (b.p ?? 1e9));
+      else if (sort === 'desc') results.sort((a, b) => (b.p ?? -1) - (a.p ?? -1));
+      else if (sort === 'name') results.sort((a, b) => a.n.localeCompare(b.n, 'ru'));
+      else results.sort((a, b) => scope.indexOf(a.s) - scope.indexOf(b.s));
+      if (found) found.textContent = String(results.length); if (count) count.textContent = String(results.length);
+      pg = 1; renderPage(); recount(sel);
+    };
+    // пересчёт количества в опциях с учётом остальных выбранных фильтров
+    const match = (r: Row, sel: Record<string, string>, skip: string) => {
+      for (const [k, v] of Object.entries(sel)) {
+        if (k === skip) continue;
+        if (k === 'min') { if (!r.p || r.p < +v) return false; continue; }
+        if (k === 'max') { if (!r.p || r.p > +v) return false; continue; }
+        const val = r.f[k]; if (val === undefined) return false;
+        if (Array.isArray(val) ? !val.includes(v) : val !== v) return false;
+      }
+      return true;
+    };
+    const recount = (sel: Record<string, string>) => {
+      if (!form || !cache) return;
+      const set = new Set(scope); const rows = cache.filter((r) => set.has(r.s));
+      form.querySelectorAll<HTMLSelectElement>('select').forEach((selEl) => {
+        const k = selEl.name; const cnt = new Map<string, number>();
+        rows.filter((r) => match(r, sel, k)).forEach((r) => { const v = r.f[k]; (Array.isArray(v) ? v : v === undefined ? [] : [v]).forEach((x) => cnt.set(x, (cnt.get(x) || 0) + 1)); });
+        [...selEl.options].forEach((o) => { if (!o.value) return; const n = cnt.get(o.value) || 0; o.textContent = o.textContent!.replace(/ \(\d+\)$/, '') + ` (${n})`; o.disabled = n === 0 && selEl.value !== o.value; });
+      });
+    };
+    form?.addEventListener('change', run);
+    form?.addEventListener('input', (e) => { if ((e.target as HTMLInputElement).name === 'min' || (e.target as HTMLInputElement).name === 'max') { clearTimeout((form as any)._t); (form as any)._t = setTimeout(run, 400); } });
+    form?.addEventListener('reset', () => setTimeout(run, 0));
     root.querySelector('[data-apply]')?.addEventListener('click', () => grid.scrollIntoView({ behavior: 'smooth' }));
-    root.querySelector<HTMLSelectElement>('[data-sort]')?.addEventListener('change', (e) => {
-      const v = (e.target as HTMLSelectElement).value;
-      const sorted = [...cards].sort((a, b) => {
-        if (v === 'name') return (a.dataset.name || '').localeCompare(b.dataset.name || '');
-        const pa = +(a.dataset.price || 0) || 1e9, pb = +(b.dataset.price || 0) || 1e9;
-        return v === 'asc' ? pa - pb : v === 'desc' ? (pb % 1e9) - (pa % 1e9) : 0;
-      });
-      if (v) sorted.forEach((c) => grid.appendChild(c)); else cards.forEach((c) => grid.appendChild(c));
-      paginate();
-    });
+    sortSel.addEventListener('change', run);
   });
 </script>
