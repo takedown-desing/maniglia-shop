@@ -1,0 +1,19 @@
+---
+import Base from '../layouts/Base.astro';
+import ReviewCard from '../components/ReviewCard.astro';
+import Stars from '../components/Stars.astro';
+import { REVIEWS, REVIEWS_NOTE, RATING, ratingStr } from '../lib/reviews';
+import { SITE_NAME } from '../lib/data';
+const dist = [5, 4, 3, 2, 1].map((s) => ({ s, n: REVIEWS.filter((r) => r.rating === s).length }));
+---
+<Base title={`Отзывы покупателей о магазине ${SITE_NAME}`} description={`Отзывы покупателей о магазине дверной фурнитуры ${SITE_NAME}: подбор, доставка, качество ручек, замков и петель. Демо-версия.`} path="/otzyvy/" crumbs={[{ url: '/', name: 'Главная' }, { url: '/otzyvy/', name: 'Отзывы' }]}>
+  <div class="wrap">
+    <div class="page-head"><h1>Отзывы покупателей</h1></div>
+    <p class="demo-note">{REVIEWS_NOTE}</p>
+    <div class="reviews-top">
+      <div class="reviews-score"><span class="v">{ratingStr}</span><Stars value={RATING} size={22} /><span class="l">{REVIEWS.length} отзывов</span></div>
+      <div class="reviews-dist">{dist.map((d) => <div><span>{d.s} ★</span><span class="bar"><i style={`width:${(d.n / REVIEWS.length) * 100}%`}></i></span><span>{d.n}</span></div>)}</div>
+    </div>
+    <div class="reviews-grid">{REVIEWS.map((r) => <ReviewCard r={r} />)}</div>
+  </div>
+</Base>

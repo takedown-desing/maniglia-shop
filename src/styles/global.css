@@ -372,8 +372,9 @@ a.pg:hover, button.pg:hover:not(:disabled) { border-color: var(--c-accent); colo
 .socials { display: flex; gap: 10px; margin: 6px 0 16px; }
 .socials span { width: 36px; height: 36px; border-radius: 8px; display: grid; place-items: center; background: #2c2f33; color: #fff; font-size: 12px; font-weight: 500; }
 .pay { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 14px; }
-.pay span { height: 30px; padding: 0 10px; border-radius: 5px; background: #fff; display: grid; place-items: center; font-size: 13px; font-weight: 700; letter-spacing: .02em; }
-.pay .mir { color: #0f754e; } .pay .visa { color: #1a1f71; font-style: italic; } .pay .mc { color: #eb001b; } .pay .sbp { color: #5b57a2; }
+.pay { align-items: center; gap: 10px; }
+.pay img { height: 30px; width: auto; background: #fff; border-radius: 5px; padding: 3px 6px; object-fit: contain; }
+.pay img[alt="Mastercard"], .pay img[alt="Visa"] { height: 34px; padding: 0 2px; }
 .hours { display: grid; grid-template-columns: auto 1fr; gap: 4px 14px; }
 @media (max-width: 1280px) { .foot-grid { grid-template-columns: 1fr 1fr 1fr; } }
 @media (max-width: 700px) { .foot-grid { grid-template-columns: 1fr 1fr; } }
@@ -385,3 +386,32 @@ a.pg:hover, button.pg:hover:not(:disabled) { border-color: var(--c-accent); colo
 .kv { display: grid; grid-template-columns: 170px 1fr; gap: 10px 16px; font-size: 15.5px; }
 .kv dt { color: var(--c-text-2); } .kv dd { margin: 0; }
 @media (max-width: 900px) { .contact-grid { grid-template-columns: 1fr; } .kv { grid-template-columns: 1fr; gap: 2px; } .kv dd { margin-bottom: 10px; } }
+
+/* ---------- рейтинг и отзывы */
+.stars { position: relative; display: inline-block; line-height: 1; letter-spacing: 1px; color: #d9d9d9; }
+.stars::before { content: '★★★★★'; position: absolute; inset: 0; width: var(--pct); overflow: hidden; color: #f5a623; white-space: nowrap; }
+.rating-badge { display: inline-grid; gap: 2px; background: #fff; color: var(--c-text); border-radius: 8px; padding: 10px 14px; border: 1px solid var(--c-line); }
+.rating-badge.dark { border-color: transparent; }
+.rating-badge:hover { color: var(--c-text); box-shadow: var(--sh); }
+.rb-top { display: flex; align-items: center; gap: 8px; }
+.rb-val { font-size: 22px; font-weight: 500; }
+.rb-sub { font-size: 12.5px; color: var(--c-text-2); }
+.rb-note, .demo-note { font-size: 11.5px; color: var(--c-muted); }
+.demo-note { font-size: 13px; background: var(--c-sand-l); border: 1px dashed var(--c-sand); border-radius: 6px; padding: 8px 12px; display: inline-block; margin: 0 0 22px; }
+.reviews-top { display: flex; gap: 40px; align-items: center; flex-wrap: wrap; margin-bottom: 30px; }
+.reviews-score { display: grid; gap: 4px; justify-items: start; }
+.reviews-score .v { font-size: 48px; font-weight: 300; line-height: 1; }
+.reviews-score .l { font-size: 14px; color: var(--c-text-2); }
+.reviews-dist { display: grid; gap: 6px; min-width: 260px; font-size: 14px; }
+.reviews-dist > div { display: grid; grid-template-columns: 34px 1fr 24px; gap: 10px; align-items: center; }
+.reviews-dist .bar { height: 8px; background: var(--c-bg-2); border-radius: 4px; overflow: hidden; }
+.reviews-dist .bar i { display: block; height: 100%; background: #f5a623; }
+.reviews-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 18px; }
+.review { border: 1px solid var(--c-line); border-radius: 8px; padding: 20px; display: grid; gap: 12px; align-content: start; transition: box-shadow var(--t); }
+.review:hover { box-shadow: var(--sh); }
+.review-head { display: grid; grid-template-columns: 42px 1fr auto; gap: 12px; align-items: center; }
+.review-head b { font-weight: 400; display: block; } .review-head small { font-size: 12.5px; color: var(--c-muted); }
+.review-av { width: 42px; height: 42px; border-radius: 50%; background: var(--c-sand-l); display: grid; place-items: center; font-size: 17px; }
+.review p { margin: 0; font-size: 15px; color: var(--c-text); }
+.review-prod { font-size: 13.5px; color: var(--c-text-2); border-bottom: 1px solid var(--c-line-2); justify-self: start; }
+@media (max-width: 480px) { .reviews-grid { grid-template-columns: 1fr; } }

@@ -4,6 +4,7 @@ import Icon from '../components/Icon.astro';
 import { CATEGORY_NAV, SITE_NAME, PHONE, EMAIL, BRANDS, DOOR_TYPES, shortName } from '../lib/data';
 import { u, abs } from '../lib/url';
 import { COMPANY, tel } from '../lib/company';
+import RatingBadge from '../components/RatingBadge.astro';
 
 interface Props {
   title: string;
@@ -114,7 +115,13 @@ const topBrands = BRANDS.filter((b) => b.tier === 'A');
           <div>
             <a href={u('/')} class="logo" style="color:#fff">MANI<b>G</b>LIA</a>
             <p style="margin:14px 0 0">Интернет-магазин дверной фурнитуры: ручки, замки, петли, доводчики и раздвижные системы 22 брендов. Доставка по России.</p>
-            <div class="pay" aria-label="Способы оплаты"><span class="mir">МИР</span><span class="visa">VISA</span><span class="mc">Mastercard</span><span class="sbp">СБП</span></div>
+            <div class="pay" aria-label="Способы оплаты">
+              <img src={u('/images/pay/mir.svg')} alt="МИР" width="72" height="20" loading="lazy" />
+              <img src={u('/images/pay/mastercard.svg')} alt="Mastercard" width="44" height="44" loading="lazy" />
+              <img src={u('/images/pay/visa.svg')} alt="Visa" width="52" height="44" loading="lazy" />
+              <img src={u('/images/pay/sbp.svg')} alt="СБП" width="64" height="32" loading="lazy" />
+            </div>
+            <div style="margin-top:16px"><RatingBadge dark /></div>
           </div>
           <div>
             <h4>Контактная информация</h4>

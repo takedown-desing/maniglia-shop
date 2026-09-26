@@ -3,6 +3,8 @@ import Base from '../../layouts/Base.astro';
 import ProductCard from '../../components/ProductCard.astro';
 import Blocks from '../../components/Blocks.astro';
 import Faq from '../../components/Faq.astro';
+import ReviewCard from '../../components/ReviewCard.astro';
+import { REVIEWS, REVIEWS_NOTE } from '../../lib/reviews';
 import Icon from '../../components/Icon.astro';
 import {
   products, regByUrl, breadcrumbs, brandName, rub, COLOR_HEX, COLOR_NAMES, CATEGORY_NAV, articles, SERIES_RULES, registry, SITE_NAME, minPrice,
@@ -44,6 +46,7 @@ const schema: any[] = [{
   ...(offers.length ? { offers: offers.length === 1 ? offers[0] : { '@type': 'AggregateOffer', priceCurrency: 'RUB', lowPrice: Math.min(...offers.map((o) => o.price as number)), highPrice: Math.max(...offers.map((o) => o.price as number)), offerCount: offers.length } } : {}),
 }];
 const pt = productTexts.get(p.slug);
+const myReviews = REVIEWS.filter((r) => r.product === p.slug);
 if (pt?.faq?.length) schema.push({ '@type': 'FAQPage', mainEntity: pt.faq.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) } as any);
 const specs = Object.entries({ Производитель: bname, ...(p.series ? { Серия: p.series } : {}), ...(p.article ? { Артикул: p.article } : {}), ...(p.material ? { Материал: p.material } : {}), ...(p.specs || {}) });
 ---
@@ -109,6 +112,7 @@ const specs = Object.entries({ Производитель: bname, ...(p.series ?
       </aside>
     </section>
     {pt?.faq?.length ? <div id="faq"><Faq items={pt.faq} title="Вопросы о модели" /></div> : null}
+    {myReviews.length > 0 && <section class="section" id="reviews"><h2>Отзывы о модели</h2><p class="demo-note">{REVIEWS_NOTE}</p><div class="reviews-grid">{myReviews.map((r) => <ReviewCard r={r} />)}</div></section>}
     {sameSeries.length > 0 && <section id="series" class="section"><h2>Другие изделия серии {p.series}</h2><div class="grid">{sameSeries.map((x) => <ProductCard p={x} />)}</div></section>}
     {compat.length > 0 && <section id="compat" class="section"><h2>С этим покупают</h2><div class="grid">{compat.map((x) => <ProductCard p={x} />)}</div></section>}
     {similar.length > 0 && <section id="similar" class="section"><h2>Похожие товары</h2><div class="grid">{similar.map((x) => <ProductCard p={x} />)}</div></section>}

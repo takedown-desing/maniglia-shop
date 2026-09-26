@@ -8,7 +8,7 @@ import { registry, services, products, SITE_NAME, PHONE, EMAIL } from '../../lib
 import { u } from '../../lib/url';
 export function getStaticPaths() {
   const ROOT_TYPES = ['door-type', 'utility', 'b2b'];
-  const SKIP = ['/search/', '/cart/', '/compare/', '/account/', '/sitemap/', '/new/', '/product/{slug}/', '/blog/', '/brands/', '/', '/kontakty/', '/o-kompanii/'];
+  const SKIP = ['/search/', '/cart/', '/compare/', '/account/', '/sitemap/', '/new/', '/product/{slug}/', '/blog/', '/brands/', '/', '/kontakty/', '/o-kompanii/', '/otzyvy/'];
   return registry.filter((p) => ROOT_TYPES.includes(p.type) && !SKIP.includes(p.url) && /^\/[^/]+\/$/.test(p.url))
     .map((p) => ({ params: { slug: p.url.replace(/\//g, '') }, props: { url: p.url, type: p.type, h1: p.h1 } }));
 }

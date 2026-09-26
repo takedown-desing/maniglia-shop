@@ -1,0 +1,11 @@
+---
+import Stars from './Stars.astro';
+import type { Review } from '../lib/reviews';
+import { u } from '../lib/url';
+const { r } = Astro.props as { r: Review };
+---
+<article class="review">
+  <div class="review-head"><span class="review-av" aria-hidden="true">{r.name.charAt(0)}</span><div><b>{r.name}</b><small>{r.city} · {new Date(r.date).toLocaleDateString('ru-RU', { day: 'numeric', month: 'long', year: 'numeric' })}</small></div><Stars value={r.rating} /></div>
+  <p>{r.text}</p>
+  <a class="review-prod" href={u(`/product/${r.product}/`)}>{r.productName}</a>
+</article>

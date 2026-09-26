@@ -6,6 +6,9 @@ import BrandTiles from '../components/BrandTiles.astro';
 import Prose from '../components/Prose.astro';
 import Faq from '../components/Faq.astro';
 import Icon from '../components/Icon.astro';
+import ReviewCard from '../components/ReviewCard.astro';
+import RatingBadge from '../components/RatingBadge.astro';
+import { REVIEWS, REVIEWS_NOTE } from '../lib/reviews';
 import { CATEGORY_NAV, products, pageTexts, articles, productsFor, firstImage, DOOR_TYPES, shortName, SITE_NAME, brandName, BRANDS } from '../lib/data';
 import { u, abs } from '../lib/url';
 const t = pageTexts.get('/') || {};
@@ -63,6 +66,12 @@ const schema = [{ '@type': 'WebSite', name: SITE_NAME, url: abs(Astro.site, '/')
     <section class="section">
       <div class="section-title"><h2>Фурнитура по типу двери</h2></div>
       <div class="chips">{DOOR_TYPES.map((d) => <a class="chip" href={u(d.url)}>{shortName(d)}</a>)}</div>
+    </section>
+
+    <section class="section">
+      <div class="section-title"><h2>Отзывы покупателей</h2><a href={u('/otzyvy/')}>Все отзывы</a></div>
+      <div style="display:flex;gap:18px;align-items:center;flex-wrap:wrap;margin-bottom:18px"><RatingBadge /><span class="rb-note">{REVIEWS_NOTE}</span></div>
+      <div class="reviews-grid">{REVIEWS.slice(0, 3).map((r) => <ReviewCard r={r} />)}</div>
     </section>
 
     {articles.length > 0 && (

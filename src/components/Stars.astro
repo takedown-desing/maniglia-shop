@@ -1,0 +1,5 @@
+---
+const { value, size = 16 } = Astro.props as { value: number; size?: number };
+const pct = Math.max(0, Math.min(100, (value / 5) * 100));
+---
+<span class="stars" style={`--pct:${pct}%;font-size:${size}px`} aria-label={`Оценка ${String(value).replace('.', ',')} из 5`}><span aria-hidden="true">★★★★★</span></span>
