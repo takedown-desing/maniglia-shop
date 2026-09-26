@@ -2,7 +2,7 @@
 import Base from '../../layouts/Base.astro';
 import Prose from '../../components/Prose.astro';
 import Faq from '../../components/Faq.astro';
-import { articles, registry, regByUrl, SITE_NAME, shortName } from '../../lib/data';
+import { articles, registry, regByUrl, SITE_NAME, shortName, isLive } from '../../lib/data';
 import type { Article } from '../../lib/data';
 import { u, abs } from '../../lib/url';
 export function getStaticPaths() {
@@ -42,7 +42,7 @@ const other = a ? articles.filter((x) => x.slug !== a.slug && x.hub === a.hub).c
         {a!.related?.length && (
           <div class="aside-box" style="margin-bottom:20px">
             <h3>Товары по теме</h3>
-            <ul>{a!.related.filter((r) => regByUrl.get(r)).map((r) => <li><a href={u(r)}>{shortName(regByUrl.get(r)!)}</a></li>)}</ul>
+            <ul>{a!.related.filter((r) => regByUrl.get(r) && isLive(r)).map((r) => <li><a href={u(r)}>{shortName(regByUrl.get(r)!)}</a></li>)}</ul>
           </div>
         )}
         {other.length > 0 && <div class="aside-box"><h3>Читайте также</h3><ul>{other.map((x) => <li><a href={u(`/blog/${x.slug}/`)}>{x.h1}</a></li>)}</ul></div>}

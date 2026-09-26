@@ -1,13 +1,13 @@
 ---
 import Base from '../layouts/Base.astro';
 import Tiles from '../components/Tiles.astro';
-import { CATEGORY_NAV, SITE_NAME } from '../lib/data';
+import { CATEGORY_NAV, SITE_NAME, productsFor, firstImage } from '../lib/data';
 import { u } from '../lib/url';
 ---
 <Base title={`Страница не найдена | ${SITE_NAME}`} path="/404/" noindex>
   <div class="wrap" style="padding-top:40px">
     <h1>Страница не найдена</h1>
     <p class="lead">Возможно, товар снят с продажи или адрес изменился. Воспользуйтесь <a href={u('/search/')} style="border-bottom:1px solid">поиском</a> или выберите раздел каталога.</p>
-    <Tiles items={CATEGORY_NAV.map((c) => ({ url: c.url, name: c.name, icon: c.icon }))} />
+    <Tiles items={CATEGORY_NAV.filter((c) => productsFor(c.url).length).map((c) => ({ url: c.url, name: c.name, icon: c.icon, img: productsFor(c.url).map(firstImage).find(Boolean) }))} />
   </div>
 </Base>

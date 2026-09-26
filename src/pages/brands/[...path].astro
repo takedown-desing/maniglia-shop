@@ -3,11 +3,11 @@ import Base from '../../layouts/Base.astro';
 import SectionPage from '../../components/SectionPage.astro';
 import Listing from '../../components/Listing.astro';
 import Prose from '../../components/Prose.astro';
-import { registry, regByUrl, brandTexts, productsFor, children, breadcrumbs, seriesTexts, isIndexable, SITE_NAME, firstImage, pagesCount } from '../../lib/data';
+import { registry, regByUrl, brandTexts, productsFor, children, breadcrumbs, seriesTexts, isIndexable, SITE_NAME, firstImage, pagesCount, isEmptyPage } from '../../lib/data';
 import { u, abs } from '../../lib/url';
 export function getStaticPaths() {
   const out: any[] = [];
-  for (const p of registry.filter((r) => r.type === 'brand' || r.type === 'brand-category')) {
+  for (const p of registry.filter((r) => (r.type === 'brand' || r.type === 'brand-category') && !isEmptyPage(r.url))) {
     const rel = p.url.replace(/^\/brands\//, '').replace(/\/$/, '');
     out.push({ params: { path: rel }, props: { url: p.url, page: 1 } });
     const n = pagesCount(productsFor(p.url).length);

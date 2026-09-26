@@ -1,8 +1,8 @@
 ---
-import { BRANDS, brandTexts } from '../lib/data';
+import { BRANDS, brandTexts, isEmptyPage } from '../lib/data';
 import { u } from '../lib/url';
 const { slugs, small = false } = Astro.props as { slugs?: string[]; small?: boolean };
-const list = slugs ? BRANDS.filter((b) => slugs.includes(b.slug)) : BRANDS;
+const list = (slugs ? BRANDS.filter((b) => slugs.includes(b.slug)) : BRANDS).filter((b) => !isEmptyPage(`/brands/${b.slug}/`));
 ---
 <div class="brand-grid">
   {list.map((b) => <a class={'brand-tile' + (small ? ' sm' : '')} href={u(`/brands/${b.slug}/`)}><span>{b.name}<small>{brandTexts.get(b.slug)?.country || ''}</small></span></a>)}

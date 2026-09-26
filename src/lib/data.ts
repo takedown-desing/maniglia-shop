@@ -83,7 +83,7 @@ export const BRANDS: { slug: string; name: string; tier: string }[] = [
 export const brandName = (slug: string) => BRANDS.find((b) => b.slug === slug)?.name ?? slug;
 
 // ---------- навигация: 16 разделов каталога + иконки
-export const CATEGORY_NAV: { url: string; name: string; icon: string }[] = [
+export let CATEGORY_NAV: { url: string; name: string; icon: string }[] = [
   { url: '/catalog/dvernye-ruchki/', name: 'Дверные ручки', icon: 'handle' },
   { url: '/catalog/zavertki-i-nakladki/', name: 'WC-завертки и накладки', icon: 'rosette' },
   { url: '/catalog/mezhkomnatnye-zamki/', name: 'Межкомнатные замки', icon: 'lock' },
@@ -101,7 +101,7 @@ export const CATEGORY_NAV: { url: string; name: string; icon: string }[] = [
   { url: '/catalog/mebelnaya-furnitura/', name: 'Мебельная фурнитура', icon: 'furniture' },
   { url: '/catalog/komplekty-furnitury/', name: 'Комплекты на дверь', icon: 'kit' },
 ];
-export const DOOR_TYPES = registry.filter((p) => p.type === 'door-type');
+export let DOOR_TYPES = registry.filter((p) => p.type === 'door-type');
 
 // ---------- теги (фасетные посадочные): правило выборки
 const COLOR_TAGS: Record<string, string> = { chernye: 'black', belye: 'white', zoloto: 'gold', hrom: 'chrome', bronza: 'bronze', nikel: 'nickel', latun: 'brass', grafit: 'graphite', med: 'copper' };
@@ -137,7 +137,7 @@ export function tagRule(url: string): ((p: Product) => boolean) | null {
     'dlya-tyazhelyh-dverej': (p) => has(p, /(1[0-9]{2}|[8-9][0-9])\s?кг/),
     cilindrovye: (p) => has(p, /цилиндр/),
     suvaldnye: (p) => has(p, /сувальд/),
-    'dlya-kalitki': (p) => has(p, /калитк|ворот/),
+    'dlya-kalitki': (p) => has(p, /калитк|(^|[^а-яё])ворот/),
     protivopozharnye: (p) => has(p, /противопожар|огнест|ei\s?\d/),
     chernye: (p) => p.variants.some((v) => v.color === 'black'),
     nochnye: (p) => has(p, /ночн/),
@@ -166,7 +166,7 @@ export function productsFor(url: string): Product[] {
     const key = DOOR_TYPE_KEYS[url] || '';
     return products.filter((p) => (p.doorTypes || []).includes(key));
   }
-  if (url === '/catalog/komplekty-furnitury/') return [];
+  if (url === '/catalog/komplekty-furnitury/') return [...new Map(KITS.flatMap((k) => k.items.map((i) => [i.p.slug, i.p] as const))).values()];
   if (url === '/catalog/') return products;
   return products.filter((p) => p.category.startsWith(url));
 }
@@ -197,10 +197,12 @@ export const minPrice = (p: Product) => {
 };
 export const rub = (n: number | null | undefined) => (n ? new Intl.NumberFormat('ru-RU').format(n) + ' ₽' : 'Цена по запросу');
 export const firstImage = (p: Product | undefined | null) => p?.variants.find((v) => v.image)?.image ?? null;
-export const children = (url: string, types?: string[]) => registry.filter((p) => p.parent === url && p.url !== url && (!types || types.includes(p.type)));
+export const children = (url: string, types?: string[]) => registry.filter((p) => p.parent === url && p.url !== url && (!types || types.includes(p.type)) && !isEmptyPage(p.url));
 export const INDEX_THRESHOLD: Record<string, number> = { tag: 3, 'brand-category': 2, subcategory: 1, series: 1, category: 1 };
 export function isIndexable(url: string): boolean {
+  if (isEmptyPage(url)) return false;
   const reg = regByUrl.get(url);
+  if (reg?.type === 'kit') return true;
   if (!reg) return true;
   if (reg.priority === 'GAP') return productsFor(url).length > 0;
   const th = INDEX_THRESHOLD[reg.type];
@@ -293,6 +295,63 @@ export const LIVE_URLS = new Set<string>([
   ...registry.filter((p) => p.type !== 'article' && p.type !== 'product-template').map((p) => p.url),
   ...ARTICLE_URLS, ...products.map((p) => `/product/${p.slug}/`), '/kontakty/', '/o-kompanii/', '/search/', '/cart/',
 ]);
-export const isLive = (path: string) => LIVE_URLS.has(path.split('#')[0].split('?')[0].replace(/([^/])$/, '$1/'));
+export const isLive = (path: string) => { const n = path.split('#')[0].split('?')[0].replace(/([^/])$/, '$1/'); return LIVE_URLS.has(n) && !isEmptyPage(n); };
 // markdown: [анкор](/url/) → анкор, если страницы нет
 export const pruneLinks = (md: string) => md.replace(/\[([^\]]+)\]\((\/[^)\s]*)\)/g, (m, a, p) => (isLive(p) ? m : a));
+
+// ---------- готовые комплекты фурнитуры на дверь (собираются из реальных товаров одного покрытия)
+export type KitItem = { role: string; p: Product; v: Variant; qty: number };
+export type Kit = { id: string; title: string; color: string; kind: 'room' | 'bath' | 'hidden'; items: KitItem[]; total: number; note: string };
+function pickVariant(cats: string[], color: string, exclude: Set<string>, prefBrand?: string): { p: Product; v: Variant } | null {
+  const cands: { p: Product; v: Variant }[] = [];
+  for (const p of products) {
+    if (exclude.has(p.slug) || !cats.some((c) => p.category.startsWith(c))) continue;
+    const v = p.variants.find((x) => x.color === color && x.image && x.price);
+    if (v) cands.push({ p, v });
+  }
+  cands.sort((a, b) => (a.p.brand === prefBrand ? -1 : 0) - (b.p.brand === prefBrand ? -1 : 0));
+  return cands[0] || null;
+}
+function buildKits(): Kit[] {
+  const kits: Kit[] = []; const usedHandles = new Set<string>();
+  const COLORS = ['black', 'chrome', 'gold', 'bronze', 'nickel', 'brass', 'white', 'graphite'];
+  for (const kind of ['bath', 'room', 'hidden'] as const) {
+    for (const color of COLORS) {
+      const handle = pickVariant(['/catalog/dvernye-ruchki/na-rozetke/'], color, usedHandles);
+      if (!handle) continue;
+      const b = handle.p.brand; const items: KitItem[] = [{ role: 'Ручка', ...handle, qty: 1 }];
+      if (kind === 'bath') { const wc = pickVariant(['/catalog/zavertki-i-nakladki/wc-zavertki/'], color, new Set(), b); if (!wc) continue; items.push({ role: 'WC-завертка', ...wc, qty: 1 }); }
+      const lock = pickVariant(kind === 'bath' ? ['/catalog/mezhkomnatnye-zamki/magnitnye/', '/catalog/mezhkomnatnye-zamki/s-fiksatorom/'] : ['/catalog/mezhkomnatnye-zamki/magnitnye/'], color, new Set(), b)
+        || pickVariant(['/catalog/mezhkomnatnye-zamki/'], color, new Set(), b);
+      if (!lock) continue; items.push({ role: 'Замок', ...lock, qty: 1 });
+      const hinge = kind === 'hidden' ? pickVariant(['/catalog/dvernye-petli/skrytye/'], color, new Set(), b)
+        : pickVariant(['/catalog/dvernye-petli/universalnye/', '/catalog/dvernye-petli/babochki/', '/catalog/dvernye-petli/skrytye/'], color, new Set(), b);
+      if (!hinge) continue; items.push({ role: 'Петли', ...hinge, qty: hinge.p.category.includes('skrytye') ? 3 : 2 });
+      const stop = pickVariant(['/catalog/upory-i-ogranichiteli/'], color, new Set(), b);
+      if (stop) items.push({ role: 'Упор', ...stop, qty: 1 });
+      usedHandles.add(handle.p.slug);
+      const cname = COLOR_NAMES[color] || color;
+      const kindName = kind === 'bath' ? 'для ванной и туалета' : kind === 'hidden' ? 'для скрытой двери' : 'для межкомнатной двери';
+      kits.push({
+        id: `${kind}-${color}`, color, kind, items,
+        title: `Комплект ${kindName}, ${cname}`,
+        total: items.reduce((s, i) => s + (i.v.price || 0) * i.qty, 0),
+        note: kind === 'bath' ? 'Ручка, WC-завертка, замок с фиксатором или магнитный, петли и упор' : kind === 'hidden' ? 'Ручка, магнитный замок, 3 скрытые петли с 3D-регулировкой и упор' : 'Ручка, бесшумный магнитный замок, петли и упор',
+      });
+    }
+  }
+  return kits;
+}
+export const KITS = buildKits();
+
+// ---------- страницы без товаров не публикуются (не генерируются, исчезают из навигации и ссылок)
+const EMPTY_TYPES = new Set(['category', 'subcategory', 'tag', 'brand', 'brand-category', 'series', 'door-type']);
+export const isEmptyPage = (url: string): boolean => {
+  const r = regByUrl.get(url);
+  if (!r || url === '/catalog/') return false;
+  if (r.type === 'kit') return KITS.length === 0;
+  if (!EMPTY_TYPES.has(r.type)) return false;
+  return productsFor(url).length === 0;
+};
+DOOR_TYPES = DOOR_TYPES.filter((d) => !isEmptyPage(d.url));
+CATEGORY_NAV = CATEGORY_NAV.filter((c) => !isEmptyPage(c.url));

@@ -191,6 +191,17 @@ const topBrands = BRANDS.filter((b) => b.tier === 'A');
       const inp = q.parentElement?.querySelector('input') as HTMLInputElement;
       inp.value = String(Math.max(1, (parseInt(inp.value, 10) || 1) + +(q.dataset.cq || 0)));
     });
+    // добавить весь комплект
+    document.addEventListener('click', (e) => {
+      const kb = (e.target as HTMLElement).closest('[data-add-kit]') as HTMLElement | null;
+      if (!kb) return;
+      const items = read();
+      for (const it of JSON.parse(kb.dataset.items || '[]') as Item[]) {
+        const ex = items.find((i) => i.slug === it.slug && i.finish === it.finish);
+        if (ex) ex.qty += it.qty; else items.push(it);
+      }
+      write(items); toast('Комплект добавлен в корзину');
+    });
     document.addEventListener('click', (e) => {
       const b = (e.target as HTMLElement).closest('[data-add]') as HTMLElement | null;
       if (!b) return;

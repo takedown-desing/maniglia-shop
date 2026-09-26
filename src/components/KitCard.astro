@@ -1,0 +1,19 @@
+---
+import type { Kit } from '../lib/data';
+import { brandName, rub, COLOR_HEX } from '../lib/data';
+import { u } from '../lib/url';
+const { k } = Astro.props as { k: Kit };
+const payload = JSON.stringify(k.items.map((i) => ({ slug: i.p.slug, name: i.p.name, finish: i.v.finish, price: i.v.price, img: i.v.image, qty: i.qty, url: `/product/${i.p.slug}/` })));
+---
+<article class="kit" id={k.id}>
+  <header class="kit-h"><span class="sw" style={`background:${COLOR_HEX[k.color]}`}></span><h3>{k.title}</h3></header>
+  <p class="kit-note">{k.note}</p>
+  <ul class="kit-list">
+    {k.items.map((i) => (
+      <li><a href={u(`/product/${i.p.slug}/`)} class="kit-thumb"><img src={u(i.v.image!)} alt={i.p.name} width="84" height="84" loading="lazy" /></a>
+        <div><span class="kit-role">{i.role}{i.qty > 1 ? ` × ${i.qty}` : ''}</span><a href={u(`/product/${i.p.slug}/`)}>{i.p.name}</a><small>{brandName(i.p.brand)} · {i.v.finish}</small></div>
+        <b>{rub((i.v.price || 0) * i.qty)}</b></li>
+    ))}
+  </ul>
+  <footer class="kit-f"><span>Итого за комплект: <b>{rub(k.total)}</b></span><button type="button" class="btn btn-accent" data-add-kit data-items={payload}>Добавить комплект в корзину</button></footer>
+</article>

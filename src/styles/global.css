@@ -463,3 +463,18 @@ a.pg:hover, button.pg:hover:not(:disabled) { border-color: var(--c-accent); colo
 @media (max-width: 1100px) { .color-cards { grid-template-columns: repeat(4, 1fr); } .series-cards { grid-template-columns: repeat(3, 1fr); } .door-cards { grid-template-columns: repeat(2, 1fr); } .kit-banner, .showroom, .lead-banner { grid-template-columns: 1fr; } }
 @media (max-width: 700px) { .svc-grid, .b2b-grid { grid-template-columns: 1fr; } .kit-items { grid-template-columns: repeat(3, 1fr); } .kit-banner { padding: 22px; } }
 @media (max-width: 480px) { .door-cards { grid-template-columns: 1fr; } .color-cards { grid-template-columns: repeat(2, 1fr); } .series-cards { grid-template-columns: repeat(2, 1fr); } }
+
+/* ---------- комплекты */
+.kits { display: grid; grid-template-columns: repeat(auto-fill, minmax(460px, 1fr)); gap: 18px; margin: 10px 0 30px; }
+.kit { border: 1px solid var(--c-line); border-radius: 12px; padding: 20px; display: grid; gap: 12px; align-content: start; transition: box-shadow var(--t); }
+.kit:hover { box-shadow: var(--sh); }
+.kit-h { display: flex; gap: 10px; align-items: center; } .kit-h h3 { margin: 0; font-size: 19px; } .kit-h .sw { width: 18px; height: 18px; }
+.kit-note { font-size: 14px; color: var(--c-text-2); margin: 0; }
+.kit-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 8px; }
+.kit-list li { display: grid; grid-template-columns: 64px 1fr auto; gap: 12px; align-items: center; border-top: 1px dashed var(--c-line); padding-top: 8px; }
+.kit-thumb img { width: 64px; height: 64px; object-fit: contain; border-radius: 6px; background: #fff; }
+.kit-list div { display: grid; font-size: 14px; line-height: 1.35; } .kit-role { font-size: 11.5px; letter-spacing: .08em; text-transform: uppercase; color: var(--c-muted); }
+.kit-list small { color: var(--c-muted); font-size: 12.5px; } .kit-list b { font-weight: 400; white-space: nowrap; font-size: 14.5px; }
+.kit-f { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; border-top: 1px solid var(--c-line); padding-top: 14px; }
+.kit-f b { font-size: 22px; font-weight: 400; }
+@media (max-width: 560px) { .kits { grid-template-columns: 1fr; } .kit-list li { grid-template-columns: 52px 1fr; } .kit-list b { grid-column: 2; } }

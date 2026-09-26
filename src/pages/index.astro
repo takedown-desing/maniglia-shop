@@ -19,7 +19,9 @@ import type { Product } from '../lib/data';
 import { u, abs } from '../lib/url';
 
 const t = (pageTexts.get('/') || {}) as any;
-const tiles = CATEGORY_NAV.map((c) => ({ url: c.url, name: c.name, icon: c.icon, count: productsFor(c.url).length }));
+// плитки разделов с фото: самый характерный товар раздела (без логотипов дистрибьюторов, если есть)
+const tileImg = (url: string) => { const ps = productsFor(url).filter((p) => firstImage(p)); return firstImage(ps.find((p) => p.variants.some((v) => v.imageSrc && !/made-italy|fratelli-cattini\.com/.test(v.imageSrc))) || ps[0]); };
+const tiles = CATEGORY_NAV.filter((c) => productsFor(c.url).length).map((c) => ({ url: c.url, name: c.name, icon: c.icon, img: tileImg(c.url), count: productsFor(c.url).length }));
 const hasImg = (p: Product) => !!firstImage(p);
 const pickIn = (cat: string, n: number) => products.filter((p) => p.category.startsWith(cat) && hasImg(p)).slice(0, n);
 // hero: фото без логотипов дистрибьюторов

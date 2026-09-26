@@ -1,8 +1,8 @@
 ---
 import SectionPage from '../../../components/SectionPage.astro';
-import { registry, seriesTexts } from '../../../lib/data';
+import { registry, seriesTexts, isEmptyPage } from '../../../lib/data';
 export function getStaticPaths() {
-  return registry.filter((p) => p.type === 'series').map((p) => ({ params: { slug: p.url.split('/')[2] }, props: { url: p.url } }));
+  return registry.filter((p) => p.type === 'series' && !isEmptyPage(p.url)).map((p) => ({ params: { slug: p.url.split('/')[2] }, props: { url: p.url } }));
 }
 const { url } = Astro.props;
 const s = seriesTexts.get(url.split('/')[2]);

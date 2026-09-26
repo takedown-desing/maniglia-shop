@@ -8,8 +8,9 @@ import Prose from './Prose.astro';
 import Blocks from './Blocks.astro';
 import {
   regByUrl, pageTexts, productsFor, children, breadcrumbs, shortName, isIndexable, CATEGORY_NAV, articles, brandName,
-  BRAND_CAT_MAP, minPrice, firstImage, colorImage, SITE_NAME, registry, pagesCount,
+  BRAND_CAT_MAP, minPrice, firstImage, colorImage, SITE_NAME, registry, pagesCount, isEmptyPage, KITS,
 } from '../lib/data';
+import KitCard from './KitCard.astro';
 import { abs, u } from '../lib/url';
 
 const { url, page = 1, override } = Astro.props as { url: string; page?: number; override?: { title?: string; description?: string; h1?: string; lead?: string; text?: string; faq?: { q: string; a: string }[] } };
@@ -50,9 +51,9 @@ const tiles = kids.map((s) => {
 });
 const siblings = reg.type === 'tag' || reg.type === 'subcategory' ? children(reg.parent, ['subcategory', 'tag']).filter((s) => s.url !== url) : [];
 
-const brandCats = reg.type === 'category'
+const brandCats = (reg.type === 'category'
   ? registry.filter((p) => p.type === 'brand-category' && (BRAND_CAT_MAP[p.url.split('/')[3]] || `/catalog/${p.url.split('/')[3]}/`).startsWith(url))
-  : reg.type === 'subcategory' ? registry.filter((p) => p.type === 'brand-category' && BRAND_CAT_MAP[p.url.split('/')[3]] === url) : [];
+  : reg.type === 'subcategory' ? registry.filter((p) => p.type === 'brand-category' && BRAND_CAT_MAP[p.url.split('/')[3]] === url) : []).filter((p) => !isEmptyPage(p.url));
 const brandsHere = [...new Set(items.map((p) => p.brand))];
 
 const catSlug = url.split('/').filter(Boolean)[1];
@@ -75,7 +76,8 @@ if (isFirst && t.faq?.length) schema.push({ '@type': 'FAQPage', mainEntity: t.fa
     <div class="page-head">
       <h1>{h1}</h1>
       {isFirst && t.lead && <p class="lead">{t.lead}</p>}
-      {minP && <p class="lead" style="font-size:14.5px">{items.length} {items.length % 10 === 1 && items.length % 100 !== 11 ? 'модель' : 'моделей'} · цены от {new Intl.NumberFormat('ru-RU').format(minP)} ₽</p>}
+      {reg.type === 'kit' && KITS.length > 0 && <p class="lead" style="font-size:14.5px">{KITS.length} готовых комплектов · от {new Intl.NumberFormat('ru-RU').format(Math.min(...KITS.map((k) => k.total)))} ₽ за комплект</p>}
+      {minP && reg.type !== 'kit' && <p class="lead" style="font-size:14.5px">{items.length} {items.length % 10 === 1 && items.length % 100 !== 11 ? 'модель' : 'моделей'} · цены от {new Intl.NumberFormat('ru-RU').format(minP)} ₽</p>}
     </div>
 
     {isFirst && brandsHere.length > 1 && reg.type !== 'brand-category' && reg.type !== 'series' && (
@@ -86,7 +88,9 @@ if (isFirst && t.faq?.length) schema.push({ '@type': 'FAQPage', mainEntity: t.fa
 
     {isFirst && tiles.length > 0 && <section style="margin:10px 0 28px"><h2 class="sr-only">Подразделы и подборки</h2><Tiles items={tiles} /></section>}
 
-    <Listing items={items} page={page} baseUrl={url} />
+    {reg.type === 'kit' ? (
+      <section><div class="listbar"><span>Готовых комплектов: <b>{KITS.length}</b></span><span class="note">Цена комплекта = сумма цен позиций. Любую позицию можно заменить при заказе</span></div><div class="kits">{KITS.map((k) => <KitCard k={k} />)}</div></section>
+    ) : <Listing items={items} page={page} baseUrl={url} />}
 
     {isFirst && (
       <>
