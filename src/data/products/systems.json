@@ -817,8 +817,8 @@
     "article": "KBL212",
     "price": 184,
     "inStock": true,
-    "image": null,
-    "imageSrc": null
+    "image": "/images/products/krona-koblenz-ugolok-kart-8.jpg",
+    "imageSrc": "https://toomart.ru/image/cache/catalog/mycatalogs/dvernaya-furnitura/razdvizhnie-mehanizmi/razdvizhnie-sistemi-krona-koblenz/ugolok-krepezhnyj-serii-kart-do-4080-kg-kart8-785x1000-1200x800.jpg"
    }
   ],
   "material": "сталь",
@@ -832,7 +832,7 @@
    "Гарантия": "12 месяцев"
   },
   "description": "Стальной уголок для крепления верхнего трека раздвижной системы Koblenz к стене. Подходит для систем серии KART, рассчитанных на полотна до 40 и до 80 кг. Продаётся поштучно, количество зависит от длины трека.",
-  "sourceUrl": "https://todoor.ru/shop/ugolok-krepezhnyj-serii-kart-do-4080-kg-kart8/"
+  "sourceUrl": "https://toomart.ru/dvernaya-furnitura/razdvizhnye-mehanizmy/razdvizhnye-sistemy-krona-koblenz/ugolok-koblenz-krepezhnyy-serii-kart-do-4080-kg-kart8-art-95960"
  },
  {
   "slug": "armadillo-space-gl-h01",
@@ -936,8 +936,8 @@
     "article": "AGB318",
     "price": 990,
     "inStock": true,
-    "image": null,
-    "imageSrc": null
+    "image": "/images/products/agb-e50100-00-01.jpg",
+    "imageSrc": "https://www.builddis.com/Files/134839/Img/19/AG-B5010000-big.jpg"
    }
   ],
   "material": "алюминий",
@@ -952,7 +952,7 @@
    "Гарантия": "12 месяцев"
   },
   "description": "Итальянская петля AGB для межкомнатных дверей из стекла в отделке матовый хром. Две петли выдерживают полотно весом до 100 кг. Сочетается с магнитными замками AGB для стекла из той же серии.",
-  "sourceUrl": "https://todoor.ru/shop/e501000001-dvernaja-petlja-dlja-stekljannogo-polotna-agb-matovyj-hrom/"
+  "sourceUrl": "https://www.builddis.com/charniere-drapeau-rectangulaire-pour-agb-vitra-ouv-180-fixation-murale-c2x40433267"
  },
  {
   "slug": "armadillo-range-gl-l10",

@@ -536,8 +536,8 @@
     "article": "K7080 DXSX CS",
     "price": 6715,
     "inStock": true,
-    "image": null,
-    "imageSrc": null
+    "image": "/images/products/krona-koblenz-kubica-k7080-matovyy-hrom.jpg",
+    "imageSrc": "https://www.moyzamok.ru/iw1200/pages/catalog/../photos/koblenz/7080/kubi7k7080cs.jpg"
    },
    {
     "finish": "матовый никель",
@@ -545,8 +545,8 @@
     "article": "K7080 DXSX NS",
     "price": 7243,
     "inStock": true,
-    "image": null,
-    "imageSrc": null
+    "image": "/images/products/krona-koblenz-kubica-k7080-matovyy-nikel.jpg",
+    "imageSrc": "https://www.moyzamok.ru/iw1200/pages/catalog/../photos/koblenz/7080/kubi7k7080ns.jpg"
    },
    {
     "finish": "хром",
@@ -554,8 +554,8 @@
     "article": "K7080 DXSX CL",
     "price": 6947,
     "inStock": true,
-    "image": null,
-    "imageSrc": null
+    "image": "/images/products/krona-koblenz-kubica-k7080-hrom.jpg",
+    "imageSrc": "https://www.moyzamok.ru/iw1200/pages/catalog/../photos/koblenz/7080/kubica7080cl.jpg"
    },
    {
     "finish": "золото",
@@ -563,8 +563,8 @@
     "article": "K7080 DXSX GOLD",
     "price": 8278,
     "inStock": true,
-    "image": null,
-    "imageSrc": null
+    "image": "/images/products/krona-koblenz-kubica-k7080-zoloto.jpg",
+    "imageSrc": "https://www.moyzamok.ru/iw1200/pages/catalog/../photos/koblenz/7080/kubi7k7080or.jpg"
    }
   ],
   "material": "цинковый сплав ZAMAK, сталь",
@@ -585,7 +585,7 @@
    "Сторона открывания": "универсальная"
   },
   "description": "Мощная скрытая петля высотой 160 мм для тяжёлых и высоких полотен. Комплект из трёх петель рассчитан на дверь до 100 кг, минимальная толщина полотна 40 мм. Подойдёт для дверей в потолок, массивных полотен и скрытых дверей под покраску.",
-  "sourceUrl": "https://todoor.ru/shop/k-7080-DXSX-CS-universalnaja-petlja-Koblenz-KUBICA-cvet-matovyj-hrom-80-kg/"
+  "sourceUrl": "https://www.moyzamok.ru/item15717"
  },
  {
   "slug": "krona-koblenz-kubica-k2000-twist",
@@ -601,8 +601,8 @@
     "article": "K2000 DXSX CR.SAT",
     "price": 10115,
     "inStock": true,
-    "image": null,
-    "imageSrc": null
+    "image": "/images/products/krona-koblenz-kubica-k2000-twist-matovyy-hrom.jpg",
+    "imageSrc": "https://www.moyzamok.ru/iw1200/pages/catalog/../photos/koblenz/2000/kubi7k2000cs.jpg"
    },
    {
     "finish": "матовый никель",
@@ -610,8 +610,8 @@
     "article": "K2000 DXSX NS",
     "price": 10709,
     "inStock": true,
-    "image": null,
-    "imageSrc": null
+    "image": "/images/products/krona-koblenz-kubica-k2000-twist-matovyy-nikel.jpg",
+    "imageSrc": "https://www.moyzamok.ru/iw1200/pages/catalog/../photos/koblenz/2000/kubi7k2000ns.jpg"
    }
   ],
   "material": "цинковый сплав ZAMAK, сталь",
@@ -633,7 +633,7 @@
    "Функция": "встроенный доводчик"
   },
   "description": "Скрытая петля Twist со встроенным доводчиком: дверь сама возвращается в закрытое положение. Производитель рекомендует сочетать её с магнитным замком и не использовать в помещениях с очень интенсивным проходом. Три петли держат полотно до 60 кг.",
-  "sourceUrl": "https://todoor.ru/shop/KUBICA-2000-DXSX-CRSAT-TWIST-petlja-skrytaja-universalnaja-s-dovodchikom-matovyj-hrom-60-kg/"
+  "sourceUrl": "https://www.moyzamok.ru/item9467"
  },
  {
   "slug": "agb-eclipse-2-0",
@@ -2326,8 +2326,8 @@
     "article": "E00133.16.04",
     "price": 5400,
     "inStock": true,
-    "image": null,
-    "imageSrc": null
+    "image": "/images/products/agb-e00133-16-04.jpg",
+    "imageSrc": "https://agb.spb.ru/wp-content/uploads/2020/05/%D0%A8%D0%B0%D0%B1%D0%BB%D0%BE%D0%BD-%D0%B4%D0%BB%D1%8F-4-%D1%91%D1%85-%D1%88%D1%82%D1%8B%D1%80%D1%8C%D0%BA%D0%BE%D0%B2%D1%8B%D1%85-%D0%B4%D0%B2%D0%B5%D1%80%D0%BD%D1%8B%D1%85-%D0%BF%D0%B5%D1%82%D0%B5%D0%BB%D1%8C.jpg"
    }
   ],
   "material": "пластик, металл",
@@ -2340,7 +2340,7 @@
    "Двери": "стандартные (без притвора)"
   },
   "description": "Кондуктор AGB для точной разметки и сверления отверстий под ввертные петли на дверях без притвора. Помогает выдержать соосность штифтов, что важно для ровного хода полотна. Пригодится установщикам, которые регулярно ставят ввертные петли.",
-  "sourceUrl": "https://todoor.ru/shop/E001331401-shablon-dlja-ustanovki-vvertnyh-petel/"
+  "sourceUrl": "https://agb.spb.ru/product/shablon-vvertnyh-petel-1/"
  },
  {
   "slug": "agb-e00139-16-04",
@@ -2356,8 +2356,8 @@
     "article": "E00139.16.04",
     "price": 5400,
     "inStock": true,
-    "image": null,
-    "imageSrc": null
+    "image": "/images/products/agb-e00139-16-04.jpg",
+    "imageSrc": "https://agb.spb.ru/wp-content/uploads/2020/05/%D0%A8%D0%B0%D0%B1%D0%BB%D0%BE%D0%BD-%D0%B4%D0%BB%D1%8F-4-%D1%85-%D1%88%D1%82%D1%8B%D1%80%D1%8C%D0%BA%D0%BE%D0%B2%D1%8B%D1%85-%D0%B4%D0%B2%D0%B5%D1%80%D0%BD%D1%8B%D1%85-%D0%BF%D0%B5%D1%82%D0%B5%D0%BB%D1%8C-%D0%B4%D0%B2%D0%B5%D1%80%D1%8C-%D1%81-%D0%BF%D1%80%D0%B8%D1%82%D0%B2%D0%BE%D1%80%D0%BE%D0%BC.jpg"
    }
   ],
   "material": "пластик, металл",
@@ -2370,7 +2370,7 @@
    "Двери": "с притвором (четвертью)"
   },
   "description": "Вариант шаблона AGB для дверей с притвором. Задаёт правильное положение отверстий в полотне и коробке, чтобы дверь не перекашивало после навески. Используется вместе с ввертными петлями AGB.",
-  "sourceUrl": "https://todoor.ru/shop/E001391604-shablon-dlja-ustanovki-vvertnyh-petel/"
+  "sourceUrl": "https://agb.spb.ru/product/shablon-vvertnyh-petel-2/"
  },
  {
   "slug": "krona-koblenz-k-dima",
@@ -2386,8 +2386,8 @@
     "article": "K.DIMA",
     "price": 35417,
     "inStock": true,
-    "image": null,
-    "imageSrc": null
+    "image": "/images/products/krona-koblenz-k-dima.jpg",
+    "imageSrc": "https://uploads.prod01.london.platform-os.com/instances/748/assets/images/KOBLENZ/kob%20jig%20500x500.jpg"
    }
   ],
   "material": "алюминий",
@@ -2400,7 +2400,7 @@
    "Вставки": "продаются отдельно под каждую модель Kubica"
   },
   "description": "Профессиональный алюминиевый шаблон Koblenz для фрезерования гнёзд под скрытые петли Kubica. Под каждую модель петли подбирается своя вставка, поэтому одним шаблоном можно работать с разными сериями. Нужен мастерам, которые ставят скрытые двери на объектах.",
-  "sourceUrl": "https://todoor.ru/shop/kdima-universalnyj-shablon-dlja-vrezki-skrytyh-petel-vstavki-otdelno/"
+  "sourceUrl": "https://www.tgs-shepherds.co.uk/product/kob-dima"
  },
  {
   "slug": "punto-sd-2030",
@@ -3605,8 +3605,8 @@
     "article": "HGT003",
     "price": 4623,
     "inStock": true,
-    "image": null,
-    "imageSrc": null
+    "image": "/images/products/fantom-fire-hgt003.jpg",
+    "imageSrc": "https://static.tildacdn.com/tild3066-3839-4732-a233-643030633937/orig_3.jpeg"
    }
   ],
   "material": "сталь",
@@ -3621,7 +3621,7 @@
    "Гарантия": "24 месяца"
   },
   "description": "Версия магнитного упора Fantom для помещений, где нужны материалы, устойчивые к высоким температурам. Магнит автоматически фиксирует дверь в открытом положении. Монтаж накладной, без глубокой врезки.",
-  "sourceUrl": "https://todoor.ru/shop/upor-magnitnyj-protivopozharnyj-avtomaticheskij-skrytyj-fantom-premium-hgt001-prozrachnyj/"
+  "sourceUrl": "https://www.fantomstop.ru/"
  },
  {
   "slug": "fantom-standart-fnt0020",
@@ -3637,8 +3637,8 @@
     "article": "FNT0020",
     "price": 1820,
     "inStock": true,
-    "image": null,
-    "imageSrc": null
+    "image": "/images/products/fantom-standart-fnt0020.jpg",
+    "imageSrc": "https://zamkitut.com/upload/iblock/993/60vx4dzehjopkhnb15qlo2sznxcawmlf.jpeg"
    }
   ],
   "material": "сталь",
@@ -3651,7 +3651,7 @@
    "Гарантия": "24 месяца"
   },
   "description": "Базовая версия скрытого упора Fantom с прозрачной крышкой, которая сливается с любым напольным покрытием. Магнит срабатывает автоматически и держит дверь открытой. Пол остаётся ровным, уборка не требует обходить упор.",
-  "sourceUrl": "https://todoor.ru/shop/upor-magnitnyj-avtomaticheskij-skrytyj-fantom-standart-fnt0020-prozrachnyj/"
+  "sourceUrl": "https://zamkitut.ru/catalog/product/upor_dvernoy_fantom_standart_fnt0020_prozrachnyy/"
  },
  {
   "slug": "morelli-mds-1",
@@ -3781,8 +3781,8 @@
     "article": "HGT0011",
     "price": 2617,
     "inStock": true,
-    "image": null,
-    "imageSrc": null
+    "image": "/images/products/fantom-premium-pivot.jpg",
+    "imageSrc": "https://zamok31.ru/upload/iblock/ba8/6la03mdr4xg044ltdc09fj5nnhlo9n8f.jpg"
    }
   ],
   "material": "сталь",
@@ -3797,7 +3797,7 @@
    "Гарантия": "24 месяца"
   },
   "description": "Специальная версия Fantom для поворотных дверей pivot и рото-систем. Пластина запатентованной формы удерживает дверь в открытом положении при нестандартной траектории движения. Сохраняет главные плюсы серии: пол без выступов и незаметный монтаж.",
-  "sourceUrl": "https://todoor.ru/shop/upor-magnitnyj-avtomaticheskij-skrytyj-dlja-roto-dverej-fantom-premium-pivot-hgt0011/"
+  "sourceUrl": "https://zamok31.ru/catalog/dvernaya_furnitura/upory_dvernye/21670/"
  },
  {
   "slug": "verum-stoppino-mod-2",

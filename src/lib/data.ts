@@ -51,6 +51,8 @@ function cleanProduct(p: Product): Product | null {
   const BLOCKED = /todoor\.ru/i;
   const variants = (p.variants || []).filter(Boolean).map((v) => ({ ...v, image: v.image && v.imageSrc && !BLOCKED.test(v.imageSrc) ? v.image : null }));
   if (!variants.length) return null;
+  // товар без единого фото на сайт не выводится (все карточки должны быть с картинкой)
+  if (!variants.some((v) => v.image)) return null;
   const cat = p.category.endsWith('/') ? p.category : p.category + '/';
   return { ...p, category: cat, variants, doorTypes: p.doorTypes || [] };
 }
